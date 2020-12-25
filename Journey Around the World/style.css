@@ -236,7 +236,7 @@
     height: auto;
   }
   .photo-blockquote {
-    background-color: #0094DB;
+    background-color: #EBA505;
     margin-top: -80px;
     padding-bottom: 80px;
   }
@@ -245,7 +245,7 @@
     font-size: 24px;
     line-height: 1.4;
     text-align: center;
-    color: #FFFFFF;
+    color: #011E5C;
   }
   blockquote:before {
     content: '  ';
@@ -263,7 +263,7 @@
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    color: #F9F9F9;
+    color: #011E5C;
   }
   
   .photo-about, .photo-contact {
