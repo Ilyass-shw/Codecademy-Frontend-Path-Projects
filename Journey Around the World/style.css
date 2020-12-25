@@ -136,11 +136,12 @@
   .site-header-right li a {
     text-decoration: none;
     margin-left: 20px;
+    color: white;
   }
   
   /* Site Footer */
   .footer {
-    background-color: #333333;
+    background-color: #9E6200;
     color: #FFFFFF;
     padding: 30px;
     text-align: center;
