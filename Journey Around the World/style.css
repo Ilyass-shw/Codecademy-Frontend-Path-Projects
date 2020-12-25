@@ -200,7 +200,7 @@
   /* 6. Page Styles
   ======================================== */
   .photo-hero {
-    background-color: #0094DB;
+    background-color: #054DEB;
     min-height: 700px;
   }
   .photo-hero-text {
@@ -211,7 +211,7 @@
     margin: 1em 0 40px;;
   }
   .photo-hero h1 span {
-    color: #0C2EE8;
+    color: #DBAD00;
   }
   .photo-hero p {
     color: #FFFFFF;
