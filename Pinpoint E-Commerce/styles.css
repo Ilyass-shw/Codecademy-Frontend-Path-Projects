@@ -204,7 +204,7 @@
   
   /* Site Navigation */
   .site-header {
-    background-color: #EBEBEB;
+    background-color: #34474F;
     padding: 30px 15px 0;
   }
   
@@ -470,7 +470,7 @@
   }
   
   .site-main-background {
-    background-color: #EBEBEB;
+    background-color: #34474F;
     bottom: 0;
     display: block;
     height: 600px;
@@ -487,7 +487,7 @@
   
   .site-main-header h1,
   .site-main-header p {
-    color: #2A2A2A;
+    color: white;
   }
   
   .section-header {
