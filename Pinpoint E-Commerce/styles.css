@@ -258,12 +258,12 @@
   }
   
   .site-nav-link {
-    color: #959595;
+    color: white;
     text-decoration: none;
   }
   
   .site-nav-link.active {
-    color: #2A2A2A;
+    color: #FFAA00;
   }
   
   /* Site Footer */
