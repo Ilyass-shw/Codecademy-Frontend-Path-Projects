@@ -270,11 +270,17 @@
       font-size: 14px;
 
   }
-  .movie-description-stars .stars{
+  .movie-description-stars .stars-label{
       margin-bottom: 12px;
       font-weight: bold;
       font-size: 18px;
       color: greenyellow;
+      text-transform: uppercase;
+  }
+  .featured-section-header{
+      color: white;
+      text-transform: uppercase;
+      font-weight: 18px;
   }
   
   
