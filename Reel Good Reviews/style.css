@@ -265,6 +265,17 @@
     border: 1px solid #F1EB58;
     outline: none;
   }
+  .movie-description-stars ul{
+      line-height: 16px;
+      font-size: 14px;
+
+  }
+  .movie-description-stars .stars{
+      margin-bottom: 12px;
+      font-weight: bold;
+      font-size: 18px;
+      color: greenyellow;
+  }
   
   
   /* 6. Page Styles
