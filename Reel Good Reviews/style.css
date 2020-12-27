@@ -380,3 +380,10 @@
   .review-header h2 {
     text-transform: uppercase;
   }
+  .button-primary{
+      background-color: #F1EB58;
+  }
+  .button-secondary{
+      background-color: #62A7B3;
+      color: #FFFFFF;
+  }
