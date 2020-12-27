@@ -366,7 +366,7 @@
   .movie-description-category {
     border-bottom: 1px solid #62A7B3;
     border-top: 1px solid #62A7B3;
-    letter-spacing: -1px;
+    letter-spacing: 2px;
     margin: 20px auto;
     padding: 10px;
     text-align: center;
