@@ -15,3 +15,16 @@ a:hover{
 .nav-link:hover{
     color: #5495ff;
 }
+.btn{
+    font-family: 'Raleway', sans-serif;
+    background-color: #2176FF;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 14px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
