@@ -30,10 +30,20 @@ a:hover{
 }
 .btn:hover{
     transition: all .5s ease-in-out;
-    border: 1px solid #62DFF5;
+    border: 2px solid #62DFF5;
 }
 .btn:active{
-    transition: none;
+    font-size: 14px;
+    transition: font-size .25s;
     background-color: #62DFF5;
     border: 0px 0px;
+}
+.activity{
+    text-decoration: none;
+    border: 3px solid #2176FF;
+    cursor: pointer;
+}
+.activity:hover{
+    background-color: #082046bd;
+    transition: background-color 1s;
 }
