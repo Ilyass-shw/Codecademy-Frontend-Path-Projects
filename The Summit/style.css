@@ -8,3 +8,10 @@ a:hover{
     text-decoration: none;
 
 }
+.nav-link{
+    text-decoration: none;
+
+}
+.nav-link:hover{
+    color: #5495ff;
+}
