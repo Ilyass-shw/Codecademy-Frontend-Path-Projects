@@ -43,7 +43,13 @@ a:hover{
     border: 3px solid #2176FF;
     cursor: pointer;
 }
-.activity:hover{
-    background-color: #082046bd;
-    transition: background-color 1s;
-}
+.activity:hover {
+    background-color: #fff;
+    color: #5495ff;
+    transition: color .1s ease-in, background-color .1s ease-in;
+  }
+   
+  .activity:active {
+    font-size: 40px;
+    transition: font-size .1s;
+  }
