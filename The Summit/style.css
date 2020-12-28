@@ -28,3 +28,12 @@ a:hover{
     cursor: pointer;
 
 }
+.btn:hover{
+    transition: all .5s ease-in-out;
+    border: 1px solid #62DFF5;
+}
+.btn:active{
+    transition: none;
+    background-color: #62DFF5;
+    border: 0px 0px;
+}
