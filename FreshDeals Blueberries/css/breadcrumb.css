@@ -1,11 +1,34 @@
+
+.breadcrumb a{
+    background-color: #447D06;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 15px;
+    padding: 0 5px;
+
+}
+
+
 .breadcrumb>li{
-    display: inline;
+    float: left;
+
+
 
 }
 .breadcrumb li.location+li.location::before{
     content: ">";
+    color: black;
 }
-.breadcrumb li:hover{
+.breadcrumb a:hover{
     color: red;
-    font-size: 20px;
+    font-size: 18px;
+}
+.breadcrumb .attribute::after {
+    content: " x";
+    vertical-align: super;
+    font-size: 10px;
 }
