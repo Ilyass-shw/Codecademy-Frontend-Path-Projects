@@ -5,3 +5,7 @@
 .breadcrumb li+li::before{
     content: ">";
 }
+.breadcrumb li:hover{
+    color: red;
+    font-size: 20px;
+}
