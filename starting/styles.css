@@ -8,6 +8,12 @@ font-family: "Nunito sans";
 }
 .colors-container ul{
     list-style-type: none;
+    padding: 0 0;
+}
+.colors-container li{
+
+    margin: 16px 0;
+    
 }
 #blue-block{
     background-color: #2d5dcc;
@@ -28,5 +34,4 @@ font-family: "Nunito sans";
 #blue-block, #pink-block, #mint-block, #beige-block{
     text-align: center;
     font-size: 16px;
-    height: 80px;
 }
