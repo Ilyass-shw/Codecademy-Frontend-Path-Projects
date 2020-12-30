@@ -1,0 +1,32 @@
+body{
+margin: 0 10%;
+font-family: "Nunito sans";
+}
+.colors-container, .fonts-container, .Text-Styles-container{
+    border: 1px solid grey;
+    padding: 10px;
+}
+.colors-container ul{
+    list-style-type: none;
+}
+#blue-block{
+    background-color: #2d5dcc;
+    color: white;
+} 
+#pink-block{
+    background-color: #d957d9;
+    color: black;
+} 
+#mint-block{
+    background-color: #4fe0b0;
+    color: black;
+} 
+#beige-block{
+    background-color: #efd9ca;
+    color: black;
+}
+#blue-block, #pink-block, #mint-block, #beige-block{
+    text-align: center;
+    font-size: 16px;
+    height: 80px;
+}
