@@ -90,3 +90,9 @@ font-family: "Nunito sans", sans-serif;
     border: 2px solid grey;
 
 }
+.resource-panel{
+    background-color: #141c3a;
+    color: white;
+    border: 1px solid #053BE3;
+    margin-bottom: 10px;
+}
