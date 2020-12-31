@@ -60,3 +60,18 @@ font-family: "Nunito sans", sans-serif;
 .italic{
     font-style: italic;
 }
+.Text-Styles-container h1{
+    font-weight: 700;
+    font-size: 32px;
+    font-family: "Nunito Sans", sans-serif;
+}
+.Text-Styles-container h2{
+    font-weight: 500;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+}
+.Text-Styles-container p{
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
