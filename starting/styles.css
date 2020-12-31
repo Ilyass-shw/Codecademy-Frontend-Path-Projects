@@ -1,5 +1,6 @@
 body{
 margin: 0 10%;
+margin-right: auto;
 font-family: "Nunito sans", sans-serif;
 }
 .colors-container, .fonts-container, .Text-Styles-container{
@@ -74,4 +75,18 @@ font-family: "Nunito sans", sans-serif;
     font-weight: 400;
     font-size: 14px;
     font-family: "Poppins", sans-serif;
+}
+.centre-content{
+    min-width: 400px;
+    max-width: 800px;
+      display: inline-block;
+
+}
+.side-resources-bar{
+    display: inline-block;
+    max-width: 250px;
+    min-width: 183px;
+    text-align: center;
+    border: 2px solid grey;
+
 }
