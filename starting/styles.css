@@ -3,9 +3,9 @@ margin: 0 10%;
 font-family: "Nunito sans", sans-serif;
 }
 .colors-container, .fonts-container, .Text-Styles-container{
-    border: 1px solid grey;
+    border: 2px solid grey;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px auto;
 }
 .colors-container p{
     padding: 0 0;
@@ -32,7 +32,7 @@ font-family: "Nunito sans", sans-serif;
     text-align: center;
     width: 32%;
     display: inline-block;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 .font-family-segment{
     display: inline-block;
