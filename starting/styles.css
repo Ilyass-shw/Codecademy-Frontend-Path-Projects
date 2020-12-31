@@ -36,4 +36,27 @@ font-family: "Nunito sans", sans-serif;
 }
 .font-family-segment{
     display: inline-block;
+    width: 45%;
+}
+.font-family-segment .font-label {
+    text-decoration: underline;
+    font-size: 20px;
+}
+.font-family-segment .font-one {
+    font-family: "Source Code Pro", monospace;
+}
+.font-family-segment .font-two {
+    font-family: "Nunito Sans", sans-serif;
+}
+.font-family-segment .font-three {
+    font-family: "Poppins", sans-serif;
+}
+.regular{
+    font-style: normal;
+}
+.bold{
+    font-weight: 700;
+}
+.italic{
+    font-style: italic;
 }
