@@ -58,6 +58,7 @@ li {
 .supporting img {
 width: 10%;
 height: 10%;
+margin-right: 5%;
 }
 
 .rating {
@@ -71,7 +72,7 @@ height: 10%;
 }
 
 .rating h1 {
-
+font-size: 2.5rem;
 }
 
 .gallery img {
@@ -91,7 +92,7 @@ height: 10%;
 }
 
 .location img {
-
+width: 100%;
 }
 
 footer {
