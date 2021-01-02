@@ -130,3 +130,11 @@ footer nav{
   display: none;
 }
 }
+nav ul li{
+  margin-left: 7px;
+ 
+}
+nav ul{
+  display: inline-block;
+  align-items: center;
+}
