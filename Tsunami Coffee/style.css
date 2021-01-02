@@ -126,4 +126,7 @@ footer .container {
   margin-left: 0;
   margin-right: 0;
 }
+footer nav{
+  display: none;
+}
 }
