@@ -42,6 +42,7 @@ body {
   .week {
     display: inline-flex;
     flex-grow: 3;
+    flex-direction: column;
   }
   
   .row {
