@@ -50,6 +50,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
   }
   
   .square {
@@ -58,6 +59,8 @@ body {
     padding: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
+
 
   }
   
