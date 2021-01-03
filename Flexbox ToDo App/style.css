@@ -41,7 +41,7 @@ body {
   
   .week {
     display: inline-flex;
-
+    flex-grow: 3;
   }
   
   .row {
@@ -78,6 +78,7 @@ body {
   .reminders {
     background-color: Khaki;
     display: inline-flex;
+    flex-grow: 2;
 
   }
   
