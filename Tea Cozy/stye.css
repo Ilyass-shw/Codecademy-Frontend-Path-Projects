@@ -53,12 +53,15 @@ main{
 }
 .container-tea-of-month{
     width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .tea-box-container{
     display: flex;
-    width: 1000px;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 figure img{
     width: 300px;
@@ -67,4 +70,25 @@ figure img{
 figure{
     margin-left: 10px;
     margin-right: 10px;
+}
+.container-location{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    height: 500px;
+    background-image: url("resouces/img-locations-background.webp");
+}
+.container-location-box{
+    display: flex;
+    justify-content: space-around;
+
+
+}
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
 }
