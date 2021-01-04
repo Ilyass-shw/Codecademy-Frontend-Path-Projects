@@ -92,3 +92,10 @@ figure{
     flex-direction: column;
     align-content: space-around;
 }
+.reference{
+    height: 200px;
+}
+.copyright{
+    text-align: left;
+    margin-right: 20px;
+}
