@@ -3,8 +3,8 @@
     height: 500px;
     width: 500px;
     display: grid;
-    grid-template-columns: 
-  }
+    grid-template-columns: 25% 25% 2fr 1fr;
+}
   
   .box {
     background-color: beige;
