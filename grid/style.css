@@ -6,9 +6,10 @@
     grid-template-columns: 25% 25% 2fr 1fr;
     grid-template-rows: repeat(2, 200px);
     grid-gap: 10px 15px;
-
 }
-  
+.a{
+    grid-column: 1 / span 2;
+  }
   .box {
     background-color: beige;
     color: black;
