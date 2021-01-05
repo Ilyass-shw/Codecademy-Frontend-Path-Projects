@@ -12,6 +12,10 @@
     grid-row-start: 1 ;
     grid-row-end: 3;
   }
+  .c{
+    grid-row-start: 1 ;
+    grid-row-end: 3;
+}
   .box {
     background-color: beige;
     color: black;
