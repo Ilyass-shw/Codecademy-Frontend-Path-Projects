@@ -4,6 +4,8 @@
     width: 500px;
     display: grid;
     grid-template-columns: 25% 25% 2fr 1fr;
+    grid-template-rows: repeat(2, 200px);
+
 }
   
   .box {
