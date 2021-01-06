@@ -14,3 +14,6 @@ Project is: _in progress_, until every project is done and the full path is clea
 
 ## Inspiration
 The idea of creating this repo is based on suggestions and advices from current self taught developers/friends on reddit.  
+
+## Contact
+Created by [@ilyass](https://www.instagram.com/il.yass40/) - feel free to contact me!
