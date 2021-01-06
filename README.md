@@ -8,3 +8,6 @@ This repo was created with the intention to keep myself focused, invested, and r
 * Html5 - 
 * Css 
 * Javascript 
+
+## Status
+Project is: _in progress_, until every project is done and the full path is cleared this goal shal continue in progress.
