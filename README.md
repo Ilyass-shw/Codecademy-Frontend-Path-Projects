@@ -1,6 +1,16 @@
 # Codecademy Frontenf path projects
 > This big repo includes almost all of the projects that have to be completed doing the Frontend path provided by CodeCademy.
 
+## Table of contents
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
+
 ## General info
 This repo was created with the intention to keep myself focused, invested, and reminded everyday of my goal of becoming a great Frontend Engineer.
 
