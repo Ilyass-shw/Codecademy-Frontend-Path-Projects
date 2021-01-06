@@ -11,3 +11,6 @@ This repo was created with the intention to keep myself focused, invested, and r
 
 ## Status
 Project is: _in progress_, until every project is done and the full path is cleared this goal shal continue in progress.
+
+## Inspiration
+The idea of creating this repo is based on suggestions and advices from current self taught developers/friends on reddit.  
