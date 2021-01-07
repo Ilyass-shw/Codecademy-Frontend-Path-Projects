@@ -63,6 +63,7 @@ header, footer {
     color: #4a4a4a;
     position: relative;
     bottom: 5px;
+    grid-auto-rows: 500px;
   }
   
   .description {
