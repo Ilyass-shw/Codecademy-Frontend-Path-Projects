@@ -16,7 +16,12 @@ header, footer {
     align-items: stretch;
     align-content: center;
     grid-auto-rows: 500px;
+    grid-auto-flow: column;
+    grid-auto-columns: 250px;
 
+  }
+  .e{
+    justify-self: end;
   }
   
   h2 {
