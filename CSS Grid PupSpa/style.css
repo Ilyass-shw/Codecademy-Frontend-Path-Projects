@@ -5,7 +5,9 @@ body {
   }
   
   .grid {
-  
+    display: grid;
+    grid-template-rows: 5% 30% 10% 30% 20% 5%;
+    grid-template-columns: repeat(6, 1fr);
   }
   
   header {
@@ -123,7 +125,7 @@ body {
   @media(max-width: 600px){
   
     .grid {
-        display: grid;
+
     }
   
     header {
