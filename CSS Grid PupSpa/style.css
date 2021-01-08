@@ -70,15 +70,17 @@ body {
   }
   
   .address {
-  
+  grid-column: 1/ span 2;
   }
   
   .hours {
-  
+    grid-column: 3/ span 2;
+
   }
   
   .call-us {
-  
+    grid-column: 5/ span 2;
+
   }
   
   .marker {
@@ -109,11 +111,12 @@ body {
   }
   
   .one {
-  
+  grid-column: 1 / span 3;
   }
   
   .two {
-  
+    grid-column: 4 / span 3;
+
   }
   
   footer {
