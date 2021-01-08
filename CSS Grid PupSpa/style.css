@@ -7,6 +7,7 @@ body {
   .grid {
     display: grid;
     grid-template: 5% 30% 10% 30% 20% 5% / repeat(6, 1fr);
+    grid-column-gap: 20px;
   }
   
   header {
@@ -135,7 +136,7 @@ body {
   @media(max-width: 600px){
   
     .grid {
-
+        grid-template-columns: 100%;
     }
   
     header {
