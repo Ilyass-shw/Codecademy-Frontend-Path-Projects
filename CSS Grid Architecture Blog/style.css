@@ -10,7 +10,7 @@ body {
   img{
       max-width: 100%;
   }
-  .h, .i, .k, .l, .n, .o {
+ .i, .k, .l, .n, .o {
     display: none;
   }
   .grid {
@@ -54,7 +54,8 @@ body {
   /* set 3: pattern play */
   
   .g {
-  
+    grid-area: 11 / 3 / 14 / 12;
+
   }
   
   .h {
