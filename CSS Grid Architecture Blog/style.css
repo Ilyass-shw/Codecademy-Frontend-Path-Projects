@@ -10,7 +10,9 @@ body {
   img{
       max-width: 100%;
   }
-
+  .e, .f,  .h, .i, .k, .l, .n, .o {
+    display: none;
+  }
   .grid {
   display: grid;
   width: 900px;
