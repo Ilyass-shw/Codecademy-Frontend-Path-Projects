@@ -10,7 +10,9 @@ body {
   img{
       max-width: 100%;
   }
-
+  .d, .e, .f, .g, .h, .i, .j, .k, .l, .m, .n, .o {
+    display: none;
+  }
   .grid {
   display: grid;
   width: 900px;
@@ -21,7 +23,7 @@ body {
   
   /* set 1: repurposed living */
   .a {
-  
+      grid-area: 1 / 3 / 5 / 13;
   }
   
   .b {
