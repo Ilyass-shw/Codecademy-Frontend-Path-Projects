@@ -10,9 +10,7 @@ body {
   img{
       max-width: 100%;
   }
- .i, .k, .l, .n, .o {
-    display: none;
-  }
+ 
   .grid {
   display: grid;
   width: 900px;
@@ -59,11 +57,13 @@ body {
   }
   
   .h {
-  
+    grid-area: 12 / 2 / 13 / 5;
+
   }
   
   .i {
-  
+    grid-area: 14 / 1 / 15 / 4;
+
   }
   
   /* set 4: healing house */
