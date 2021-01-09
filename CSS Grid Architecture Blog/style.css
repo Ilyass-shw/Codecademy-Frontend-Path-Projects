@@ -27,11 +27,11 @@ body {
   }
   
   .b {
-  
+    grid-area: 6 / 4 / 7 / span 5;
   }
   
   .c {
-  
+    grid-area: 7 / 4 / 8 / span 8;
   }
   
   /* set 2: angles */
