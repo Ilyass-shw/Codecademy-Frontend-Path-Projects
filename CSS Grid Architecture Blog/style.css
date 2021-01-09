@@ -10,7 +10,7 @@ body {
   img{
       max-width: 100%;
   }
-  .e, .f,  .h, .i, .k, .l, .n, .o {
+  .h, .i, .k, .l, .n, .o {
     display: none;
   }
   .grid {
@@ -27,25 +27,28 @@ body {
   }
   
   .b {
-    grid-area: 6 / 4 / 7 / span 5;
+    grid-area: 2 / 2 / 3 / 4;
   }
   
   .c {
-    grid-area: 7 / 4 / 8 / span 8;
+    grid-area: 4 / 1 / 5 / 4; 
   }
   
   /* set 2: angles */
   
   .d {
-  
+    grid-area: 5 / 1 / span 7 / span 6;
+
   }
   
   .e {
-  
+    grid-area: 7 / 5 / span 1 / span 4;
+
   }
   
   .f {
-  
+    grid-area: 9 / 7 / span 1 / span 2;
+
   }
   
   /* set 3: pattern play */
