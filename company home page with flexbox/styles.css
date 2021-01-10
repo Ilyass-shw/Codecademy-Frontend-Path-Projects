@@ -23,8 +23,13 @@ header{
 
 header a {
     text-decoration: none;
+    font-weight: 650;
+    padding: 1px;
+    background-color: #D9C179;
+    color: #51ABCF;
     margin-left: 20px;
-    color: white;
+    border: 2px solid #D9C179;
+    border-radius: 3px;
 }
 
 header a:hover{
