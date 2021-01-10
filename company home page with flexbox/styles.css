@@ -140,4 +140,15 @@ figure p{
     height: 250px;
     width: 150px;
 }
+
 /*footer*/
+footer{
+    text-align: center;
+}
+.contact{
+    padding-top: 20px;
+}
+
+.copyright{
+    padding-top: 20px;
+}
