@@ -1,10 +1,11 @@
 /* Universal styles */
 html{
-    Font-Family: 'Noto Serif', Serif;
-    Font-Size: 15px;
-    background-color: #304452;
+    Font-Family: 'Quattrocento Sans', Sans-Serif;
+    Font-Size: 17px;
+    background-color: #736F63;
 
 }
+
 body{
     margin: 0 0;;
 }
@@ -19,11 +20,13 @@ header{
     margin-left: 10px;
     margin-right: 10px;
 }
+
 header a {
-    color: #F8FAF9;
     text-decoration: none;
     margin-left: 20px;
+    color: #131313;
 }
+
 header a:hover{
 
 }
@@ -39,9 +42,10 @@ header a:hover{
     align-items: center;
     justify-content: center;
 }
+
 .hero-text{
-    background-color: #494E52;
-    color: #ECEEEE;
+    background-color: #f3d887;
+    color: #131313;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -49,10 +53,30 @@ header a:hover{
     align-items: center;
     align-content: space-around;
 }
+
+.hero h1{
+    Font-Family: 'Ovo', Serif;
+    Font-Size: 42px;
 .hero p{
     margin-bottom: 20.1px;
 }
 /*main*/
+main{
+    background-color: #C1CFD9;
+}
 
+.attractions{
+    width: 70%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
 
+}
+
+.box{
+
+}
+ .attraction-1{
+
+ }
 /*footer*/
