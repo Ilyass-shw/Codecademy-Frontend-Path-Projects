@@ -1,0 +1,41 @@
+/* Universal styles */
+html{
+    Font-Family: 'Noto Serif', Serif;
+    Font-Size: 15px;
+    background-color: #304452;
+
+}
+
+/* header */
+header{
+    display: flex;
+    height: 65px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+header a {
+    color: #F8FAF9;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/*hero*/
+.hero{
+    background-image: url("https://www.swedishnomad.com/wp-content/images/2018/10/Places-to-visit-in-Germany.jpg.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/*main*/
+
+
+/*footer*/
