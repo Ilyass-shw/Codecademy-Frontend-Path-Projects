@@ -24,7 +24,7 @@ header{
 header a {
     text-decoration: none;
     margin-left: 20px;
-    color: #131313;
+    color: white;
 }
 
 header a:hover{
@@ -120,18 +120,24 @@ main{
 
 .team{
     height: 400px;
-    background-color:  #f3d887;
+    background-color:  #F4ECD2;
     display: flex;
     justify-content: center;
 }
 .team figure{
     margin: 0 0;
     display: flex;
+    flex-basis: 280px;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+figure p{
+    text-align: center;
 }
 
 .team img{
     height: 250px;
+    width: 150px;
 }
 /*footer*/
