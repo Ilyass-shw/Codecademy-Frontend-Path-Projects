@@ -46,7 +46,7 @@ header a:hover{
 .hero-text{
     background-color: #f3d887;
     color: #131313;
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,6 +57,8 @@ header a:hover{
 .hero h1{
     Font-Family: 'Ovo', Serif;
     Font-Size: 42px;
+}
+
 .hero p{
     margin-bottom: 20.1px;
 }
@@ -66,17 +68,53 @@ main{
 }
 
 .attractions{
+    margin: 0 auto;
     width: 70%;
-    height: 700px;
+    height: 800px;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
-
+    flex-wrap: wrap;
 }
 
 .box{
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
- .attraction-1{
+.attraction-1{
+    background-image: url("https://www.swedishnomad.com/wp-content/images/2018/10/lake-Schrecksee.webp");
+    background-size: cover;
+    height: 250px;
+    margin-right: 10px;
+}
 
- }
+.attraction-2{
+    background-image: url("https://www.swedishnomad.com/wp-content/images/2019/04/Obersee.jpg.webp");
+    background-size: cover;
+    height: 250px;
+    margin-right: 10px;
+}
+
+.attraction-3{
+    background-image: url("https://www.swedishnomad.com/wp-content/images/2018/10/Saarschleife.webp");
+    background-size: cover;
+    height: 200px;
+    width: 310px;
+    margin-right: 10px;
+}
+
+.attraction-4{
+    background-image: url("https://www.swedishnomad.com/wp-content/images/2018/09/Lichtenstein-castle.webp");
+    background-size: cover;
+    height: 500px;
+}
+
+.attraction-5{
+    background-image: url("https://www.swedishnomad.com/wp-content/images/2019/04/Saxon-Switzerland.jpg.webp");
+    background-size: cover;
+    height: 220px;
+    width: 450px;
+}
 /*footer*/
