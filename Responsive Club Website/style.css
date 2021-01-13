@@ -46,4 +46,20 @@ header a{
 }
 /*main*/
 
+.summary{
+    padding: 0 1rem;
+}
+.summary, .images{
+    margin: 4rem 0;
+    color: white;
+}
+.summary h2{
+    color: yellow;
+}
+.images img{
+    margin: 1.5%;
+    display: inline-block;
+    width: 30%;
+}
+
 /*footer*/
