@@ -96,4 +96,43 @@ header a{
 .join{
         margin-bottom: 2rem;
 }
+
 /*footer*/
+
+footer{
+    background-color: teal;
+    padding-top: 1em;
+    width: 100%;
+}
+
+footer ul{
+    list-style: none;
+    margin: 0;
+}
+
+footer li{
+    display: inline-block;
+    margin-right: 1.5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+footer a{
+    text-decoration: none;
+    color: lightsalmon;
+}
+
+@media only screen and (max-width: 640px){
+    .images img, .join img{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    header li{
+        display: block;
+        text-decoration: underline;
+        text-align: center;
+    }
+}
