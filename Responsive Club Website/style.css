@@ -80,4 +80,20 @@ header a{
 .bryce h1{
     font-size: 2.5rem;
 }
+
+.join {
+    text-align: center;
+    color: yellow;
+}
+
+.join img{
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.join{
+        margin-bottom: 2rem;
+}
 /*footer*/
