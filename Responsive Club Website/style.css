@@ -1,0 +1,31 @@
+/*general stylling*/
+
+body{
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    background-color: lightsalmon;
+}
+
+/*header*/
+header{
+    background-color: teal;
+    height: 28px;
+    padding-top: 1em;
+}
+header ul{
+    list-style: none;
+    margin: 0;
+}
+header li{
+    display: inline-block;
+    margin-right: 1.5rem;
+    padding: 0.5rem 1.5rem;
+}
+header a{
+    text-decoration: none;
+    color: lightsalmon;
+}
+/*main*/
+
+/*footer*/
