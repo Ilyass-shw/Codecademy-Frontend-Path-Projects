@@ -8,9 +8,11 @@ body{
 }
 
 /*header*/
+
 header{
     background-color: teal;
     padding-top: 1em;
+    width: 100%;
 }
 header ul{
     list-style: none;
@@ -24,6 +26,23 @@ header li{
 header a{
     text-decoration: none;
     color: lightsalmon;
+}
+
+/*hero*/
+
+.hero{
+    height: 30rem;
+    padding-top: 1rem;
+    background-image: url('https://content.codecademy.com/PRO/independent-practice-projects/responsive-meetup-page/img/runner-splash.jpg');
+}
+.hero h1{
+    background-color: rgba(0.5, 0.5, 0.5, 0.5);
+    color: Coral;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 10rem;
+    padding: 2rem;
+
 }
 /*main*/
 
