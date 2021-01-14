@@ -18,4 +18,10 @@ close.addEventListener('click', hide);
 // Write your code here
 function textChange(){
     view.innerHTML = 'Hello, World!';
-  }
+  };
+  function textReturn(){
+    view.innerHTML = 'View';
+  };
+  
+  view.onclick = textChange;
+  close.addEventListener('click', textReturn);
