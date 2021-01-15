@@ -40,6 +40,8 @@ startOver.hidden= true;
 nextOne.onclick = function(){
     nextTwo.hidden = false;
     nextOne.hidden = true;
+    document.getElementById('letter-note-five').innerHTML = 'D';
+    document.getElementById('letter-note-six').innerHTML = 'C';
 }
 
 // Write anonymous event handler property and function for the second progress button
