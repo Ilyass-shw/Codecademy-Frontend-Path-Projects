@@ -12,7 +12,7 @@
       <hr>
       <form>
         <h1>Create a burger!</h1>
-				<section class="protein">
+        <section class="protein">
           <label for="patty">What type of protein would you like?</label>
     			<input type="text" name="patty" id="patty">
         </section>
@@ -22,17 +22,28 @@
           <input type="number" name="amount" id="amount">
         </section>
         <hr>
-				
         <section class="cooked">
           <label for="doneness">How do you want your patty cooked</label>
           <br>
           <span>Rare</span>
-		       <!--Add your code below-->
-          <input id="doneness" name="doneness" type="range" min="0" max="5" step="0.5">
-          
+          <input type="range" name="doneness" id="doneness" value="3" min="1" max="5">
           <span>Well-Done</span>
         </section>
+        <hr>
         
+        <section class="toppings">
+          <span>What toppings would you like?</span>
+          <br>
+          <!--Add your code below for the first checkbox-->
+					<input id="lettuce" name="topping" type="checkbox" value="lettuce">
+					<label for="lettuce">Lettuce</label>
+          <!--Add your code below for the second checkbox-->
+					<input id="tomato" name="topping" type="checkbox" value="tomato">
+          <label for="tomato">Tomato</label>
+          <!--Add your code below for the third checkbox-->
+					<input id="onion" name="topping" type="checkbox" value="onion">
+          <label for="onion">Onion</label>
+        </section>
       </form>
     </section>
   </body>
