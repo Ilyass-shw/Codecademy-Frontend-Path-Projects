@@ -39,6 +39,17 @@
           <label for="yes">Yes</label>
           <input type="radio" name="answer" id="no" value="no" required>
           <label for="no">No</label>
+          <br>
+          <label for="speed">Relative speed (ends in -er):</label>
+          <select name="speed" id="speed" required>
+              <option value="faster">Faster</option>
+              <option value="slower">Slower</option>
+              <option value="not-moving">Not Moving</option>
+          </select>
+          <br>
+          <label for="quote">Motivational Quote:</label>
+          <input type="text" list="quote-choices" name="quote"
+          id="quote" required>
 
             <br>
           <input type="submit" value="Form My Story!">
