@@ -175,7 +175,7 @@ html {
   
   .definable .word {
     color: #639eff;
-  
+    transition: color .5s linear;
   }
   
   .definable .word:hover {
