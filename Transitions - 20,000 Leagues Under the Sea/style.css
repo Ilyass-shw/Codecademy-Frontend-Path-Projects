@@ -72,8 +72,7 @@ html {
   
   }
   
-  nav a:hover,
-  nav a.active {
+  nav a:hover, nav a.active {
     color: #639eff;
   }
   
@@ -244,6 +243,7 @@ html {
     font-weight: bold;
     text-decoration: none;
     color: #ffffff;
+    transition: opacity 100ms linear 100ms;
   
   }
   
