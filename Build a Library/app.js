@@ -72,5 +72,12 @@ class CD extends Media{
  baba.addRating(7);
  baba.addRating(8);
  const av = baba.getAverageRating();
+ 
+ const tosan = new Movie('fath', 'kill him', 60);
+ tosan.toggleCheckOutStatus(true);
+ tosan.addRating(5);
+ tosan.addRating(6);
+ tosan.addRating(4);
+ const an = tosan.getAverageRating();
   
  jhvuh
