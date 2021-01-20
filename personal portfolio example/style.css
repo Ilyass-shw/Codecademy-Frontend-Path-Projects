@@ -1,22 +1,22 @@
 /* General style*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre:wght@700&display=swap");
 
-body{
-    font-family: "Proza Libre", sans-serif    ;
-    color: #323232;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(30, 1fr);
-    grid-gap: 10px 10px;
+body {
+  font-family: "Proza Libre", sans-serif;
+  color: #323232;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(30, 1fr);
+  grid-gap: 10px 10px;
 }
 
 /* header */
-header{
-    grid-area: 1 / 1 /  1 / 12;
+header {
+  grid-area: 1 / 1 / 1 / 12;
 }
-nav{
-    grid-area: 1 / 1 /  1 / 12;
+nav {
+  grid-area: 1 / 1 / 1 / 12;
 }
- nav h1{
-    grid-area: 4 / 4 / span 4 / span 4;
+nav h1 {
+  grid-area: 4 / 4 / span 4 / span 4;
 }
