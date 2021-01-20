@@ -80,7 +80,7 @@ class CD extends Media{
  tosan.addRating(4);
  const an = tosan.getAverageRating();
  
- const kasan = new CD('fith', 'kill her', ['dima raja', 'dima widad', 'dima ore']);
+ const kasan = new CD('foth', 'kill her', ['dima raja', 'dima widad', 'dima ore']);
  kasan.toggleCheckOutStatus(true);
  kasan.addRating(1);
  kasan.addRating(3);
