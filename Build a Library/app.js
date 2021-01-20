@@ -87,4 +87,5 @@ class CD extends Media{
  kasan.addRating(4);
  const ar = kasan.getAverageRating();
   
+ const song = kasan.songs;
  jhvuh
