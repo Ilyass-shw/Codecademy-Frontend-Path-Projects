@@ -79,5 +79,12 @@ class CD extends Media{
  tosan.addRating(6);
  tosan.addRating(4);
  const an = tosan.getAverageRating();
+ 
+ const kasan = new CD('fith', 'kill her', 60);
+ kasan.toggleCheckOutStatus(true);
+ kasan.addRating(1);
+ kasan.addRating(3);
+ kasan.addRating(4);
+ const ar = kasan.getAverageRating();
   
  jhvuh
