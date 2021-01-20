@@ -1,27 +1,27 @@
 class Media{
     constructor(title){
         this._title = title;
-        this._isChechedOut = false;
+        this._isCheckedOut = false;
         this._ratings = [];
     }
 
     get title(){
         return this._title;
     }
-    get isChechedOut(){
-        return this._isChechedOut;
+    get isCheckedOut(){
+        return this._isCheckedOut;
     }
-    get rating(){
-        return this._rating;
+    get ratings(){
+        return this._ratings;
     }
     getAverageRating(){
-        return this._ratings.reduce((acc, curr) => acc+curr)
+        return (this._ratings.reduce((acc, curr) => acc+curr)) / this._ratings.length;
     }
     toggleCheckOutStatus(status){
-        this.isCheckedOut = status;
+        this._isCheckedOut = status;
     }
     addRating(rate){
-        this.rating.push(rate);
+        this.ratings.push(rate);
     }
 }
 
@@ -67,5 +67,10 @@ class CD extends Media{
     }
 }
  const baba = new Book('azdin', 'regular', 20);
-
+ baba.toggleCheckOutStatus(true);
+ baba.addRating(9);
+ baba.addRating(7);
+ baba.addRating(8);
+ const av = baba.getAverageRating();
+  
  jhvuh
