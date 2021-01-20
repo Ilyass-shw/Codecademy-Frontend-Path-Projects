@@ -66,5 +66,6 @@ class CD extends Media{
         return this._songs;
     }
 }
+ const baba = new Book('azdin', 'regular', 20);
 
-// const baba = new Book('azdin', 'regular', 20)
+ jhvuh
