@@ -12,7 +12,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\messageMixer.js"
+            "program": "${workspaceFolder}\\message.js"
         }
     ]
 }
