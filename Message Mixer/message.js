@@ -9,7 +9,6 @@ function displayMessage() {
     console.log(MessageMixer.reverseAllWords("What is the color of the sky?"));
     console.log(MessageMixer.replaceFirstOccurence("What is the color of the sky?", "sky", "water"));
     console.log(MessageMixer.encode("What is the color of the sky?"));
-    console.log(MessageMixer.palindrome("What is the color of the sky?"));
   }
   
   displayMessage();
