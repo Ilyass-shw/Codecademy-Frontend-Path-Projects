@@ -56,6 +56,6 @@ MessageMixer.replaceAllOccurrences = function(string, toBeReplaced, replaceWith)
 
   MessageMixer.pigLatin = function (sentence, character){
     return sentence.split(' ').join(character + ' ');
-  }
+  };
 
   module.exports = MessageMixer;
