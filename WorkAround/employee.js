@@ -1,4 +1,5 @@
-let salary = 100000;
+let Employee = {};
+Employee = { salary = 100000 };
 
 let payGrades = {
   entryLevel: { taxMultiplier: .05, benefits: ['health'], minSalary: 10000, maxSalary: 49999 },
@@ -35,17 +36,4 @@ function reimbursementEligibility() {
   }
   return totalBenefitsValue;
 }
-
-function getEmployeeInformation(inputSalary) {
-  salary = inputSalary;
-  console.log('Cadre: ' + getCadre());
-  console.log('Tax: ' + calculateTax());
-  console.log('Benefits: ' + getBenefits());
-  console.log('Bonus: ' + calculateBonus());
-  console.log('Reimbursement Eligibility: ' + reimbursementEligibility() + '\n');
-}
-
-getEmployeeInformation(10000);
-getEmployeeInformation(50000);
-getEmployeeInformation(100000);
 
