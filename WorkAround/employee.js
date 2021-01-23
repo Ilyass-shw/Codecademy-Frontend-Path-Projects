@@ -1,4 +1,5 @@
 let Employee = {};
+
 Employee.salary = 100000 ;
 
 let payGrades = {
