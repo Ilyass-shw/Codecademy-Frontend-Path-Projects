@@ -29,22 +29,25 @@ const test = new Field([
     ['░', '^', '░'],
   ]);
 
+  let futurecase = pathCharacter;
 
- test.print();
- y=1;
- test.fieldChange(x, y);
- test.print();
+while( futurecase!==hat ){
+    console.log(futurecase);
+    test.print();
 
- let dir = prompt('Which direction?');
-if( dir = r){
-    y++
-} else if( dir = l){
-    y--
-} else if( dir = u){
-    x--
-} else if( dir = d){
-    x++
+    let dir = prompt('Which way? ');
+   if( dir === 'r'){
+       y++
+   } else if( dir === 'l'){
+       y--
+   } else if( dir === 'u'){
+       x--
+   } else if( dir === 'd'){
+       x++
+   }
+   futurecase = test.field[x][y];
+   test.fieldChange(x, y);
+   test.print();
 }
 
-test.fieldfieldChange(x, y);
-test.print();
+console.log('congrat!');
