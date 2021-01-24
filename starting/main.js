@@ -32,7 +32,6 @@ const test = new Field([
   let futurecase = pathCharacter;
 
 while( futurecase!==hat ){
-    console.log(futurecase);
     test.print();
 
     let dir = prompt('Which way? ');
@@ -47,7 +46,6 @@ while( futurecase!==hat ){
    }
    futurecase = test.field[x][y];
    test.fieldChange(x, y);
-   test.print();
 }
 
 console.log('congrat!');
