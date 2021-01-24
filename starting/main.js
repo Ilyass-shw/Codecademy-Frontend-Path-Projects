@@ -6,9 +6,20 @@ const fieldCharacter = '░';
 const pathCharacter = '*';
 
 class Field{
-    constructor(str){
-        field = str;
+    constructor(field){
+        this.field = field;
     }
 
-    
-}
+    print() {         
+        for(let i=0; i<=this.field.length-1; i++){
+        console.log(this.field[i].join(''));}
+        }
+    }
+
+
+const test = new Field([
+    ['*', '░', 'O'],
+    ['░', 'O', '░'],
+    ['░', '^', '░'],
+  ]);
+ test.print();
