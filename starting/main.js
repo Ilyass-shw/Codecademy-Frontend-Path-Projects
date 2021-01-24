@@ -29,9 +29,18 @@ const test = new Field([
     ['░', '^', '░'],
   ]);
 
-  let futurecase = pathCharacter;
+  let futurecase = test.field[x][y];
 
-while( futurecase!==hat ){
+while( futurecase !== hat ){
+
+    if(futurecase === hole){
+        console.log('Sorry, you fell down a hole');
+        break;
+    } else if( !futurecase ){
+        console.log('Sorry, out of bounderies');
+        break;
+    }
+
     test.print();
 
     let dir = prompt('Which way? ');
@@ -44,6 +53,7 @@ while( futurecase!==hat ){
    } else if( dir === 'd'){
        x++
    }
+
    futurecase = test.field[x][y];
    test.fieldChange(x, y);
 }
