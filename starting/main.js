@@ -32,15 +32,14 @@ const test = new Field([
   let futurecase = test.field[x][y];
 
 while( futurecase !== hat ){
-
+    
     if(futurecase === hole){
-        console.log('Sorry, you fell down a hole');
-        break;
+        throw Error('Sorry, you fell down a hole');
+    
     } else if( !futurecase ){
-        console.log('Sorry, out of bounderies');
-        break;
+        throw Error('Sorry, out of bounderies');
+        
     }
-
     test.print();
 
     let dir = prompt('Which way? ');
@@ -54,7 +53,12 @@ while( futurecase !== hat ){
        x++
    }
 
-   futurecase = test.field[x][y];
+   try {
+    futurecase = test.field[x][y];
+   }catch(e){
+       throw Error('out of boundries')
+   }
+
    test.fieldChange(x, y);
 }
 
