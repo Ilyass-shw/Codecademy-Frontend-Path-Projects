@@ -35,15 +35,24 @@ describe('Rooster', ()=>{
 
  
             // Use an assert method to compare actual and expected result
-            assert.ifError(Rooster.timeAtDawn(-5));
+            assert.throws(
+                () => {
+                   Rooster.timeAtDawn(-5);
+                },
+                RangeError
+              );
 
         })        
         
         it('throws an error if passed a number greater than 23', ()=>{
 
             // Use an assert method to compare actual and expected result
-            assert.ifError(Rooster.timeAtDawn(24));
-
+            assert.throws(
+                () => {
+                   Rooster.timeAtDawn(24);
+                },
+                RangeError
+              );
         })
     })
 
