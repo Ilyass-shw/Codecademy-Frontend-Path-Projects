@@ -4,7 +4,26 @@ var Calculate =  require('../index.js')
 describe('Calculate', () => {
   describe('.factorial', () => {
       it('will test if the output of 5! is equal to 120',()=>{
-          assert.equal(Calculate.factorial(5), 120)
+          // setup
+          const expectedValue = 120;
+          const inputValue = 5;
+
+          //exercice
+          const result = Calculate.factorial(inputValue);
+
+          //verification
+          assert.equal(result, expectedValue);
+      })
+        it('will test if the output of 3! is equal to 6',()=>{
+          // setup
+          const expectedValue = 6;
+          const inputValue = 3;
+
+          //exercice
+          const result = Calculate.factorial(inputValue);
+
+          //verification
+          assert.equal(result, expectedValue);
       })
   });
 });
