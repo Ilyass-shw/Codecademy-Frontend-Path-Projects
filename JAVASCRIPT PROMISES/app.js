@@ -16,3 +16,5 @@ const inventory = {
   const orderSunglasses = () => {
     return new Promise(myExecutor);
 };
+
+const orderPromise = orderSunglasses();
