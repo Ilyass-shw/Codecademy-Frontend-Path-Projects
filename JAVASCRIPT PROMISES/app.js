@@ -1,6 +1,6 @@
 const inventory = {
-    sunglasses: 0,
-    pants: 1088,
+    sunglasses: 1,
+    pants: 0,
     bags: 1344
   };
   
@@ -19,4 +19,4 @@ const inventory = {
 
 const orderPromise = orderSunglasses();
 
-console.log(orderPromise);
+console.log("yokata: "+orderPromise);
