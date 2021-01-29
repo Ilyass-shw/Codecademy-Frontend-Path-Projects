@@ -8,3 +8,4 @@ async function makeBeans(){
     console.log(dinner);
 
 };
+makeBeans();
