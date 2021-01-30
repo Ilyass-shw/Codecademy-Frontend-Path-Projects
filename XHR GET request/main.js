@@ -6,3 +6,4 @@ xhr.onreadystatechange = ()=>{
         return xhr.response;
        }
 };
+xhr.open('GET', url);
