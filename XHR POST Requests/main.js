@@ -8,3 +8,5 @@ xhr.onreadystatechange= ()=>{
         return xhr.response;
     }
   };
+
+  xhr.open('POST', url);
