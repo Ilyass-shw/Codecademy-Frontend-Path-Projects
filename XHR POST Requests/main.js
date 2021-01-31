@@ -5,6 +5,6 @@ const data = JSON.stringify({id : '200'});
 xhr.responseType = 'json';
 xhr.onreadystatechange= ()=>{
     if(xhr.readyState === XMLHttpRequest.DONE){
-  
+        return xhr.response;
     }
   };
