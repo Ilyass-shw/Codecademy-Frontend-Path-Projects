@@ -23,7 +23,10 @@ const urlToFetch = url+city+'&limit=10&client_id='+clientId+'&client_secret='+cl
 try{
     const response = await fetch(urlToFetch);
     if(response.ok){
-        console.log(response)
+        const jsonResponse = await response.json();
+        const venues = jsonResponse.response.groups[0].items.map(item => item.venue);;
+        console.log(venues);
+        return venues;
     }
 }catch(error){
     console.log(error)
