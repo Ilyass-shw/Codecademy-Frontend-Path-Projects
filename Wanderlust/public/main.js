@@ -38,6 +38,7 @@ const getForecast = async () => {
     try {
         const response = await fetch(urlToFetch);
         const jsonResponse = await response.json();
+        console.log(jsonResponse);
         return jsonResponse;
     } catch (error) {
         console.log(error)
@@ -61,7 +62,7 @@ const renderVenues = (venues) => {
 const renderForecast = (day) => {
   // Add your code here:
   
-	let weatherContent = '';
+	let weatherContent = createWeatherHTML(day);
   $weatherDiv.append(weatherContent);
 }
 
@@ -73,7 +74,9 @@ const executeSearch = () => {
   getVenues().then((venues)=>{
       return renderVenues(venues);
   })
-  getForecast()
+  getForecast().then((forecast)=>{
+      return renderForecast(forecast);
+  })
   return false;
 }
 
