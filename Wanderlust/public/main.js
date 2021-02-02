@@ -46,7 +46,6 @@ const getForecast = async () => {
 }
 
 
-// Render functions
 const renderVenues = (venues) => {
   $venueDivs.forEach(($venue, index) => {
     // Add your code here:
