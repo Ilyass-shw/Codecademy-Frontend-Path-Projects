@@ -3,11 +3,9 @@ const clientId = 'KGMRCL2QKZZ1ASBF4J2QDJ0MDZTVIQBQXAFXUPXRS1WZNG5B';
 const clientSecret = 'WZUBSZECHNMUFPG4FBOMG11CIEV3OCEMEGIYM52BOMMOBHDP';
 const url = 'https://api.foursquare.com/v2/venues/explore?near=';
 
-// OpenWeather Info
 const openWeatherKey = '9c3a764fec89decff16f10978cce5f35';
 const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
-// Page Elements
 const $input = $('#city');
 const $submit = $('#button');
 const $destination = $('#destination');
@@ -60,7 +58,8 @@ const renderVenues = (venues) => {
 }
 
 const renderForecast = (day) => {
-lkjbdkbjsjbd  
+  // Add your code here:
+  
 	let weatherContent = createWeatherHTML(day);
   $weatherDiv.append(weatherContent);
 }
