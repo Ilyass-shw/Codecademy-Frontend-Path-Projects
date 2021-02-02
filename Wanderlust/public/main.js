@@ -46,6 +46,7 @@ const getForecast = async () => {
 }
 
 
+// Render functions
 const renderVenues = (venues) => {
   $venueDivs.forEach(($venue, index) => {
     // Add your code here:
@@ -59,8 +60,7 @@ const renderVenues = (venues) => {
 }
 
 const renderForecast = (day) => {
-  // Add your code here:
-  
+lkjbdkbjsjbd  
 	let weatherContent = createWeatherHTML(day);
   $weatherDiv.append(weatherContent);
 }
