@@ -3,6 +3,7 @@ class Square extends React.Component {
       return (
         <button className="square">
           {/* TODO */}
+          {this.props.value}
         </button>
       );
     }
