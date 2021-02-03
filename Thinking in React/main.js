@@ -8,6 +8,13 @@ class Square extends React.Component {
       );
     }
   }
+  class Square extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        value: null,
+      };
+    }
   
   class Board extends React.Component {
     renderSquare(i) {
