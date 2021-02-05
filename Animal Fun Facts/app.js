@@ -1,0 +1,2 @@
+import { animals } from './animals';
+    
