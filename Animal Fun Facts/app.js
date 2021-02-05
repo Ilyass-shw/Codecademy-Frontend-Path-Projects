@@ -2,28 +2,36 @@ import { animals } from './animals';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
-// const images = animals.map((pic, i)=>{
-//     pic
-// })
 const images = [];
 for(const animal in animals){
-    images.push(<img
+    images.push(
+      <img
                     key={animal}
                     className='animal'
                     alt={animal}
                     src= {animals[animal].image}
                     aria-label={animal}
-                    role='button'
-                >{animal}
-                </img> );
+                    role='button'>
+                    onClick = {displayFact}
+              </img>);
+};
+function displayFact(e){
+const selectedAnimal = e.target.alt;
+const animalInfo = animals[selectedAnimal];
+const optionIndex = Math.floor(Math.random()*animalInfo.facts.length);
+const funFact = animalInfo.facts[optionIndex];
+document.getElementById('fact').innerHTML = funFact;
 }
 const title = '';
 const background = <img className = "background" alt="ocean" src="/images/ocean.jpg"></img>
 const animalFacts =(
    <div>
-      <p>{title===''? "Click an animal for a fun fact" : title}</p>
+      <h1>{title===''? "Click an animal for a fun fact" : title}</h1>
       {background}
+      <p id="fact"></p>
+      <div classeName='animals'>
+        {images}
+      </div>
    </div>
 );
 
