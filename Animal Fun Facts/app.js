@@ -11,8 +11,8 @@ for(const animal in animals){
                     alt={animal}
                     src= {animals[animal].image}
                     aria-label={animal}
-                    role='button'>
-                    onClick = {displayFact}
+                    role='button'
+                    onClick = {displayFact}>
               </img>);
 };
 function displayFact(e){
@@ -28,7 +28,7 @@ const animalFacts =(
    <div>
       <h1>{title===''? "Click an animal for a fun fact" : title}</h1>
       {background}
-      <p id="fact"></p>
+      <p id = 'fact'></p>
       <div classeName='animals'>
         {images}
       </div>
