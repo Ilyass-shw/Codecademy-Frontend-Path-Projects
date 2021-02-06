@@ -6,7 +6,7 @@ class Contact extends React.Component {
     super(props);
     this.state = {
       password: 'swordfish',
-      authorized: true
+      authorized: false
     };
     this.authorize = this.authorize.bind(this);
   }
@@ -21,7 +21,7 @@ class Contact extends React.Component {
   }
 
   render() {
-      const login = (<form action="#">
+      const login = (<form action="#" onSubmit = {this.authorize}>
           <input
            type="password"
            placeholder="Password" />
@@ -40,7 +40,8 @@ class Contact extends React.Component {
       );
     return (
       <div id="authorization">
-            {this.state.authorized?<h1>Contact</h1> : <h1>Enter the Password</h1>}        
+            {this.state.authorized?<h1>Contact</h1> : <h1>Enter the Password</h1>}    
+            {this.state.authorized? contactInfo: login}    
       </div>
     );
   }
