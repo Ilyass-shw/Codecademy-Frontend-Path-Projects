@@ -21,6 +21,9 @@ class Contact extends React.Component {
   }
 
   render() {
+      const login = (<form action="#">
+
+      </form>);
     return (
       <div id="authorization">
             {this.state.authorized?<h1>Contact</h1> : <h1>Enter the Password</h1>}        <ul>
