@@ -22,7 +22,11 @@ class Contact extends React.Component {
 
   render() {
       const login = (<form action="#">
-
+          <input
+           type="password"
+           placeholder="Password" />
+          <input
+           type="submit" />
       </form>);
     return (
       <div id="authorization">
