@@ -6,7 +6,8 @@ class Random extends React.Component {
         super(props);
         this.state = { color: [253, 254, 153] };
     }
-
+    handleClick(){
+    }
   componentDidMount() {
     this.applyColor();
   }
