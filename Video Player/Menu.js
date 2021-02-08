@@ -1,9 +1,13 @@
 import React from 'react';
 
 export class Menu extends React.Component {
+    constructor(props){
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
     handleClick(e){
         const video = e.target.value;
-        this.props.chooseVideo(e)
+        this.props.chooseVideo(video)
     }
   render() {
     return (
