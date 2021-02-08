@@ -13,8 +13,11 @@ const VIDEOS = {
 class App extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = { src: VIDEOS.fast };
+    chooseVideo (newVideo){
+        this.setState({src : VIDEOS[newVideo]});
+    }
   }
   
   render() {
