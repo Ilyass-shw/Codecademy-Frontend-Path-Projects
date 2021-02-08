@@ -5,7 +5,7 @@ class Random extends React.Component {
     constructor(props){
         super(props);
         this.state = { color: [253, 254, 153] };
-        this.handleClick= this.handleClick.bend(this);
+        this.handleClick= this.handleClick.bind(this);
     }
     handleClick(){
         this.setState({color: this.chooseColor()})
