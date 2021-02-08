@@ -17,14 +17,16 @@ class App extends React.Component {
     this.state = { src: VIDEOS.fast };
     chooseVideo (newVideo){
         this.setState({src : VIDEOS[newVideo]});
-    }
+    };
+
+    this.chooseVideo = this.chooseVideo.bind(this);
   }
   
   render() {
     return (
       <div>
         <h1>Video Player</h1>
-        <Menu />
+        <Menu chooseVideo= {this.chooseVideo} />
         <Video src ={this.state.src}/>
       </div>
     );
