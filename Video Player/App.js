@@ -15,12 +15,12 @@ class App extends React.Component {
     super(props);
     
     this.state = { src: VIDEOS.fast };
-    chooseVideo (newVideo){
-        this.setState({src : VIDEOS[newVideo]});
-    };
 
     this.chooseVideo = this.chooseVideo.bind(this);
   }
+  chooseVideo(newVideo){
+    this.setState({src : VIDEOS[newVideo]});
+};
   
   render() {
     return (
