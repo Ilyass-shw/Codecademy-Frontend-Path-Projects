@@ -11,7 +11,7 @@ export class Profile extends React.Component {
 
   loadUserData(){
 
-    if(!this.state.userData===null){
+    if(this.state.userData!=null){
       this.setState({ userData: null })
     };
 
@@ -23,7 +23,8 @@ export class Profile extends React.Component {
 
 
   render() {
-    const isLoading = true;
+    let isLoading;
+    this.state.userData === null?  isLoading = true: isLoading=false;
 
     let className = 'Profile';
     if (isLoading) {
@@ -42,5 +43,9 @@ export class Profile extends React.Component {
         </div>
       </div>
     );
+  }
+
+  componentDidMount(){
+    this.loadUserData()
   }
 }
