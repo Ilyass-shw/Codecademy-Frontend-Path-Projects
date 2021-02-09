@@ -20,15 +20,16 @@ export class Profile extends React.Component {
     }
 
     let name;
-    this.state.userData === null? name= 'Loading...': name= this.state.userData.name; 
+    isLoading? name= 'Loading...': name= this.state.userData.name; 
 
     let bio;
-    this.state.userData === null? name= 'Loading...': name= this.state.userData.bio; 
+    isLoading? name= 'Loading...': name= this.state.userData.bio;
+    
+    
+    let friends;
+    isLoading? friends= []: friends= this.state.userData.friends; 
 
-    const friends =[];
-    if(!this.state.userData === null){
-      friends = this.state.userData.friends;
-    }
+    
 
     return (
       <div className={className}>
