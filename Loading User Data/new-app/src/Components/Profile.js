@@ -30,17 +30,20 @@ export class Profile extends React.Component {
     if (isLoading) {
       className += ' loading';
     }
-    
+
     let name;
-    this.state.userData === null? name= 'Loading...': name= this.state.userData; 
+    this.state.userData === null? name= 'Loading...': name= this.state.userData.name; 
+
+    let bio;
+    this.state.userData === null? name= 'Loading...': name= this.state.userData.bio; 
 
     return (
       <div className={className}>
         <div className="profile-picture"></div>
         <div className="profile-body">
-          <h2>Name goes here</h2>
+          <h2>{name}</h2>
           <h3>@{this.props.username}</h3>
-          <p>Bio goes here</p>
+          <p>{bio}</p>
           <h3>My friends</h3>
           <Userlist usernames={[]} onChoose={this.props.onChoose} />
         </div>
