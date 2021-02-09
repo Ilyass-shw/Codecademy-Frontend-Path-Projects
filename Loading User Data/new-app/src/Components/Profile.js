@@ -30,6 +30,9 @@ export class Profile extends React.Component {
     if (isLoading) {
       className += ' loading';
     }
+    
+    let name;
+    this.state.userData === null? name= 'Loading...': name= this.state.userData; 
 
     return (
       <div className={className}>
