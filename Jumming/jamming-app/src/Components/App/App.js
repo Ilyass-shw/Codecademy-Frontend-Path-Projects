@@ -27,11 +27,15 @@ class App extends React.Component {
     }
     if(isNotInPlaylist){
       const newPlaylistTracks = this.state.playlistTracks.concat(trackkk) ;
-      console.log(newPlaylistTracks);
       this.setState({playlistTracks: newPlaylistTracks});
     }
     
   }
+  removeTrack(track) {
+    const ourList = this.props.playlistTracks;
+    const newList = ourList.splice(ourList.indexOf(track), 0);
+    this.setState({playlistTracks: newList})
+  } 
   render(){
     return (
       <div>
