@@ -7,6 +7,7 @@ import {Playlist} from '../Playlist/Playlist'
 class App extends React.Component {
   constructor(props){
     super(props);
+    this.addTrack = this.addTrack.bind(this);
     this.state = {searchResults: [
     {name: 'name1', artist: 'artist1', album: 'album1', id: '1'},
     {name: 'name2', artist: 'artist2', album: 'album2', id: '2'},
@@ -18,6 +19,19 @@ class App extends React.Component {
       {name: 'name2', artist: 'artist2', album: 'album2', id: '5'},
       {name: 'name3', artist: 'artist3', album: 'album3', id: '6'}] };
   }
+
+  addTrack(trackkk){
+    let isNotInPlaylist = true;
+    for(let i=0;i<this.state.playlistTracks.length;i++){
+      if(this.state.playlistTracks[i].id===trackkk.id){ isNotInPlaylist = false;}
+    }
+    if(isNotInPlaylist){
+      const newPlaylistTracks = this.state.playlistTracks.concat(trackkk) ;
+      console.log(newPlaylistTracks);
+      this.setState({playlistTracks: newPlaylistTracks});
+    }
+    
+  }
   render(){
     return (
       <div>
@@ -25,7 +39,7 @@ class App extends React.Component {
   <div className="App">
     <SearchBar />
     <div className="App-playlist">  
-      <SearchResults searchResults={this.state.searchResults}/>
+      <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack}/>
       <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
     </div>
   </div>
