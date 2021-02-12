@@ -7,10 +7,14 @@ import {Playlist} from '../Playlist/Playlist'
 class App extends React.Component {
   constructor(props){
     super(props);
+
+
     this.savePlaylist = this.savePlaylist.bind(this);
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
+    this.search = this.search.bind(this);
+
     this.state = {searchResults: [
     {name: 'name1', artist: 'artist1', album: 'album1', id: '1'},
     {name: 'name2', artist: 'artist2', album: 'album2', id: '2'},
@@ -47,6 +51,11 @@ class App extends React.Component {
     ourList.splice(ourList.indexOf(track), 1);
     this.setState({playlistTracks: ourList})
   } 
+
+  search(term){
+    console.log(temr);
+  }
+
   render(){
     return (
       <div>
