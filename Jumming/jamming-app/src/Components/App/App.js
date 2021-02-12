@@ -7,6 +7,7 @@ import {Playlist} from '../Playlist/Playlist'
 class App extends React.Component {
   constructor(props){
     super(props);
+    this.savePlaylist = this.savePlaylist.bind(this);
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
@@ -23,7 +24,7 @@ class App extends React.Component {
   }
 
   savePlaylist(){
-    
+    const trackURIs = this.props.playlistName.map(element=> element.uri);
   }
 
   updatePlaylistName(name){
@@ -54,7 +55,7 @@ class App extends React.Component {
     <SearchBar />
     <div className="App-playlist">  
       <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack}/>
-      <Playlist onNameChange= {this.updatePlaylistName}  playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} onRemove={this.removeTrack}/>
+      <Playlist onSave = {this.savePlaylist} onNameChange= {this.updatePlaylistName}  playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} onRemove={this.removeTrack}/>
     </div>
   </div>
 </div>
