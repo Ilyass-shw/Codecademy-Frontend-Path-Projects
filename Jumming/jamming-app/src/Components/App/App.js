@@ -33,9 +33,9 @@ class App extends React.Component {
     
   }
   removeTrack(track) {
-    const ourList = this.props.playlistTracks;
-    const newList = ourList.splice(ourList.indexOf(track), 0);
-    this.setState({playlistTracks: newList})
+    const ourList = this.state.playlistTracks;
+    const newList = ourList.splice(ourList.indexOf(track), 1);
+    this.setState({playlistTracks: ourList})
   } 
   render(){
     return (
