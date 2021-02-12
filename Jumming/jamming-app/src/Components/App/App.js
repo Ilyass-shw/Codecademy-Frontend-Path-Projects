@@ -53,7 +53,7 @@ class App extends React.Component {
   } 
 
   search(term){
-    console.log(temr);
+    console.log(term);
   }
 
   render(){

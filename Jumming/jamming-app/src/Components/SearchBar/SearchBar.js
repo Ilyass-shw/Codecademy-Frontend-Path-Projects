@@ -6,9 +6,16 @@ export class SearchBar extends React.Component{
     super(props);
     this.search = this.search.bind(this);
   }
-  search(term){
-    this.props.search(term);     
+
+
+  search(){
+    this.props.onSearch(this.props.term);     
   }
+
+  handleTermChange(event){
+    this.setState({term : event.target.value});
+  }
+
     render(){
       return (
         <div className="SearchBar">
