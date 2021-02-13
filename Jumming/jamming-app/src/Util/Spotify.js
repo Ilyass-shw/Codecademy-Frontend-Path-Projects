@@ -1,5 +1,5 @@
 let userAccessToken;
-const clientId = d78b99e781f14bfdb6148b282c4dd921;
+const clientId = 'd78b99e781f14bfdb6148b282c4dd921';
 const redirectedUri = "http://localhost:3000/";
 
 
@@ -40,6 +40,16 @@ const Spotify = {
                 uri: track.uri
             }))
         })
+    }
+
+    savePlaylist(playlist, trackUris){
+        if(!playlist || !trackUris){
+            return;
+        }
+        const accessToken = this.getAccessToken();
+        const headers = { Authorization: `Bearer ${accessToken}`};
+        let userId;
+
     }
 
 };
