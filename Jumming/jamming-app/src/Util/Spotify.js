@@ -1,5 +1,5 @@
 let userAccessToken;
-const userID;
+let userId;
 const clientId = 'd78b99e781f14bfdb6148b282c4dd921';
 const redirectedUri = "http://localhost:3000/";
 
@@ -25,9 +25,9 @@ const Spotify = {
 
     },
 
-    getCurrentUserId(){
-        if(userID){
-            return new Promise(resolve=>{resolve(userID)});
+    getCurrentuserId(){
+        if(userId){
+            return new Promise(resolve=>{resolve(userId)});
         }
         const accessToken = this.getAccessToken();
         const headers = { Authorization: `Bearer ${accessToken}`};
@@ -64,7 +64,9 @@ const Spotify = {
         if(!playlist || !trackUris){
             return;
         }
-        this.getCurrentUserId().then(userId=>{
+        const accessToken = this.getAccessToken();
+        const headers = { Authorization: `Bearer ${accessToken}`};
+        return this.getCurrentuserId().then(userId=>{
             return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
             method: 'POST',
             headers: headers,
