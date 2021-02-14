@@ -86,7 +86,13 @@ const Spotify = {
     },
 
     getUserPlaylists(){
-
+        const accessToken = this.getAccessToken();
+        const headers = { Authorization: `Bearer ${accessToken}`};
+        this.getCurrentuserId().then(userId=>{
+            return fetch('https://api.spotify.com/v1/users/${userId}/playlists',{
+                headers: headers
+            })
+        })
     }
 
 };
