@@ -93,7 +93,14 @@ const Spotify = {
                 headers: headers
             }).then(response=>{
                 return response.json();
-            })
+            }).then(jsonResponse=>{
+            if(!jsonResponse){
+                return [];
+            }
+            return jsonResponse.items.map(track=>({
+                id: track.id,
+                name: track.name
+            }))
         })
     }
 
