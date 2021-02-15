@@ -72,14 +72,14 @@ const Spotify = {
             headers: headers,
             body: JSON.stringify({name: playlist})
                         }).then(response=>{return response.json()
-                                }).then(jsonResponse=>{
-                                            const playlistID=jsonResponse.id;
-                                           return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistID}/tracks`, {
-                                            method: 'POST',
-                                            headers: headers,
-                                         body: JSON.stringify({uris: trackUris})
+                        }).then(jsonResponse=>{
+                            const playlistID=jsonResponse.id;
+                            return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistID}/tracks`, {
+                                           method: 'POST',
+                                           headers: headers,
+                                           body: JSON.stringify({uris: trackUris})
                                         })
-                                        })
+                        })
         })
         
 
@@ -88,22 +88,23 @@ const Spotify = {
     getUserPlaylists(){
         const accessToken = this.getAccessToken();
         const headers = { Authorization: `Bearer ${accessToken}`};
-        this.getCurrentuserId().then(userId=>{
-            return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`,{
-                headers: headers
-            }).then(response=>{
-                return response.json();
-            }).then(jsonResponse=>{
-            if(!jsonResponse){
-                return [];
-            }
-            return jsonResponse.items.map(track=>({
-                id: track.id,
-                name: track.name
-            }))
+        return this.getCurrentuserId().then(userId=>{
+                                                return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`,{
+                                                                headers: headers
+                                        }).then(response=>{
+                                                return response.json();
+                                        }).then(jsonResponse=>{
+                                                if(!jsonResponse){
+                                                     return [];
+                                                    }
+                                                return jsonResponse.items.map(track=>{
+                                                return {id: track.id,name: track.name}
+                                                })                                                                             
+                                        })
         })
     }
 
-};
+}
+
 
 export default Spotify;

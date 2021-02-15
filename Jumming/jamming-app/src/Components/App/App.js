@@ -4,6 +4,7 @@ import {SearchBar} from '../SearchBar/SearchBar'
 import {SearchResults} from '../SearchResults/SearchResults'
 import {Playlist} from '../Playlist/Playlist'
 import Spotify from '../../Util/Spotify';
+import { LocalPlaylists } from '../LocalPlaylists/LocalPlaylists';
 
 class App extends React.Component {
   constructor(props){
@@ -67,9 +68,9 @@ class App extends React.Component {
     <SearchBar onSearch={this.search}/>
     <div className="App-playlist">  
       <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack}/>
-      <Playlist onSave = {this.savePlaylist} onNameChange= {this.updatePlaylistName}  playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} onRemove={this.removeTrack}/>
-      {/* <Playlist   onRemove={this.removeTrack}/> */}
-    </div>
+      <LocalPlaylists/>
+      <Playlist onSave = {this.savePlaylist} onNameChange= {this.updatePlaylistName}  playlistTracks={this.state.playlistTracks} onRemove={this.removeTrack}/>
+      </div>
   </div>
 </div>
     );
