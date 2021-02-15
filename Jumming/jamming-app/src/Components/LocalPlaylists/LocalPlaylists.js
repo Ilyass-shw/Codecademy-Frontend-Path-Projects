@@ -1,6 +1,6 @@
 import React from 'react'
 import LocalPlaylist from '../LocalPlaylist/LocalPlaylist';
-import '../Playlist/Playlist.css'
+import './LocalPlaylists.css'
 import Spotify from '../../Util/Spotify';
 
 export class LocalPlaylists extends React.Component{
