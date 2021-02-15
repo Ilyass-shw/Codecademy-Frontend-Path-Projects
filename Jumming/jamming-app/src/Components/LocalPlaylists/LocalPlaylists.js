@@ -11,7 +11,7 @@ export class LocalPlaylists extends React.Component{
   componentDidMount(){
     Spotify.getUserPlaylists().then((playlists)=>{
       const LocalPlaylists= playlists.map(list=>{
-        <LocalPlaylist list={list}/>
+        return <LocalPlaylist list={list} key={list.id}/>
       });
       this.setState({playlists: LocalPlaylists});
     })
