@@ -1,4 +1,5 @@
 import React from 'react'
+import LocalPlaylist from '../LocalPlaylist/LocalPlaylist';
 import '../Playlist/Playlist.css'
 
 export class LocalPlaylists extends React.Component{
@@ -10,6 +11,7 @@ export class LocalPlaylists extends React.Component{
       return (
 <div className="Playlist">
   <input defaultValue ={'Local Playlists'} />
+  <LocalPlaylist/>
 </div>
       );
     }
