@@ -10,7 +10,7 @@ class LocalPlaylist  extends React.Component{
       return (
 <div className="Track">
   <div className="Track-information">
-    <h3>listName</h3>
+    <h3>{this.props.list.name}</h3>
   </div>
 </div>
       );

@@ -19,8 +19,7 @@ class App extends React.Component {
 
     this.state = {searchResults: [],
     playlistName: 'playlistName',
-    playlistTracks: [],
-    LocalPlayLists: [] };
+    playlistTracks: [] };
   }
 
   savePlaylist(){
