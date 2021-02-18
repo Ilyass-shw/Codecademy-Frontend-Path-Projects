@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Timer() {
   const [time, setTime] = useState(0);
