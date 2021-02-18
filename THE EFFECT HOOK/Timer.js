@@ -18,7 +18,7 @@ export default function Timer() {
 
   return (
     <>
-      <h1>Time: {time}</h1>
+      <h1>Time now is: {time}</h1>
       <input value={name} onChange={handleChange} type='text' />
     </>
   );
