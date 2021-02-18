@@ -12,7 +12,7 @@ export default function Timer() {
     return () => {
       clearInterval(intervalId);
     };
-  });
+  }, []);
 
   const handleChange = ({ target }) => setName(target.value);
 
