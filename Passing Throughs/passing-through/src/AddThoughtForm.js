@@ -7,9 +7,14 @@ export function AddThoughtForm(props) {
   const handleTextChange= ({target})=>{
     setText(target.value);
   }
+  const handleSubmit= (event)=>{
+    event.preventDefault();
+
+  }
 
   return (
-    <form className="AddThoughtForm">
+    <form className="AddThoughtForm"
+          onSubmit={handleSubmit}>
       <input
         value={text}
         type="text"
