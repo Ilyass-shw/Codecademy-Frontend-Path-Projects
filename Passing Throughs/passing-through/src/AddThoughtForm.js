@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { generateId, getNewExpirationTime } from './utilities';
 
 export function AddThoughtForm(props) {
@@ -9,13 +9,17 @@ export function AddThoughtForm(props) {
   }
   const handleSubmit= (event)=>{
     event.preventDefault();
+    if(text.length>=1){
     const thought ={
       id: generateId(),
       text: text,
       expiresAt: getNewExpirationTime()
     };
     props.addThought(thought);
+    setText('');}
   }
+
+  
 
   return (
     <form className="AddThoughtForm"
