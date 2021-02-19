@@ -22,6 +22,11 @@ function App() {
     setThoughts(prev=> [...prev, thought]);
   }
 
+  const removeThought = (thoughtIdToRemove)=>{
+    setThoughts(prev=> prev.filter((item)=>item.id!==thoughtIdToRemove));
+
+  }
+
   return (
     <div className="App">
       <header>
