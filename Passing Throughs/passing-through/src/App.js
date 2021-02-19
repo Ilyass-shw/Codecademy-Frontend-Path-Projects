@@ -18,7 +18,9 @@ function App() {
     },
   ]);
 
-  
+  const addThought = (thought)=>{
+    setThoughts(prev=> [...prev, thought]);
+  }
 
   return (
     <div className="App">
