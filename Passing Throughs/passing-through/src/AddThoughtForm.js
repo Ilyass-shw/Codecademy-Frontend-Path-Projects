@@ -9,7 +9,12 @@ export function AddThoughtForm(props) {
   }
   const handleSubmit= (event)=>{
     event.preventDefault();
-
+    const thought ={
+      id: generateId(),
+      text: text,
+      expiresAt: getNewExpirationTime()
+    };
+    props.addThought(thought);
   }
 
   return (
