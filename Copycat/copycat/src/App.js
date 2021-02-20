@@ -1,24 +1,37 @@
-import './App.css';
+import React from 'react';
+import CopyCat from './CopyCat';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const images = {
+  copycat: 'https://content.codecademy.com/courses/React/react_photo_copycat.png',
+  quietcat: 'https://content.codecademy.com/courses/React/react_photo_quietcat.png'
+};
+
+
+class CopyCatContainer extends React.Component {
+    constructor(props) {
+    super(props);
+
+    this.state = { 
+      copying: true
+    };
+
+    this.toggleTape = this.toggleTape.bind(this);
+  }
+
+  toggleTape() {
+    this.setState({copying: !this.state.copying})
+  }
+  
+  render() {
+    const copying = this.state.copying;
+    const toggleTape = this.toggleTape
+    
+    return (
+      <div>
+        <CopyCat copying={copying}  toggleTape={toggleTape} />
+      </div>
+    );
+  };
 }
 
-export default App;
+export default CopyCatContainer;
