@@ -29,5 +29,5 @@ const imgStyles = {
   width: width
 };
 
- const styles={divStyles, imgStyles};
+ const styles={divStyles: divStyles , imgStyles: imgStyles};
  export default styles;
