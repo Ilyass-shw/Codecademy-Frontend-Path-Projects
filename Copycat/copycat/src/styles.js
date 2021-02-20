@@ -28,3 +28,6 @@ const imgStyles = {
   marginTop: marginTop,
   width: width
 };
+
+ const styles={divStyles, imgStyles};
+ export default styles;
