@@ -34,7 +34,7 @@ class CopyCatContainer extends React.Component {
     
     return (
       <div>
-        <CopyCat copying={copying}  toggleTape={toggleTape} input={input} handleChange={this.handleChange} />
+        <CopyCat copying={copying}  toggleTape={toggleTape} input={this.state.input} handleChange={this.handleChange} />
       </div>
     );
   };
