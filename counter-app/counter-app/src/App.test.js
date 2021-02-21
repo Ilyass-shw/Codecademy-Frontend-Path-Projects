@@ -8,4 +8,14 @@ import React from 'react';
         const text = wrapper.find('p').text();
         expect(text).toEqual('Count: 0');
       });
+
+      it('increments count by 1 when the increment button is clicked', () => {
+        const wrapper = shallow(<App />);
+        const incrementBtn = wrapper.find('button.increment');
+        incrementBtn.simulate('click');
+        const text = wrapper.find('p').text();
+        expect(text).toEqual('Count: 1');
+      });
     });
+
+      
