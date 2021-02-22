@@ -21,7 +21,7 @@ import React, { Component } from 'react';
         return (
           <div>
             <p>Count: {this.state.count}</p>
-            <button className="increment" onClick={this.increment}>Increment count2</button>
+            <button className="increment" onClick={this.increment}>Increment count</button>
             <button className="decrement" onClick={this.decrement}>Decrement count</button>
           </div>
         )
