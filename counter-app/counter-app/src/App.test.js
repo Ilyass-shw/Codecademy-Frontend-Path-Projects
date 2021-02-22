@@ -25,6 +25,11 @@ import React from 'react';
         const text = wrapper.find('p').text();
         expect(text).toEqual('Count: -1');
       });
+
+      it('matches the snapshot', () => {
+        const tree = renderer.create(<App />).toJSON();
+        expect(tree).toMatchSnapshot();
+      });
     });
 
       
