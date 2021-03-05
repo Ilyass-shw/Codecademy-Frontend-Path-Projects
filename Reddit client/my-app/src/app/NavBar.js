@@ -22,28 +22,35 @@ import orderedList from "@iconify-icons/jam/ordered-list";
 // npm install --save-dev @iconify/react @iconify-icons/majesticons
 import videoCamera from "@iconify-icons/majesticons/video-camera";
 
+// npm install --save-dev @iconify/react @iconify-icons/ic
+import baselineVideoLibrary from '@iconify-icons/ic/baseline-video-library';
+
+
 const NavBar = (props) => {
 	return (
 		<nav>
 			<ul>
-				<li>
+				{/* <li>
 					<Icon icon={redditFill} color="#FF0000" />
-				</li>
+				</li> */}
 				{/* <Icon icon={alienshipIcon} color="blue" /> */}
 				<li>
-					<Icon icon={bxMenu} />
+					<Icon icon={bxMenu} color={"white"} width="1.5rem" height="1.5rem" />
 				</li>
 				{/* <Icon icon={bxTrendingUp} /> */}
 				<li>
-					<Icon icon={homeIcon} />
+					<Icon icon={homeIcon} color={"white"} width="1.2rem" height="1.2rem" />
+					Home
 				</li>
 				{/* <Icon icon={graphBar} /> */}
 				<li>
-					<Icon icon={sharpLocalFireDepartment} />
+					<Icon icon={sharpLocalFireDepartment} color={"white"} width="1.2rem" height="1.2rem" />
+                    Trending
 				</li>
 				{/* <li><Icon icon={orderedList} /></li> */}
 				<li>
-					<Icon icon={baselineSubscriptions} />
+					<Icon icon={baselineSubscriptions} color={"white"} width="1.2rem" height="1.2rem" />
+                    subscriptions
 				</li>
 				{/* <li><Icon icon={baselineSubscriptions} /></li> */}
 			</ul>
