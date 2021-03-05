@@ -11,12 +11,16 @@ body {
 
 nav {
 	height: 100%;
-	width: 240px;
+	width: 6rem;
   font-size: .8em;
+  display: flex;
+  flex-direction: row;
+
 }
 
 nav ul{
-
+  height: 6rem;
+  display: flex;
 	list-style-type: none;
 	padding-inline-start: 0;
 }
