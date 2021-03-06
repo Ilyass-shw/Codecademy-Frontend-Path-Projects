@@ -2,5 +2,7 @@
 	align-self: center;
 }
 input {
-	background-color: black;
+	background-color: #121212;
+    color: #d1d1d1;
+    border: 1px solid #303030;
 }

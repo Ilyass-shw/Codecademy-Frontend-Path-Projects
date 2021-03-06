@@ -10,7 +10,7 @@ export const InputForm = () => {
 	return (
 		<div className="input">
 			<form action='#'>
-				<input type="text" name="search" value={term} onChange={handleChange} />
+				<input type="text" name="search" value={term} onChange={handleChange} placeholder='Search' />
 			</form>
 		</div>
 	);
