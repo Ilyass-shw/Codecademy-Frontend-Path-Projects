@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './InputForm.css'
+import "./InputForm.css";
 
 export const InputForm = () => {
 	const [term, setTerm] = useState("");
@@ -8,8 +8,10 @@ export const InputForm = () => {
 		setTerm(target.value);
 	};
 	return (
-		<div className='input'>
-			<input type="text" name="search" value={term} onChange={handleChange} />
+		<div className="input">
+			<form action='#'>
+				<input type="text" name="search" value={term} onChange={handleChange} />
+			</form>
 		</div>
 	);
 };
