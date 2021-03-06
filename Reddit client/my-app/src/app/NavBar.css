@@ -1,0 +1,30 @@
+.sideNav {
+	height: 100%;
+	width: 4.4rem;
+	font-size: 0.6em;
+	position: fixed;
+}
+
+.sideNav ul {
+	padding-left: 0;
+	margin: 0;
+}
+
+.sideNav ul {
+	list-style-type: none;
+}
+.sideNav ul a {
+	display: block;
+	height: 4.55rem;
+	text-decoration: none;
+	padding-left: 0;
+	color: white;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.sideNav ul a:hover {
+	background-color: #404040;
+}
