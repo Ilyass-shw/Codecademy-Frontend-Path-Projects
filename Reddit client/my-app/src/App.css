@@ -12,7 +12,10 @@
     animation: App-logo-float infinite 3s ease-in-out;
   }
 }
-
+.App-container{
+  display: flex;
+  flex-direction: column;
+}
 .App-header {
   min-height: 100vh;
   display: flex;

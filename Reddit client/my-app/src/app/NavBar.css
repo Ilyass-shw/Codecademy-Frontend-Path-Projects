@@ -2,6 +2,8 @@
 	height: 100%;
 	width: 4.4rem;
 	font-size: 0.6em;
+	position: fixed;
+	margin-top: .5rem;
 }
 
 .sideNav ul {

@@ -1,7 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./NavBar.css";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import redditFill from "@iconify-icons/akar-icons/reddit-fill";
 import bxMenu from "@iconify-icons/bx/bx-menu";
 import homeIcon from "@iconify-icons/entypo/home";
@@ -70,7 +69,5 @@ const NavBar = (props) => {
 		</div>
 	);
 };
-
-NavBar.propTypes = {};
 
 export default NavBar;
