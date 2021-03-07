@@ -27,9 +27,6 @@ input {
 	border-block: 1px solid #303030;
 	outline: none !important;
 }
-.search-button:hover{
-	cursor: pointer;
-}
 input:focus {
 	outline: none !important;
 	border: 0.2px solid rgb(0, 89, 255);
