@@ -9,7 +9,7 @@ import bxsVideoPlus from "@iconify-icons/bx/bxs-video-plus";
 import appMenu from "@iconify-icons/fe/app-menu";
 // npm install --save-dev @iconify/react @iconify-icons/mdi
 import bellIcon from "@iconify-icons/mdi/bell";
-import { InputForm } from "../SearchInput/InputForm.js";
+import { InputForm } from "../InputForm/InputForm.js";
 
 const Header = (props) => {
 	return (
