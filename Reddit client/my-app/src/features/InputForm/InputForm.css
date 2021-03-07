@@ -23,7 +23,7 @@ input {
 	height: 2.1rem;
 	width: 4.5rem;
 	border-inline: none;
-	
+
 	border-block: 1px solid #303030;
 }
 input:focus {

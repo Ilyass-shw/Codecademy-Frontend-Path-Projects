@@ -1,26 +1,25 @@
 .filter-bar {
-    display: flex;
+	display: flex;
 	justify-content: start;
-    align-items: center;
+	align-items: center;
 	margin-left: 4.5rem;
 	height: 3.5rem;
 	border-block-end: 1px solid #404040;
 }
 .filter-button {
 	background-color: #373737;
-    color: rgba(255, 255, 255, 1);
-    height: 2.2rem;
-    border: 1px solid rgba(75, 75, 75, 1);
-    margin: 12px;
-    margin-left: 0;
-    border-radius: 20px;
-    padding-right: 8.5px;
-    transition: .28s;
-
+	color: rgba(255, 255, 255, 1);
+	height: 2.2rem;
+	border: 1px solid rgba(75, 75, 75, 1);
+	margin: 12px;
+	margin-left: 0;
+	border-radius: 20px;
+	padding-right: 8.5px;
+	transition: 0.28s;
 }
-.filter-button:first-child{
-    margin-left: 24px;
+.filter-button:first-child {
+	margin-left: 24px;
 }
-.filter-button:hover{
-background-color: rgba(77, 77, 77, 1);
+.filter-button:hover {
+	background-color: rgba(77, 77, 77, 1);
 }
