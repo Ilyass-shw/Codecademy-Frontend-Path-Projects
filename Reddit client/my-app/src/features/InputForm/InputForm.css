@@ -25,10 +25,8 @@ input {
 	border-inline: none;
 	
 	border-block: 1px solid #303030;
-	outline: none !important;
 }
 input:focus {
-	outline: none !important;
 	border: 0.2px solid rgb(0, 89, 255);
 	box-shadow: 0 0 10px #313131;
 }

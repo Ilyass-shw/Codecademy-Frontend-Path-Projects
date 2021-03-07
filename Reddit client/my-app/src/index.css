@@ -7,6 +7,11 @@ body {
 	line-height: 1.4rem;
 	font-weight: 400;
 }
-button:hover{
+button:hover, button:focus{
 	cursor: pointer;
+	outline: none !important;
+}
+input{
+	outline: none !important;
+
 }
