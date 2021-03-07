@@ -1227,6 +1227,11 @@
   "resolved" "https://registry.npmjs.org/@iconify-icons/fe/-/fe-1.1.0.tgz"
   "version" "1.1.0"
 
+"@iconify-icons/fluent@^1.1.8":
+  "integrity" "sha512-/4dow7+BhA4AWws2RWDQXsXx0U/Le6PF9WKU1KNoJlb9YCulF0G0uLWFBEDhrvkjOSZos7u+SZWYGBPnJvarzw=="
+  "resolved" "https://registry.npmjs.org/@iconify-icons/fluent/-/fluent-1.1.8.tgz"
+  "version" "1.1.8"
+
 "@iconify-icons/foundation@^1.1.0":
   "integrity" "sha512-ogPIL//stfnYJqq9ntEj07CvFWB+YHDSud9SkHKGaVl5dVv0jy896KcVlmQ3510+JzRa9zLuCfInnDdiOZdOxg=="
   "resolved" "https://registry.npmjs.org/@iconify-icons/foundation/-/foundation-1.1.0.tgz"
