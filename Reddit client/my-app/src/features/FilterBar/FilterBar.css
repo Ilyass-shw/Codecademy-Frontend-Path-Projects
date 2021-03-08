@@ -1,6 +1,6 @@
 .filter-bar {
 	display: flex;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: center;
 	margin-left: 4.5rem;
 	height: 3.5rem;
@@ -18,7 +18,7 @@
 	transition: 0.28s;
 }
 .filter-button:first-child {
-	margin-left: 24px;
+	margin-left: 44px;
 }
 .filter-button:hover {
 	background-color: rgba(77, 77, 77, 1);

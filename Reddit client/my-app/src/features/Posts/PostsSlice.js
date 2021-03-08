@@ -33,7 +33,7 @@ const initialState = {
 			subreddit: "r/German 3",
 			subredditIcon: "./imgs/icons/fff.png",
 			content: "text 3",
-			id: 1,
+			id: 3,
 		},
 	],
 };

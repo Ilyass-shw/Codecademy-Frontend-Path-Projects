@@ -11,7 +11,9 @@
 	align-items: center;
 	margin-right: 26.19px;
 }
-
+h3{
+	margin-left: 2rem;
+}
 .user-icon {
 	margin-left: 2rem;
 }

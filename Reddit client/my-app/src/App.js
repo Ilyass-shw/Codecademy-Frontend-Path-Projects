@@ -7,7 +7,7 @@ import PostsList from "./features/posts/PostsList";
 
 function App() {
 	return (
-		<div  classeName='App-container'>
+		<div  classename='App-container'>
 		<NavBar />
 		<Header/>
 		<FilterBar/>
