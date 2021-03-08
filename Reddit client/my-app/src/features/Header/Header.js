@@ -11,7 +11,7 @@ const Header = (props) => {
 	return (
 		<div className="header">
 			<h3>
-				<InlineIcon icon={redditFill} color={"red"} width="1.5rem" height="1.5rem" /> React
+				<InlineIcon icon={redditFill} color={"red"} width="1.7rem" height="1.7rem" /> React
 			</h3>
 			<InputForm />
 			<div className="header-user-features">

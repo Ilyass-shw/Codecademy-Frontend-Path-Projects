@@ -1,0 +1,35 @@
+.post-block {
+	margin-bottom: 5px;
+}
+.post-data {
+	display: inline-block;
+	margin-left: 13px;
+	color: #a5aa9c;
+}
+    /* .post-data-container{
+                    display: flex;
+                    flex-direction: column;
+
+                } */
+.post-block img {
+	width: 18rem;
+	height: 10rem;
+	display: inline-block;
+	border-radius: 2.5px;
+}
+.post-block .subreddit-icon {
+	height: 1.7rem;
+	width: 1.7rem;
+	border-radius: 50%;
+}
+.post-data h4.title {
+	font-size: 1.2rem;
+	font-weight: 300;
+	color: #ffffff;
+	margin-top: 0;
+	margin-bottom: 2px;
+}
+.post-data p {
+	font-size: 0.8rem;
+	margin: 0;
+}
