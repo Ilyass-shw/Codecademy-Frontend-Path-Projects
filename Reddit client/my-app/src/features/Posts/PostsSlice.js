@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { client } from "../../api/api";
 
 const initialState = {
 	posts: [
@@ -46,5 +47,10 @@ const postsSlice = createSlice({
 
 export const {} = postsSlice.actions;
 export default postsSlice.reducer;
+
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async ()=>{
+	const response = await client.get('www.reddit.com/r',{'q': 'puppies', 'limit': 5, 'sort': 'relevance'});
+	console.log(response);
+})
 
 export const selectAllPosts = (state) => state.posts.posts;
