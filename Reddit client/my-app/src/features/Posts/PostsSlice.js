@@ -49,8 +49,17 @@ export const {} = postsSlice.actions;
 export default postsSlice.reducer;
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async ()=>{
-	const response = await client.get('https://www.reddit.com/search.json',{'q': 'puppies', 'limit': 5, 'sort': 'relevance'});
-	console.log(response);
+	// const response = await client.get('https://www.reddit.com/memes.json');
+	await fetch('https://www.reddit.com/memes.json').then(response=> {
+		if(response.ok){
+			console.log('oui')
+			return response.json()
+		}
+		console.log('la')
+	}).then(jsonresponse=>{
+		console.log(jsonresponse)
+	})
+	// console.log(response);
 })
 
 export const selectAllPosts = (state) => state.posts.posts;
