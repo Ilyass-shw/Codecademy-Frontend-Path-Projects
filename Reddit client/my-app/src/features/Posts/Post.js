@@ -11,11 +11,13 @@ const Post = ({ post }) => {
 			<div className="post-data">
 				<div className="post-data-container">
 					<h4 className="title">{post.title}</h4>
-					<div className='upvotes-date-data'>
-						<p>{post.upvotes} upvotes<span className='dot'>•</span></p>
+					<div className="upvotes-date-data">
+						<p>
+							{post.upvotes} upvotes<span className="dot">•</span>
+						</p>
 						<p>{post.date}</p>
 					</div>
-					<div className='subreddit'>
+					<div className="subreddit">
 						<img src={logo} alt="subreddit's icon" className="subreddit-icon" />
 						<p>{post.subreddit}</p>
 					</div>
