@@ -2,15 +2,15 @@
 // https://kentcdodds.com/blog/replace-axios-with-a-simple-custom-fetch-wrapper
 
 export async function client(endpoint, { body, ...customConfig } = {}) {
-    const headers = { 'Content-Type': 'application/json' }
+    // const headers = { 'Content-Type': 'application/json' }
   
     const config = {
       method: body ? 'POST' : 'GET',
-      ...customConfig,
-      headers: {
-        ...headers,
-        ...customConfig.headers,
-      },
+    //   ...customConfig,
+    //   headers: {
+    //     ...headers,
+    //     ...customConfig.headers,
+    //   },
     }
   
     if (body) {
