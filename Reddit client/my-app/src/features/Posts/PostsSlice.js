@@ -49,7 +49,7 @@ export const {} = postsSlice.actions;
 export default postsSlice.reducer;
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async ()=>{
-	const response = await client.get('www.reddit.com/r',{'q': 'puppies', 'limit': 5, 'sort': 'relevance'});
+	const response = await client.get('https://www.reddit.com/search.json',{'q': 'puppies', 'limit': 5, 'sort': 'relevance'});
 	console.log(response);
 })
 

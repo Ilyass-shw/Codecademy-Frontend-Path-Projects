@@ -1,10 +1,16 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Post from "./Post";
 import "./PostsList.css";
-import { selectAllPosts } from "./postsSlice";
+import { fetchPosts, selectAllPosts } from "./postsSlice";
 
 const PostsList = () => {
+
+	const dispatch = useDispatch();
+	useEffect(()=>{
+		dispatch(fetchPosts());
+   },[dispatch])
+
 	const posts = useSelector(selectAllPosts);
 	const content = posts.map((post) => {
 		return <Post key={post.id} post={post} />;
@@ -16,4 +22,5 @@ const PostsList = () => {
 	);
 };
 
+ 
 export default PostsList;
