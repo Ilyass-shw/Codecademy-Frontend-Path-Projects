@@ -45,10 +45,14 @@ const initialState = {
 const postsSlice = createSlice({
 	name: "posts",
 	initialState,
-	reducers: {},
+	reducers: {
+		addToPosts: (state, action)=>{
+			state.posts.concat(action.payload);
+		}
+	},
 });
 
-export const {} = postsSlice.actions;
+export const {addToPosts} = postsSlice.actions;
 export default postsSlice.reducer;
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
