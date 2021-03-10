@@ -1,5 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { client } from "../../api/api";
+import fromUnixTime from "date-fns/fromUnixTime";
+import { formatDistanceToNow } from "date-fns";
+import millify from "millify";
 
 const initialState = {
 	posts: [
@@ -48,18 +51,28 @@ const postsSlice = createSlice({
 export const {} = postsSlice.actions;
 export default postsSlice.reducer;
 
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async ()=>{
-	const response = await client.get('https://www.reddit.com/memes.json');
-	// await fetch('https://www.reddit.com/memes.json').then(response=> {
-	// 	if(response.ok){
-	// 		console.log('oui')
-	// 		return response.json()
-	// 	}
-	// 	console.log('la')
-	// }).then(jsonresponse=>{
-	// 	console.log(jsonresponse)
-	// })
-	console.log(response);
-})
+export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
+	const response = await client.get(
+		"https://www.reddit.com/search.json?q=puppies&include_facets=true&limit=2&restrict_sr=true&sort=relevance&t=all"
+	);
+
+	const fetchedPosts = response.data.children.map((post) => {
+		let postDate = fromUnixTime(post.data.created_utc);
+		postDate = formatDistanceToNow(postDate, { addSuffix: true, includeSeconds: true });
+		const upvotes = millify(post.data.ups);
+		return {
+			title: post.data.title,
+			img: post.data.rpan_video.hls_url,
+			upvotes,
+			date: postDate,
+			author: post.data.author,
+			subreddit: post.data.subreddit_name_prefixed,
+			subredditIcon: post.data.rpan_video.scrubber_media_url,
+			content: "text1",
+			id: post.data.id,
+		};
+	});
+	console.log(fetchedPosts);
+});
 
 export const selectAllPosts = (state) => state.posts.posts;

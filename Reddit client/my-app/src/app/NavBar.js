@@ -1,26 +1,26 @@
 import React from "react";
 import "./NavBar.css";
 import { Icon } from "@iconify/react";
-import redditFill from "@iconify-icons/akar-icons/reddit-fill";
+// import redditFill from "@iconify-icons/akar-icons/reddit-fill";
 import bxMenu from "@iconify-icons/bx/bx-menu";
 import homeIcon from "@iconify-icons/entypo/home";
 import sharpLocalFireDepartment from "@iconify-icons/ic/sharp-local-fire-department";
 import baselineSubscriptions from "@iconify-icons/ic/baseline-subscriptions";
 
 // npm install --save-dev @iconify/react @iconify-icons/whh
-import alienshipIcon from "@iconify-icons/whh/alienship";
+// import alienshipIcon from "@iconify-icons/whh/alienship";
 
 // npm install --save-dev @iconify/react @iconify-icons/bx
-import bxTrendingUp from "@iconify-icons/bx/bx-trending-up";
+// import bxTrendingUp from "@iconify-icons/bx/bx-trending-up";
 
 // npm install --save-dev @iconify/react @iconify-icons/foundation
-import graphBar from "@iconify-icons/foundation/graph-bar";
+// import graphBar from "@iconify-icons/foundation/graph-bar";
 
 // npm install --save-dev @iconify/react @iconify-icons/jam
-import orderedList from "@iconify-icons/jam/ordered-list";
+// import orderedList from "@iconify-icons/jam/ordered-list";
 
 // npm install --save-dev @iconify/react @iconify-icons/majesticons
-import videoCamera from "@iconify-icons/majesticons/video-camera";
+// import videoCamera from "@iconify-icons/majesticons/video-camera";
 
 // npm install --save-dev @iconify/react @iconify-icons/ic
 import baselineVideoLibrary from "@iconify-icons/ic/baseline-video-library";
