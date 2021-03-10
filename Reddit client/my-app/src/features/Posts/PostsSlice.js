@@ -5,6 +5,34 @@ import { formatDistanceToNow } from "date-fns";
 import { useDispatch } from "react-redux";
 import millify from "millify";
 
+export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
+	const response = await client.get(
+		"https://www.reddit.com/search.json?q=puppies&include_facets=true&limit=2&restrict_sr=true&sort=relevance&t=all"
+	);
+	console.log(response);
+
+	const fetchedPosts = response.data.children.map((post) => {
+		let postDate = fromUnixTime(post.data.created_utc);
+		postDate = formatDistanceToNow(postDate, { addSuffix: true, includeSeconds: true });
+		const upvotes = millify(post.data.ups);
+
+		return {
+			title: post.data.title,
+			img: post.data.rpan_video.hls_url,
+			upvotes,
+			date: postDate,
+			author: post.data.author,
+			subreddit: post.data.subreddit_name_prefixed,
+			subredditIcon: post.data.rpan_video.scrubber_media_url,
+			content: "text1",
+			id: post.data.id,
+		};
+	});
+
+	console.log(fetchedPosts);
+	return fetchedPosts;
+});
+
 const initialState = {
 	posts: [
 		{
@@ -41,6 +69,8 @@ const initialState = {
 			id: 3,
 		},
 	],
+	status: "idle",
+	error: null,
 };
 
 const postsSlice = createSlice({
@@ -48,40 +78,27 @@ const postsSlice = createSlice({
 	initialState,
 	reducers: {
 		postAdded(state, action) {
-			state.posts.push(action.payload)
-		  },
+			state.posts.push(action.payload);
+		},
+	},
+	extraReducers: {
+		[fetchPosts.pending]: (state, action) => {
+			state.status = "Loading";
+		},
+		[fetchPosts.fulfilled]: (state, action) => {
+			state.status = "succeeded";
+			state.posts = state.posts.concat(action.payload);
+		},
+		[fetchPosts.pending]: (state, action) => {
+			state.status = "failed";
+			state.error = action.error.message;
+		},
 	},
 });
 
 export const { postAdded } = postsSlice.actions;
 export default postsSlice.reducer;
 
-export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-	const response = await client.get(
-		"https://www.reddit.com/search.json?q=puppies&include_facets=true&limit=2&restrict_sr=true&sort=relevance&t=all"
-	);
-	console.log(response);
 
-	const fetchedPosts = response.data.children.map((post) => {
-		let postDate = fromUnixTime(post.data.created_utc);
-		postDate = formatDistanceToNow(postDate, { addSuffix: true, includeSeconds: true });
-		const upvotes = millify(post.data.ups);
-		
-		return {
-			title: post.data.title,
-			img: post.data.rpan_video.hls_url,
-			upvotes,
-			date: postDate,
-			author: post.data.author,
-			subreddit: post.data.subreddit_name_prefixed,
-			subredditIcon: post.data.rpan_video.scrubber_media_url,
-			content: "text1",
-			id: post.data.id,
-		};
-	});
-
-	console.log(fetchedPosts);
-	return fetchedPosts;
-});
 
 export const selectAllPosts = (state) => state.posts.posts;
