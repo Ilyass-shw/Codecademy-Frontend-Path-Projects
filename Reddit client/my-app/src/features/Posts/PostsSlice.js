@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { client } from "../../api/api";
 import fromUnixTime from "date-fns/fromUnixTime";
 import { formatDistanceToNow } from "date-fns";
-import { useDispatch } from "react-redux";
 import millify from "millify";
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
@@ -87,9 +86,11 @@ const postsSlice = createSlice({
 		},
 		[fetchPosts.fulfilled]: (state, action) => {
 			state.status = "succeeded";
+			console.log(state.posts)
+			console.log(action.payload)
 			state.posts = state.posts.concat(action.payload);
 		},
-		[fetchPosts.pending]: (state, action) => {
+		[fetchPosts.rejected]: (state, action) => {
 			state.status = "failed";
 			state.error = action.error.message;
 		},

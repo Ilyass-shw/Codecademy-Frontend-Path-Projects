@@ -13,21 +13,21 @@ const PostsList = () => {
 			dispatch(fetchPosts());
 		}
 
-		dispatch(
-			postAdded([
-				{
-					title: "title2",
-					img: "./imgs/Untitled.png",
-					upvotes: 100,
-					date: "1 min ago 2",
-					author: "arthur 2",
-					subreddit: "r/German 2",
-					subredditIcon: "./imgs/icons/favicon.ico",
-					content: "text 2",
-					id: 2,
-				},
-			])
-		);
+		// dispatch(
+		// 	postAdded([
+		// 		{
+		// 			title: "title2",
+		// 			img: "./imgs/Untitled.png",
+		// 			upvotes: 100,
+		// 			date: "1 min ago 2",
+		// 			author: "arthur 2",
+		// 			subreddit: "r/German 2",
+		// 			subredditIcon: "./imgs/icons/favicon.ico",
+		// 			content: "text 2",
+		// 			id: 2,
+		// 		},
+		// 	])
+		// );
 	}, [postStatus, dispatch]);
 
 	const posts = useSelector(selectAllPosts);
