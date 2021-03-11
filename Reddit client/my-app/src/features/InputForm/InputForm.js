@@ -16,7 +16,8 @@ export const InputForm = () => {
 		setTerm(target.value);
 	};
 
-	const handleOnClick = () => {
+	const handleOnClick = (e) => {
+		e.preventDefault();
 		dispatch(searchTermSet(term));
 		dispatch(fetchPosts());
 	};
@@ -27,7 +28,6 @@ export const InputForm = () => {
 				<input type="text" name="search" value={term} onChange={handleChange} placeholder="Search" />
 				<button
 					className="search-button"
-					type="button"
 					onMouseEnter={() => {
 						setMouseOnSearchButton(true);
 					}}
