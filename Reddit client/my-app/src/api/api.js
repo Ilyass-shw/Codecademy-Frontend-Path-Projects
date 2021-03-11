@@ -4,7 +4,6 @@ import fromUnixTime from "date-fns/fromUnixTime";
 import { formatDistanceToNow } from "date-fns";
 import millify from "millify";
 
-
 export async function client(endpoint, { body, ...customConfig } = {}) {
 	// const headers = { 'Content-Type': 'application/json' }
 
@@ -42,14 +41,18 @@ client.post = function (endpoint, body, customConfig = {}) {
 	return client(endpoint, { ...customConfig, body });
 };
 
-export const getEndPoint = ({searchTerm}) => {
+export const getEndPoint = ({ searchTerm }) => {
 	return `https://www.reddit.com/search.json?q=${searchTerm}&include_facets=true&limit=20&restrict_sr=true&sort=relevance&t=all`;
 };
 
-export const handlefetchedPosts =(response)=>{
-	response.data.children.map((post) => {
+export const handlefetchedPosts = (response) => {
+
+	return response.data.children.map((post) => {
+
 		let postDate = fromUnixTime(post.data.created_utc);
+
 		postDate = formatDistanceToNow(postDate, { addSuffix: true, includeSeconds: true });
+		
 		const upvotes = millify(post.data.ups);
 
 		return {
@@ -64,4 +67,4 @@ export const handlefetchedPosts =(response)=>{
 			id: post.data.id,
 		};
 	});
-}
+};

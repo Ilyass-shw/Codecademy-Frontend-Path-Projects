@@ -49,27 +49,8 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (_, { getSt
 	const response = await client.get(getEndPoint(getState().posts));
 
 	console.log(response);
-
-	const fetchedPosts = response.data.children.map((post) => {
-		let postDate = fromUnixTime(post.data.created_utc);
-		postDate = formatDistanceToNow(postDate, { addSuffix: true, includeSeconds: true });
-		const upvotes = millify(post.data.ups);
-
-		return {
-			title: post.data.title,
-			img: post.data.rpan_video ? post.data.rpan_video.scrubber_media_url : "",
-			upvotes,
-			date: postDate,
-			author: post.data.author,
-			subreddit: post.data.subreddit_name_prefixed,
-			subredditIcon: "",
-			content: "text1",
-			id: post.data.id,
-		};
-	});
-
+	const fetchedPosts = handlefetchedPosts(response);
 	console.log(fetchedPosts);
-	console.log(handlefetchedPosts(response));
 	return fetchedPosts;
 });
 
