@@ -3,6 +3,10 @@
 import fromUnixTime from "date-fns/fromUnixTime";
 import { formatDistanceToNow } from "date-fns";
 import millify from "millify";
+import im from "../features/posts/imgs/icons/background_photo_desktop.webp";
+
+
+
 
 export async function client(endpoint, { body, ...customConfig } = {}) {
 	// const headers = { 'Content-Type': 'application/json' }
@@ -41,9 +45,19 @@ client.post = function (endpoint, body, customConfig = {}) {
 	return client(endpoint, { ...customConfig, body });
 };
 
+
+// ============= ============= ============= ============= =============
+
+
+
 export const getEndPoint = ({ searchTerm }) => {
 	return `https://www.reddit.com/search.json?q=${searchTerm}&include_facets=true&limit=20&restrict_sr=true&sort=relevance&t=all`;
 };
+
+
+// ============= ============= ============= ============= =============
+
+
 
 export const handlefetchedPosts = (response) => {
 
@@ -52,12 +66,21 @@ export const handlefetchedPosts = (response) => {
 		let postDate = fromUnixTime(post.data.created_utc);
 
 		postDate = formatDistanceToNow(postDate, { addSuffix: true, includeSeconds: true });
-		
+
 		const upvotes = millify(post.data.ups);
+
+		let img =im
+
+		if(post.data.rpan_video){
+			img = post.data.rpan_video
+		}else if(post.data.thumbnail){
+			img = post.data.thumbnail
+			console.log(`thum: ${img}` )
+		}
 
 		return {
 			title: post.data.title,
-			img: post.data.rpan_video ? post.data.rpan_video.scrubber_media_url : "",
+			img,
 			upvotes,
 			date: postDate,
 			author: post.data.author,
