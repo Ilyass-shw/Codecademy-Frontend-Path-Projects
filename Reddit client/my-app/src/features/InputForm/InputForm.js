@@ -17,9 +17,11 @@ export const InputForm = () => {
 	};
 
 	const handleOnClick = (e) => {
+		if (term) {
+			dispatch(searchTermSet(term));
+			dispatch(fetchPosts());
+		}
 		e.preventDefault();
-		dispatch(searchTermSet(term));
-		dispatch(fetchPosts());
 	};
 
 	return (
