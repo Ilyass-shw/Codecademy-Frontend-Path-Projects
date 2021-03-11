@@ -3,7 +3,7 @@ import "./InputForm.css";
 // npm install --save-dev @iconify/react @iconify-icons/fluent
 import { InlineIcon } from "@iconify/react";
 import search16Filled from "@iconify-icons/fluent/search-16-filled";
-import { searchTermSet } from "../posts/postsSlice";
+import { fetchPosts, searchTermSet } from "../posts/postsSlice";
 import { useDispatch } from "react-redux";
 
 export const InputForm = () => {
@@ -18,6 +18,7 @@ export const InputForm = () => {
 
 	const handleOnClick = () => {
 		dispatch(searchTermSet(term));
+		dispatch(fetchPosts());
 	};
 
 	return (
