@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import "./InputForm.css";
 // npm install --save-dev @iconify/react @iconify-icons/fluent
-import { Icon, InlineIcon } from "@iconify/react";
+import { InlineIcon } from "@iconify/react";
 import search16Filled from "@iconify-icons/fluent/search-16-filled";
+import { searchTermSet } from "../posts/postsSlice";
+import { useDispatch } from "react-redux";
 
 export const InputForm = () => {
+	const dispatch = useDispatch();
+
 	const [term, setTerm] = useState("");
 	const [mouseOnSearchButton, setMouseOnSearchButton] = useState(false);
 
 	const handleChange = ({ target }) => {
 		setTerm(target.value);
+	};
+
+	const handleOnClick = () => {
+		dispatch(searchTermSet(term));
 	};
 
 	return (
@@ -18,12 +26,14 @@ export const InputForm = () => {
 				<input type="text" name="search" value={term} onChange={handleChange} placeholder="Search" />
 				<button
 					className="search-button"
+					type="button"
 					onMouseEnter={() => {
 						setMouseOnSearchButton(true);
 					}}
 					onMouseLeave={() => {
 						setMouseOnSearchButton(false);
 					}}
+					onClick={handleOnClick}
 				>
 					<InlineIcon
 						icon={search16Filled}

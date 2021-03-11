@@ -7,7 +7,7 @@ import fireFilled from "@iconify-icons/ant-design/fire-filled";
 // npm install --save-dev @iconify/react @iconify-icons/ic
 import sharpNewReleases from "@iconify-icons/ic/sharp-new-releases";
 // npm install --save-dev @iconify/react @iconify-icons/bx
-import bxsCommentDetail from "@iconify-icons/bx/bxs-comment-detail";
+// import bxsCommentDetail from "@iconify-icons/bx/bxs-comment-detail";
 import "./FilterBar.css";
 
 export const FilterBar = () => {

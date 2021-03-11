@@ -15,16 +15,16 @@ const Header = (props) => {
 			</h3>
 			<InputForm />
 			<div className="header-user-features">
-				<a href="#">
+				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<InlineIcon className="user-icon" icon={bxsVideoPlus} color={"white"} width="1.5rem" height="1.5rem" />
 				</a>
-				<a href="#">
+				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<InlineIcon className="user-icon" icon={appMenu} color={"white"} width="1.5rem" height="1.5rem" />
 				</a>
-				<a href="#">
+				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<InlineIcon className="user-icon" icon={bellIcon} color={"white"} width="1.5rem" height="1.5rem" />
 				</a>
-				<a href="#">
+				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<InlineIcon className="user-icon" icon={redditFill} color={"white"} width="1.5rem" height="1.5rem" />
 				</a>
 			</div>

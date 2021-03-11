@@ -36,32 +36,32 @@ const NavBar = (props) => {
 					<Icon icon={redditFill} color="#FF0000" />
 				</li> */}
 				{/* <Icon icon={alienshipIcon} color="blue" /> */}
-				<a href="#">
+				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<li>
 						<Icon icon={bxMenu} color={"white"} width="1.5rem" height="1.5rem" />
 					</li>
 				</a>
 				{/* <Icon icon={bxTrendingUp} /> */}
 
-				<a href="#">
+				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<Icon icon={homeIcon} color={"white"} width="1.2rem" height="1.2rem" />
 					<li>Home</li>
 				</a>
 
 				{/* <Icon icon={graphBar} /> */}
-				<a href="#">
+				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<Icon icon={sharpLocalFireDepartment} color={"white"} width="1.2rem" height="1.2rem" />
 					<li>Trending</li>
 				</a>
 
 				{/* <li><Icon icon={orderedList} /></li> */}
-				<a href="#">
+				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<Icon icon={baselineSubscriptions} color={"white"} width="1.2rem" height="1.2rem" className="menu-icon" />
 					<li>Subscriptions</li>
 				</a>
 
 				{/* <li><Icon icon={baselineSubscriptions} /></li> */}
-				<a href="#">
+				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<Icon icon={baselineVideoLibrary} color={"white"} width="1.5rem" height="1.5rem" className="menu-icon" />
 					<li>Library</li>
 				</a>
