@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { client, getEndPoint } from "../../api/api";
+import { client, getEndPoint, handlefetchedPosts } from "../../api/api";
 import fromUnixTime from "date-fns/fromUnixTime";
 import { formatDistanceToNow } from "date-fns";
 import millify from "millify";
@@ -69,6 +69,7 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (_, { getSt
 	});
 
 	console.log(fetchedPosts);
+	console.log(handlefetchedPosts(response));
 	return fetchedPosts;
 });
 
