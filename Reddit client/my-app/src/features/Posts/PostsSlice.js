@@ -41,6 +41,7 @@ const initialState = {
 			id: 3,
 		},
 	],
+	filter : 'relevance',
 	status: "idle",
 	error: null,
 };
@@ -61,6 +62,9 @@ const postsSlice = createSlice({
 		searchTermSet(state, action) {
 			state.searchTerm = action.payload;
 		},
+		filterUpdated(state, action){
+			state.filter = action.payload
+		}
 	},
 	extraReducers: {
 		[fetchPosts.pending]: (state, action) => {
@@ -77,7 +81,7 @@ const postsSlice = createSlice({
 	},
 });
 
-export const { searchTermSet } = postsSlice.actions;
+export const { searchTermSet, filterUpdated } = postsSlice.actions;
 export default postsSlice.reducer;
 
 export const selectAllPosts = (state) => state.posts.posts;

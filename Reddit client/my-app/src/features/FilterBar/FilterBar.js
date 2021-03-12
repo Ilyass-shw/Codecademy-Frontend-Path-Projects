@@ -13,12 +13,18 @@ import "./FilterBar.css";
 import verticalAlignTop from "@iconify/icons-oi/vertical-align-top";
 // npm install --save-dev @iconify/react @iconify/icons-icons8
 import commentsIcon from "@iconify/icons-icons8/comments";
+import { useDispatch } from "react-redux";
+import { filterUpdated } from "../posts/postsSlice";
 
 export const FilterBar = () => {
+
 	const [filterBy, setFilterBy] = useState("relevance");
+
+	const dispatch = useDispatch();
 
 	const handleOnClick = ({ target }) => {
 		setFilterBy(target.value);
+		dispatch(filterUpdated(filterBy));
 	};
 
 	return (
