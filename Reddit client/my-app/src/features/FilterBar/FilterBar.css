@@ -17,9 +17,17 @@
 	padding-right: 8.5px;
 	transition: 0.28s;
 }
+
 .filter-button:first-child {
 	margin-left: 44px;
 }
 .filter-button:hover {
 	background-color: rgba(77, 77, 77, 1);
 }
+.selected{
+	color: #030303;
+	background-color: #ffff;
+	}
+.selected:hover{
+	background-color: #909090;
+}	
