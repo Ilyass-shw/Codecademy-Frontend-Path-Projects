@@ -4,6 +4,9 @@
 	font-size: 0.6em;
 	position: fixed;
 	margin-top: 0.5rem;
+	z-index: 3;
+	background-color: #202020;
+
 }
 
 .sideNav ul {
