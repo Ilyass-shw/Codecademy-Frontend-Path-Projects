@@ -5,11 +5,17 @@
 .post-data {
 	margin-left: 13px;
 	color: #a5aa9c;
+	/* flex-shrink: 1; */
+	width: 80%;
+	/* height: 7rem; */
 }
 
-.post-block img {
-	width: 18rem;
+.post-block .content-image {
+	flex-shrink: 1;
+	flex-basis: 240px;
+	max-width: 240px;
 	height: 10rem;
+	/* min-height: 10rem; */
 	border-radius: 2.5px;
 }
 .post-block .subreddit-icon {

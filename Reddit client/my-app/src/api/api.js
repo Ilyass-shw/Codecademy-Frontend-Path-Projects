@@ -5,9 +5,6 @@ import { formatDistanceToNow } from "date-fns";
 import millify from "millify";
 import im from "../features/posts/imgs/icons/background_photo_desktop.webp";
 
-
-
-
 export async function client(endpoint, { body, ...customConfig } = {}) {
 	// const headers = { 'Content-Type': 'application/json' }
 
@@ -45,37 +42,35 @@ client.post = function (endpoint, body, customConfig = {}) {
 	return client(endpoint, { ...customConfig, body });
 };
 
-
 // ============= ============= ============= ============= =============
-
-
 
 export const getEndPoint = ({ searchTerm, filter }) => {
 	return `https://www.reddit.com/search.json?q=${searchTerm}&include_facets=true&limit=20&restrict_sr=true&sort=${filter}&t=all`;
 };
 
-
 // ============= ============= ============= ============= =============
 
-
-
 export const handlefetchedPosts = (response) => {
-
 	return response.data.children.map((post) => {
-
 		let postDate = fromUnixTime(post.data.created_utc);
 
 		postDate = formatDistanceToNow(postDate, { addSuffix: true, includeSeconds: true });
 
 		const upvotes = millify(post.data.ups);
 
-		let img =im
+		let img = im;
 
-		if(post.data.rpan_video){
-			img = post.data.rpan_video
-		}else if(post.data.thumbnail){
-			img = post.data.thumbnail
-			console.log(`thum: ${img}` )
+		if (post.data.rpan_video) {
+			img = post.data.rpan_video;
+		} else if (post.data.thumbnail) {
+			if (post.data.thumbnail === "self") {
+				img = im;
+			} else if (post.data.thumbnail === "spoiler") {
+				img = im;
+			} else {
+				img = post.data.thumbnail;
+			}
+			console.log(`thum: ${img}`);
 		}
 
 		return {
