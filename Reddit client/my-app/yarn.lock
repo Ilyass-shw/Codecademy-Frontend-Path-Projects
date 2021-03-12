@@ -1267,6 +1267,16 @@
   "resolved" "https://registry.npmjs.org/@iconify-icons/whh/-/whh-1.1.0.tgz"
   "version" "1.1.0"
 
+"@iconify/icons-icons8@^1.1.0":
+  "integrity" "sha512-zB1iSF+EqUX7OgFsvZK5v9W3gyyO2fh++Eb2EFD7zznw9yAY5XXj/rkNbCJmd5T+v/MttbJDbDxM1+zDhd8Dzw=="
+  "resolved" "https://registry.npmjs.org/@iconify/icons-icons8/-/icons-icons8-1.1.0.tgz"
+  "version" "1.1.0"
+
+"@iconify/icons-oi@^1.1.0":
+  "integrity" "sha512-Ad/7wFxAkgEPWyyHqyuvf25HDkR2W5WkKOxGpmi0c2PbiGV4NBb4aUWSNujBbJQYuKTJbOShaLgNoq4wPIJUzA=="
+  "resolved" "https://registry.npmjs.org/@iconify/icons-oi/-/icons-oi-1.1.0.tgz"
+  "version" "1.1.0"
+
 "@iconify/react@^1.1.4":
   "integrity" "sha512-oxq8IMOq8q3nKGiDHbQPC8FcFuBsKve68JWBo140d5LRnj0bv5TB/FE/y01ZSvEZ7PlI2HIrnb2qivPN8kTDgw=="
   "resolved" "https://registry.npmjs.org/@iconify/react/-/react-1.1.4.tgz"
