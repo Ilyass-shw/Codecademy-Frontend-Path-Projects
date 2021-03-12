@@ -14,7 +14,7 @@ import verticalAlignTop from "@iconify/icons-oi/vertical-align-top";
 // npm install --save-dev @iconify/react @iconify/icons-icons8
 import commentsIcon from "@iconify/icons-icons8/comments";
 import { useDispatch } from "react-redux";
-import { filterUpdated } from "../posts/postsSlice";
+import { filterUpdated, fetchPosts } from "../posts/postsSlice";
 
 export const FilterBar = () => {
 
@@ -25,6 +25,7 @@ export const FilterBar = () => {
 	const handleOnClick = ({ target }) => {
 		setFilterBy(target.value);
 		dispatch(filterUpdated(filterBy));
+		dispatch(fetchPosts());
 	};
 
 	return (
