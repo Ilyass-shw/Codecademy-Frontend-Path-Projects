@@ -1,8 +1,7 @@
 .posts-container {
+	display: inline-flex;
 	margin-left: 4.5rem;
 	background-color: rgba(24, 24, 24, 1);
-	position: absolute;
-	flex: 1;
 }
 .posts-container .posts-list {
 	width: 80%;

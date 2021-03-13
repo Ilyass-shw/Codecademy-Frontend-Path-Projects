@@ -1,5 +1,5 @@
 .filter-bar {
-	display: flex;
+	display: inline-flex;
 	justify-content: flex-start;
 	align-items: center;
 	margin-left: 4.5rem;
@@ -24,10 +24,10 @@
 .filter-button:hover {
 	background-color: rgba(77, 77, 77, 1);
 }
-.selected{
+.selected {
 	color: #030303;
 	background-color: #ffff;
-	}
-.selected:hover{
+}
+.selected:hover {
 	background-color: #909090;
-}	
+}

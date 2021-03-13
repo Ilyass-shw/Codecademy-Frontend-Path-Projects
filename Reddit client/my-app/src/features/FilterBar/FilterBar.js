@@ -17,7 +17,6 @@ import { useDispatch } from "react-redux";
 import { filterUpdated, fetchPosts } from "../posts/postsSlice";
 
 export const FilterBar = () => {
-
 	const [filterBy, setFilterBy] = useState("relevance");
 
 	const dispatch = useDispatch();
