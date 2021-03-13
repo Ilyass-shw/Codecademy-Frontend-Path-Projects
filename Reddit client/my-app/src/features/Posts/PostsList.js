@@ -6,18 +6,33 @@ import { fetchPosts, selectAllPosts } from "./postsSlice";
 import PostsSkeleton from "../PostsSkeleton/PostsSkeleton";
 
 const PostsList = () => {
-	const postStatus = useSelector((state) => state.posts.status);
+	const postsStatus = useSelector((state) => state.posts.status);
+	const postError = useSelector((state) => state.posts.error);
 	const posts = useSelector(selectAllPosts);
 
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		if (postStatus === "idle") {
-			dispatch(fetchPosts());
-		}
-	}, [postStatus, dispatch]);
+		// const timeOut = setTimeout(() => {
+			if (postsStatus === "idle") {
+				dispatch(fetchPosts());
+			}
+		// }, 100);
+		// clearTimeout(timeOut)
+		
+	}, [postsStatus, dispatch]);
 
-	const content = posts.map((post) => {
+	let content;
+
+	if(postsStatus === "idle" || postsStatus === "Loading"){
+		content = Array(3).fill().map(item=>{
+			return <PostsSkeleton/>
+		})
+	}else if(postsStatus === "failed"){
+		content = postError
+	}
+
+	 content = posts.map((post) => {
 		return <Post key={post.id} post={post} />;
 	});
 
@@ -25,7 +40,7 @@ const PostsList = () => {
 		<div className="posts-container">
 			<div className="posts-list">
 				{
-					// <PostsSkeleton/>
+					 
 
 					content
 				}
