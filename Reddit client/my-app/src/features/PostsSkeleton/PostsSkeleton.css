@@ -1,0 +1,7 @@
+.post-data-container {
+	display: flex;
+	flex-direction: column;
+}
+.subreddit span:nth-child(2) {
+	margin-left: 4px;
+}

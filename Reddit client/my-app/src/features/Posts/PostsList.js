@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Post from "./Post";
 import "./PostsList.css";
 import { fetchPosts, selectAllPosts } from "./postsSlice";
-import Skeleton from 'react-loading-skeleton';
+import PostsSkeleton from "../PostsSkeleton/PostsSkeleton";
 
 const PostsList = () => {
 	const postStatus = useSelector((state) => state.posts.status);
@@ -23,10 +23,13 @@ const PostsList = () => {
 
 	return (
 		<div className="posts-container">
-			<div className="posts-list">{ 
-			// <Skeleton />
-			content
-			}</div>
+			<div className="posts-list">
+				{
+					// <PostsSkeleton/>
+
+					content
+				}
+			</div>
 		</div>
 	);
 };

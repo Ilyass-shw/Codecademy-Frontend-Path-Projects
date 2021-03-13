@@ -29,7 +29,7 @@
 	display: -webkit-box;
 	-webkit-line-clamp: 2; /* number of lines to show */
 	-webkit-box-orient: vertical;
- 
+
 	font-size: 1.2rem;
 	font-weight: 300;
 	color: #ffffff;
