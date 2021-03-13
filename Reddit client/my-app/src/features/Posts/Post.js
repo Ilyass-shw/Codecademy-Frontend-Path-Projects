@@ -5,10 +5,9 @@ import im from "./imgs/icons/background_photo_desktop.webp";
 import logo from "./imgs/icons/favicon.ico";
 
 const Post = ({ post }) => {
-	const url = post.img ? post.img : im;
 	return (
 		<div className="post-block">
-			<img src={url} alt="post" className="content-image" />
+			<img src={post.img} alt="post" className="content-image" />
 			<div className="post-data">
 				<div className="post-data-container">
 					<h4 className="title">{post.title}</h4>

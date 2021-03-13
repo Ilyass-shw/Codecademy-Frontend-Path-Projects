@@ -10,10 +10,14 @@ import { InputForm } from "../InputForm/InputForm.js";
 const Header = (props) => {
 	return (
 		<div className="header">
-			<h3>
-				<InlineIcon icon={redditFill} color={"red"} width="1.7rem" height="1.7rem" /> React
-			</h3>
-			<InputForm />
+			<div className="reddit-logo">
+				<h3>
+					<InlineIcon icon={redditFill} color={"red"} width="1.7rem" height="1.7rem" /> React
+				</h3>
+			</div>
+
+			<InputForm className="inputForm" />
+			
 			<div className="header-user-features">
 				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
 					<InlineIcon className="user-icon" icon={bxsVideoPlus} color={"white"} width="1.5rem" height="1.5rem" />
