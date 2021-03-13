@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "./Post.css";
 import logo from "./imgs/icons/favicon.ico";
-import { useSelector } from "react-redux";
 
 
 const Post = ({ post }) => {
 
-	// const [loading, setLoading] = useState(false)
-
-	const loading = useSelector(state => state.posts.status)
 	return (
 		<div className="post-block">
 			<img src={post.img} alt="post" className="content-image" />

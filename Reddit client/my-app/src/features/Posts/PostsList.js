@@ -40,8 +40,6 @@ const PostsList = () => {
 		<div className="posts-container">
 			<div className="posts-list">
 				{
-					 
-
 					content
 				}
 			</div>
