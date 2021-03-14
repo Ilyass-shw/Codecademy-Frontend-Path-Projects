@@ -13,36 +13,30 @@ const PostsList = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		// const timeOut = setTimeout(() => {
-			if (postsStatus === "idle") {
-				dispatch(fetchPosts());
-			}
-		// }, 100);
-		// clearTimeout(timeOut)
-		
+		if (postsStatus === "idle") {
+			dispatch(fetchPosts());
+		}
 	}, [postsStatus, dispatch]);
 
 	let content;
 
-	if(postsStatus === "idle" || postsStatus === "Loading"){
-		content = Array(3).fill().map(item=>{
-			return <PostsSkeleton/>
-		})
-	}else if(postsStatus === "failed"){
-		content = postError
+	if (postsStatus === "idle" || postsStatus === "Loading") {
+		content = Array(3)
+			.fill()
+			.map(() => {
+				return <PostsSkeleton />;
+			});
+	} else if (postsStatus === "failed") {
+		content = postError;
+	} else {
+		content = posts.map((post) => {
+			return <Post key={post.id} post={post} />;
+		});
 	}
-
-	 content = posts.map((post) => {
-		return <Post key={post.id} post={post} />;
-	});
 
 	return (
 		<div className="posts-container">
-			<div className="posts-list">
-				{
-					content
-				}
-			</div>
+			<div className="posts-list">{content}</div>
 		</div>
 	);
 };

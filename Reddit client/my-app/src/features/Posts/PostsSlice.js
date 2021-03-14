@@ -5,7 +5,7 @@ import { formatDistanceToNow } from "date-fns";
 import millify from "millify";
 
 const initialState = {
-	searchTerm: "hoho",
+	searchTerm: "",
 	posts: [],
 	filter : 'relevance',
 	status: "idle",
