@@ -5,6 +5,9 @@ import fromUnixTime from "date-fns/fromUnixTime";
 import { formatDistanceToNow } from "date-fns";
 import millify from "millify";
 import im from "../features/posts/imgs/icons/background_photo_desktop.webp";
+// npm install --save-dev @iconify/react @iconify/icons-bi
+import { Icon, InlineIcon } from "@iconify/react";
+import imageIcon from "@iconify/icons-bi/image";
 
 export async function client(endpoint, { body, ...customConfig } = {}) {
 	// const headers = { 'Content-Type': 'application/json' }
@@ -83,14 +86,32 @@ export const handlefetchedPosts = (response) => {
 // ============= ============= ============= ============= =============
 
 export const handleThumbnail = (thubmnailSrc) => {
-	let img;
+	const style = {
+		display: "inline-flex",
+		justifyContent: "center",
+		alignItems: "center",
+
+	}
 	if (thubmnailSrc) {
 		if (thubmnailSrc === "self") {
-			return <img src={im} alt="post" className="content-image" />;
+			// return <img src={im} alt="post" className="content-image" />;
+			return (
+				<div className="content-image">
+					<Icon icon={imageIcon} height='2rem' width='2rem'/>
+				</div>
+			);
 		} else if (thubmnailSrc === "spoiler") {
-			return <img src={im} alt="post" className="content-image" />;
+			return (
+				<div className="content-image">
+					<Icon icon={imageIcon} height='2rem' width='2rem'/>
+				</div>
+			);
 		} else if (thubmnailSrc === "image") {
-			return <img src={im} alt="post" className="content-image" />;
+			return (
+				<div className="content-image">
+					<Icon icon={imageIcon} height='2rem' width='2rem'/>
+				</div>
+			);
 		} else {
 			return <img src={thubmnailSrc} alt="post" className="content-image" />;
 		}
