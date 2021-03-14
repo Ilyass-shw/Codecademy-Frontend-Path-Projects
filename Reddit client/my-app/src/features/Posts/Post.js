@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Post.css";
-import logo from "./imgs/icons/favicon.ico";
-
+import { Icon, InlineIcon } from "@iconify/react";
+import bxlReddit from "@iconify/icons-bx/bxl-reddit";
 
 const Post = ({ post }) => {
-
 	return (
 		<div className="post-block">
 			<img src={post.img} alt="post" className="content-image" />
@@ -19,8 +18,7 @@ const Post = ({ post }) => {
 						<p>{post.date}</p>
 					</div>
 					<div className="subreddit">
-						<img src={logo} alt="subreddit's icon" className="subreddit-icon" />
-						<p>{post.subreddit}</p>
+						<Icon icon={bxlReddit} width='1.5rem' height='1.5rem'/> <p>{post.subreddit}</p>
 					</div>
 				</div>
 			</div>

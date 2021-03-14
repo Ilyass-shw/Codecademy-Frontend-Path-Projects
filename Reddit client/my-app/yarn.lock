@@ -1344,6 +1344,11 @@
   "resolved" "https://registry.npmjs.org/@iconify-icons/whh/-/whh-1.1.0.tgz"
   "version" "1.1.0"
 
+"@iconify/icons-bx@^1.1.0":
+  "integrity" "sha512-4TyjNcB4hO5e5pTe/M0xaW1vqK92DcK3y9n0cDx/bUaBBa/xt2K3OM6uBGVbna2yIcmDvQJGPJpd5hnXtgZrBw=="
+  "resolved" "https://registry.npmjs.org/@iconify/icons-bx/-/icons-bx-1.1.0.tgz"
+  "version" "1.1.0"
+
 "@iconify/icons-icons8@^1.1.0":
   "integrity" "sha512-zB1iSF+EqUX7OgFsvZK5v9W3gyyO2fh++Eb2EFD7zznw9yAY5XXj/rkNbCJmd5T+v/MttbJDbDxM1+zDhd8Dzw=="
   "resolved" "https://registry.npmjs.org/@iconify/icons-icons8/-/icons-icons8-1.1.0.tgz"
