@@ -4,10 +4,12 @@ import React from "react";
 import fromUnixTime from "date-fns/fromUnixTime";
 import { formatDistanceToNow } from "date-fns";
 import millify from "millify";
-import im from "../features/posts/imgs/icons/background_photo_desktop.webp";
-// npm install --save-dev @iconify/react @iconify/icons-bi
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import imageIcon from "@iconify/icons-bi/image";
+import commentTextAlt from "@iconify/icons-zmdi/comment-text-alt";
+import linkChain from "@iconify/icons-akar-icons/link-chain";
+
+
 
 export async function client(endpoint, { body, ...customConfig } = {}) {
 	// const headers = { 'Content-Type': 'application/json' }
@@ -90,26 +92,31 @@ export const handleThumbnail = (thubmnailSrc) => {
 		display: "inline-flex",
 		justifyContent: "center",
 		alignItems: "center",
-
-	}
+		backgroundColor: "#202021",
+	};
 	if (thubmnailSrc) {
 		if (thubmnailSrc === "self") {
-			// return <img src={im} alt="post" className="content-image" />;
 			return (
-				<div className="content-image">
-					<Icon icon={imageIcon} height='2rem' width='2rem'/>
+				<div className="content-image" style={style}>
+					<Icon icon={commentTextAlt} height="2rem" width="2rem" />
 				</div>
 			);
 		} else if (thubmnailSrc === "spoiler") {
 			return (
-				<div className="content-image">
-					<Icon icon={imageIcon} height='2rem' width='2rem'/>
+				<div className="content-image" style={style}>
+					<Icon icon={imageIcon} height="2rem" width="2rem" />
+				</div>
+			);
+		} else if (thubmnailSrc === "default") {
+			return (
+				<div className="content-image" style={style}>
+					<Icon icon={linkChain} height="2rem" width="2rem" />
 				</div>
 			);
 		} else if (thubmnailSrc === "image") {
 			return (
-				<div className="content-image">
-					<Icon icon={imageIcon} height='2rem' width='2rem'/>
+				<div className="content-image" style={style}>
+					<Icon icon={imageIcon} height="2rem" width="2rem" />
 				</div>
 			);
 		} else {

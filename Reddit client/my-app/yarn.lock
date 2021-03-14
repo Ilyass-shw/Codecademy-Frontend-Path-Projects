@@ -1344,6 +1344,11 @@
   "resolved" "https://registry.npmjs.org/@iconify-icons/whh/-/whh-1.1.0.tgz"
   "version" "1.1.0"
 
+"@iconify/icons-akar-icons@^1.1.4":
+  "integrity" "sha512-xhnPIjxI3VjGsFvUz1xSGclp4EFMydGGjQJQ66ZGqcKUmmvX9PRj4PZtRUJTlW5v11p/O3YVOZN6w0cix/Zwsw=="
+  "resolved" "https://registry.npmjs.org/@iconify/icons-akar-icons/-/icons-akar-icons-1.1.4.tgz"
+  "version" "1.1.4"
+
 "@iconify/icons-bi@^1.1.2":
   "integrity" "sha512-EWIVIHjT84AyTeevXGmrX0UhAvJVhjPdVpP1zKyxSpCZ+uf6WrvJvD5o97jIUxWSCufcJ3Wxm3vaucuE0sYmdw=="
   "resolved" "https://registry.npmjs.org/@iconify/icons-bi/-/icons-bi-1.1.2.tgz"
@@ -1362,6 +1367,11 @@
 "@iconify/icons-oi@^1.1.0":
   "integrity" "sha512-Ad/7wFxAkgEPWyyHqyuvf25HDkR2W5WkKOxGpmi0c2PbiGV4NBb4aUWSNujBbJQYuKTJbOShaLgNoq4wPIJUzA=="
   "resolved" "https://registry.npmjs.org/@iconify/icons-oi/-/icons-oi-1.1.0.tgz"
+  "version" "1.1.0"
+
+"@iconify/icons-zmdi@^1.1.0":
+  "integrity" "sha512-G7N93Ir9C9YeL3mKlr72yg75NgTzDfJ+XF4bQZ0vNl5xb7KQKTMkteA1gp2dcgof4GP9fm/yX2pqPLP4hFLBng=="
+  "resolved" "https://registry.npmjs.org/@iconify/icons-zmdi/-/icons-zmdi-1.1.0.tgz"
   "version" "1.1.0"
 
 "@iconify/react@^1.1.4":
