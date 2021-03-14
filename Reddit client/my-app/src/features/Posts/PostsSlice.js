@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { client, getEndPoint, handlefetchedPosts } from "../../api/api";
-import fromUnixTime from "date-fns/fromUnixTime";
-import { formatDistanceToNow } from "date-fns";
-import millify from "millify";
+
 
 const initialState = {
 	searchTerm: "",
