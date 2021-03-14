@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Post.css";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import bxlReddit from "@iconify/icons-bx/bxl-reddit";
+import { handleThumbnail } from "../../api/api";
 
 const Post = ({ post }) => {
 	return (
 		<div className="post-block">
-			<img src={post.img} alt="post" className="content-image" />
+			{handleThumbnail(post.img)}
 			<div className="post-data">
 				<div className="post-data-container">
 					<h4 className="title">{post.title}</h4>
@@ -18,7 +19,7 @@ const Post = ({ post }) => {
 						<p>{post.date}</p>
 					</div>
 					<div className="subreddit">
-						<Icon icon={bxlReddit} width='1.5rem' height='1.5rem'/> <p>{post.subreddit}</p>
+						<Icon icon={bxlReddit} width="1.5rem" height="1.5rem" /> <p>{post.subreddit}</p>
 					</div>
 				</div>
 			</div>

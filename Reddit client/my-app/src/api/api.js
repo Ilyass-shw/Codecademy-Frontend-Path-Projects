@@ -1,5 +1,6 @@
 // A tiny wrapper around fetch(), borrowed from
 // https://kentcdodds.com/blog/replace-axios-with-a-simple-custom-fetch-wrapper
+import React from "react";
 import fromUnixTime from "date-fns/fromUnixTime";
 import { formatDistanceToNow } from "date-fns";
 import millify from "millify";
@@ -58,18 +59,12 @@ export const handlefetchedPosts = (response) => {
 
 		const upvotes = millify(post.data.ups);
 
-		let img = im;
+		let img;
 
 		if (post.data.rpan_video) {
 			img = post.data.rpan_video;
 		} else if (post.data.thumbnail) {
-			if (post.data.thumbnail === "self") {
-				img = im;
-			} else if (post.data.thumbnail === "spoiler") {
-				img = im;
-			} else {
-				img = post.data.thumbnail;
-			}
+			img = post.data.thumbnail;
 			console.log(`thum: ${img}`);
 		}
 
@@ -83,4 +78,21 @@ export const handlefetchedPosts = (response) => {
 			id: post.data.id,
 		};
 	});
+};
+
+// ============= ============= ============= ============= =============
+
+export const handleThumbnail = (thubmnailSrc) => {
+	let img;
+	if (thubmnailSrc) {
+		if (thubmnailSrc === "self") {
+			return <img src={im} alt="post" className="content-image" />;
+		} else if (thubmnailSrc === "spoiler") {
+			return <img src={im} alt="post" className="content-image" />;
+		} else if (thubmnailSrc === "image") {
+			return <img src={im} alt="post" className="content-image" />;
+		} else {
+			return <img src={thubmnailSrc} alt="post" className="content-image" />;
+		}
+	}
 };

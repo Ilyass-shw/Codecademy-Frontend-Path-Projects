@@ -3,7 +3,7 @@ import { client, getEndPoint, handlefetchedPosts } from "../../api/api";
 
 
 const initialState = {
-	searchTerm: "random",
+	searchTerm: "lol",
 	posts: [],
 	filter : 'relevance',
 	status: "idle",
