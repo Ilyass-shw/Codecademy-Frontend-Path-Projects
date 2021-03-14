@@ -4,6 +4,7 @@ import Post from "./Post";
 import "./PostsList.css";
 import { fetchPosts, selectAllPosts } from "./postsSlice";
 import PostsSkeleton from "../PostsSkeleton/PostsSkeleton";
+import { nanoid } from "nanoid";
 
 const PostsList = () => {
 	const postsStatus = useSelector((state) => state.posts.status);
@@ -24,7 +25,7 @@ const PostsList = () => {
 		content = Array(3)
 			.fill()
 			.map(() => {
-				return <PostsSkeleton />;
+				return <PostsSkeleton key={nanoid()} />;
 			});
 	} else if (postsStatus === "failed") {
 		content = postError;
