@@ -6,7 +6,6 @@
 	margin-top: 0.5rem;
 	z-index: 3;
 	background-color: #202020;
-
 }
 
 .sideNav ul {
@@ -28,12 +27,14 @@
 	flex-direction: column;
 	transition: 0.018s;
 }
-.sideNav ul a:hover {
+.sideNav ul a:hover:not(a:first-child) {
 	background-color: #404040;
 }
 .sideNav ul a:first-child {
 	height: 3.6rem;
 }
-.sideNav ul a:first-child {
+.sideNav ul li:first-child svg:hover {
+	padding: 6px;
+	background-color: #404040;
 	border-radius: 50%;
 }
