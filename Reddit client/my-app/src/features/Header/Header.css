@@ -26,3 +26,16 @@ h3 {
 .user-icon {
 	margin-left: 2rem;
 }
+.icon-label {
+	padding: 0.4rem;
+	color: #ffffff;
+	background-color: #5a5a5ac9;
+	border-radius: 2;
+	position: relative;
+	top: 40px;
+	right: 34px;
+	visibility: hidden;
+}
+.user-icon:hover + p{
+	visibility: visible;
+}

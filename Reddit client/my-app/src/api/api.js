@@ -76,6 +76,7 @@ export const handlefetchedPosts = (response) => {
 		return {
 			title: post.data.title,
 			img,
+			url: post.data.permalink,
 			upvotes,
 			date: postDate,
 			author: post.data.author,

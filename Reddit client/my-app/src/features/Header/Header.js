@@ -7,7 +7,7 @@ import appMenu from "@iconify-icons/fe/app-menu";
 import bellIcon from "@iconify-icons/mdi/bell";
 import { InputForm } from "../InputForm/InputForm.js";
 
-const Header = (props) => {
+const Header = () => {
 	return (
 		<div className="header">
 			<div className="reddit-logo">
@@ -17,19 +17,22 @@ const Header = (props) => {
 			</div>
 
 			<InputForm className="inputForm" />
-			
+
 			<div className="header-user-features">
-				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-					<InlineIcon className="user-icon" icon={bxsVideoPlus} color={"white"} width="1.5rem" height="1.5rem" />
+				<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
+					<InlineIcon icon={bxsVideoPlus} color={"white"} width="1.5rem" height="1.5rem" />
 				</a>
-				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-					<InlineIcon className="user-icon" icon={appMenu} color={"white"} width="1.5rem" height="1.5rem" />
+				<p className="icon-label">Create</p>
+				<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
+					<InlineIcon icon={appMenu} color={"white"} width="1.5rem" height="1.5rem" />
 				</a>
-				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-					<InlineIcon className="user-icon" icon={bellIcon} color={"white"} width="1.5rem" height="1.5rem" />
+				<p className="icon-label">Apps</p>
+				<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
+					<InlineIcon icon={bellIcon} color={"white"} width="1.5rem" height="1.5rem" />
 				</a>
+				<p className="icon-label">Notifications</p>
 				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-					<InlineIcon className="user-icon" icon={redditFill} color={"white"} width="1.5rem" height="1.5rem" />
+					<InlineIcon icon={redditFill} color={"white"} width="1.5rem" height="1.5rem" />
 				</a>
 			</div>
 		</div>

@@ -1,31 +1,36 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
-
-
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+	.App-logo {
+		animation: App-logo-float infinite 3s ease-in-out;
+	}
 }
-.App-container{
-  display: flex;
-  flex-direction: column;
-  /* position: absolute; */
+.App-container {
+	display: flex;
+	flex-direction: column;
+	/* position: absolute; */
 }
 
+.App-container a:link {
+	text-decoration: inherit;
+	color: inherit;
+}
 
-
+.App-container a:visited {
+	text-decoration: inherit;
+	color: inherit;
+}
 
 @keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px)
-  }
-  100% {
-    transform: translateY(0px)
-  }
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
