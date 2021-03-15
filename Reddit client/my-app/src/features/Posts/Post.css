@@ -54,3 +54,18 @@
 .upvotes-date-data p span {
 	margin: 0 4px;
 }
+.subreddit-label {
+	padding: 0.4rem;
+	color: #ffffff;
+	background-color: #5a5a5ac9;
+	border-radius: 2px;
+	position: relative;
+	right: 107px;
+	bottom: 30px;
+	opacity: 0;
+	transition: opacity 0.28s;
+}
+
+.subreddit-name:hover + p {
+	opacity: 1;
+}
