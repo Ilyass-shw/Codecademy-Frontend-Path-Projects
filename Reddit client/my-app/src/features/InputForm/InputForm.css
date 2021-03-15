@@ -36,10 +36,12 @@ input:focus {
 	background-color: #5a5a5ac9;
 	border-radius: 2px;
 	position: relative;
-	right: 65px;
+	right: 55px;
 	top: 45px;
 	opacity: 0;
 	transition: opacity 0.28s;
+	font-size: 0.75rem;
+
 }
 button:hover + p {
 	opacity: 1;
