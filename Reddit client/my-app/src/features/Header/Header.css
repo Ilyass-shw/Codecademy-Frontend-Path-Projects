@@ -36,8 +36,16 @@ h3 {
 	right: 34px;
 	opacity: 0;
 	transition: opacity 0.28s;
+	font-size: 0.75rem;
 }
 
 .user-icon:hover + p {
 	opacity: 1;
 }
+/* .user-icon svg{
+	padding: 6px;
+	transition: all 2s;
+}
+.user-icon: svg{
+	background-color: #404040;
+} */
