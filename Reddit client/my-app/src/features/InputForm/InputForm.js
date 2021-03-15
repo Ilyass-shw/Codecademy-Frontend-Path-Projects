@@ -45,6 +45,7 @@ export const InputForm = () => {
 						color={mouseOnSearchButton ? "#a3a3a3" : "#6f6f6f"}
 					/>
 				</button>
+				<p className="search-label">Search</p>
 			</form>
 		</div>
 	);
