@@ -1,10 +1,9 @@
 .sideNav {
-	height: 100%;
 	width: 4.4rem;
 	font-size: 0.6em;
 	position: fixed;
 	margin-top: 0.5rem;
-	background-color: #202020;
+	color: #909090;
 }
 
 .sideNav ul {
@@ -18,8 +17,6 @@
 
 .sideNav ul a {
 	height: 4.55rem;
-	text-decoration: none;
-	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
