@@ -19,21 +19,31 @@ const Header = () => {
 			<InputForm className="inputForm" />
 
 			<div className="header-user-features">
-				<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-					<InlineIcon icon={bxsVideoPlus} color={"white"} width="1.5rem" height="1.5rem" />
-				</a>
-				<p className="icon-label">Create</p>
-				<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-					<InlineIcon icon={appMenu} color={"white"} width="1.5rem" height="1.5rem" />
-				</a>
-				<p className="icon-label">Apps</p>
-				<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-					<InlineIcon icon={bellIcon} color={"white"} width="1.5rem" height="1.5rem" />
-				</a>
-				<p className="icon-label">Notifications</p>
-				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-					<InlineIcon icon={redditFill} color={"white"} width="1.5rem" height="1.5rem" />
-				</a>
+				<div className="icon-container">
+					<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
+						<InlineIcon icon={bxsVideoPlus} color={"white"} width="1.5rem" height="1.5rem" />
+					</a>
+					<p className="icon-label">Create</p>
+				</div>
+				<div className="icon-container">
+					<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
+						<InlineIcon icon={appMenu} color={"white"} width="1.5rem" height="1.5rem" />
+					</a>
+					<p className="icon-label">Apps</p>
+				</div>
+
+				<div className="icon-container">
+					<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
+						<InlineIcon icon={bellIcon} color={"white"} width="1.5rem" height="1.5rem" />
+					</a>
+					<p className="icon-label">Notifications</p>
+				</div>
+
+				<div className="icon-container">
+					<a className="user-icon" href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
+						<InlineIcon icon={redditFill} color={"white"} width="1.5rem" height="1.5rem" />
+					</a>
+				</div>
 			</div>
 		</div>
 	);
