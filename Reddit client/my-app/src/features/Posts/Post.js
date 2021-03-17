@@ -8,7 +8,13 @@ import { handleThumbnail } from "../../api/api";
 const Post = ({ post }) => {
 	return (
 		<div className="post-block">
-			<a alt={post.title} href={"https://www.reddit.com" + post.url} target="_blank" rel="noopener noreferrer">
+			<a
+				alt={post.title}
+				href={"https://www.reddit.com" + post.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="image-container"
+			>
 				{handleThumbnail(post.img)}
 			</a>
 			<div className="post-data">
