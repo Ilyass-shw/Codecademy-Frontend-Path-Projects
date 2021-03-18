@@ -23,9 +23,8 @@ const Post = ({ post }) => {
 						<h4 className="title">{post.title}</h4>
 						<div className="upvotes-date-data">
 							<p>
-								{post.upvotes} upvotes<span className="dot">•</span>
+								{post.upvotes} upvotes<span className="dot">•</span>{post.date}
 							</p>
-							<p>{post.date}</p>
 						</div>
 						<div className="subreddit">
 							<Icon icon={bxlReddit} width="1.5rem" height="1.5rem" />
