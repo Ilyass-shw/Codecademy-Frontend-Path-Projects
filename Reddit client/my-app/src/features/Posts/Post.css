@@ -6,6 +6,7 @@
 }
 .post-data {
 	margin-left: 13px;
+	min-width: 0;
 	color: #a5aa9c;
 	flex-basis: 80%;
 }
