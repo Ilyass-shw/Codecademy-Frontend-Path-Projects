@@ -1,4 +1,5 @@
 .filter-bar {
+	position: relative;
 	display: inline-flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -31,22 +32,27 @@
 .selected:hover {
 	background-color: #909090;
 }
+.arrow{
+	position: absolute;
+	height: 100%;
+	left: 0;
+}
 .arrow-button{
 	display: flex;
 	align-items: center;
 	height: 100%;
 }
-.arrow-button svg{
+.arrow-button svg	{
 	margin-right: 1rem;
 	padding: .5rem  ;
 	border-radius: 50%;
 	transition: all .28s;
 }
-.arrow-button svg:hover{
+.left-button svg:hover, .right-button svg:hover{
 	background-color: #373737;
 	cursor: pointer;
 }
-.arrow-button::before{
+.right-button::before,.left-button::after {
 	content: "";
 	height: 100%;
 	padding-left: .9rem;

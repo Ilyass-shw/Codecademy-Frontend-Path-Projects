@@ -16,7 +16,7 @@ import commentsIcon from "@iconify/icons-icons8/comments";
 // npm install --save-dev @iconify/react @iconify-icons/eva
 import arrowIosForwardOutline from "@iconify-icons/eva/arrow-ios-forward-outline";
 // npm install --save-dev @iconify/react @iconify-icons/eva
-import arrowIosBackOutline from '@iconify-icons/eva/arrow-ios-back-outline';
+import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 
 import { useDispatch } from "react-redux";
 import { filterUpdated, fetchPosts } from "../posts/postsSlice";
@@ -34,9 +34,12 @@ export const FilterBar = () => {
 
 	return (
 		<div className="filter-bar">
-			<div className="arrow-button">
-				<InlineIcon icon={arrowIosBackOutline} />
+			<div className='arrow'>
+				<div className="left-button arrow-button">
+					<InlineIcon icon={arrowIosBackOutline} />
+				</div>
 			</div>
+
 			<button
 				className={`filter-button ${"relevance" === filterBy && "selected"}`}
 				value="relevance"
@@ -60,8 +63,10 @@ export const FilterBar = () => {
 			>
 				<InlineIcon icon={commentsIcon} /> Comments
 			</button>
-			<div className="arrow-button">
-				<InlineIcon icon={arrowIosForwardOutline} />
+			<div>
+				<div className="right-button arrow-button">
+					<InlineIcon icon={arrowIosForwardOutline} />
+				</div>
 			</div>
 		</div>
 	);
