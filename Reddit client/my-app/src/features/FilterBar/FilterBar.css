@@ -31,3 +31,26 @@
 .selected:hover {
 	background-color: #909090;
 }
+.arrow-button{
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.arrow-button svg{
+	margin-right: 1rem;
+	padding: .5rem  ;
+	border-radius: 50%;
+	transition: all .28s;
+}
+.arrow-button svg:hover{
+	background-color: #373737;
+	cursor: pointer;
+}
+.arrow-button::before{
+	content: "";
+	height: 100%;
+	padding-left: .9rem;
+	padding-right: .9rem;
+	background: linear-gradient(to left, rgba(33, 33, 33, 0.98) 20%, #202020 80%);
+	
+}

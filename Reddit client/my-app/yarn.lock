@@ -1304,6 +1304,11 @@
   "resolved" "https://registry.npmjs.org/@iconify-icons/entypo/-/entypo-1.1.0.tgz"
   "version" "1.1.0"
 
+"@iconify-icons/eva@^1.1.0":
+  "integrity" "sha512-YVJSW8U09ypVAXuEyMRFdPOeY7p4MfofnLQVrZ2Ug5F7GA+fNHrWLwbL3Et4k+1fO2Uvim20dyG5v7V79Nc1vg=="
+  "resolved" "https://registry.npmjs.org/@iconify-icons/eva/-/eva-1.1.0.tgz"
+  "version" "1.1.0"
+
 "@iconify-icons/fe@^1.1.0":
   "integrity" "sha512-oC8NMWuKbo0WkYhNN+LPEJEMHvt3rqlp4bl1lz8zvxDO82Xk1H1U/SikGDAWah/O1EU2WmX+EbGKpw8KTCRTuA=="
   "resolved" "https://registry.npmjs.org/@iconify-icons/fe/-/fe-1.1.0.tgz"
