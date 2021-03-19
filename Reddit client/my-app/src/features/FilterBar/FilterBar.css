@@ -38,6 +38,12 @@
 	height: 100%;
 	z-index: 2;
 }
+.left{
+	left: 0;
+}
+.right{
+	right: 0;
+}
 .arrow-button{
 	display: flex;
 	align-items: center;
