@@ -63,11 +63,9 @@ export const FilterBar = () => {
 			>
 				<InlineIcon icon={commentsIcon} /> Comments
 			</button>
-			<div className="filter-bar">
-				<div className="arrow right">
-					<div className="arrow-button">
-						<InlineIcon icon={arrowIosForwardOutline} />
-					</div>
+			<div className="arrow right">
+				<div className="arrow-button">
+					<InlineIcon icon={arrowIosForwardOutline} />
 				</div>
 			</div>
 		</div>

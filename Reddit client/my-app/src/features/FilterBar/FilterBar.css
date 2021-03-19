@@ -1,12 +1,13 @@
 .filter-bar {
 	position: relative;
-	display: inline-flex;
 	justify-content: flex-start;
 	align-items: center;
 	margin-left: 4.5rem;
 	height: 3.5rem;
 	border-block-end: 1px solid #404040;
 	z-index: 1;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .filter-button {
 	background-color: #373737;
@@ -33,31 +34,40 @@
 .selected:hover {
 	background-color: #909090;
 }
-.arrow{
+.arrow {
 	position: absolute;
 	height: 100%;
 	z-index: 2;
 }
-.left{
+.left {
 	left: 0;
 }
-.right{
-	right: 0;
+.left .arrow-button {
+	justify-content: flex-start;
+	background: linear-gradient(to left, #21212100 -2%, #202020 47%);
+
 }
-.arrow-button{
+.right {
+	right: 0;
+	top: 0;
+}
+.right .arrow-button {
+	justify-content: flex-end;
+	background: linear-gradient(to right, #21212100 -2%, #202020 47%);
+
+}
+.arrow-button {
 	display: flex;
 	align-items: center;
 	width: 5rem;
 	height: 100%;
-	background: linear-gradient(to left, #21212100 -2%, #202020 47%);
 }
-.arrow-button svg	{
-	margin-right: 1rem;
-	padding: .5rem  ;
+.arrow-button svg {
+	padding: 0.5rem;
 	border-radius: 50%;
-	transition: all .28s;
+	transition: all 0.28s;
 }
-.arrow-button svg:hover{
+.arrow-button svg:hover {
 	background-color: #373737;
 	cursor: pointer;
 }
