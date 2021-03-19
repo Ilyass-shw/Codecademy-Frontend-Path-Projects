@@ -2,16 +2,31 @@
 	text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-float infinite 3s ease-in-out;
+@media (min-width: 660px) {
+	.header,.filter-bar,.posts-container{
+		margin: 0;
+	}
+	.sideNav{
+		bottom: 0;
+		margin: 0;
+		width: 100%;
+		z-index: 2;
+		background-color: #202020;
+	}
+	.sideNav ul{
+		display: flex;
+		align-items: center;
+	}
+	.sideNav ul a{
+		flex: 1;
+	}
+	.sideNav ul a:first-child {
+		display: none;
 	}
 }
 .App-container {
 	display: flex;
 	flex-direction: column;
-	/* position: absolute; */
-	/* width: 220vh; */
 }
 
 .App-container a:link {
@@ -24,14 +39,3 @@
 	color: inherit;
 }
 
-@keyframes App-logo-float {
-	0% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(10px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
-}

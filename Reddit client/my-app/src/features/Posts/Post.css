@@ -12,6 +12,7 @@
 	background-color: rgb(32, 32, 33);
 	display: flex;
 	align-items: center;
+	min-width: 230px;
 }
 .content-image {
 	width: 100%;
@@ -51,6 +52,9 @@
 	display: flex;
 	align-items: flex-end;
 	padding: 12px 0;
+}
+.subreddit svg{
+	min-width: 24px;
 }
 .subreddit-icon {
 	height: 1.7rem;
