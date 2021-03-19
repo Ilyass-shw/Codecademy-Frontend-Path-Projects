@@ -2,7 +2,7 @@
 	text-align: center;
 }
 
-@media (min-width: 660px) {
+@media (max-width: 660px) {
 	.header,.filter-bar,.posts-container{
 		margin: 0;
 	}
@@ -18,7 +18,10 @@
 		align-items: center;
 	}
 	.sideNav ul a{
+		display: inline-flex;
+		justify-content: flex-end;
 		flex: 1;
+		height: 3.2rem;
 	}
 	.sideNav ul a:first-child {
 		display: none;
