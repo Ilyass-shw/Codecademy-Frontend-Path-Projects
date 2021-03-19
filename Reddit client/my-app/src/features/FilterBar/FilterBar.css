@@ -6,6 +6,7 @@
 	margin-left: 4.5rem;
 	height: 3.5rem;
 	border-block-end: 1px solid #404040;
+	z-index: 1;
 }
 .filter-button {
 	background-color: #373737;
@@ -35,12 +36,14 @@
 .arrow{
 	position: absolute;
 	height: 100%;
-	left: 0;
+	z-index: 2;
 }
 .arrow-button{
 	display: flex;
 	align-items: center;
+	width: 5rem;
 	height: 100%;
+	background: linear-gradient(to left, #21212100 -2%, #202020 47%);
 }
 .arrow-button svg	{
 	margin-right: 1rem;
@@ -48,15 +51,7 @@
 	border-radius: 50%;
 	transition: all .28s;
 }
-.left-button svg:hover, .right-button svg:hover{
+.arrow-button svg:hover{
 	background-color: #373737;
 	cursor: pointer;
-}
-.right-button::before,.left-button::after {
-	content: "";
-	height: 100%;
-	padding-left: .9rem;
-	padding-right: .9rem;
-	background: linear-gradient(to left, rgba(33, 33, 33, 0.98) 20%, #202020 80%);
-	
 }

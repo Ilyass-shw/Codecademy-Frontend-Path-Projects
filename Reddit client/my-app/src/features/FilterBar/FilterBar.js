@@ -34,8 +34,8 @@ export const FilterBar = () => {
 
 	return (
 		<div className="filter-bar">
-			<div className='arrow'>
-				<div className="left-button arrow-button">
+			<div className="arrow">
+				<div className="arrow-button">
 					<InlineIcon icon={arrowIosBackOutline} />
 				</div>
 			</div>
@@ -63,9 +63,11 @@ export const FilterBar = () => {
 			>
 				<InlineIcon icon={commentsIcon} /> Comments
 			</button>
-			<div>
-				<div className="right-button arrow-button">
-					<InlineIcon icon={arrowIosForwardOutline} />
+			<div className="filter-bar">
+				<div className="arrow">
+					<div className="arrow-button">
+						<InlineIcon icon={arrowIosForwardOutline} />
+					</div>
 				</div>
 			</div>
 		</div>
