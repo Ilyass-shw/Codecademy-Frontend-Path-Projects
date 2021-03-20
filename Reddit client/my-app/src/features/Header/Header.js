@@ -13,6 +13,12 @@ const Header = () => {
 
 	const [isSearching, setIsSearching] = useState(false);
 
+	const handleOnSearchClick =()=>{
+		isNotDesktop = false
+		setIsSearching(true);
+		
+	}
+
 	return (
 		<div className="header">
 			<div className="reddit-logo">
@@ -23,11 +29,11 @@ const Header = () => {
 
 			{!isNotDesktop && <InputForm className="inputForm" />}
 
-			<div className="header-user-features">
+			{ !isSearching && <div className="header-user-features">
 				<div className="icon-container">
 					{isNotDesktop && (
-						<button Classname="mobile-search user-icon">
-							<InlineIcon icon={search16Filled} width="1.22rem" height="1.22rem" color={"white"} />
+						<button Classname="mobile-search user-icon" onClick={handleOnSearchClick}>
+							<InlineIcon icon={search16Filled} width="1.5rem" height="1.5rem" color={"white"} />
 						</button>
 					)}
 				</div>
@@ -58,7 +64,7 @@ const Header = () => {
 						<InlineIcon icon={redditFill} color={"white"} width="1.5rem" height="1.5rem" />
 					</a>
 				</div>
-			</div>
+			</div>}
 		</div>
 	);
 };

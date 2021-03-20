@@ -70,11 +70,18 @@
 	.post-data-container .subreddit {
 		padding: 0 12px;
 	}
-	.post-data{
+	.post-data {
 		margin: 0 auto;
 		flex-basis: 35%;
 	}
 	@media (max-width: 460px) {
-
+		.header .reddit-logo svg {
+			width: 1.4rem;
+			height: 1.4rem;
+		}
+		.mobile-search {
+			background-color: #202020;
+			border: none;
+		}
 	}
 }
