@@ -74,14 +74,23 @@
 		margin: 0 auto;
 		flex-basis: 35%;
 	}
-	@media (max-width: 460px) {
-		.header .reddit-logo svg {
-			width: 1.4rem;
-			height: 1.4rem;
-		}
-		.mobile-search {
-			background-color: #202020;
-			border: none;
-		}
+}
+@media (max-width: 460px) {
+	.header .reddit-logo svg {
+		width: 1.4rem;
+		height: 1.4rem;
+	}
+	.header .mobile-search-button {
+		background-color: #202020;
+		border: none;
+	}
+}
+@media (max-width: 350px){
+	.header-user-features{
+		justify-content: flex-end;
+		margin: 0 6px 0 0;
+	}
+	.icon-container:not(.icon-container:first-child){
+		display: none;
 	}
 }
