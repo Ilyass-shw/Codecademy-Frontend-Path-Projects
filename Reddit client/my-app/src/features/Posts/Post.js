@@ -6,7 +6,7 @@ import bxlReddit from "@iconify/icons-bx/bxl-reddit";
 import { handleThumbnail } from "../../api/api";
 
 const Post = ({ post }) => {
-	let isDesktop= window.innerWidth < 480;
+	let isDesktop= window.innerWidth > 580;
 	return (
 		<div className="post-block">
 			<a
