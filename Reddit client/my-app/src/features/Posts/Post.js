@@ -26,6 +26,7 @@ const Post = ({ post }) => {
 								<Icon icon={bxlReddit} width="1.5rem" height="1.5rem" />
 							</div>
 						)}
+						<div className='mobile-post-data'>
 						<h4 className="title">{post.title}</h4>
 						<div className="upvotes-date-data">
 							<p>
@@ -33,6 +34,7 @@ const Post = ({ post }) => {
 								{post.upvotes} upvotes<span className="dot">•</span>
 								{post.date}
 							</p>
+						</div>
 						</div>
 						{isDesktop && (
 							<div className="subreddit">

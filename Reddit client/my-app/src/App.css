@@ -16,12 +16,13 @@
 	color: inherit;
 }
 
-
 @media (max-width: 660px) {
-	.header,.filter-bar,.posts-container{
+	.header,
+	.filter-bar,
+	.posts-container {
 		margin: 0;
 	}
-	.sideNav{
+	.sideNav {
 		bottom: 0;
 		margin: 0;
 		width: 100%;
@@ -29,11 +30,11 @@
 		background-color: #202020;
 		color: white;
 	}
-	.sideNav ul{
+	.sideNav ul {
 		display: flex;
 		align-items: center;
 	}
-	.sideNav ul a{
+	.sideNav ul a {
 		display: inline-flex;
 		justify-content: flex-end;
 		flex: 1;
@@ -43,23 +44,34 @@
 		display: none;
 	}
 }
-@media (max-width: 580px){
+@media (max-width: 580px) {
 	.post-block {
 		flex-direction: column;
-		height: 25rem;
+		height: 15rem;
+		width: 100%;
 	}
 	.image-container {
 		display: inline-flex;
 		justify-content: center;
-
 		height: 65%;
 		width: 100%;
 		flex-basis: auto;
 	}
-	.content-image{
+	.content-image {
 		height: 100%;
 		width: auto;
 		max-width: 100%;
 	}
+	.post-data-container {
+		flex-direction: row;
+		align-items: flex-start;
+		margin-top: 12px;
+	}
+	.post-data-container .subreddit {
+		padding: 0 12px;
+	}
+	.post-data{
+		margin: 0 auto;
+		flex-basis: 35%;
+	}
 }
-
