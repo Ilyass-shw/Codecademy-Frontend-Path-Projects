@@ -46,6 +46,8 @@
 	opacity: 0;
 	transition: opacity 0.28s;
 	font-size: 0.75rem;
+	z-index: 3;
+
 }
 
 .user-icon:hover + p {

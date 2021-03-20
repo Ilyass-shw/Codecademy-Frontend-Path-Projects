@@ -1,6 +1,21 @@
 .App {
 	text-align: center;
 }
+.App-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.App-container a:link {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+.App-container a:visited {
+	text-decoration: inherit;
+	color: inherit;
+}
+
 
 @media (max-width: 660px) {
 	.header,.filter-bar,.posts-container{
@@ -12,6 +27,7 @@
 		width: 100%;
 		z-index: 2;
 		background-color: #202020;
+		color: white;
 	}
 	.sideNav ul{
 		display: flex;
@@ -27,18 +43,23 @@
 		display: none;
 	}
 }
-.App-container {
-	display: flex;
-	flex-direction: column;
-}
+@media (max-width: 580px){
+	.post-block {
+		flex-direction: column;
+		height: 25rem;
+	}
+	.image-container {
+		display: inline-flex;
+		justify-content: center;
 
-.App-container a:link {
-	text-decoration: inherit;
-	color: inherit;
-}
-
-.App-container a:visited {
-	text-decoration: inherit;
-	color: inherit;
+		height: 65%;
+		width: 100%;
+		flex-basis: auto;
+	}
+	.content-image{
+		height: 100%;
+		width: auto;
+		max-width: 100%;
+	}
 }
 
