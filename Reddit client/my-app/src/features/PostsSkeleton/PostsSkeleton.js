@@ -7,7 +7,7 @@ const PostsSkeleton = () => {
 		<div>
 			<SkeletonTheme color="#262626" highlightColor="#444">
 				<div className="post-block skeleton-post-block">
-					<div className="content-image">
+					<div className="content-image skeleton-content-image">
 						<Skeleton width="240px" height="10rem" />
 					</div>
 
