@@ -45,7 +45,6 @@
 .left .arrow-button {
 	justify-content: flex-start;
 	background: linear-gradient(to left, #21212100 -2%, #202020 47%);
-
 }
 .right {
 	right: 0;
@@ -54,7 +53,6 @@
 .right .arrow-button {
 	justify-content: flex-end;
 	background: linear-gradient(to right, #21212100 -2%, #202020 47%);
-
 }
 .arrow-button {
 	display: flex;

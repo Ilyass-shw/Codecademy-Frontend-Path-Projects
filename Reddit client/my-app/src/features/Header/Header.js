@@ -9,7 +9,6 @@ import { InputForm } from "../InputForm/InputForm.js";
 import search16Filled from "@iconify-icons/fluent/search-16-filled";
 // npm install --save-dev @iconify/react @iconify-icons/akar-icons
 import arrowLeft from "@iconify-icons/akar-icons/arrow-left";
-
 const Header = () => {
 	let isNotDesktop = window.innerWidth < 460;
 

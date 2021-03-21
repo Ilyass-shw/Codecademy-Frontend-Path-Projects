@@ -5,7 +5,7 @@ import { InlineIcon } from "@iconify/react";
 import search16Filled from "@iconify-icons/fluent/search-16-filled";
 import { fetchPosts, searchTermSet } from "../posts/postsSlice";
 import { useDispatch } from "react-redux";
-
+import { Transition } from "react-spring/renderprops";
 export const InputForm = () => {
 	const dispatch = useDispatch();
 
@@ -24,10 +24,31 @@ export const InputForm = () => {
 		e.preventDefault();
 	};
 
+	const show = true;
 	return (
 		<div className="input">
 			<form action="#" className="input-form" autoComplete="off">
-				<input type="text" name="search" value={term} onChange={handleChange} placeholder="Search" />
+				<Transition
+					config={{ duration: 500 }}
+					items={show}
+					from={{ flexBasis: "0rem" }}
+					enter={{ flexBasis: "34.5rem" }}
+				>
+					{(show) =>
+						show &&
+						((props) => (
+							<input
+								style={props}
+								type="text"
+								name="search"
+								value={term}
+								onChange={handleChange}
+								placeholder="Search"
+							/>
+						))
+					}
+				</Transition>
+
 				<button
 					className="search-button"
 					onMouseEnter={() => {

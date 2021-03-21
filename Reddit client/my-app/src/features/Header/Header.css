@@ -15,8 +15,8 @@
 	margin-left: 0.6rem;
 }
 
-.go-back-arrow{
-	padding: .5rem;
+.go-back-arrow {
+	padding: 0.5rem;
 	border-radius: 50%;
 }
 .inputForm,
@@ -53,7 +53,6 @@
 	transition: opacity 0.28s;
 	font-size: 0.75rem;
 	z-index: 3;
-
 }
 
 .user-icon:hover + p {
