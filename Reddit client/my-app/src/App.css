@@ -93,4 +93,10 @@
 	.icon-container:not(.icon-container:first-child){
 		display: none;
 	}
+	.header .go-back-arrow{
+		margin: 0 ;
+	}
+	.header .input{
+		margin: 0 4px 0 0;
+	}
 }

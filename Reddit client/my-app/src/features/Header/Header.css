@@ -14,6 +14,11 @@
 .reddit-logo h3 {
 	margin-left: 0.6rem;
 }
+
+.go-back-arrow{
+	padding: .5rem;
+	border-radius: 50%;
+}
 .inputForm,
 .header-user-features {
 	flex: 1;

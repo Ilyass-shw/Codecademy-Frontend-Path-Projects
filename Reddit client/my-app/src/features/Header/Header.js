@@ -7,6 +7,8 @@ import appMenu from "@iconify-icons/fe/app-menu";
 import bellIcon from "@iconify-icons/mdi/bell";
 import { InputForm } from "../InputForm/InputForm.js";
 import search16Filled from "@iconify-icons/fluent/search-16-filled";
+// npm install --save-dev @iconify/react @iconify-icons/akar-icons
+import arrowLeft from "@iconify-icons/akar-icons/arrow-left";
 
 const Header = () => {
 	let isNotDesktop = window.innerWidth < 460;
@@ -16,6 +18,9 @@ const Header = () => {
 	const handleOnSearchClick = () => {
 		isNotDesktop = false;
 		setIsSearching(true);
+	};
+	const handleOnBackArrowClick = () => {
+		setIsSearching(false);
 	};
 
 	return (
@@ -28,13 +33,15 @@ const Header = () => {
 				</div>
 			)}
 
-			{!isNotDesktop && <InputForm className="inputForm" />}
+			{isSearching && <InlineIcon onClick={handleOnBackArrowClick} className="go-back-arrow" icon={arrowLeft} />}
+
+			{(!isNotDesktop || isSearching) && <InputForm className="inputForm" />}
 
 			{!isSearching && (
 				<div className="header-user-features">
 					<div className="icon-container">
 						{isNotDesktop && (
-							<button ClassName="mobile-search-button" onClick={handleOnSearchClick}>
+							<button className="mobile-search-button" onClick={handleOnSearchClick}>
 								<InlineIcon icon={search16Filled} width="1.5rem" height="1.5rem" color={"white"} />
 							</button>
 						)}
