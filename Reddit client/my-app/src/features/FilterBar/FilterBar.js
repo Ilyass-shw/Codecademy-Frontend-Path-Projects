@@ -31,8 +31,8 @@ export const FilterBar = () => {
 		dispatch(filterUpdated(filterBy));
 		dispatch(fetchPosts());
 	};
-	const scrollLeft = () => document.getElementById("filter-bar").scrollLeft+= 20;
-	const scrollRight = () => document.getElementById("filter-bar").scrollLeft-= 20;
+	const scrollLeft = () => document.getElementById("filter-bar").scrollLeft-= 100;
+	const scrollRight = () => document.getElementById("filter-bar").scrollLeft+= 100;
 
 	return (
 		<div className="filter-bar" id="filter-bar">
