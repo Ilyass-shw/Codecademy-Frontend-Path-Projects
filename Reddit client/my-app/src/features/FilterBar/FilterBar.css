@@ -6,7 +6,7 @@
 	height: 3.5rem;
 	border-block-end: 1px solid #404040;
 	z-index: 1;
-	overflow: hidden;
+    overflow-y: hidden;
 	white-space: nowrap;
 }
 .filter-button {
