@@ -10,6 +10,7 @@
 	z-index: 1;
 	overflow-y: hidden;
 	white-space: nowrap;
+	scroll-behavior: smooth;
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
 .filter-bar::-webkit-scrollbar {
