@@ -17,6 +17,7 @@ export const FilterBar = () => {
 
 	const [styleRightArrow, setStyleRightArrow] = useState({});
 	const [styleLeftArrow, setStyleLeftArrow] = useState({});
+
 	const [filterBarScrollLeft, setFilterBarScrollLeft] = useState(0);
 
 	const dispatch = useDispatch();
@@ -41,20 +42,13 @@ export const FilterBar = () => {
 
 	useEffect(() => {
 		if (filterBarScrollLeft === 0) {
-			setStyleLeftArrow({
-				display: "none",
-			});
+			setStyleLeftArrow({ display: "none" });
 		} else if (barWidth - filterBarScrollLeft === 100) {
-			setStyleRightArrow({
-				display: "none",
-			});
+			setStyleRightArrow({ display: "none" });
 		} else {
-			setStyleLeftArrow({
-				display: "flex",
-			});
-			setStyleRightArrow({
-				display: "flex",
-			});
+			setStyleLeftArrow({ display: "flex" });
+
+			setStyleRightArrow({ display: "flex" });
 		}
 	}, [setStyleLeftArrow, setStyleRightArrow, filterBarScrollLeft, barWidth]);
 
