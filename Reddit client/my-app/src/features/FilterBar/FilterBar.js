@@ -1,21 +1,12 @@
-import React, { useState } from "react";
-// npm install --save-dev @iconify/react @iconify-icons/bx
+import React, { useEffect, useState } from "react";
 import { InlineIcon } from "@iconify/react";
 import bxsRocket from "@iconify-icons/bx/bxs-rocket";
-// npm install --save-dev @iconify/react @iconify-icons/ant-design
 import fireFilled from "@iconify-icons/ant-design/fire-filled";
-// npm install --save-dev @iconify/react @iconify-icons/ic
 import sharpNewReleases from "@iconify-icons/ic/sharp-new-releases";
-// npm install --save-dev @iconify/react @iconify-icons/bx
-// import bxsCommentDetail from "@iconify-icons/bx/bxs-comment-detail";
 import "./FilterBar.css";
-// npm install --save-dev @iconify/react @iconify/icons-oi
 import verticalAlignTop from "@iconify/icons-oi/vertical-align-top";
-// npm install --save-dev @iconify/react @iconify/icons-icons8
 import commentsIcon from "@iconify/icons-icons8/comments";
-// npm install --save-dev @iconify/react @iconify-icons/eva
 import arrowIosForwardOutline from "@iconify-icons/eva/arrow-ios-forward-outline";
-// npm install --save-dev @iconify/react @iconify-icons/eva
 import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 
 import { useDispatch } from "react-redux";
@@ -24,6 +15,10 @@ import { filterUpdated, fetchPosts } from "../posts/postsSlice";
 export const FilterBar = () => {
 	const [filterBy, setFilterBy] = useState("relevance");
 
+	const [styleRightArrow, setStyleRightArrow] = useState({});
+	const [styleLeftArrow, setStyleLeftArrow] = useState({});
+	const [filterBarScrollLeft, setFilterBarScrollLeft] = useState(0);
+
 	const dispatch = useDispatch();
 
 	const handleOnClick = ({ target }) => {
@@ -31,14 +26,43 @@ export const FilterBar = () => {
 		dispatch(filterUpdated(filterBy));
 		dispatch(fetchPosts());
 	};
-	const scrollLeft = () => (document.getElementById("filter-bar").scrollLeft -= 100);
-	const scrollRight = () => (document.getElementById("filter-bar").scrollLeft += 100);
+
+	const barWidth = window.innerWidth - 8;
+	const handleScrollLeft = () => {
+		document.getElementById("filter-bar").scrollLeft -= 100;
+
+		setFilterBarScrollLeft(Math.max(filterBarScrollLeft - 100, 0));
+	};
+	const handleScrollRight = () => {
+		document.getElementById("filter-bar").scrollLeft += 100;
+
+		setFilterBarScrollLeft(Math.min(filterBarScrollLeft + 100, barWidth - 100));
+	};
+
+	useEffect(() => {
+		if (filterBarScrollLeft === 0) {
+			setStyleLeftArrow({
+				display: "none",
+			});
+		} else if (barWidth - filterBarScrollLeft === 100) {
+			setStyleRightArrow({
+				display: "none",
+			});
+		} else {
+			setStyleLeftArrow({
+				display: "flex",
+			});
+			setStyleRightArrow({
+				display: "flex",
+			});
+		}
+	}, [setStyleLeftArrow, setStyleRightArrow, filterBarScrollLeft, barWidth]);
 
 	return (
 		<div className="filter-bar-container">
 			<div className="filter-bar" id="filter-bar">
-				<div className="arrow left">
-					<div className="arrow-button" onClick={scrollLeft}>
+				<div className="arrow left" style={styleLeftArrow}>
+					<div className="arrow-button" onClick={handleScrollLeft}>
 						<InlineIcon icon={arrowIosBackOutline} />
 					</div>
 				</div>
@@ -84,8 +108,8 @@ export const FilterBar = () => {
 					<InlineIcon icon={commentsIcon} /> Comments
 				</button>
 
-				<div className="arrow right">
-					<div className="arrow-button" onClick={scrollRight}>
+				<div className="arrow right" style={styleRightArrow}>
+					<div className="arrow-button" onClick={handleScrollRight}>
 						<InlineIcon icon={arrowIosForwardOutline} />
 					</div>
 				</div>
