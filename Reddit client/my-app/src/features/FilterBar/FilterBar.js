@@ -29,6 +29,7 @@ export const FilterBar = () => {
 	};
 
 	const barWidth = window.innerWidth - 8;
+	
 	const handleScrollLeft = () => {
 		document.getElementById("filter-bar").scrollLeft -= 100;
 
