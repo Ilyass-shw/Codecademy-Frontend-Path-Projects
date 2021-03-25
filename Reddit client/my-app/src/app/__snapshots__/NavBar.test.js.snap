@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBar/> matches snapshot 1`] = `
+<div>
+  <div
+    class="sideNav"
+  >
+    <ul>
+      <a
+        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
+      >
+        <li>
+          icon
+        </li>
+      </a>
+      <a
+        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
+      >
+        <li>
+          icon
+        </li>
+        <li>
+          Home
+        </li>
+      </a>
+      <a
+        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
+      >
+        <li>
+          icon
+        </li>
+        <li>
+          Trending
+        </li>
+      </a>
+      <a
+        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
+      >
+        <li>
+          icon
+        </li>
+        <li>
+          Subscriptions
+        </li>
+      </a>
+      <a
+        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
+      >
+        <li>
+          icon
+        </li>
+        <li>
+          Library
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
+`;
