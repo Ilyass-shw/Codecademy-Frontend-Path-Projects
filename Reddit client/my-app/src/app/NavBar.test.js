@@ -8,9 +8,15 @@ jest.mock("@iconify-icons/entypo/home", () => () => <div>mock</div>);
 jest.mock("@iconify-icons/ic/sharp-local-fire-department", () => () => <div>mock</div>);
 jest.mock("@iconify-icons/ic/baseline-subscriptions", () => () => <div>mock</div>);
 jest.mock("@iconify-icons/ic/baseline-video-library", () => () => <div>mock</div>);
+
 describe("NavBar", () => {
-	it("should matche the snapshot", () => {
+	it("should match the snapshot", () => {
 		const { container } = render(<NavBar />);
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should render without crashing", () => {
+		const div = document.createElement("div");
+		render(<NavBar />, div);
 	});
 });
