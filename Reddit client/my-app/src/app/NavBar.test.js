@@ -1,37 +1,19 @@
+import { jest } from "@jest/globals";
 import { render } from "@testing-library/react";
 import React from "react";
-// import { NavBar } from "./NavBar.js";
+import NavBar from "./NavBar";
 
-test("<NavBar/> matches snapshot", ()=>{
-    const component = render (
-		<div className="sideNav">
-			<ul>
-				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-					<li>icon</li>
-				</a>
+jest.mock("@iconify-icons/bx/bx-menu", ()=>() =><div>mock</div>)
+jest.mock("@iconify-icons/entypo/home", ()=>() =><div>mock</div>)
+jest.mock("@iconify-icons/ic/sharp-local-fire-department", ()=>() =><div>mock</div>)
+jest.mock("@iconify-icons/ic/baseline-subscriptions", ()=>() =><div>mock</div>)
+jest.mock("@iconify-icons/ic/baseline-video-library", ()=>() =><div>mock</div>)
+describe('NavBar',()=>{
+	it("should matche the snapshot", () => {
 
-				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-                    <li>icon</li>
-					<li>Home</li>
-				</a>
-
-				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-                <li>icon</li>
-					<li>Trending</li>
-				</a>
-
-				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-                <li>icon</li>
-					<li>Subscriptions</li>
-				</a>
-
-				<a href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s">
-                    <li>icon</li>
-					<li>Library</li>
-				</a>
-			</ul>
-		</div>
-	);
-console.log(component.container)
-    expect(component.container).toMatchSnapshot()
+		const component = render(<NavBar />);
+		// console.log(component)
+		// expect(container).toMatchSnapshot();
+	});
 })
+
