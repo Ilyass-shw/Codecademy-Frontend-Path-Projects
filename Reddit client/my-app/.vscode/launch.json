@@ -5,25 +5,30 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
+            "name": "Debug Jest Tests",
             "type": "node",
             "request": "launch",
-            "name": "Jest Tests",
-            "program": "${workspaceRoot}\\node_modules\\jest\\bin\\jest.js",
-            "args": [
-                "-i"
+            "runtimeArgs": [
+              "--inspect-brk",
+              "${workspaceRoot}/node_modules/jest/bin/jest.js",
+              "--runInBand"
             ],
-            "internalConsoleOptions": "openOnSessionStart",
-            "outFiles": [
-                "${workspaceRoot}/dist/**/*"
-            ],
-            "envFile": "${workspaceRoot}/.env"
-        }
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229
+          },
+          {
+            "name": "Debug CRA Tests",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",
+            "args": ["test", "--runInBand", "--no-cache", "--watchAll=false"],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "env": { "CI": "true" },
+            "disableOptimisticBPs": true
+          }
     ]
 }
