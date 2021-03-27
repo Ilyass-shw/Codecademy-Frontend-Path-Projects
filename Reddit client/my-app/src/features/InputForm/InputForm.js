@@ -49,24 +49,26 @@ export const InputForm = () => {
 					}
 				</Transition>
 
-				<button
-					className="search-button"
-					onMouseEnter={() => {
-						setMouseOnSearchButton(true);
-					}}
-					onMouseLeave={() => {
-						setMouseOnSearchButton(false);
-					}}
-					onClick={handleOnClick}
-				>
-					<InlineIcon
-						icon={search16Filled}
-						width="1.22rem"
-						height="1.22rem"
-						color={mouseOnSearchButton ? "#a3a3a3" : "#6f6f6f"}
-					/>
-				</button>
-				<p className="search-label">Search</p>
+				<div className="button-container">
+					<button
+						className="search-button"
+						onMouseEnter={() => {
+							setMouseOnSearchButton(true);
+						}}
+						onMouseLeave={() => {
+							setMouseOnSearchButton(false);
+						}}
+						onClick={handleOnClick}
+					>
+						<InlineIcon
+							icon={search16Filled}
+							width="1.22rem"
+							height="1.22rem"
+							color={mouseOnSearchButton ? "#a3a3a3" : "#6f6f6f"}
+						/>
+					</button>
+					<p className="search-label">Search</p>
+				</div>
 			</form>
 		</div>
 	);

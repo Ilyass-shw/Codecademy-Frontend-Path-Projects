@@ -13,8 +13,10 @@ input {
 	padding: 2px 6px;
 	min-width: 0;
 }
-.search-button {
+.button-container {
 	position: relative;
+}
+.search-button {
 	background-color: #313131;
 	border-radius: 0 2px 2px 0;
 	height: 2.1rem;
@@ -33,11 +35,12 @@ input:focus {
 	background-color: #5a5a5ac9;
 	border-radius: 2px;
 	position: absolute;
-	right: 55px;
-	top: 45px;
+	right: 7px;
+	top: 38px;
 	opacity: 0;
 	transition: opacity 0.28s;
 	font-size: 0.75rem;
+	z-index: 2;
 }
 button:hover + p {
 	opacity: 1;
