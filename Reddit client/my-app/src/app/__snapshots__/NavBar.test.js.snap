@@ -9,11 +9,18 @@ exports[`NavBar should match the snapshot 1`] = `
       <a
         href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
       >
-        <li />
+        <li>
+          <p>
+            Icon mock
+          </p>
+        </li>
       </a>
       <a
         href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
       >
+        <p>
+          Icon mock
+        </p>
         <li>
           Home
         </li>
@@ -21,6 +28,9 @@ exports[`NavBar should match the snapshot 1`] = `
       <a
         href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
       >
+        <p>
+          Icon mock
+        </p>
         <li>
           Trending
         </li>
@@ -28,6 +38,9 @@ exports[`NavBar should match the snapshot 1`] = `
       <a
         href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
       >
+        <p>
+          Icon mock
+        </p>
         <li>
           Subscriptions
         </li>
@@ -35,50 +48,9 @@ exports[`NavBar should match the snapshot 1`] = `
       <a
         href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
       >
-        <li>
-          Library
-        </li>
-      </a>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`NavBar should matche the snapshot 1`] = `
-<div>
-  <div
-    class="sideNav"
-  >
-    <ul>
-      <a
-        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
-      >
-        <li />
-      </a>
-      <a
-        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
-      >
-        <li>
-          Home
-        </li>
-      </a>
-      <a
-        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
-      >
-        <li>
-          Trending
-        </li>
-      </a>
-      <a
-        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
-      >
-        <li>
-          Subscriptions
-        </li>
-      </a>
-      <a
-        href="www.youtube.com/watch?v=3oUu7N65s6I&t=1860s"
-      >
+        <p>
+          Icon mock
+        </p>
         <li>
           Library
         </li>

@@ -35,6 +35,7 @@ export const FilterBar = () => {
 
 		setFilterBarScrollLeft(Math.max(filterBarScrollLeft - 100, 0));
 	};
+	
 	const handleScrollRight = () => {
 		document.getElementById("filter-bar").scrollLeft += 100;
 

@@ -3,11 +3,47 @@ import { render } from "@testing-library/react";
 import React from "react";
 import NavBar from "./NavBar";
 
-jest.mock("@iconify-icons/bx/bx-menu", () => () => <div>mock</div>);
-jest.mock("@iconify-icons/entypo/home", () => () => <div>mock</div>);
-jest.mock("@iconify-icons/ic/sharp-local-fire-department", () => () => <div>mock</div>);
-jest.mock("@iconify-icons/ic/baseline-subscriptions", () => () => <div>mock</div>);
-jest.mock("@iconify-icons/ic/baseline-video-library", () => () => <div>mock</div>);
+jest.mock("@iconify-icons/bx/bx-menu", () => {
+	return {
+		default: () => {
+			return "rock";
+		},
+	};
+});
+
+jest.mock("@iconify/react", () => {
+	return { Icon: () => <p>Icon mock</p> };
+});
+
+jest.mock("@iconify-icons/entypo/home", () => {
+	return {
+		default: () => {
+			return "rock";
+		},
+	};
+});
+
+jest.mock("@iconify-icons/ic/sharp-local-fire-department", () => {
+	return {
+		default: () => {
+			return "rock";
+		},
+	};
+});
+jest.mock("@iconify-icons/ic/baseline-subscriptions", () => {
+	return {
+		default: () => {
+			return "rock";
+		},
+	};
+});
+jest.mock("@iconify-icons/ic/baseline-video-library", () => {
+	return {
+		default: () => {
+			return "rock";
+		},
+	};
+});
 
 describe("NavBar", () => {
 	it("should match the snapshot", () => {
