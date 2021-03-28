@@ -25,7 +25,6 @@ jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	};
 });
 
-
 jest.mock("react-spring/renderprops", () => {
 	return { Transition: () => <div className="mocking-Transition"></div> };
 });
@@ -43,8 +42,11 @@ describe("InputForm", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	// it("should render without crashing", () => {
-	// const div = document.createElement("div");
-	// render(<InputForm />);
-	// });
+	it("should render without crashing", () => {
+		render(
+			<Provider store={store}>
+				<InputForm />
+			</Provider>
+		);
+	});
 });
