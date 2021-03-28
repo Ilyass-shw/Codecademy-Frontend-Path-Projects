@@ -17,9 +17,20 @@ function createTestStore() {
 }
 const store = createTestStore();
 
-jest.mock("@iconify-icons/fluent/search-16-filled", () => () => <div>mock</div>);
-jest.mock("react-spring/renderprops", () => () => <div>mock</div>);
-jest.mock("react-spring/renderprops", () => () => <div>mock</div>);
+jest.mock("@iconify-icons/fluent/search-16-filled", () => {
+	return {
+		default: () => {
+			return "rock";
+		},
+	};
+});
+
+jest.mock("react-spring/renderprops", () => {
+	return { Transition: () => <div className="mocking-Transition"></div> };
+});
+jest.mock("@iconify/react", () => {
+	return { InlineIcon: () => <p>InlineIcon mock</p> };
+});
 
 describe("InputForm", () => {
 	it("should match the snapshot", () => {
@@ -28,9 +39,6 @@ describe("InputForm", () => {
 				<InputForm />
 			</Provider>
 		);
-
-        console.log(container.outerHTML)
-		// const { container } = render(<Provider store={Store}><InputForm /></Provider>);
 		expect(container).toMatchSnapshot();
 	});
 

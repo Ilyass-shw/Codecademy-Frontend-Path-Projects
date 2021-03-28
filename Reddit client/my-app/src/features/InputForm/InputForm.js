@@ -28,7 +28,7 @@ export const InputForm = () => {
 	return (
 		<div className="input">
 			<form action="#" className="input-form" autoComplete="off">
-				{/* <Transition
+				<Transition
 					config={{ duration: 500 }}
 					items={show}
 					from={{ flexBasis: "0rem" }}
@@ -47,7 +47,7 @@ export const InputForm = () => {
 							/>
 						))
 					}
-				</Transition> */}
+				</Transition>
 
 				<div className="button-container">
 					<button
