@@ -51,6 +51,7 @@ export const InputForm = () => {
 
 				<div className="button-container">
 					<button
+						data-testid="search-button"
 						className="search-button"
 						onMouseEnter={() => {
 							setMouseOnSearchButton(true);

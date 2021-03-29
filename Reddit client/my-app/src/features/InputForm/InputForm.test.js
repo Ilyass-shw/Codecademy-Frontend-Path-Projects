@@ -1,5 +1,5 @@
 import { jest } from "@jest/globals";
-import { render } from "@testing-library/react";
+import { render, fireEvent  } from "@testing-library/react";
 import React from "react";
 import { InputForm } from "./InputForm.js";
 import { Provider } from "react-redux";
@@ -48,6 +48,8 @@ describe("InputForm", () => {
 				<InputForm />
 			</Provider>
 		);
+		store.dispatch = jest.fn();
+
 	})
 
 	it("should match the snapshot", () => {
@@ -58,4 +60,15 @@ describe("InputForm", () => {
 	it("should render without crashing", () => {
 		
 	});
+	
+	it("should not dispatch anything when clicked without defined term", () => {
+		const submitButton = component.getByTestId("search-button");
+		fireEvent.click(submitButton);
+		expect(store.dispatch).toBeCalledTimes(0)
+
+	});
+it("should render without crashing", () => {
+		
+	});
+
 });
