@@ -1,10 +1,9 @@
 import React from "react";
-import Header from "./Header"
+import Header from "./Header";
 import { Provider } from "react-redux";
 import { jest } from "@jest/globals";
-import { render, fireEvent  } from "@testing-library/react";
-import configureStore from 'redux-mock-store';
-
+import { render, fireEvent, screen } from "@testing-library/react";
+import configureStore from "redux-mock-store";
 
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
@@ -60,20 +59,17 @@ jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	};
 });
 
-const mockStore =  configureStore([]);
-
+const mockStore = configureStore([]);
 
 describe("Header", () => {
 	let store;
 	let component;
 
-	beforeEach(()=>{
+	beforeEach(() => {
 		store = mockStore({});
 
-		 
 		store.dispatch = jest.fn();
-
-	})
+	});
 
 	it("should match the snapshot", () => {
 		component = render(
@@ -93,13 +89,23 @@ describe("Header", () => {
 	});
 
 	it("should render InputForm when window width > 460", () => {
-		global.innerWidth = 1000
-        const {getByText} = render(
+		global.innerWidth = 461;
+		const { getByText } = render(
 			<Provider store={store}>
 				<Header />
 			</Provider>
 		);
-        expect(getByText('InputForm mock')).toBeTruthy()
+		getByText("InputForm mock");
+	});
 
+	it("should not render InputForm when window width < 460", () => {
+		global.innerWidth = 459;
+		render(
+			<Provider store={store}>
+				<Header />
+			</Provider>
+		);
+		const InputForm = screen.queryByText("InputForm mock");
+		expect(InputForm).toBeNull(); // it doesn't exist
 	});
 });
