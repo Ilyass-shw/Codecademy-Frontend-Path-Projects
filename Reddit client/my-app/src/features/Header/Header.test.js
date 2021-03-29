@@ -83,4 +83,8 @@ describe("Header", () => {
 		
 		expect(component.container).toMatchSnapshot();
 	});
+
+	it("should render without crashing", () => {
+		
+	});
 });
