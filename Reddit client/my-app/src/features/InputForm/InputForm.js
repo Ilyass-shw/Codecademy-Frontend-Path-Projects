@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./InputForm.css";
-// npm install --save-dev @iconify/react @iconify-icons/fluent
 import { InlineIcon } from "@iconify/react";
 import search16Filled from "@iconify-icons/fluent/search-16-filled";
 import { fetchPosts, searchTermSet } from "../posts/postsSlice";

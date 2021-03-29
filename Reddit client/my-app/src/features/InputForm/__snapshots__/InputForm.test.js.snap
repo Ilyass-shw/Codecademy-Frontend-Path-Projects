@@ -10,9 +10,7 @@ exports[`InputForm should match the snapshot 1`] = `
       autocomplete="off"
       class="input-form"
     >
-      <div
-        class="mocking-Transition"
-      />
+      <div />
       <div
         class="button-container"
       >

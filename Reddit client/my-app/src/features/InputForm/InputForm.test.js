@@ -30,7 +30,12 @@ jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 });
 
 jest.mock("react-spring/renderprops", () => {
-	return { Transition: () => <div className="mocking-Transition"></div> };
+	function renderPropsComponent(children) {
+		return <div>{children}</div>;
+	}
+	return {  Transition: (props) =>{
+		return renderPropsComponent(props.children);
+	} };
 });
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
