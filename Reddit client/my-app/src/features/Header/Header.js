@@ -39,7 +39,7 @@ const Header = () => {
 				<div className="header-user-features">
 					<div className="icon-container">
 						{isNotDesktop && (
-							<button className="mobile-search-button" onClick={handleOnSearchClick}>
+							<button data-testid="mobile-search-button" className="mobile-search-button" onClick={handleOnSearchClick}>
 								<InlineIcon icon={search16Filled} width="1.5rem" height="1.5rem" color={"white"} />
 							</button>
 						)}
