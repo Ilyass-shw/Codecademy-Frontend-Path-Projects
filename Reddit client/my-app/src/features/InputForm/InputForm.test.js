@@ -2,10 +2,11 @@ import { jest } from "@jest/globals";
 import { render } from "@testing-library/react";
 import React from "react";
 import { InputForm } from "./InputForm.js";
-import store from "../../app/store";
 import { Provider } from "react-redux";
 import postsReducer from "../posts/postsSlice";
 import { combineReducers, createStore } from "redux";
+import configureStore from 'redux-mock-store';
+
 
 // function createTestStore() {
 // 	const store = createStore(
@@ -16,6 +17,9 @@ import { combineReducers, createStore } from "redux";
 // 	return store;
 // }
 // const store = createTestStore();
+
+const mockStore =  configureStore([]);
+
 
 jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	return {
@@ -33,20 +37,25 @@ jest.mock("@iconify/react", () => {
 });
 
 describe("InputForm", () => {
-	it("should match the snapshot", () => {
-		const { container } = render(
+	let store;
+	let component;
+
+	beforeEach(()=>{
+		store = mockStore({});
+
+		 component = render(
 			<Provider store={store}>
 				<InputForm />
 			</Provider>
 		);
-		expect(container).toMatchSnapshot();
+	})
+
+	it("should match the snapshot", () => {
+		
+		expect(component.container).toMatchSnapshot();
 	});
 
 	it("should render without crashing", () => {
-		render(
-			<Provider store={store}>
-				<InputForm />
-			</Provider>
-		);
+		
 	});
 });
