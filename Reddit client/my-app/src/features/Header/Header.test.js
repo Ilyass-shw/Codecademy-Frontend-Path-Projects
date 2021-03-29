@@ -70,21 +70,36 @@ describe("Header", () => {
 	beforeEach(()=>{
 		store = mockStore({});
 
-		 component = render(
-			<Provider store={store}>
-				<Header />
-			</Provider>
-		);
+		 
 		store.dispatch = jest.fn();
 
 	})
 
 	it("should match the snapshot", () => {
-		
+		component = render(
+			<Provider store={store}>
+				<Header />
+			</Provider>
+		);
 		expect(component.container).toMatchSnapshot();
 	});
 
 	it("should render without crashing", () => {
-		
+		component = render(
+			<Provider store={store}>
+				<Header />
+			</Provider>
+		);
+	});
+
+	it("should render InputForm when window width > 460", () => {
+		global.innerWidth = 1000
+        const {getByText} = render(
+			<Provider store={store}>
+				<Header />
+			</Provider>
+		);
+        expect(getByText('InputForm mock')).toBeTruthy()
+
 	});
 });

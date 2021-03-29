@@ -24,7 +24,7 @@ const Header = () => {
 	return (
 		<div className="header">
 			{!isSearching && (
-				<div className="reddit-logo">
+				<div className="reddit-logo" data-testid="reddit-logo">
 					<h3>
 						<InlineIcon icon={redditFill} color={"red"} width="1.7rem" height="1.7rem" /> React
 					</h3>
