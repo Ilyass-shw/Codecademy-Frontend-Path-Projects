@@ -32,8 +32,8 @@ const Header = () => {
 			)}
 
 			{isSearching && (
-				<div className="go-back-button" data-testid="go-back-button">
-					<InlineIcon onClick={handleOnBackArrowClick} icon={arrowLeft} />
+				<div className="go-back-button" data-testid="go-back-button" onClick={handleOnBackArrowClick}>
+					<InlineIcon icon={arrowLeft} />
 				</div>
 			)}
 

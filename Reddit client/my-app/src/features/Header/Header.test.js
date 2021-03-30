@@ -117,10 +117,30 @@ describe("Header", () => {
 		);
         const MobileSearchButton = getByTestId('mobile-search-button')
         fireEvent.click(MobileSearchButton)
+		
         const InputForm = screen.queryByText("InputForm mock");
+		expect(InputForm).toBeInTheDocument()
+
         const GoBackButton = screen.queryByTestId("go-back-button");
-        expect(InputForm).toBeInTheDocument()
         expect(GoBackButton).toBeInTheDocument()
+
+	});
+
+	it("should render InputForm and go-back-button when clicking on search button on window-width < 460", () => {
+		global.innerWidth = 459;
+		const { getByTestId } = render(
+			<Provider store={store}>
+				<Header />
+			</Provider>
+		);
+        let MobileSearchButton = getByTestId('mobile-search-button')
+        fireEvent.click(MobileSearchButton)
+		
+        let GoBackButton = screen.queryByTestId("go-back-button");		
+		fireEvent.click(GoBackButton)
+
+		MobileSearchButton = getByTestId('mobile-search-button')
+		expect(MobileSearchButton).toBeInTheDocument()
 
 	});
 });
