@@ -108,7 +108,7 @@ describe("Header", () => {
 		expect(InputForm).not.toBeInTheDocument(); // it doesn't exist
 	});
 
-	it("should render InputForm when clicking on search button on window-width < 460", () => {
+	it("should render InputForm and go-back-button when clicking on search button on window-width < 460", () => {
 		global.innerWidth = 459;
 		const { getByTestId } = render(
 			<Provider store={store}>
@@ -118,7 +118,9 @@ describe("Header", () => {
         const MobileSearchButton = getByTestId('mobile-search-button')
         fireEvent.click(MobileSearchButton)
         const InputForm = screen.queryByText("InputForm mock");
+        const GoBackButton = screen.queryByTestId("go-back-button");
         expect(InputForm).toBeInTheDocument()
+        expect(GoBackButton).toBeInTheDocument()
 
 	});
 });

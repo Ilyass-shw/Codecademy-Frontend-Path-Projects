@@ -31,7 +31,11 @@ const Header = () => {
 				</div>
 			)}
 
-			{isSearching && <InlineIcon onClick={handleOnBackArrowClick} className="go-back-arrow" icon={arrowLeft} />}
+			{isSearching && (
+				<div className="go-back-button" data-testid="go-back-button">
+					<InlineIcon onClick={handleOnBackArrowClick} icon={arrowLeft} />
+				</div>
+			)}
 
 			{(!isNotDesktop || isSearching) && <InputForm className="inputForm" />}
 
