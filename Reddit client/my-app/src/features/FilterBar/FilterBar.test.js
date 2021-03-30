@@ -3,7 +3,6 @@ import { FilterBar } from "./FilterBar";
 import { jest } from "@jest/globals";
 import { render, fireEvent, screen } from "../../app/test-utils/test-utils.js";
 
-
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
 });
@@ -58,7 +57,6 @@ jest.mock("@iconify-icons/eva/arrow-ios-back-outline", () => {
 	};
 });
 
-
 describe("FilterBar", () => {
 	it("should match the snapshot", () => {
 		const { container } = render(<FilterBar />);
@@ -67,5 +65,12 @@ describe("FilterBar", () => {
 
 	it("should render without crashing", () => {
 		render(<FilterBar />);
+	});
+
+	it("should render Relevance button as the default selected filter", () => {
+		const { getByText } = render(<FilterBar />);
+        const relevanceFilterButton = getByText('Relevance');
+        expect(relevanceFilterButton.className).toBe('filter-button selected')
+        
 	});
 });
