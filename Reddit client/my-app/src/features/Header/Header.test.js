@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./Header";
 import { jest } from "@jest/globals";
-import { fireEvent, screen } from "@testing-library/react";
-import { render } from "../../app/test-utils/test-utils.js";
+// import { fireEvent, screen } from "@testing-library/react";
+import { render, fireEvent, screen } from "../../app/test-utils/test-utils.js";
 
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
@@ -58,20 +58,14 @@ jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	};
 });
 
-
 describe("Header", () => {
-	
-
 	it("should match the snapshot", () => {
-		
 		const { container } = render(<Header />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without crashing", () => {
-		render(
-			<Header />
-		);
+		render(<Header />);
 	});
 
 	it("should render InputForm when window-width > 460", () => {

@@ -1,9 +1,8 @@
 import React from "react";
 import { FilterBar } from "./FilterBar";
-import { Provider } from "react-redux";
 import { jest } from "@jest/globals";
-import { render, fireEvent, screen } from "@testing-library/react";
-import configureStore from "redux-mock-store";
+import { render, fireEvent, screen } from "../../app/test-utils/test-utils.js";
+
 
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
@@ -59,13 +58,14 @@ jest.mock("@iconify-icons/eva/arrow-ios-back-outline", () => {
 	};
 });
 
-const mockStore = configureStore([]);
 
 describe("FilterBar", () => {
-	let store;
-	beforeEach(() => {
-		store = mockStore();
+	it("should match the snapshot", () => {
+		const { container } = render(<FilterBar />);
+		expect(container).toMatchSnapshot();
+	});
 
-		store.dispatch = jest.fn();
+	it("should render without crashing", () => {
+		render(<FilterBar />);
 	});
 });
