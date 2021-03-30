@@ -1,12 +1,9 @@
 import { jest } from "@jest/globals";
-import { render, fireEvent  } from "@testing-library/react";
+import { fireEvent } from "@testing-library/react";
 import React from "react";
 import { InputForm } from "./InputForm.js";
-import { Provider } from "react-redux";
-import postsReducer from "../posts/postsSlice";
-import { combineReducers, createStore } from "redux";
-import configureStore from 'redux-mock-store';
-
+// 
+import { render } from "../../app/test-utils/test-utils.js";
 
 // function createTestStore() {
 // 	const store = createStore(
@@ -18,8 +15,7 @@ import configureStore from 'redux-mock-store';
 // }
 // const store = createTestStore();
 
-const mockStore =  configureStore([]);
-
+// const mockStore = configureStore([]);
 
 jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	return {
@@ -33,47 +29,37 @@ jest.mock("react-spring/renderprops", () => {
 	function renderPropsComponent(children) {
 		return <div>{children}</div>;
 	}
-	return {  Transition: (props) =>{
-		return renderPropsComponent(props.children);
-	} };
+	return {
+		Transition: (props) => {
+			return renderPropsComponent(props.children);
+		},
+	};
 });
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
 });
 
 describe("InputForm", () => {
-	let store;
+	// let store;
 	let component;
 
-	beforeEach(()=>{
-		store = mockStore({});
+	beforeEach(() => {
 
-		 component = render(
-			<Provider store={store}>
+		component = render(
 				<InputForm />
-			</Provider>
 		);
-		store.dispatch = jest.fn();
-
-	})
+	});
 
 	it("should match the snapshot", () => {
-		
 		expect(component.container).toMatchSnapshot();
 	});
 
-	it("should render without crashing", () => {
-		
-	});
-	
+	it("should render without crashing", () => {});
+
 	it("should not dispatch anything when clicked without defined term", () => {
 		const submitButton = component.getByTestId("search-button");
 		fireEvent.click(submitButton);
-		expect(store.dispatch).toBeCalledTimes(0)
-
+		// expect(store.dispatch).toBeCalledTimes(0);
 	});
-it("should render without crashing", () => {
-		
-	});
-
+	it("should render without crashing", () => {});
 });
