@@ -126,7 +126,7 @@ describe("Header", () => {
 
 	});
 
-	it("should render InputForm and go-back-button when clicking on search button on window-width < 460", () => {
+	it("should make InputForm disappear and rerender mobile-search-button and reddit-logo when clicking on go-back-button on window-width < 460", () => {
 		global.innerWidth = 459;
 		const { getByTestId } = render(
 			<Provider store={store}>
@@ -135,12 +135,15 @@ describe("Header", () => {
 		);
         let MobileSearchButton = getByTestId('mobile-search-button')
         fireEvent.click(MobileSearchButton)
-		
+
         let GoBackButton = screen.queryByTestId("go-back-button");		
 		fireEvent.click(GoBackButton)
 
 		MobileSearchButton = getByTestId('mobile-search-button')
 		expect(MobileSearchButton).toBeInTheDocument()
+
+		const redditLogo = getByTestId('reddit-logo')
+		expect(redditLogo).toBeInTheDocument()
 
 	});
 });
