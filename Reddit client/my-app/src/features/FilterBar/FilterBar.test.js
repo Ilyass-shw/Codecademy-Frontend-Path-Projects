@@ -69,8 +69,58 @@ describe("FilterBar", () => {
 
 	it("should render Relevance button as the default selected filter", () => {
 		const { getByText } = render(<FilterBar />);
-        const relevanceFilterButton = getByText('Relevance');
-        expect(relevanceFilterButton.className).toBe('filter-button selected')
+		const relevanceFilterButton = getByText("Relevance");
+		expect(relevanceFilterButton.className).toBe("filter-button selected");
+	});
+
+	it("should be able to select any button as the selected filter and one at a time", () => {
+		const { getByText } = render(<FilterBar />);
+
+		const relevanceFilterButton = getByText("Relevance");
+		const hotFilterButton = getByText("Hot");
+		const newFilterButton = getByText("New");
+		const commentsFilterButton = getByText("Comments");
+		const topFilterButton = getByText("Top");
         
+		expect(hotFilterButton.className).toBe("filter-button false");
+		expect(newFilterButton.className).toBe("filter-button false");
+		expect(commentsFilterButton.className).toBe("filter-button false");
+		expect(topFilterButton.className).toBe("filter-button false");
+		expect(relevanceFilterButton.className).toBe("filter-button selected");
+
+		fireEvent.click(hotFilterButton);
+		expect(hotFilterButton.className).toBe("filter-button selected");
+		expect(newFilterButton.className).toBe("filter-button false");
+		expect(commentsFilterButton.className).toBe("filter-button false");
+		expect(topFilterButton.className).toBe("filter-button false");
+		expect(relevanceFilterButton.className).toBe("filter-button false");
+
+		fireEvent.click(newFilterButton);
+		expect(hotFilterButton.className).toBe("filter-button false");
+		expect(newFilterButton.className).toBe("filter-button selected");
+		expect(commentsFilterButton.className).toBe("filter-button false");
+		expect(topFilterButton.className).toBe("filter-button false");
+		expect(relevanceFilterButton.className).toBe("filter-button false");
+
+		fireEvent.click(commentsFilterButton);
+		expect(hotFilterButton.className).toBe("filter-button false");
+		expect(newFilterButton.className).toBe("filter-button false");
+		expect(commentsFilterButton.className).toBe("filter-button selected");
+		expect(topFilterButton.className).toBe("filter-button false");
+		expect(relevanceFilterButton.className).toBe("filter-button false");
+
+		fireEvent.click(topFilterButton);
+		expect(hotFilterButton.className).toBe("filter-button false");
+		expect(newFilterButton.className).toBe("filter-button false");
+		expect(commentsFilterButton.className).toBe("filter-button false");
+		expect(topFilterButton.className).toBe("filter-button selected");
+		expect(relevanceFilterButton.className).toBe("filter-button false");
+
+		fireEvent.click(relevanceFilterButton);
+		expect(hotFilterButton.className).toBe("filter-button false");
+		expect(newFilterButton.className).toBe("filter-button false");
+		expect(commentsFilterButton.className).toBe("filter-button false");
+		expect(topFilterButton.className).toBe("filter-button false");
+		expect(relevanceFilterButton.className).toBe("filter-button selected");
 	});
 });

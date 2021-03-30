@@ -24,8 +24,8 @@ export const FilterBar = () => {
 
 	const handleOnClick = ({ target }) => {
 		setFilterBy(target.value);
-		dispatch(filterUpdated(filterBy));
-		dispatch(fetchPosts());
+		// dispatch(filterUpdated(filterBy));
+		// dispatch(fetchPosts());
 	};
 
 	const barWidth = window.innerWidth - 8;
