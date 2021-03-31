@@ -153,5 +153,20 @@ describe("FilterBar", () => {
 		fireEvent.click(TopFilterButton);
 
 		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("top"));
+
+		const NewFilterButton = getByText("New");
+		fireEvent.click(NewFilterButton);
+
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("new"));
+
+		const RelevanceFilterButton = getByText("Relevance");
+		fireEvent.click(RelevanceFilterButton);
+
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("relevance"));
+
+		const CommentsFilterButton = getByText("Comments");
+		fireEvent.click(CommentsFilterButton);
+
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("comments"));
 	});
 });
