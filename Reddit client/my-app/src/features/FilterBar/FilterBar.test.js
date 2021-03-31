@@ -67,10 +67,10 @@ describe("FilterBar", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render without crashing", () => {
-		const store = makeTestStore();
-		testRender(<FilterBar />, { store });
-	});
+	// it("should render without crashing", () => {
+	// 	const store = makeTestStore();
+	// 	testRender(<FilterBar />, { store });
+	// });
 
 	it("should render Relevance button as the default selected filter", () => {
 		const store = makeTestStore();
