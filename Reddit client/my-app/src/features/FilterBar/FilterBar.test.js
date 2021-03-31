@@ -143,10 +143,15 @@ describe("FilterBar", () => {
 
 	it("should render Relevance button as the default selected filter", () => {
 		const { getByText } = render(<FilterBar />, { store });
-
+		
 		const hotFilterButton = getByText("Hot");
 		fireEvent.click(hotFilterButton);
 
 		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("hot"));
+
+		const TopFilterButton = getByText("Top");
+		fireEvent.click(TopFilterButton);
+
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("top"));
 	});
 });
