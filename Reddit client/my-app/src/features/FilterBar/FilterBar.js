@@ -39,10 +39,10 @@ export const FilterBar = () => {
 
 		setFilterBarScrollLeft(Math.min(filterBarScrollLeft + 100, barWidth - 100));
 	};
-	
+
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
-		// dispatch(fetchPosts());
+		dispatch(fetchPosts());
 
 		if (filterBarScrollLeft === 0) {
 			setStyleLeftArrow({ display: "none" });
