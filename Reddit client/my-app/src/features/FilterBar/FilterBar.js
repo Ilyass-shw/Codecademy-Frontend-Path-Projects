@@ -24,25 +24,26 @@ export const FilterBar = () => {
 
 	const handleOnClick = ({ target }) => {
 		setFilterBy(target.value);
-		// dispatch(filterUpdated(filterBy));
-		// dispatch(fetchPosts());
 	};
 
 	const barWidth = window.innerWidth - 8;
-	
+
 	const handleScrollLeft = () => {
 		document.getElementById("filter-bar").scrollLeft -= 100;
 
 		setFilterBarScrollLeft(Math.max(filterBarScrollLeft - 100, 0));
 	};
-	
+
 	const handleScrollRight = () => {
 		document.getElementById("filter-bar").scrollLeft += 100;
 
 		setFilterBarScrollLeft(Math.min(filterBarScrollLeft + 100, barWidth - 100));
 	};
-
+	
 	useEffect(() => {
+		dispatch(filterUpdated(filterBy));
+		// dispatch(fetchPosts());
+
 		if (filterBarScrollLeft === 0) {
 			setStyleLeftArrow({ display: "none" });
 		} else if (barWidth - filterBarScrollLeft === 100) {
@@ -52,7 +53,7 @@ export const FilterBar = () => {
 
 			setStyleRightArrow({ display: "flex" });
 		}
-	}, [setStyleLeftArrow, setStyleRightArrow, filterBarScrollLeft, barWidth]);
+	}, [setStyleLeftArrow, setStyleRightArrow, filterBarScrollLeft, barWidth, filterBy, dispatch]);
 
 	return (
 		<div className="filter-bar-container">

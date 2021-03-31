@@ -2,6 +2,8 @@ import React from "react";
 import { FilterBar } from "./FilterBar";
 import { jest } from "@jest/globals";
 import { render, fireEvent, screen } from "../../app/test-utils/test-utils.js";
+import { filterUpdated } from "../posts/postsSlice";
+import { testRender, makeTestStore } from "./testUtils";
 
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
@@ -81,7 +83,7 @@ describe("FilterBar", () => {
 		const newFilterButton = getByText("New");
 		const commentsFilterButton = getByText("Comments");
 		const topFilterButton = getByText("Top");
-        
+
 		expect(hotFilterButton.className).toBe("filter-button false");
 		expect(newFilterButton.className).toBe("filter-button false");
 		expect(commentsFilterButton.className).toBe("filter-button false");
@@ -122,5 +124,16 @@ describe("FilterBar", () => {
 		expect(commentsFilterButton.className).toBe("filter-button false");
 		expect(topFilterButton.className).toBe("filter-button false");
 		expect(relevanceFilterButton.className).toBe("filter-button selected");
+	});
+
+	it("should render Relevance button as the default selected filter", () => {
+		const store = makeTestStore();
+
+		const { getByText } = testRender(<FilterBar />, { store });
+
+		const hotFilterButton = getByText("Hot");
+		fireEvent.click(hotFilterButton);
+
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("hot"));
 	});
 });
