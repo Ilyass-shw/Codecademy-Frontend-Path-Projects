@@ -9,7 +9,7 @@ import commentsIcon from "@iconify/icons-icons8/comments";
 import arrowIosForwardOutline from "@iconify-icons/eva/arrow-ios-forward-outline";
 import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { filterUpdated, fetchPosts } from "../posts/postsSlice";
 
 export const FilterBar = () => {
@@ -39,11 +39,12 @@ export const FilterBar = () => {
 
 		setFilterBarScrollLeft(Math.min(filterBarScrollLeft + 100, barWidth - 100));
 	};
-
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
 		dispatch(fetchPosts());
+	}, [filterBy, dispatch]);
 
+	useEffect(() => {
 		if (filterBarScrollLeft === 0) {
 			setStyleLeftArrow({ display: "none" });
 		} else if (barWidth - filterBarScrollLeft === 100) {
@@ -53,7 +54,7 @@ export const FilterBar = () => {
 
 			setStyleRightArrow({ display: "flex" });
 		}
-	}, [setStyleLeftArrow, setStyleRightArrow, filterBarScrollLeft, barWidth, filterBy, dispatch]);
+	}, [setStyleLeftArrow, setStyleRightArrow, filterBarScrollLeft, barWidth]);
 
 	return (
 		<div className="filter-bar-container">

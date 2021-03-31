@@ -58,21 +58,25 @@ jest.mock("@iconify-icons/eva/arrow-ios-back-outline", () => {
 	};
 });
 
+let store;
+
 describe("FilterBar", () => {
+
+	beforeEach(() => {
+		store = makeTestStore();
+	});
+
 	it("should match the snapshot", () => {
-		const store = makeTestStore();
 		const { container } = render(<FilterBar />, { store });
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without crashing", () => {
-		const store = makeTestStore();
 		render(<FilterBar />, { store });
 	});
 
 	it("should render Relevance button as the default selected filter", () => {
-		const store = makeTestStore();
 		const { getByText } = render(<FilterBar />, { store });
 
 		const relevanceFilterButton = getByText("Relevance");
@@ -81,7 +85,6 @@ describe("FilterBar", () => {
 	});
 
 	it("should be able to select any button as the selected filter and one at a time", () => {
-		const store = makeTestStore();
 
 		const { getByText } = render(<FilterBar />, { store });
 
@@ -139,7 +142,6 @@ describe("FilterBar", () => {
 	});
 
 	it("should render Relevance button as the default selected filter", () => {
-		const store = makeTestStore();
 		const { getByText } = render(<FilterBar />, { store });
 
 		const hotFilterButton = getByText("Hot");
