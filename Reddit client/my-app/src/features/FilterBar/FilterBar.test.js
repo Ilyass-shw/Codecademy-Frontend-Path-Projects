@@ -1,9 +1,8 @@
 import React from "react";
 import { FilterBar } from "./FilterBar";
 import { jest } from "@jest/globals";
-import { render, fireEvent, screen } from "../../app/test-utils/test-utils.js";
 import { filterUpdated } from "../posts/postsSlice";
-import { testRender, makeTestStore } from "./testUtils";
+import { render, makeTestStore, fireEvent, screen } from "./testUtils";
 
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
@@ -62,19 +61,19 @@ jest.mock("@iconify-icons/eva/arrow-ios-back-outline", () => {
 describe("FilterBar", () => {
 	it("should match the snapshot", () => {
 		const store = makeTestStore();
-		const { container } = testRender(<FilterBar />, { store });
+		const { container } = render(<FilterBar />, { store });
 
 		expect(container).toMatchSnapshot();
 	});
 
-	// it("should render without crashing", () => {
-	// 	const store = makeTestStore();
-	// 	testRender(<FilterBar />, { store });
-	// });
+	it("should render without crashing", () => {
+		const store = makeTestStore();
+		render(<FilterBar />, { store });
+	});
 
 	it("should render Relevance button as the default selected filter", () => {
 		const store = makeTestStore();
-		const { getByText } = testRender(<FilterBar />, { store });
+		const { getByText } = render(<FilterBar />, { store });
 
 		const relevanceFilterButton = getByText("Relevance");
 
@@ -84,7 +83,7 @@ describe("FilterBar", () => {
 	it("should be able to select any button as the selected filter and one at a time", () => {
 		const store = makeTestStore();
 
-		const { getByText } = testRender(<FilterBar />, { store });
+		const { getByText } = render(<FilterBar />, { store });
 
 		const relevanceFilterButton = getByText("Relevance");
 		const hotFilterButton = getByText("Hot");
@@ -141,7 +140,7 @@ describe("FilterBar", () => {
 
 	it("should render Relevance button as the default selected filter", () => {
 		const store = makeTestStore();
-		const { getByText } = testRender(<FilterBar />, { store });
+		const { getByText } = render(<FilterBar />, { store });
 
 		const hotFilterButton = getByText("Hot");
 		fireEvent.click(hotFilterButton);
