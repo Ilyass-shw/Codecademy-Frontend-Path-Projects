@@ -13,13 +13,26 @@ import { useDispatch } from "react-redux";
 import { filterUpdated, fetchPosts } from "../posts/postsSlice";
 import useWindowDimensions from "../Helper/UseWindowDimensions";
 
+function isInViewport(element) {
+	const rect = element.getBoundingClientRect();
+	return (
+		rect.top >= 0 &&
+		rect.left >= 0 &&
+		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
+}
+
 export const FilterBar = () => {
 	const [filterBy, setFilterBy] = useState("relevance");
 
 	const [styleRightArrow, setStyleRightArrow] = useState({});
 	const [styleLeftArrow, setStyleLeftArrow] = useState({});
 
-	const [filterBarScrollLeft, setFilterBarScrollLeft] = useState(0);
+	const [isLastFilterVisible, setIsLastFilterVisible] = useState();
+	const [isFirstFilterVisible, setIsFirstFilterVisible] = useState();
+
+	const [pixelsScrolledLeft, setPixelsScrolledLeft] = useState(0);
 
 	const dispatch = useDispatch();
 
@@ -27,23 +40,18 @@ export const FilterBar = () => {
 		setFilterBy(target.value);
 	};
 
-	const  {width}  = useWindowDimensions()
-	const barWidth = width- 8; // 8px is the width of the scrolling bar
+	const { width } = useWindowDimensions();
+	const barWidth = width - 8; // 8px is the width of the scrolling bar
 	const handleScrollLeft = () => {
-		console.log(`before: ${document.getElementById("filter-bar").scrollLeft}`);
 		document.getElementById("filter-bar").scrollLeft -= 100;
-		console.log(`after: ${document.getElementById("filter-bar").scrollLeft}`);
 
-		setFilterBarScrollLeft(Math.max(filterBarScrollLeft - (100 + 8), 0));
+		setPixelsScrolledLeft(Math.max(pixelsScrolledLeft - (100 + 8), 0));
 	};
 
 	const handleScrollRight = () => {
-		console.log(`before: ${document.getElementById("filter-bar").scrollLeft}`);
-
 		document.getElementById("filter-bar").scrollLeft += 100;
-		console.log(`after: ${document.getElementById("filter-bar").scrollLeft}`);
 
-		setFilterBarScrollLeft(Math.min(filterBarScrollLeft + (100 + 8), barWidth - 100));
+		setPixelsScrolledLeft(Math.min(pixelsScrolledLeft + (100 + 8), barWidth - 100));
 	};
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
@@ -51,16 +59,30 @@ export const FilterBar = () => {
 	}, [filterBy, dispatch]);
 
 	useEffect(() => {
-		if (filterBarScrollLeft === 0) {
+		setIsLastFilterVisible(isInViewport(document.getElementById("comments")));
+		setIsFirstFilterVisible(isInViewport(document.getElementById("relevance")));
+		console.log("relevance : " + isFirstFilterVisible);
+		console.log("comments : " + isLastFilterVisible);
+		console.log(pixelsScrolledLeft);
+
+		if (isFirstFilterVisible) {
 			setStyleLeftArrow({ display: "none" });
-		} else if (barWidth - filterBarScrollLeft === 100) {
+		} else if (isLastFilterVisible) {
 			setStyleRightArrow({ display: "none" });
 		} else {
 			setStyleLeftArrow({ display: "flex" });
 
 			setStyleRightArrow({ display: "flex" });
 		}
-	}, [setStyleLeftArrow, setStyleRightArrow, filterBarScrollLeft, barWidth]);
+	}, [
+		setStyleLeftArrow,
+		pixelsScrolledLeft,
+		setStyleRightArrow,
+		isLastFilterVisible,
+		setIsLastFilterVisible,
+		setIsFirstFilterVisible,
+		isFirstFilterVisible,
+	]);
 
 	return (
 		<div className="filter-bar-container">
