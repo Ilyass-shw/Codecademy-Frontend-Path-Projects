@@ -76,7 +76,7 @@ describe("FilterBar", () => {
 		render(<FilterBar />, { store });
 	});
 
-	it("should render Relevance button as the default selected filter", () => {
+	it("should render with 'Relevance' as the default selected filter", () => {
 		const { getByText } = render(<FilterBar />, { store });
 
 		const relevanceFilterButton = getByText("Relevance");
@@ -141,7 +141,7 @@ describe("FilterBar", () => {
 		expect(relevanceFilterButton.className).toBe("filter-button selected");
 	});
 
-	it("should render Relevance button as the default selected filter", () => {
+	it("should render with the relative filter everytime a new filter button is clicked", () => {
 		const { getByText } = render(<FilterBar />, { store });
 		
 		const hotFilterButton = getByText("Hot");

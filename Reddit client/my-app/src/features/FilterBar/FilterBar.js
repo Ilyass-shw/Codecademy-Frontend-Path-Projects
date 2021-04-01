@@ -9,7 +9,7 @@ import commentsIcon from "@iconify/icons-icons8/comments";
 import arrowIosForwardOutline from "@iconify-icons/eva/arrow-ios-forward-outline";
 import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { filterUpdated, fetchPosts } from "../posts/postsSlice";
 
 export const FilterBar = () => {
@@ -26,18 +26,18 @@ export const FilterBar = () => {
 		setFilterBy(target.value);
 	};
 
-	const barWidth = window.innerWidth - 8;
+	const barWidth = window.innerWidth - 8; // 8px is the width of the scrolling bar
 
 	const handleScrollLeft = () => {
 		document.getElementById("filter-bar").scrollLeft -= 100;
 
-		setFilterBarScrollLeft(Math.max(filterBarScrollLeft - 100, 0));
+		setFilterBarScrollLeft(Math.max(filterBarScrollLeft - (100+8), 0));
 	};
 
 	const handleScrollRight = () => {
 		document.getElementById("filter-bar").scrollLeft += 100;
 
-		setFilterBarScrollLeft(Math.min(filterBarScrollLeft + 100, barWidth - 100));
+		setFilterBarScrollLeft(Math.min(filterBarScrollLeft + (100+8), barWidth - 100));
 	};
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
