@@ -11,6 +11,7 @@ import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 
 import { useDispatch } from "react-redux";
 import { filterUpdated, fetchPosts } from "../posts/postsSlice";
+import useWindowDimensions from "../Helper/UseWindowDimensions";
 
 export const FilterBar = () => {
 	const [filterBy, setFilterBy] = useState("relevance");
@@ -26,18 +27,23 @@ export const FilterBar = () => {
 		setFilterBy(target.value);
 	};
 
-	const barWidth = window.innerWidth - 8; // 8px is the width of the scrolling bar
-
+	const  {width}  = useWindowDimensions()
+	const barWidth = width- 8; // 8px is the width of the scrolling bar
 	const handleScrollLeft = () => {
+		console.log(`before: ${document.getElementById("filter-bar").scrollLeft}`);
 		document.getElementById("filter-bar").scrollLeft -= 100;
+		console.log(`after: ${document.getElementById("filter-bar").scrollLeft}`);
 
-		setFilterBarScrollLeft(Math.max(filterBarScrollLeft - (100+8), 0));
+		setFilterBarScrollLeft(Math.max(filterBarScrollLeft - (100 + 8), 0));
 	};
 
 	const handleScrollRight = () => {
-		document.getElementById("filter-bar").scrollLeft += 100;
+		console.log(`before: ${document.getElementById("filter-bar").scrollLeft}`);
 
-		setFilterBarScrollLeft(Math.min(filterBarScrollLeft + (100+8), barWidth - 100));
+		document.getElementById("filter-bar").scrollLeft += 100;
+		console.log(`after: ${document.getElementById("filter-bar").scrollLeft}`);
+
+		setFilterBarScrollLeft(Math.min(filterBarScrollLeft + (100 + 8), barWidth - 100));
 	};
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
