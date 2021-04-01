@@ -8,8 +8,11 @@ import bellIcon from "@iconify-icons/mdi/bell";
 import { InputForm } from "../InputForm/InputForm.js";
 import search16Filled from "@iconify-icons/fluent/search-16-filled";
 import arrowLeft from "@iconify-icons/akar-icons/arrow-left";
+import useWindowDimensions from "../Helper/UseWindowDimensions";
 const Header = () => {
-	let isNotDesktop = window.innerWidth < 460;
+
+	const {width} = useWindowDimensions()
+	let isNotDesktop =width< 460;
 
 	const [isSearching, setIsSearching] = useState(false);
 
