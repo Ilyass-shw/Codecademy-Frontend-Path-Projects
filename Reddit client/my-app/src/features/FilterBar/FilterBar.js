@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { InlineIcon } from "@iconify/react";
 import bxsRocket from "@iconify-icons/bx/bxs-rocket";
 import fireFilled from "@iconify-icons/ant-design/fire-filled";
@@ -9,29 +11,14 @@ import commentsIcon from "@iconify/icons-icons8/comments";
 import arrowIosForwardOutline from "@iconify-icons/eva/arrow-ios-forward-outline";
 import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 
-import { useDispatch } from "react-redux";
 import { filterUpdated, fetchPosts } from "../posts/postsSlice";
-import useWindowDimensions from "../Helper/UseWindowDimensions";
-import { updateArrowStyle } from "./FilterBarUtils";
-
-function isInViewport(element) {
-	const rect = element.getBoundingClientRect();
-	return (
-		rect.top >= 0 &&
-		rect.left >= 0 &&
-		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-	);
-}
+import { styleArrowsToDisplayNone, updateArrowStyle } from "./FilterBarUtils";
 
 export const FilterBar = () => {
 	const [filterBy, setFilterBy] = useState("relevance");
 
 	const [styleRightArrow, setStyleRightArrow] = useState({});
 	const [styleLeftArrow, setStyleLeftArrow] = useState({});
-
-	const [isLastFilterVisible, setIsLastFilterVisible] = useState();
-	const [isFirstFilterVisible, setIsFirstFilterVisible] = useState();
 
 	const [pixelsScrolledLeft, setPixelsScrolledLeft] = useState(0);
 
@@ -41,21 +28,18 @@ export const FilterBar = () => {
 		setFilterBy(target.value);
 	};
 
-	const { width } = useWindowDimensions();
 	const handleScrollLeft = () => {
 		document.getElementById("filter-bar").scrollLeft -= 100;
 
 		setPixelsScrolledLeft(pixelsScrolledLeft + 1);
 
-		setStyleLeftArrow({ display: "none" });
-		setStyleRightArrow({ display: "none" });
+		styleArrowsToDisplayNone(setStyleLeftArrow, setStyleRightArrow);
 	};
 
 	const handleScrollRight = () => {
 		document.getElementById("filter-bar").scrollLeft += 100;
 
-		setStyleLeftArrow({ display: "none" });
-		setStyleRightArrow({ display: "none" });
+		styleArrowsToDisplayNone(setStyleLeftArrow, setStyleRightArrow);
 
 		setPixelsScrolledLeft(pixelsScrolledLeft + 1);
 	};
@@ -65,31 +49,14 @@ export const FilterBar = () => {
 	}, [filterBy, dispatch]);
 
 	useEffect(() => {
-		setIsLastFilterVisible(isInViewport(document.getElementById("comments")));
-		setIsFirstFilterVisible(isInViewport(document.getElementById("relevance")));
-
-		// console.log(pixelsScrolledLeft);
-		const time = setTimeout(() => {
-			if (!isInViewport(document.getElementById("relevance"))) {
-				setStyleLeftArrow({ display: "flex" });
-			}
-			if (!isInViewport(document.getElementById("comments"))) {
-				setStyleRightArrow({ display: "flex" });
-			}
-		}, 70);
+		const timeOut = setTimeout(() => {
+			updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
+		}, 100);
 
 		return () => {
-			clearTimeout(time);
+			clearTimeout(timeOut);
 		};
-	}, [
-		setStyleLeftArrow,
-		pixelsScrolledLeft,
-		setStyleRightArrow,
-		isLastFilterVisible,
-		setIsLastFilterVisible,
-		setIsFirstFilterVisible,
-		isFirstFilterVisible,
-	]);
+	}, [setStyleLeftArrow, pixelsScrolledLeft, setStyleRightArrow]);
 
 	return (
 		<div className="filter-bar-container">
