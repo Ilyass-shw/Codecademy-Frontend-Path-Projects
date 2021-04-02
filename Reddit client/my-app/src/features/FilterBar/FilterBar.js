@@ -9,22 +9,16 @@ import { InlineIcon } from "@iconify/react";
 import arrowIosForwardOutline from "@iconify-icons/eva/arrow-ios-forward-outline";
 import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 
-
-
 export const FilterBar = () => {
-
 	const [styleRightArrow, setStyleRightArrow] = useState({});
 	const [styleLeftArrow, setStyleLeftArrow] = useState({});
 
-	const [pixelsScrolledLeft, setPixelsScrolledLeft] = useState(0);
-
-
-	
+	let [rerender, setRerender] = useState(0); // this state is created to trigger a new render
 
 	const handleScrollLeft = () => {
 		document.getElementById("filter-bar").scrollLeft -= 100;
 
-		setPixelsScrolledLeft(pixelsScrolledLeft + 1);
+		setRerender(rerender + 1);
 
 		styleArrowsToDisplayNone(setStyleLeftArrow, setStyleRightArrow);
 	};
@@ -34,19 +28,43 @@ export const FilterBar = () => {
 
 		styleArrowsToDisplayNone(setStyleLeftArrow, setStyleRightArrow);
 
-		setPixelsScrolledLeft(pixelsScrolledLeft + 1);
+		setRerender(rerender + 1);
 	};
-	
 
 	useEffect(() => {
 		const timeOut = setTimeout(() => {
 			updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
 		}, 100);
 
+		window.addEventListener("scroll", () => {
+			console.log("scrolled");
+			setRerender(rerender + 1);
+
+			updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
+		});
+		window.addEventListener("resize", () => {
+			console.log("resized");
+			setRerender(rerender + 1);
+
+			updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
+		});
+
 		return () => {
 			clearTimeout(timeOut);
+			window.removeEventListener("scroll", () => {
+				console.log("scrolled");
+				setRerender(rerender + 1);
+
+				updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
+			});
+			window.removeEventListener("resize", () => {
+				console.log("resized");
+				setRerender(rerender + 1);
+
+				updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
+			});
 		};
-	}, [setStyleLeftArrow, pixelsScrolledLeft, setStyleRightArrow]);
+	}, [setStyleLeftArrow, setStyleRightArrow, setRerender, rerender]);
 
 	return (
 		<div className="filter-bar-container">
