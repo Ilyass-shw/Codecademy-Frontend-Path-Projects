@@ -12,6 +12,7 @@ import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 import { useDispatch } from "react-redux";
 import { filterUpdated, fetchPosts } from "../posts/postsSlice";
 import useWindowDimensions from "../Helper/UseWindowDimensions";
+import { updateArrowStyle } from "./FilterBarUtils";
 
 function isInViewport(element) {
 	const rect = element.getBoundingClientRect();
@@ -41,17 +42,22 @@ export const FilterBar = () => {
 	};
 
 	const { width } = useWindowDimensions();
-	const barWidth = width - 8; // 8px is the width of the scrolling bar
 	const handleScrollLeft = () => {
 		document.getElementById("filter-bar").scrollLeft -= 100;
 
-		setPixelsScrolledLeft(Math.max(pixelsScrolledLeft - (100 + 8), 0));
+		setPixelsScrolledLeft(pixelsScrolledLeft + 1);
+
+		setStyleLeftArrow({ display: "none" });
+		setStyleRightArrow({ display: "none" });
 	};
 
 	const handleScrollRight = () => {
 		document.getElementById("filter-bar").scrollLeft += 100;
 
-		setPixelsScrolledLeft(Math.min(pixelsScrolledLeft + (100 + 8), barWidth - 100));
+		setStyleLeftArrow({ display: "none" });
+		setStyleRightArrow({ display: "none" });
+
+		setPixelsScrolledLeft(pixelsScrolledLeft + 1);
 	};
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
@@ -61,19 +67,20 @@ export const FilterBar = () => {
 	useEffect(() => {
 		setIsLastFilterVisible(isInViewport(document.getElementById("comments")));
 		setIsFirstFilterVisible(isInViewport(document.getElementById("relevance")));
-		console.log("relevance : " + isFirstFilterVisible);
-		console.log("comments : " + isLastFilterVisible);
-		console.log(pixelsScrolledLeft);
 
-		if (isFirstFilterVisible) {
-			setStyleLeftArrow({ display: "none" });
-		} else if (isLastFilterVisible) {
-			setStyleRightArrow({ display: "none" });
-		} else {
-			setStyleLeftArrow({ display: "flex" });
+		// console.log(pixelsScrolledLeft);
+		const time = setTimeout(() => {
+			if (!isInViewport(document.getElementById("relevance"))) {
+				setStyleLeftArrow({ display: "flex" });
+			}
+			if (!isInViewport(document.getElementById("comments"))) {
+				setStyleRightArrow({ display: "flex" });
+			}
+		}, 70);
 
-			setStyleRightArrow({ display: "flex" });
-		}
+		return () => {
+			clearTimeout(time);
+		};
 	}, [
 		setStyleLeftArrow,
 		pixelsScrolledLeft,
