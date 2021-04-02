@@ -34,9 +34,7 @@
 	transition: 0.28s;
 }
 
-.filter-button:first-child {
-	margin-left: 44px;
-}
+
 .filter-button:hover {
 	background-color: rgba(77, 77, 77, 1);
 }
