@@ -13,6 +13,8 @@ import useWindowDimensions from "../Helper/UseWindowDimensions";
 export const FilterBar = () => {
 	const [styleRightArrow, setStyleRightArrow] = useState({});
 	const [styleLeftArrow, setStyleLeftArrow] = useState({});
+	// const [programScrolling, setProgramScrolling] = useState(true);
+	let programScrolling = true;
 
 	const { width } = useWindowDimensions(); // this includes resize event listener
 
@@ -20,7 +22,6 @@ export const FilterBar = () => {
 
 	const handleScrollLeft = () => {
 		document.getElementById("filter-bar").scrollLeft -= 100;
-
 		styleArrowsToDisplayNone(setStyleLeftArrow, setStyleRightArrow);
 
 		setRerender(rerender + width);
@@ -35,9 +36,41 @@ export const FilterBar = () => {
 	};
 
 	useEffect(() => {
+		const bar = document.getElementById("filter-bar");
+		bar.addEventListener("scroll", () => {
+			console.log('is '+programScrolling)
+			if (programScrolling) {
+				styleArrowsToDisplayNone(setStyleLeftArrow, setStyleRightArrow);
+
+				updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
+
+				console.log("styled because manual scroll");
+			}
+
+			console.log("event createdd");
+		});
+
+		return () => {
+			bar.removeEventListener("scroll", () => {
+				if (programScrolling) {
+					styleArrowsToDisplayNone(setStyleLeftArrow, setStyleRightArrow);
+
+					updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
+
+					console.log("styled because manual scroll");
+				}
+
+				console.log("event createdd");
+			});
+		};
+	}, [programScrolling]);
+
+	useEffect(() => {
 		const timeOut = setTimeout(() => {
 			updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
 		}, 200);
+		console.log("styled because program scroll");
+		programScrolling = false;
 
 		return () => {
 			clearTimeout(timeOut);
