@@ -2,7 +2,7 @@ import React from "react";
 import { FilterBar } from "./FilterBar";
 import { jest } from "@jest/globals";
 import { filterUpdated } from "../posts/postsSlice";
-import { render, makeTestStore, fireEvent, screen } from "./testUtils";
+import { render, cleanup, makeTestStore, fireEvent, screen } from "./testUtils";
 
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
@@ -61,19 +61,20 @@ jest.mock("@iconify-icons/eva/arrow-ios-back-outline", () => {
 let store;
 
 describe("FilterBar", () => {
-
 	beforeEach(() => {
 		store = makeTestStore();
+	});
+	afterEach(() => {
+		cleanup();
 	});
 
 	it("should match the snapshot", () => {
 		const { container } = render(<FilterBar />, { store });
-
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without crashing", () => {
-		render(<FilterBar />, { store });
+		 render(<FilterBar />, { store });
 	});
 
 	it("should render with 'Relevance' as the default selected filter", () => {
@@ -143,7 +144,7 @@ describe("FilterBar", () => {
 
 	it("should render with the relative filter everytime a new filter button is clicked", () => {
 		const { getByText } = render(<FilterBar />, { store });
-		
+
 		const hotFilterButton = getByText("Hot");
 		fireEvent.click(hotFilterButton);
 

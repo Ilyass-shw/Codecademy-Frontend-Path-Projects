@@ -33,7 +33,9 @@ export const FilterBar = () => {
 
 	// style scroll arrows onScroll and onResize
 	useEffect(() => {
-		filterBar.current.addEventListener("scroll", () => {
+		const FilterBar = filterBar.current
+		FilterBar.addEventListener("scroll", () => {
+			console.log('bil')
 			handleEvent(setStyleLeftArrow, setStyleRightArrow);
 		});
 		window.addEventListener("resize", () => {
@@ -41,7 +43,7 @@ export const FilterBar = () => {
 		});
 
 		return () => {
-			filterBar.current.removeEventListener("scroll", () => {
+			FilterBar.removeEventListener("scroll", () => {
 				handleEvent(setStyleLeftArrow, setStyleRightArrow);
 			});
 			window.removeEventListener("resize", () => {

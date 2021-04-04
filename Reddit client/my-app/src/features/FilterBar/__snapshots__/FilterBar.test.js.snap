@@ -11,7 +11,6 @@ exports[`FilterBar should match the snapshot 1`] = `
     >
       <div
         class="arrow left"
-        style="display: none;"
       >
         <div
           class="arrow-button"
@@ -21,56 +20,58 @@ exports[`FilterBar should match the snapshot 1`] = `
           </p>
         </div>
       </div>
-      <button
-        class="filter-button selected"
-        id="relevance"
-        value="relevance"
-      >
-        <p>
-          InlineIcon mock
-        </p>
-         Relevance
-      </button>
-      <button
-        class="filter-button false"
-        id="hot"
-        value="hot"
-      >
-        <p>
-          InlineIcon mock
-        </p>
-         Hot
-      </button>
-      <button
-        class="filter-button false"
-        id="new"
-        value="new"
-      >
-        <p>
-          InlineIcon mock
-        </p>
-         New
-      </button>
-      <button
-        class="filter-button false"
-        id="top"
-        value="top"
-      >
-        <p>
-          InlineIcon mock
-        </p>
-         Top
-      </button>
-      <button
-        class="filter-button false"
-        id="comments"
-        value="comments"
-      >
-        <p>
-          InlineIcon mock
-        </p>
-         Comments
-      </button>
+      <div>
+        <button
+          class="filter-button selected"
+          id="relevance"
+          value="relevance"
+        >
+          <p>
+            InlineIcon mock
+          </p>
+           Relevance
+        </button>
+        <button
+          class="filter-button false"
+          id="hot"
+          value="hot"
+        >
+          <p>
+            InlineIcon mock
+          </p>
+           Hot
+        </button>
+        <button
+          class="filter-button false"
+          id="new"
+          value="new"
+        >
+          <p>
+            InlineIcon mock
+          </p>
+           New
+        </button>
+        <button
+          class="filter-button false"
+          id="top"
+          value="top"
+        >
+          <p>
+            InlineIcon mock
+          </p>
+           Top
+        </button>
+        <button
+          class="filter-button false"
+          id="comments"
+          value="comments"
+        >
+          <p>
+            InlineIcon mock
+          </p>
+           Comments
+        </button>
+      </div>
       <div
         class="arrow right"
       >
