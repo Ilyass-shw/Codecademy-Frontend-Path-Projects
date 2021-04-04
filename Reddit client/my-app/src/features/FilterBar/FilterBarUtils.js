@@ -21,3 +21,8 @@ export const styleArrowsToDisplayNone = (setStyleLeftArrow, setStyleRightArrow) 
 	setStyleLeftArrow({ display: "none" });
 	setStyleRightArrow({ display: "none" });
 };
+
+export const handleEvent = (setStyleLeftArrow, setStyleRightArrow) => {
+	styleArrowsToDisplayNone(setStyleLeftArrow, setStyleRightArrow);
+	setTimeout(updateArrowStyle(setStyleLeftArrow, setStyleRightArrow), 200);
+};
