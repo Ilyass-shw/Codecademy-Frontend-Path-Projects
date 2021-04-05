@@ -170,6 +170,7 @@ describe("FilterBar", () => {
 
 		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("comments"));
 	});
+	
 	it("should be able to scroll right all the way to the last filter by clicking on right arrow ", () => {
 		global.innerWidth = 317;
 		const { getByTestId, getByText } = render(<FilterBar />, { store });
@@ -179,5 +180,23 @@ describe("FilterBar", () => {
 		const lastFilterButton = getByText("Comments");
 
 		expect(isInViewport(lastFilterButton)).toBeTruthy()
+	});
+
+	it("should be able to scroll back left all the way to the first filter by clicking on left arrow ", () => {
+		global.innerWidth = 317;
+		const { getByTestId, getByText } = render(<FilterBar />, { store });
+		const rightArrow = getByTestId("right-arrow");
+		fireEvent.click(rightArrow)
+		fireEvent.click(rightArrow)
+		const lastFilterButton = getByText("Comments");
+
+		expect(isInViewport(lastFilterButton)).toBeTruthy()
+
+		const leftArrow = getByTestId("left-arrow");
+		fireEvent.click(leftArrow)
+		fireEvent.click(leftArrow)
+		const firstFilterButton = getByText("Relevance");
+
+		expect(isInViewport(firstFilterButton)).toBeTruthy()
 	});
 });
