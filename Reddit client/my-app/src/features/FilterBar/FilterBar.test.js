@@ -3,6 +3,7 @@ import { FilterBar } from "./FilterBar";
 import { jest } from "@jest/globals";
 import { filterUpdated } from "../posts/postsSlice";
 import { render, cleanup, makeTestStore, fireEvent, screen } from "./testUtils";
+import { isInViewport } from "./FilterBarUtils";
 
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
@@ -74,7 +75,7 @@ describe("FilterBar", () => {
 	});
 
 	it("should render without crashing", () => {
-		 render(<FilterBar />, { store });
+		render(<FilterBar />, { store });
 	});
 
 	it("should render with 'Relevance' as the default selected filter", () => {
@@ -86,7 +87,6 @@ describe("FilterBar", () => {
 	});
 
 	it("should be able to select any button as the selected filter and one at a time", () => {
-
 		const { getByText } = render(<FilterBar />, { store });
 
 		const relevanceFilterButton = getByText("Relevance");
@@ -169,5 +169,15 @@ describe("FilterBar", () => {
 		fireEvent.click(CommentsFilterButton);
 
 		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("comments"));
+	});
+	it("should be able to scroll right all the way to the last filter by clicking on right arrow ", () => {
+		global.innerWidth = 317;
+		const { getByTestId, getByText } = render(<FilterBar />, { store });
+		const rightArrow = getByTestId("right-arrow");
+		fireEvent.click(rightArrow)
+		fireEvent.click(rightArrow)
+		const lastFilterButton = getByText("Comments");
+
+		expect(isInViewport(lastFilterButton)).toBeTruthy()
 	});
 });

@@ -33,9 +33,9 @@ export const FilterBar = () => {
 
 	// style scroll arrows onScroll and onResize
 	useEffect(() => {
-		const FilterBar = filterBar.current
+		const FilterBar = filterBar.current;
 		FilterBar.addEventListener("scroll", () => {
-			console.log('bil')
+			console.log("bil");
 			handleEvent(setStyleLeftArrow, setStyleRightArrow);
 		});
 		window.addEventListener("resize", () => {
@@ -56,7 +56,7 @@ export const FilterBar = () => {
 		<div className="filter-bar-container">
 			<div ref={filterBar} className="filter-bar" id="filter-bar">
 				<div className="arrow left" style={styleLeftArrow}>
-					<div className="arrow-button" onClick={handleScrollLeft}>
+					<div className="arrow-button" data-testid="left-arrow" onClick={handleScrollLeft}>
 						<InlineIcon icon={arrowIosBackOutline} />
 					</div>
 				</div>
@@ -64,7 +64,7 @@ export const FilterBar = () => {
 				<FilterButtons />
 
 				<div className="arrow right" style={styleRightArrow}>
-					<div className="arrow-button" onClick={handleScrollRight}>
+					<div className="arrow-button" data-testid="right-arrow" onClick={handleScrollRight}>
 						<InlineIcon icon={arrowIosForwardOutline} />
 					</div>
 				</div>
