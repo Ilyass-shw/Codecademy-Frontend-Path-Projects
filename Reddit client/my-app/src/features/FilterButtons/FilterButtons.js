@@ -22,7 +22,7 @@ const FilterButtons = () => {
 
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
-		dispatch(fetchPosts());
+		dispatch(fetchPosts);
 	}, [filterBy, dispatch]);
 	return (
 		<div>

@@ -24,11 +24,10 @@ export const FilterBar = () => {
 	};
 	// style scroll arrows on first render
 	useEffect(() => {
-		const timeOut = setTimeout(updateArrowStyle(setStyleLeftArrow, setStyleRightArrow), 200);
-
-		return () => {
-			clearTimeout(timeOut);
-		};
+		updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
+		setTimeout(() => {
+			console.log(document.getElementById("limn"));
+		}, 200);
 	}, []);
 
 	// style scroll arrows onScroll and onResize
@@ -56,14 +55,14 @@ export const FilterBar = () => {
 		<div className="filter-bar-container">
 			<div ref={filterBar} className="filter-bar" id="filter-bar">
 				<div className="arrow left" style={styleLeftArrow}>
-					<div className="arrow-button" data-testid="left-arrow" onClick={handleScrollLeft}>
+					<div className="arrow-button" id="left-arrow" onClick={handleScrollLeft}>
 						<InlineIcon icon={arrowIosBackOutline} />
 					</div>
 				</div>
 
 				<FilterButtons />
 
-				<div className="arrow right" style={styleRightArrow}>
+				<div className="arrow right" id="limn" style={styleRightArrow}>
 					<div className="arrow-button" data-testid="right-arrow" onClick={handleScrollRight}>
 						<InlineIcon icon={arrowIosForwardOutline} />
 					</div>
