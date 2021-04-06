@@ -8,7 +8,7 @@ import sharpNewReleases from "@iconify-icons/ic/sharp-new-releases";
 import verticalAlignTop from "@iconify/icons-oi/vertical-align-top";
 import commentsIcon from "@iconify/icons-icons8/comments";
 
-import { filterUpdated, fetchPosts } from "../posts/postsSlice";
+import { filterUpdated, fetchPosts, firstFilterUpdated, lastFilterUpdated } from "../posts/postsSlice";
 
 const FilterButtons = () => {
 	const [filterBy, setFilterBy] = useState("relevance");
@@ -19,14 +19,18 @@ const FilterButtons = () => {
 		setFilterBy(target.value);
 	};
 	useEffect(() => {
-		
+		const filterButtons = document.getElementById("filter-buttons")
+		const firstFilter = filterButtons.firstElementChild.innerText.toLowerCase()
+		const lastFilter = filterButtons.lastElementChild.innerText.toLowerCase()
+		dispatch(firstFilterUpdated(firstFilter))
+		dispatch(lastFilterUpdated(lastFilter))
 	}, []);
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
 		dispatch(fetchPosts);
 	}, [filterBy, dispatch]);
 	return (
-		<div className="filter-buttons">
+		<div id="filter-buttons">
 			<button
 				className={`filter-button ${"relevance" === filterBy && "selected"}`}
 				id="relevance"
