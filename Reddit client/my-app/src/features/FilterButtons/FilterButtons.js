@@ -24,10 +24,10 @@ const FilterButtons = () => {
 		const lastFilter = filterButtons.lastElementChild.innerText.toLowerCase()
 		dispatch(firstFilterUpdated(firstFilter))
 		dispatch(lastFilterUpdated(lastFilter))
-	}, []);
+	}, [dispatch]);
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
-		dispatch(fetchPosts);
+		dispatch(fetchPosts());
 	}, [filterBy, dispatch]);
 	return (
 		<div id="filter-buttons">

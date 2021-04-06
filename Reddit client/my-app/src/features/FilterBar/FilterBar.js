@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-
+import { useSelector } from "react-redux";
 import "./FilterBar.css";
 import { updateArrowClass, handleEvent } from "./FilterBarUtils";
 import FilterButtons from "../FilterButtons/FilterButtons";
@@ -13,6 +13,9 @@ export const FilterBar = () => {
 	const [showLeft, setShowLeft] = useState();
 	const [showRight, setShowRight] = useState();
 
+	const firstFilter = useSelector((state) => state.posts.firstFilter);
+	const lastFilter = useSelector((state) => state.posts.lastFilter);
+
 	const filterBar = useRef();
 
 	const handleScrollLeft = () => {
@@ -24,34 +27,29 @@ export const FilterBar = () => {
 	};
 	// style scroll arrows on first render
 	useEffect(() => {
-		updateArrowClass(setShowLeft, setShowRight, "relevance", "comments");
-		setTimeout(() => {
-			console.log(document.getElementById("limn"));
-		}, 200);
+		updateArrowClass(setShowLeft, setShowRight, firstFilter, lastFilter);
 	}, []);
 
 	// style scroll arrows onScroll and onResize
 	useEffect(() => {
 		const FilterBar = filterBar.current;
 		FilterBar.addEventListener("scroll", () => {
-			console.log("bil");
-			handleEvent(setShowLeft, setShowRight, "relevance", "comments");
+			handleEvent(setShowLeft, setShowRight, firstFilter, lastFilter);
 		});
 		window.addEventListener("resize", () => {
-			handleEvent(setShowLeft, setShowRight, "relevance", "comments");
+			handleEvent(setShowLeft, setShowRight, firstFilter, lastFilter);
 		});
 
 		return () => {
 			FilterBar.removeEventListener("scroll", () => {
-				console.log("bil");
-				handleEvent(setShowLeft, setShowRight, "relevance", "comments");
+				handleEvent(setShowLeft, setShowRight, firstFilter, lastFilter);
 			});
 			window.addEventListener("resize", () => {
-				handleEvent(setShowLeft, setShowRight, "relevance", "comments");
+				handleEvent(setShowLeft, setShowRight, firstFilter, lastFilter);
 			});
 		};
 	}, []);
-	console.log("rendered");
+
 	return (
 		<div className="filter-bar-container">
 			<div ref={filterBar} className="filter-bar" id="filter-bar">
