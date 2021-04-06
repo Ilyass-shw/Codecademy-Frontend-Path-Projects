@@ -8,21 +8,17 @@ export const isInViewport = (element) => {
 	);
 };
 
-export const updateArrowStyle = (setStyleLeftArrow, setStyleRightArrow) => {
-	if (!isInViewport(document.getElementById("relevance"))) {
-		setStyleLeftArrow({ display: "flex" });
+export const updateArrowClass = (setShowLeft, setShowRight, firstFilter, lastFilter) => {
+	if (!isInViewport(document.getElementById(firstFilter))) {
+		setShowLeft(true);
 	}
-	if (!isInViewport(document.getElementById("comments"))) {
-		setStyleRightArrow({ display: "flex" });
+	if (!isInViewport(document.getElementById(lastFilter))) {
+		setShowRight(true);
 	}
 };
 
-export const styleArrowsToDisplayNone = (setStyleLeftArrow, setStyleRightArrow) => {
-	setStyleLeftArrow({ display: "none" });
-	setStyleRightArrow({ display: "none" });
-};
-
-export const handleEvent = (setStyleLeftArrow, setStyleRightArrow) => {
-	styleArrowsToDisplayNone(setStyleLeftArrow, setStyleRightArrow);
-	setTimeout(updateArrowStyle(setStyleLeftArrow, setStyleRightArrow), 200);
+export const handleEvent = (setShowLeft, setShowRight, firstFilter, lastFilter) => {
+	setShowLeft(false);
+	setShowRight(false);
+	updateArrowClass(setShowLeft, setShowRight, firstFilter, lastFilter);
 };

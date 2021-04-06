@@ -13,12 +13,11 @@ import { filterUpdated, fetchPosts } from "../posts/postsSlice";
 const FilterButtons = () => {
 	const [filterBy, setFilterBy] = useState("relevance");
 
-    const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	const handleOnClick = ({ target }) => {
 		setFilterBy(target.value);
 	};
-
 
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));

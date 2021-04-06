@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import "./FilterBar.css";
-import { handleEvent, updateArrowStyle } from "./FilterBarUtils";
+import { updateArrowClass, handleEvent } from "./FilterBarUtils";
 import FilterButtons from "../FilterButtons/FilterButtons";
 
 import { InlineIcon } from "@iconify/react";
@@ -10,8 +10,8 @@ import arrowIosForwardOutline from "@iconify-icons/eva/arrow-ios-forward-outline
 import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 
 export const FilterBar = () => {
-	const [styleRightArrow, setStyleRightArrow] = useState({});
-	const [styleLeftArrow, setStyleLeftArrow] = useState({});
+	const [showLeft, setShowLeft] = useState();
+	const [showRight, setShowRight] = useState();
 
 	const filterBar = useRef();
 
@@ -24,7 +24,7 @@ export const FilterBar = () => {
 	};
 	// style scroll arrows on first render
 	useEffect(() => {
-		updateArrowStyle(setStyleLeftArrow, setStyleRightArrow);
+		updateArrowClass(setShowLeft, setShowRight, "relevance", "comments");
 		setTimeout(() => {
 			console.log(document.getElementById("limn"));
 		}, 200);
@@ -35,26 +35,27 @@ export const FilterBar = () => {
 		const FilterBar = filterBar.current;
 		FilterBar.addEventListener("scroll", () => {
 			console.log("bil");
-			handleEvent(setStyleLeftArrow, setStyleRightArrow);
+			handleEvent(setShowLeft, setShowRight, "relevance", "comments");
 		});
 		window.addEventListener("resize", () => {
-			handleEvent(setStyleLeftArrow, setStyleRightArrow);
+			handleEvent(setShowLeft, setShowRight, "relevance", "comments");
 		});
 
 		return () => {
 			FilterBar.removeEventListener("scroll", () => {
-				handleEvent(setStyleLeftArrow, setStyleRightArrow);
+				console.log("bil");
+				handleEvent(setShowLeft, setShowRight, "relevance", "comments");
 			});
-			window.removeEventListener("resize", () => {
-				handleEvent(setStyleLeftArrow, setStyleRightArrow);
+			window.addEventListener("resize", () => {
+				handleEvent(setShowLeft, setShowRight, "relevance", "comments");
 			});
 		};
 	}, []);
-
+	console.log("rendered");
 	return (
 		<div className="filter-bar-container">
 			<div ref={filterBar} className="filter-bar" id="filter-bar">
-				<div className="arrow left" style={styleLeftArrow}>
+				<div className={`arrow left ${showLeft ? "show" : "hide"}`}>
 					<div className="arrow-button" id="left-arrow" onClick={handleScrollLeft}>
 						<InlineIcon icon={arrowIosBackOutline} />
 					</div>
@@ -62,7 +63,7 @@ export const FilterBar = () => {
 
 				<FilterButtons />
 
-				<div className="arrow right" id="limn" style={styleRightArrow}>
+				<div className={`arrow right ${showRight ? "show" : "hide"}`} id="limn">
 					<div className="arrow-button" data-testid="right-arrow" onClick={handleScrollRight}>
 						<InlineIcon icon={arrowIosForwardOutline} />
 					</div>

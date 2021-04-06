@@ -34,7 +34,6 @@
 	transition: 0.28s;
 }
 
-
 .filter-button:hover {
 	background-color: rgba(77, 77, 77, 1);
 }
@@ -50,6 +49,12 @@
 	display: none;
 	height: 100%;
 	z-index: 2;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: flex;
 }
 .left {
 	left: 0;
