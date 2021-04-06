@@ -18,13 +18,15 @@ const FilterButtons = () => {
 	const handleOnClick = ({ target }) => {
 		setFilterBy(target.value);
 	};
-
+	useEffect(() => {
+		
+	}, []);
 	useEffect(() => {
 		dispatch(filterUpdated(filterBy));
 		dispatch(fetchPosts);
 	}, [filterBy, dispatch]);
 	return (
-		<div>
+		<div className="filter-buttons">
 			<button
 				className={`filter-button ${"relevance" === filterBy && "selected"}`}
 				id="relevance"
