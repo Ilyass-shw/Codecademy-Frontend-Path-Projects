@@ -2,9 +2,7 @@ import React from "react";
 import { FilterBar } from "./FilterBar";
 import { jest } from "@jest/globals";
 import { filterUpdated } from "../posts/postsSlice";
-import { render, makeTestStore, fireEvent, screen, waitForDomChange } from "./testUtils";
-import { isInViewport } from "./FilterBarUtils";
-import {render as sayb} from '@testing-library/react'
+import { render, makeTestStore, fireEvent, screen, cleanup } from "./testUtils";
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
 });
@@ -67,6 +65,7 @@ describe("FilterBar", () => {
 	});
 
 	it("should match the snapshot", () => {
+		cleanup()
 		const { container } = render(<FilterBar />, { store });
 		expect(container).toMatchSnapshot();
 	});
@@ -76,21 +75,21 @@ describe("FilterBar", () => {
 	});
 
 	it("should render with 'Relevance' as the default selected filter", () => {
-		const { getByText } = render(<FilterBar />, { store });
+		render(<FilterBar />, { store });
 
-		const relevanceFilterButton = getByText("Relevance");
+		const relevanceFilterButton = screen.getByText("Relevance");
 
 		expect(relevanceFilterButton.className).toBe("filter-button selected");
 	});
 
 	it("should be able to select any button as the selected filter and one at a time", () => {
-		const { getByText } = render(<FilterBar />, { store });
+		render(<FilterBar />, { store });
 
-		const relevanceFilterButton = getByText("Relevance");
-		const hotFilterButton = getByText("Hot");
-		const newFilterButton = getByText("New");
-		const commentsFilterButton = getByText("Comments");
-		const topFilterButton = getByText("Top");
+		const relevanceFilterButton = screen.getByText("Relevance");
+		const hotFilterButton = screen.getByText("Hot");
+		const newFilterButton = screen.getByText("New");
+		const commentsFilterButton = screen.getByText("Comments");
+		const topFilterButton = screen.getByText("Top");
 
 		expect(hotFilterButton.className).toBe("filter-button false");
 		expect(newFilterButton.className).toBe("filter-button false");
@@ -140,42 +139,31 @@ describe("FilterBar", () => {
 	});
 
 	it("should render with the relative filter everytime a new filter button is clicked", () => {
-		const { getByText } = render(<FilterBar />, { store });
+		render(<FilterBar />, { store });
 
-		const hotFilterButton = getByText("Hot");
+		const hotFilterButton = screen.getByText("Hot");
 		fireEvent.click(hotFilterButton);
 
 		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("hot"));
 
-		const TopFilterButton = getByText("Top");
+		const TopFilterButton = screen.getByText("Top");
 		fireEvent.click(TopFilterButton);
 
 		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("top"));
 
-		const NewFilterButton = getByText("New");
+		const NewFilterButton = screen.getByText("New");
 		fireEvent.click(NewFilterButton);
 
 		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("new"));
 
-		const RelevanceFilterButton = getByText("Relevance");
+		const RelevanceFilterButton = screen.getByText("Relevance");
 		fireEvent.click(RelevanceFilterButton);
 
 		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("relevance"));
 
-		const CommentsFilterButton = getByText("Comments");
+		const CommentsFilterButton = screen.getByText("Comments");
 		fireEvent.click(CommentsFilterButton);
 
 		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("comments"));
 	});
-
-	
-
-
-
-	
-
-	
-
-	
-
 });
