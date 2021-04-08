@@ -79,7 +79,7 @@ describe("FilterBar", () => {
 
 		const relevanceFilterButton = screen.getByText("Relevance");
 
-		expect(relevanceFilterButton.className).toBe("filter-button selected");
+		expect(relevanceFilterButton).toHaveClass("filter-button selected");
 	});
 
 	it("should be able to select any button as the selected filter and one at a time", () => {
@@ -91,51 +91,51 @@ describe("FilterBar", () => {
 		const commentsFilterButton = screen.getByText("Comments");
 		const topFilterButton = screen.getByText("Top");
 
-		expect(hotFilterButton.className).toBe("filter-button false");
-		expect(newFilterButton.className).toBe("filter-button false");
-		expect(commentsFilterButton.className).toBe("filter-button false");
-		expect(topFilterButton.className).toBe("filter-button false");
-		expect(relevanceFilterButton.className).toBe("filter-button selected");
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button selected");
 
 		fireEvent.click(hotFilterButton);
 
-		expect(hotFilterButton.className).toBe("filter-button selected");
-		expect(newFilterButton.className).toBe("filter-button false");
-		expect(commentsFilterButton.className).toBe("filter-button false");
-		expect(topFilterButton.className).toBe("filter-button false");
-		expect(relevanceFilterButton.className).toBe("filter-button false");
+		expect(hotFilterButton).toHaveClass("filter-button selected");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button false");
 
 		fireEvent.click(newFilterButton);
 
-		expect(hotFilterButton.className).toBe("filter-button false");
-		expect(newFilterButton.className).toBe("filter-button selected");
-		expect(commentsFilterButton.className).toBe("filter-button false");
-		expect(topFilterButton.className).toBe("filter-button false");
-		expect(relevanceFilterButton.className).toBe("filter-button false");
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button selected");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button false");
 
 		fireEvent.click(commentsFilterButton);
 
-		expect(hotFilterButton.className).toBe("filter-button false");
-		expect(newFilterButton.className).toBe("filter-button false");
-		expect(commentsFilterButton.className).toBe("filter-button selected");
-		expect(topFilterButton.className).toBe("filter-button false");
-		expect(relevanceFilterButton.className).toBe("filter-button false");
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button selected");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button false");
 
 		fireEvent.click(topFilterButton);
 
-		expect(hotFilterButton.className).toBe("filter-button false");
-		expect(newFilterButton.className).toBe("filter-button false");
-		expect(commentsFilterButton.className).toBe("filter-button false");
-		expect(topFilterButton.className).toBe("filter-button selected");
-		expect(relevanceFilterButton.className).toBe("filter-button false");
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button selected");
+		expect(relevanceFilterButton).toHaveClass("filter-button false");
 
 		fireEvent.click(relevanceFilterButton);
 
-		expect(hotFilterButton.className).toBe("filter-button false");
-		expect(newFilterButton.className).toBe("filter-button false");
-		expect(commentsFilterButton.className).toBe("filter-button false");
-		expect(topFilterButton.className).toBe("filter-button false");
-		expect(relevanceFilterButton.className).toBe("filter-button selected");
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button selected");
 	});
 
 	it("should render with the relative filter everytime a new filter button is clicked", () => {
