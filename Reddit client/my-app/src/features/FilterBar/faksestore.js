@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
+const initialState = {
+	firstFilter:'relevance',
+	lastFilter:'comments',
+	filter:'relevance',
+};
 const fakeSlice = createSlice({
-	name: "fakeSlice",
+	name: "posts",
 	initialState,
 	reducers: {},
 });

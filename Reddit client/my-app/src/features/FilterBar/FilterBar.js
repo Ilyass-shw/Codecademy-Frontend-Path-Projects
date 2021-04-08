@@ -10,8 +10,8 @@ import arrowIosForwardOutline from "@iconify-icons/eva/arrow-ios-forward-outline
 import arrowIosBackOutline from "@iconify-icons/eva/arrow-ios-back-outline";
 
 export const FilterBar = () => {
-	const [showLeft, setShowLeft] = useState();
-	const [showRight, setShowRight] = useState();
+	const [showLeft, setShowLeft] = useState(false);
+	const [showRight, setShowRight] = useState(false);
 
 	const firstFilter = useSelector((state) => state.posts.firstFilter);
 	const lastFilter = useSelector((state) => state.posts.lastFilter);
@@ -28,7 +28,7 @@ export const FilterBar = () => {
 	// style scroll arrows on first render
 	useEffect(() => {
 		updateArrowClass(setShowLeft, setShowRight, firstFilter, lastFilter);
-	}, []);
+	}, [firstFilter, lastFilter]);
 
 	// style scroll arrows onScroll and onResize
 	useEffect(() => {
@@ -48,20 +48,20 @@ export const FilterBar = () => {
 				handleEvent(setShowLeft, setShowRight, firstFilter, lastFilter);
 			});
 		};
-	}, []);
+	}, [firstFilter, lastFilter]);
 
 	return (
 		<div className="filter-bar-container">
-			<div ref={filterBar} className="filter-bar" id="filter-bar">
+			<div ref={filterBar} className="filter-bar">
 				<div className={`arrow left ${showLeft ? "show" : "hide"}`}>
-					<div className="arrow-button" id="left-arrow" onClick={handleScrollLeft}>
+					<div className="arrow-button" data-testid="left-arrow" onClick={handleScrollLeft}>
 						<InlineIcon icon={arrowIosBackOutline} />
 					</div>
 				</div>
 
 				<FilterButtons />
 
-				<div className={`arrow right ${showRight ? "show" : "hide"}`} id="limn">
+				<div className={`arrow right  ${showRight ? "show" : "hide"}`}>
 					<div className="arrow-button" data-testid="right-arrow" onClick={handleScrollRight}>
 						<InlineIcon icon={arrowIosForwardOutline} />
 					</div>

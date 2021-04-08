@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { InlineIcon } from "@iconify/react";
@@ -13,15 +13,16 @@ import { filterUpdated, fetchPosts, firstFilterUpdated, lastFilterUpdated } from
 const FilterButtons = () => {
 	const [filterBy, setFilterBy] = useState("relevance");
 
+	const filterButtons = useRef()
+
 	const dispatch = useDispatch();
 
 	const handleOnClick = ({ target }) => {
 		setFilterBy(target.value);
 	};
 	useEffect(() => {
-		const filterButtons = document.getElementById("filter-buttons")
-		const firstFilter = filterButtons.firstElementChild.innerText.toLowerCase()
-		const lastFilter = filterButtons.lastElementChild.innerText.toLowerCase()
+		const firstFilter = filterButtons.current.firstElementChild.id.toLowerCase()
+		const lastFilter = filterButtons.current.lastElementChild.id.toLowerCase()
 		dispatch(firstFilterUpdated(firstFilter))
 		dispatch(lastFilterUpdated(lastFilter))
 	}, [dispatch]);
@@ -30,7 +31,7 @@ const FilterButtons = () => {
 		dispatch(fetchPosts());
 	}, [filterBy, dispatch]);
 	return (
-		<div id="filter-buttons">
+		<div ref= {filterButtons}>
 			<button
 				className={`filter-button ${"relevance" === filterBy && "selected"}`}
 				id="relevance"

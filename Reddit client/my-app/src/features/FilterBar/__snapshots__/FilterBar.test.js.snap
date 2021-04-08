@@ -7,10 +7,9 @@ exports[`FilterBar should match the snapshot 1`] = `
   >
     <div
       class="filter-bar"
-      id="filter-bar"
     >
       <div
-        class="arrow left"
+        class="arrow left hide"
       >
         <div
           class="arrow-button"
@@ -74,7 +73,7 @@ exports[`FilterBar should match the snapshot 1`] = `
         </button>
       </div>
       <div
-        class="arrow right"
+        class="arrow right  hide"
       >
         <div
           class="arrow-button"
