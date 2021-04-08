@@ -2,7 +2,7 @@ import React from "react";
 import { FilterBar } from "./FilterBar";
 import { jest } from "@jest/globals";
 import { filterUpdated } from "../posts/postsSlice";
-import { render, makeTestStore, fireEvent, screen, cleanup } from "./testUtils";
+import { render, makeTestStore, fireEvent, screen } from "../testUtils";
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
 });
@@ -65,7 +65,6 @@ describe("FilterBar", () => {
 	});
 
 	it("should match the snapshot", () => {
-		cleanup()
 		const { container } = render(<FilterBar />, { store });
 		expect(container).toMatchSnapshot();
 	});
