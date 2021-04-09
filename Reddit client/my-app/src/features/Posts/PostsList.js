@@ -20,7 +20,7 @@ const PostsList = () => {
 	}, [postsStatus, dispatch]);
 
 	let content;
-
+	console.log(postsStatus);
 	if (postsStatus === "idle" || postsStatus === "Loading") {
 		content = Array(3)
 			.fill()
@@ -29,7 +29,8 @@ const PostsList = () => {
 			});
 	} else if (postsStatus === "failed") {
 		content = postError;
-	} else {
+	}
+	else {
 		content = posts.map((post) => {
 			return <Post key={post.id} post={post} />;
 		});

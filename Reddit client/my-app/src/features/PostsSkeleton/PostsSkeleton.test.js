@@ -1,7 +1,7 @@
 import React from "react";
 import PostsSkeleton from "./PostsSkeleton";
 import { jest } from "@jest/globals";
-import { render, makeTestStore, fireEvent, screen } from "../testUtils";
+import { render, makeTestStore, fireEvent, screen } from "../posts/testUtils";
 
 let store;
 describe("PostsSkeleton", () => {
