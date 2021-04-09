@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./Header";
 import { jest } from "@jest/globals";
-// import { fireEvent, screen } from "@testing-library/react";
 import { render, fireEvent, screen } from "../../app/test-utils/test-utils.js";
 
 jest.mock("@iconify/react", () => {
