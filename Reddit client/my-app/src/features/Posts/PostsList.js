@@ -20,7 +20,7 @@ const PostsList = () => {
 	}, [postsStatus, dispatch]);
 
 	let content;
-	console.log(postsStatus);
+	console.log(postsStatus + postError);
 	if (postsStatus === "idle" || postsStatus === "Loading") {
 		content = Array(3)
 			.fill()
