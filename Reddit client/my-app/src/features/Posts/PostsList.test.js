@@ -49,4 +49,15 @@ describe("PostsSkeleton", () => {
 		const { container } = render(<PostsList />, { store });
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should display error when posts fetching fails", () => {
+		const initialState = {
+			status: "failed",
+			error: 'I have failed you master!'
+		};
+		const name = "posts";
+		const store = makeTestStore(name, initialState);
+		const { container } = render(<PostsList />, { store });
+		expect(container).toMatchSnapshot();
+	});
 });
