@@ -71,15 +71,15 @@ describe("FilterBar", () => {
 
 	// it("should render without crashing",async () => {
 		// render(<FilterBar />, { store });
-		it("should render without crashing", async () => {
-			render(<FilterBar />, { store });
-			await new Promise((res) => {
-				setTimeout(() => {
-					console.log("resolved");
-					res();
-				}, 10000);
-			});
-		}, 30000);
+		// it("should render without crashing", async () => {
+		// 	render(<FilterBar />, { store });
+		// 	await new Promise((res) => {
+		// 		setTimeout(() => {
+		// 			console.log("resolved");
+		// 			res();
+		// 		}, 10000);
+		// 	});
+		// }, 30000);
 	// });
 
 	it("should render with 'Relevance' as the default selected filter", () => {
