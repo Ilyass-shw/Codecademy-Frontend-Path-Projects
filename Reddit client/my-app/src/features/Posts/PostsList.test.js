@@ -35,8 +35,24 @@ describe("PostsSkeleton", () => {
 		// expect(store.dispatch).toHaveBeenCalledWith(fetchPosts());
 	});
 
-	// it("should match the snapshot", () => {
+	it("should display skeleton and match the snapshot when while posts are not fetched yet ", () => {
+		const initialState = {
+			status: "idle",
+		};
+		const name = "posts";
+		store = makeTestStore(name, initialState);
+		const { container } = render(<PostsList />, { store });
+		expect(container).toMatchSnapshot();
+	});
+
+	// it("should display skeleton and match the snapshot when while posts fetching is not completed yet ", () => {
+	// 	const initialState = {
+	// 		status: "Loading",
+	// 	};
+	// 	const name = "posts";
+	// 	store = makeTestStore(name, initialState);
 	// 	const { container } = render(<PostsList />, { store });
 	// 	expect(container).toMatchSnapshot();
 	// });
+
 });

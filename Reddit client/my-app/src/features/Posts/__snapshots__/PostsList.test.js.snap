@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PostsSkeleton should match the snapshot 1`] = `
+exports[`PostsSkeleton should display skeleton and match the snapshot when while posts are not fetched yet  1`] = `
 <div>
   <div
     class="posts-container"
