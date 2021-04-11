@@ -26,8 +26,9 @@ describe("PostsSkeleton", () => {
 		);
 	});
 
-	it("should match the snapshot ", () => {
+	it("should match the snapshot on desktop", () => {
 		const store = makeTestStore();
+        global.innerWidth= 1000
 
 		const { container } = render(
 			<Post

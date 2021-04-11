@@ -7,6 +7,7 @@ import { handleThumbnail } from "../../api/api";
 
 const Post = ({ post }) => {
 	let isDesktop= window.innerWidth > 580;
+	console.log(window.innerWidth)
 	return (
 		<div className="post-block">
 			<a
