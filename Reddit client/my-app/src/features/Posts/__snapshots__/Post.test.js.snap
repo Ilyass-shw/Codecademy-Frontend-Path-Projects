@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PostsSkeleton should match the snapshot  1`] = `
+exports[`PostsSkeleton should match the snapshot on desktop 1`] = `
 <div>
   <div
     class="post-block"
@@ -83,7 +83,7 @@ exports[`PostsSkeleton should match the snapshot  1`] = `
 </div>
 `;
 
-exports[`PostsSkeleton should match the snapshot with width of  1`] = `
+exports[`PostsSkeleton should match the snapshot on devices smaller than desktop 1`] = `
 <div>
   <div
     class="post-block"
@@ -114,6 +114,13 @@ exports[`PostsSkeleton should match the snapshot with width of  1`] = `
           class="post-data-container"
         >
           <div
+            class="subreddit"
+          >
+            <p>
+              Icon mock
+            </p>
+          </div>
+          <div
             class="mobile-post-data"
           >
             <h4
@@ -141,23 +148,6 @@ exports[`PostsSkeleton should match the snapshot with width of  1`] = `
                 1 days ago
               </p>
             </div>
-          </div>
-          <div
-            class="subreddit"
-          >
-            <p>
-              Icon mock
-            </p>
-            <p
-              class="subreddit-name"
-            >
-              subreddit 1
-            </p>
-            <p
-              class="subreddit-label"
-            >
-              subreddit 1
-            </p>
           </div>
         </div>
       </a>
