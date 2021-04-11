@@ -1,8 +1,8 @@
 import React from "react";
 import PostsList from "./PostsList";
-import { jest } from "@jest/globals";
 import { render, makeTestStore, fireEvent, screen } from "../testUtils/testUtils";
 import { fetchPosts } from "../posts/postsSlice";
+import {rest} from "msw"
 
 describe("PostsSkeleton", () => {
 	it("should render first time (with posts.status = idle, in store) without crashing ", () => {
