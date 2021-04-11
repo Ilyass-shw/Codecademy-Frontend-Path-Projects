@@ -15,9 +15,7 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (_, { getSt
 	const endPoint = getEndPoint(getState().posts);
 	const response = await client.get(endPoint);
 
-	console.log(response);
 	const fetchedPosts = handlefetchedPosts(response);
-	console.log(fetchedPosts);
 	return fetchedPosts;
 });
 

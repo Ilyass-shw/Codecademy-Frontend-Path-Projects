@@ -64,114 +64,105 @@ describe("FilterBar", () => {
 		store = makeTestStore();
 	});
 
-	// it("should match the snapshot", () => {
-	// 	const { container } = render(<FilterBar />, { store });
-	// 	expect(container).toMatchSnapshot();
-	// });
-
-	// it("should render without crashing",async () => {
-	// 	render(<FilterBar />, { store });
-	it("should render without crashing", async () => {
-		render(<FilterBar />, { store });
-		await new Promise((res) => {
-			setTimeout(() => {
-				console.log("resolved");
-				res();
-			}, 4000);
-		});
-		// 	}, 30000);
+	it("should match the snapshot", () => {
+		const { container } = render(<FilterBar />, { store });
+		expect(container).toMatchSnapshot();
 	});
 
-	// it("should render with 'Relevance' as the default selected filter", () => {
-	// 	render(<FilterBar />, { store });
+	it("should render without crashing", () => {
+		render(<FilterBar />, { store });
+	});
 
-	// 	const relevanceFilterButton = screen.getByText("Relevance");
+	it("should render with 'Relevance' as the default selected filter", () => {
+		render(<FilterBar />, { store });
 
-	// 	expect(relevanceFilterButton).toHaveClass("filter-button selected");
-	// });
+		const relevanceFilterButton = screen.getByText("Relevance");
 
-	// it("should be able to select any button as the selected filter and one at a time", () => {
-	// 	render(<FilterBar />, { store });
+		expect(relevanceFilterButton).toHaveClass("filter-button selected");
+	});
 
-	// 	const relevanceFilterButton = screen.getByText("Relevance");
-	// 	const hotFilterButton = screen.getByText("Hot");
-	// 	const newFilterButton = screen.getByText("New");
-	// 	const commentsFilterButton = screen.getByText("Comments");
-	// 	const topFilterButton = screen.getByText("Top");
+	it("should be able to select any button as the selected filter and one at a time", () => {
+		render(<FilterBar />, { store });
 
-	// 	expect(hotFilterButton).toHaveClass("filter-button false");
-	// 	expect(newFilterButton).toHaveClass("filter-button false");
-	// 	expect(commentsFilterButton).toHaveClass("filter-button false");
-	// 	expect(topFilterButton).toHaveClass("filter-button false");
-	// 	expect(relevanceFilterButton).toHaveClass("filter-button selected");
+		const relevanceFilterButton = screen.getByText("Relevance");
+		const hotFilterButton = screen.getByText("Hot");
+		const newFilterButton = screen.getByText("New");
+		const commentsFilterButton = screen.getByText("Comments");
+		const topFilterButton = screen.getByText("Top");
 
-	// 	fireEvent.click(hotFilterButton);
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button selected");
 
-	// 	expect(hotFilterButton).toHaveClass("filter-button selected");
-	// 	expect(newFilterButton).toHaveClass("filter-button false");
-	// 	expect(commentsFilterButton).toHaveClass("filter-button false");
-	// 	expect(topFilterButton).toHaveClass("filter-button false");
-	// 	expect(relevanceFilterButton).toHaveClass("filter-button false");
+		fireEvent.click(hotFilterButton);
 
-	// 	fireEvent.click(newFilterButton);
+		expect(hotFilterButton).toHaveClass("filter-button selected");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button false");
 
-	// 	expect(hotFilterButton).toHaveClass("filter-button false");
-	// 	expect(newFilterButton).toHaveClass("filter-button selected");
-	// 	expect(commentsFilterButton).toHaveClass("filter-button false");
-	// 	expect(topFilterButton).toHaveClass("filter-button false");
-	// 	expect(relevanceFilterButton).toHaveClass("filter-button false");
+		fireEvent.click(newFilterButton);
 
-	// 	fireEvent.click(commentsFilterButton);
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button selected");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button false");
 
-	// 	expect(hotFilterButton).toHaveClass("filter-button false");
-	// 	expect(newFilterButton).toHaveClass("filter-button false");
-	// 	expect(commentsFilterButton).toHaveClass("filter-button selected");
-	// 	expect(topFilterButton).toHaveClass("filter-button false");
-	// 	expect(relevanceFilterButton).toHaveClass("filter-button false");
+		fireEvent.click(commentsFilterButton);
 
-	// 	fireEvent.click(topFilterButton);
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button selected");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button false");
 
-	// 	expect(hotFilterButton).toHaveClass("filter-button false");
-	// 	expect(newFilterButton).toHaveClass("filter-button false");
-	// 	expect(commentsFilterButton).toHaveClass("filter-button false");
-	// 	expect(topFilterButton).toHaveClass("filter-button selected");
-	// 	expect(relevanceFilterButton).toHaveClass("filter-button false");
+		fireEvent.click(topFilterButton);
 
-	// 	fireEvent.click(relevanceFilterButton);
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button selected");
+		expect(relevanceFilterButton).toHaveClass("filter-button false");
 
-	// 	expect(hotFilterButton).toHaveClass("filter-button false");
-	// 	expect(newFilterButton).toHaveClass("filter-button false");
-	// 	expect(commentsFilterButton).toHaveClass("filter-button false");
-	// 	expect(topFilterButton).toHaveClass("filter-button false");
-	// 	expect(relevanceFilterButton).toHaveClass("filter-button selected");
-	// });
+		fireEvent.click(relevanceFilterButton);
 
-	// it("should render with the relative filter everytime a new filter button is clicked", () => {
-	// 	render(<FilterBar />, { store });
+		expect(hotFilterButton).toHaveClass("filter-button false");
+		expect(newFilterButton).toHaveClass("filter-button false");
+		expect(commentsFilterButton).toHaveClass("filter-button false");
+		expect(topFilterButton).toHaveClass("filter-button false");
+		expect(relevanceFilterButton).toHaveClass("filter-button selected");
+	});
 
-	// 	const hotFilterButton = screen.getByText("Hot");
-	// 	fireEvent.click(hotFilterButton);
+	it("should render with the relative filter everytime a new filter button is clicked", () => {
+		render(<FilterBar />, { store });
 
-	// 	expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("hot"));
+		const hotFilterButton = screen.getByText("Hot");
+		fireEvent.click(hotFilterButton);
 
-	// 	const TopFilterButton = screen.getByText("Top");
-	// 	fireEvent.click(TopFilterButton);
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("hot"));
 
-	// 	expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("top"));
+		const TopFilterButton = screen.getByText("Top");
+		fireEvent.click(TopFilterButton);
 
-	// 	const NewFilterButton = screen.getByText("New");
-	// 	fireEvent.click(NewFilterButton);
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("top"));
 
-	// 	expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("new"));
+		const NewFilterButton = screen.getByText("New");
+		fireEvent.click(NewFilterButton);
 
-	// 	const RelevanceFilterButton = screen.getByText("Relevance");
-	// 	fireEvent.click(RelevanceFilterButton);
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("new"));
 
-	// 	expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("relevance"));
+		const RelevanceFilterButton = screen.getByText("Relevance");
+		fireEvent.click(RelevanceFilterButton);
 
-	// 	const CommentsFilterButton = screen.getByText("Comments");
-	// 	fireEvent.click(CommentsFilterButton);
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("relevance"));
 
-	// 	expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("comments"));
-	// });
+		const CommentsFilterButton = screen.getByText("Comments");
+		fireEvent.click(CommentsFilterButton);
+
+		expect(store.dispatch).toHaveBeenCalledWith(filterUpdated("comments"));
+	});
 });

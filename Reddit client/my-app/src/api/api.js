@@ -9,8 +9,6 @@ import imageIcon from "@iconify/icons-bi/image";
 import commentTextAlt from "@iconify/icons-zmdi/comment-text-alt";
 import linkChain from "@iconify/icons-akar-icons/link-chain";
 
-
-
 export async function client(endpoint, { body, ...customConfig } = {}) {
 	// const headers = { 'Content-Type': 'application/json' }
 
@@ -70,7 +68,6 @@ export const handlefetchedPosts = (response) => {
 			img = post.data.rpan_video;
 		} else if (post.data.thumbnail) {
 			img = post.data.thumbnail;
-			console.log(`thum: ${img}`);
 		}
 
 		return {
