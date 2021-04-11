@@ -1,7 +1,8 @@
-import { jest } from "@jest/globals";
-import { render } from "@testing-library/react";
 import React from "react";
 import NavBar from "./NavBar";
+import { jest } from "@jest/globals";
+import { render } from "@testing-library/react";
+
 
 jest.mock("@iconify-icons/bx/bx-menu", () => {
 	return {
