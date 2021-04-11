@@ -1,8 +1,6 @@
 import React from "react";
 import PostsList from "./PostsList";
 import { render, makeTestStore, fireEvent, screen } from "../testUtils/testUtils";
-import { fetchPosts } from "../posts/postsSlice";
-import {rest} from "msw"
 
 describe("PostsSkeleton", () => {
 	it("should render first time (with posts.status = idle, in store) without crashing ", () => {
@@ -21,7 +19,6 @@ describe("PostsSkeleton", () => {
 		};
 		const name = "posts";
 		const store = makeTestStore(name, initialState);
-		console.log(fetchPosts());
 
 		render(<PostsList />, { store });
 
