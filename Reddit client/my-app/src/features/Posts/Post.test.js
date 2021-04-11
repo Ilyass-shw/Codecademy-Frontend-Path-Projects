@@ -25,4 +25,26 @@ describe("PostsSkeleton", () => {
 			{ store }
 		);
 	});
+
+	it("should match the snapshot ", () => {
+		const store = makeTestStore();
+
+		const { container } = render(
+			<Post
+				post={{
+					title: "fake title 1",
+					img: "fake img url 1",
+					url: "fake link 1",
+					upvotes: "10k",
+					date: "1 days ago",
+					author: "author 1",
+					subreddit: "subreddit 1",
+					id: "id 1",
+				}}
+			/>,
+			{ store }
+		);
+
+        expect(container).toMatchSnapshot()
+	});
 });
