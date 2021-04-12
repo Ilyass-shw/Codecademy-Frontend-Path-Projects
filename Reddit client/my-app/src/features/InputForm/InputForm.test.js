@@ -1,9 +1,8 @@
 import { jest } from "@jest/globals";
-import { fireEvent, waitForElement } from "@testing-library/react";
+import { render, makeTestStore, fireEvent, screen } from "../testUtils/testUtils";
 import React from "react";
 import { InputForm } from "./InputForm.js";
 //
-import { render } from "../../app/test-utils/test-utils.js";
 
 jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	return {
@@ -22,23 +21,17 @@ jest.mock("react-spring/renderprops", () => {
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
 });
-
+let store;
 describe("InputForm", () => {
-	// let store;
-	let component;
-
 	beforeEach(() => {
-		component = render(<InputForm />);
+		store = makeTestStore();
 	});
 
-	it("should match the snapshot", async () => {
-		await new Promise((res) => {
-			setTimeout(() => {
-				expect(component.container).toMatchSnapshot();
-				res();
-			}, 5000);
-		});
-	}, 30000);
+	it("should match the snapshot", () => {
+		const { container } = render(<InputForm />, { store });
+
+		expect(container).toMatchSnapshot();
+	});
 
 	// it("should render without crashing", () => {});
 
