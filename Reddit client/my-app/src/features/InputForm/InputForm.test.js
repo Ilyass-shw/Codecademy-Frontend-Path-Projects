@@ -2,7 +2,11 @@ import { jest } from "@jest/globals";
 import { render, makeTestStore, fireEvent, screen } from "../testUtils/testUtils";
 import React from "react";
 import { InputForm } from "./InputForm.js";
-//
+import { fetchPosts, searchTermSet } from "../posts/postsSlice";
+import userEvent from '@testing-library/user-event'
+
+
+
 
 jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	return {
@@ -35,6 +39,14 @@ describe("InputForm", () => {
 		const { container } = render(<InputForm />, { store });
 
 		expect(container).toMatchSnapshot();
+	});
+
+
+	it("should have an empty initial value for input ", () => {
+		 render(<InputForm />, { store });
+		 const input = screen.getByPlaceholderText('Search')
+		 expect(input.value).toBe('')
+
 	});
 
 	// it("should not dispatch anything when clicked without defined term", () => {
