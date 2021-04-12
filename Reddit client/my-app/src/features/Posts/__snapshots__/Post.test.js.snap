@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PostsSkeleton should match the snapshot on desktop 1`] = `
+exports[`Post should match the snapshot on desktop 1`] = `
 <div>
   <div
     class="post-block"
@@ -83,7 +83,7 @@ exports[`PostsSkeleton should match the snapshot on desktop 1`] = `
 </div>
 `;
 
-exports[`PostsSkeleton should match the snapshot on devices smaller than desktop 1`] = `
+exports[`Post should match the snapshot on devices smaller than desktop 1`] = `
 <div>
   <div
     class="post-block"

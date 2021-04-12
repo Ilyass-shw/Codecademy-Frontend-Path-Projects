@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PostsSkeleton should display error when posts fetching fails 1`] = `
+exports[`PostsList should display error when posts fetching fails 1`] = `
 <div>
   <div
     class="posts-container"
@@ -14,7 +14,7 @@ exports[`PostsSkeleton should display error when posts fetching fails 1`] = `
 </div>
 `;
 
-exports[`PostsSkeleton should display posts after fetching has succeeded  1`] = `
+exports[`PostsList should display posts after fetching has succeeded  1`] = `
 <div>
   <div
     class="posts-container"
@@ -23,308 +23,95 @@ exports[`PostsSkeleton should display posts after fetching has succeeded  1`] = 
       class="posts-list"
     >
       <div
-        class="post-block"
+        rol="fake post"
       >
-        <a
-          alt="fake title 1"
-          class="image-container"
-          href="https://www.reddit.comfake link 1"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            alt="post"
-            class="content-image"
-            src="fake img url 1"
-          />
-        </a>
-        <div
-          class="post-data"
-        >
-          <a
-            alt="fake title 1"
-            href="https://www.reddit.comfake link 1"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <div
-              class="post-data-container"
-            >
-              <div
-                class="mobile-post-data"
-              >
-                <h4
-                  class="title"
-                >
-                  fake title 1
-                </h4>
-                <div
-                  class="upvotes-date-data"
-                >
-                  <p>
-                    subreddit 1
-                    <span
-                      class="dot"
-                    >
-                      •
-                    </span>
-                    10k
-                     upvotes
-                    <span
-                      class="dot"
-                    >
-                      •
-                    </span>
-                    1 days ago
-                  </p>
-                </div>
-              </div>
-              <div
-                class="subreddit"
-              >
-                <svg
-                  focusable="false"
-                  height="1.5rem"
-                  preserveAspectRatio="xMidYMid meet"
-                  style="transform: rotate(360deg);"
-                  viewBox="0 0 24 24"
-                  width="1.5rem"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="9.67"
-                    cy="13"
-                    fill="currentColor"
-                    r="1.001"
-                  />
-                  <path
-                    d="M14.09 15.391A3.28 3.28 0 0 1 12 16a3.271 3.271 0 0 1-2.081-.63a.27.27 0 0 0-.379.38c.71.535 1.582.809 2.471.77a3.811 3.811 0 0 0 2.469-.77v.04a.284.284 0 0 0 .006-.396a.28.28 0 0 0-.396-.003zm.209-3.351a1 1 0 0 0 0 2l-.008.039c.016.002.033 0 .051 0a1 1 0 0 0 .958-1.038a1 1 0 0 0-1.001-1.001z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M12 2C6.479 2 2 6.477 2 12c0 5.521 4.479 10 10 10s10-4.479 10-10c0-5.523-4.479-10-10-10zm5.859 11.33c.012.146.012.293 0 .439c0 2.24-2.609 4.062-5.83 4.062s-5.83-1.82-5.83-4.062a2.681 2.681 0 0 1 0-.439a1.46 1.46 0 0 1-.455-2.327a1.458 1.458 0 0 1 2.063-.063a7.145 7.145 0 0 1 3.899-1.23l.743-3.47v-.004A.313.313 0 0 1 12.82 6l2.449.49a1.001 1.001 0 1 1-.131.61L13 6.65l-.649 3.12a7.123 7.123 0 0 1 3.85 1.23a1.46 1.46 0 0 1 2.469 1c.01.563-.307 1.08-.811 1.33z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <p
-                  class="subreddit-name"
-                >
-                  subreddit 1
-                </p>
-                <p
-                  class="subreddit-label"
-                >
-                  subreddit 1
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
+        <p>
+          fake title 1
+        </p>
+        <p>
+          fake img url 1
+        </p>
+        <p>
+          fake link 1
+        </p>
+        <p>
+          10k
+        </p>
+        <p>
+          1 days ago
+        </p>
+        <p>
+          author 1
+        </p>
+        <p>
+          subreddit 1
+        </p>
+        <p>
+          id 1
+        </p>
       </div>
       <div
-        class="post-block"
+        rol="fake post"
       >
-        <a
-          alt="fake title 2"
-          class="image-container"
-          href="https://www.reddit.comfake link 2"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            alt="post"
-            class="content-image"
-            src="fake img url 2"
-          />
-        </a>
-        <div
-          class="post-data"
-        >
-          <a
-            alt="fake title 2"
-            href="https://www.reddit.comfake link 2"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <div
-              class="post-data-container"
-            >
-              <div
-                class="mobile-post-data"
-              >
-                <h4
-                  class="title"
-                >
-                  fake title 2
-                </h4>
-                <div
-                  class="upvotes-date-data"
-                >
-                  <p>
-                    subreddit 2
-                    <span
-                      class="dot"
-                    >
-                      •
-                    </span>
-                    20k
-                     upvotes
-                    <span
-                      class="dot"
-                    >
-                      •
-                    </span>
-                    2 days ago
-                  </p>
-                </div>
-              </div>
-              <div
-                class="subreddit"
-              >
-                <svg
-                  focusable="false"
-                  height="1.5rem"
-                  preserveAspectRatio="xMidYMid meet"
-                  style="transform: rotate(360deg);"
-                  viewBox="0 0 24 24"
-                  width="1.5rem"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="9.67"
-                    cy="13"
-                    fill="currentColor"
-                    r="1.001"
-                  />
-                  <path
-                    d="M14.09 15.391A3.28 3.28 0 0 1 12 16a3.271 3.271 0 0 1-2.081-.63a.27.27 0 0 0-.379.38c.71.535 1.582.809 2.471.77a3.811 3.811 0 0 0 2.469-.77v.04a.284.284 0 0 0 .006-.396a.28.28 0 0 0-.396-.003zm.209-3.351a1 1 0 0 0 0 2l-.008.039c.016.002.033 0 .051 0a1 1 0 0 0 .958-1.038a1 1 0 0 0-1.001-1.001z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M12 2C6.479 2 2 6.477 2 12c0 5.521 4.479 10 10 10s10-4.479 10-10c0-5.523-4.479-10-10-10zm5.859 11.33c.012.146.012.293 0 .439c0 2.24-2.609 4.062-5.83 4.062s-5.83-1.82-5.83-4.062a2.681 2.681 0 0 1 0-.439a1.46 1.46 0 0 1-.455-2.327a1.458 1.458 0 0 1 2.063-.063a7.145 7.145 0 0 1 3.899-1.23l.743-3.47v-.004A.313.313 0 0 1 12.82 6l2.449.49a1.001 1.001 0 1 1-.131.61L13 6.65l-.649 3.12a7.123 7.123 0 0 1 3.85 1.23a1.46 1.46 0 0 1 2.469 1c.01.563-.307 1.08-.811 1.33z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <p
-                  class="subreddit-name"
-                >
-                  subreddit 2
-                </p>
-                <p
-                  class="subreddit-label"
-                >
-                  subreddit 2
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
+        <p>
+          fake title 2
+        </p>
+        <p>
+          fake img url 2
+        </p>
+        <p>
+          fake link 2
+        </p>
+        <p>
+          20k
+        </p>
+        <p>
+          2 days ago
+        </p>
+        <p>
+          author 2
+        </p>
+        <p>
+          subreddit 2
+        </p>
+        <p>
+          id 2
+        </p>
       </div>
       <div
-        class="post-block"
+        rol="fake post"
       >
-        <a
-          alt="fake title 3"
-          class="image-container"
-          href="https://www.reddit.comfake link 3"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            alt="post"
-            class="content-image"
-            src="fake img url 3"
-          />
-        </a>
-        <div
-          class="post-data"
-        >
-          <a
-            alt="fake title 3"
-            href="https://www.reddit.comfake link 3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <div
-              class="post-data-container"
-            >
-              <div
-                class="mobile-post-data"
-              >
-                <h4
-                  class="title"
-                >
-                  fake title 3
-                </h4>
-                <div
-                  class="upvotes-date-data"
-                >
-                  <p>
-                    subreddit 3
-                    <span
-                      class="dot"
-                    >
-                      •
-                    </span>
-                    30k
-                     upvotes
-                    <span
-                      class="dot"
-                    >
-                      •
-                    </span>
-                    3 days ago
-                  </p>
-                </div>
-              </div>
-              <div
-                class="subreddit"
-              >
-                <svg
-                  focusable="false"
-                  height="1.5rem"
-                  preserveAspectRatio="xMidYMid meet"
-                  style="transform: rotate(360deg);"
-                  viewBox="0 0 24 24"
-                  width="1.5rem"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="9.67"
-                    cy="13"
-                    fill="currentColor"
-                    r="1.001"
-                  />
-                  <path
-                    d="M14.09 15.391A3.28 3.28 0 0 1 12 16a3.271 3.271 0 0 1-2.081-.63a.27.27 0 0 0-.379.38c.71.535 1.582.809 2.471.77a3.811 3.811 0 0 0 2.469-.77v.04a.284.284 0 0 0 .006-.396a.28.28 0 0 0-.396-.003zm.209-3.351a1 1 0 0 0 0 2l-.008.039c.016.002.033 0 .051 0a1 1 0 0 0 .958-1.038a1 1 0 0 0-1.001-1.001z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M12 2C6.479 2 2 6.477 2 12c0 5.521 4.479 10 10 10s10-4.479 10-10c0-5.523-4.479-10-10-10zm5.859 11.33c.012.146.012.293 0 .439c0 2.24-2.609 4.062-5.83 4.062s-5.83-1.82-5.83-4.062a2.681 2.681 0 0 1 0-.439a1.46 1.46 0 0 1-.455-2.327a1.458 1.458 0 0 1 2.063-.063a7.145 7.145 0 0 1 3.899-1.23l.743-3.47v-.004A.313.313 0 0 1 12.82 6l2.449.49a1.001 1.001 0 1 1-.131.61L13 6.65l-.649 3.12a7.123 7.123 0 0 1 3.85 1.23a1.46 1.46 0 0 1 2.469 1c.01.563-.307 1.08-.811 1.33z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <p
-                  class="subreddit-name"
-                >
-                  subreddit 3
-                </p>
-                <p
-                  class="subreddit-label"
-                >
-                  subreddit 3
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
+        <p>
+          fake title 3
+        </p>
+        <p>
+          fake img url 3
+        </p>
+        <p>
+          fake link 3
+        </p>
+        <p>
+          30k
+        </p>
+        <p>
+          3 days ago
+        </p>
+        <p>
+          author 3
+        </p>
+        <p>
+          subreddit 3
+        </p>
+        <p>
+          id 3
+        </p>
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`PostsSkeleton should display skeleton and match the snapshot when while posts are not fetched yet  1`] = `
+exports[`PostsList should display skeleton and match the snapshot when while posts are not fetched yet  1`] = `
 <div>
   <div
     class="posts-container"
@@ -332,207 +119,21 @@ exports[`PostsSkeleton should display skeleton and match the snapshot when while
     <div
       class="posts-list"
     >
-      <div>
-        <div
-          class="css-18kc0t3-SkeletonTheme"
-        >
-          <div
-            class="post-block skeleton-post-block"
-          >
-            <div
-              class="content-image skeleton-content-image"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 240px; height: 10rem;"
-                >
-                  ‌
-                </span>
-              </span>
-            </div>
-            <div
-              class="post-data skeleton-post-data-mobile"
-            >
-              <div
-                class="post-data-container skeleton-post-data-container-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 180px; height: 20px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 140px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="subreddit skeleton-subreddit-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton subreddit-icon css-1eg0sfo-skeletonStyles-Skeleton"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 80px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          class="css-18kc0t3-SkeletonTheme"
-        >
-          <div
-            class="post-block skeleton-post-block"
-          >
-            <div
-              class="content-image skeleton-content-image"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 240px; height: 10rem;"
-                >
-                  ‌
-                </span>
-              </span>
-            </div>
-            <div
-              class="post-data skeleton-post-data-mobile"
-            >
-              <div
-                class="post-data-container skeleton-post-data-container-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 180px; height: 20px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 140px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="subreddit skeleton-subreddit-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton subreddit-icon css-1eg0sfo-skeletonStyles-Skeleton"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 80px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          class="css-18kc0t3-SkeletonTheme"
-        >
-          <div
-            class="post-block skeleton-post-block"
-          >
-            <div
-              class="content-image skeleton-content-image"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 240px; height: 10rem;"
-                >
-                  ‌
-                </span>
-              </span>
-            </div>
-            <div
-              class="post-data skeleton-post-data-mobile"
-            >
-              <div
-                class="post-data-container skeleton-post-data-container-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 180px; height: 20px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 140px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="subreddit skeleton-subreddit-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton subreddit-icon css-1eg0sfo-skeletonStyles-Skeleton"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 80px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p>
+        PostsSkeletonMock
+      </p>
+      <p>
+        PostsSkeletonMock
+      </p>
+      <p>
+        PostsSkeletonMock
+      </p>
     </div>
   </div>
 </div>
 `;
 
-exports[`PostsSkeleton should display skeleton and match the snapshot when while posts fetching is not completed yet  1`] = `
+exports[`PostsList should display skeleton and match the snapshot when while posts fetching is not completed yet  1`] = `
 <div>
   <div
     class="posts-container"
@@ -540,201 +141,15 @@ exports[`PostsSkeleton should display skeleton and match the snapshot when while
     <div
       class="posts-list"
     >
-      <div>
-        <div
-          class="css-18kc0t3-SkeletonTheme"
-        >
-          <div
-            class="post-block skeleton-post-block"
-          >
-            <div
-              class="content-image skeleton-content-image"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 240px; height: 10rem;"
-                >
-                  ‌
-                </span>
-              </span>
-            </div>
-            <div
-              class="post-data skeleton-post-data-mobile"
-            >
-              <div
-                class="post-data-container skeleton-post-data-container-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 180px; height: 20px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 140px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="subreddit skeleton-subreddit-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton subreddit-icon css-1eg0sfo-skeletonStyles-Skeleton"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 80px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          class="css-18kc0t3-SkeletonTheme"
-        >
-          <div
-            class="post-block skeleton-post-block"
-          >
-            <div
-              class="content-image skeleton-content-image"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 240px; height: 10rem;"
-                >
-                  ‌
-                </span>
-              </span>
-            </div>
-            <div
-              class="post-data skeleton-post-data-mobile"
-            >
-              <div
-                class="post-data-container skeleton-post-data-container-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 180px; height: 20px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 140px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="subreddit skeleton-subreddit-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton subreddit-icon css-1eg0sfo-skeletonStyles-Skeleton"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 80px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          class="css-18kc0t3-SkeletonTheme"
-        >
-          <div
-            class="post-block skeleton-post-block"
-          >
-            <div
-              class="content-image skeleton-content-image"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 240px; height: 10rem;"
-                >
-                  ‌
-                </span>
-              </span>
-            </div>
-            <div
-              class="post-data skeleton-post-data-mobile"
-            >
-              <div
-                class="post-data-container skeleton-post-data-container-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 180px; height: 20px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 140px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="subreddit skeleton-subreddit-mobile"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton subreddit-icon css-1eg0sfo-skeletonStyles-Skeleton"
-                  >
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 80px; height: 13px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p>
+        PostsSkeletonMock
+      </p>
+      <p>
+        PostsSkeletonMock
+      </p>
+      <p>
+        PostsSkeletonMock
+      </p>
     </div>
   </div>
 </div>

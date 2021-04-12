@@ -5,7 +5,7 @@ import { render, makeTestStore } from "../testUtils/testUtils";
 jest.mock("@iconify/react", () => {
 	return { Icon: () => <p>Icon mock</p> };
 });
-describe("PostsSkeleton", () => {
+describe("Post", () => {
 	it("should render without crashing ", () => {
 		const store = makeTestStore();
 
