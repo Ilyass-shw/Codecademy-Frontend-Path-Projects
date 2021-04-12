@@ -27,13 +27,15 @@ describe("InputForm", () => {
 		store = makeTestStore();
 	});
 
+	it("should render without crashing", () => {
+		render(<InputForm />, { store });
+	});
+
 	it("should match the snapshot", () => {
 		const { container } = render(<InputForm />, { store });
 
 		expect(container).toMatchSnapshot();
 	});
-
-	// it("should render without crashing", () => {});
 
 	// it("should not dispatch anything when clicked without defined term", () => {
 	// 	const submitButton = component.getByTestId("search-button");
