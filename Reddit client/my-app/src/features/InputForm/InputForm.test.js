@@ -4,19 +4,6 @@ import React from "react";
 import { InputForm } from "./InputForm.js";
 //
 import { render } from "../../app/test-utils/test-utils.js";
-import { Transition } from "react-transition-group";
-
-// function createTestStore() {
-// 	const store = createStore(
-// 		combineReducers({
-// 			posts: postsReducer,
-// 		})
-// 	);
-// 	return store;
-// }
-// const store = createTestStore();
-
-// const mockStore = configureStore([]);
 
 jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	return {
@@ -24,36 +11,13 @@ jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	};
 });
 
-// jest.mock("react-spring/renderprops", () => {
-// 	const NewHOC =(PassedComponent)=>{
-// 		return
-// 	}
-// 	const renderPropsComponent=({koko}) =>{
-// 		return <div rol="wiyéé">{koko}</div>;
-// 	}
-// 	const Transition = ({children}) => {
-// 		const chilf = children()
-// 		return <div>{chilf}</div>
-
-// 	}
-// 	return {
-// 		Transition
-// 			// console.log(props.children);
-// 			// return
-// 			// <div rol="wiyéé">{props.children}</div>;
-// 		// },
-// 	};
-// });
-
 jest.mock("react-spring/renderprops", () => {
 	return {
-		Transition: ({ items, keys, children, enter }) => {
-
+		Transition: ({ children, enter }) => {
 			return <div data-testid="Transition">{children("InputForm")(enter)}</div>;
 		},
 	};
 });
-// Transition.mockImplementation(({ children }) => <div data-testid="Transition">{children}</div>)
 
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
