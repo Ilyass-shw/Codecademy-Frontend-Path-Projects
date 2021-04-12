@@ -49,10 +49,13 @@ describe("InputForm", () => {
 
 	});
 
-	// it("should not dispatch anything when clicked without defined term", () => {
-	// 	const submitButton = component.getByTestId("search-button");
-	// 	fireEvent.click(submitButton);
-	// 	// expect(store.dispatch).toBeCalledTimes(0);
-	// });
+	it("should not dispatch anything when clicked without defined term", () => {
+		render(<InputForm />, { store });
+		 const input = screen.getByPlaceholderText('Search')
+		 expect(input.value).toBe('')
+		const submitButton = screen.getByTestId("search-button");
+		fireEvent.click(submitButton);
+		expect(store.dispatch).toBeCalledTimes(0);
+	});
 	// it("should render without crashing", () => {});
 });
