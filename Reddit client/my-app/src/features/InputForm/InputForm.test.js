@@ -1,5 +1,5 @@
 import { jest } from "@jest/globals";
-import { render, makeTestStore, fireEvent, screen } from "../testUtils/testUtils";
+import { render, makeTestStore, screen } from "../testUtils/testUtils";
 import React from "react";
 import { InputForm } from "./InputForm.js";
 import { fetchPosts, searchTermSet } from "../posts/postsSlice";
@@ -25,8 +25,11 @@ jest.mock("react-spring/renderprops", () => {
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
 });
+
 let store;
+
 describe("InputForm", () => {
+
 	beforeEach(() => {
 		store = makeTestStore();
 	});
@@ -54,8 +57,13 @@ describe("InputForm", () => {
 		 const input = screen.getByPlaceholderText('Search')
 		 expect(input.value).toBe('')
 		const submitButton = screen.getByTestId("search-button");
-		fireEvent.click(submitButton);
 		expect(store.dispatch).toBeCalledTimes(0);
+
+		userEvent.click(submitButton)
+		expect(store.dispatch).toBeCalledTimes(0);
+
 	});
+
+	
 	// it("should render without crashing", () => {});
 });
