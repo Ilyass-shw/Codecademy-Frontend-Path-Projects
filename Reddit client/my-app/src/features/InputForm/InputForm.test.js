@@ -3,10 +3,7 @@ import { render, makeTestStore, screen } from "../testUtils/testUtils";
 import React from "react";
 import { InputForm } from "./InputForm.js";
 import { fetchPosts, searchTermSet } from "../posts/postsSlice";
-import userEvent from '@testing-library/user-event'
-
-
-
+import userEvent from "@testing-library/user-event";
 
 jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	return {
@@ -29,7 +26,6 @@ jest.mock("@iconify/react", () => {
 let store;
 
 describe("InputForm", () => {
-
 	beforeEach(() => {
 		store = makeTestStore();
 	});
@@ -44,26 +40,39 @@ describe("InputForm", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-
 	it("should have an empty initial value for input ", () => {
-		 render(<InputForm />, { store });
-		 const input = screen.getByPlaceholderText('Search')
-		 expect(input.value).toBe('')
-
+		render(<InputForm />, { store });
+		const input = screen.getByPlaceholderText("Search");
+		expect(input.value).toBe("");
 	});
 
 	it("should not dispatch anything when clicked without defined term", () => {
 		render(<InputForm />, { store });
-		 const input = screen.getByPlaceholderText('Search')
-		 expect(input.value).toBe('')
+		const input = screen.getByPlaceholderText("Search");
+		expect(input.value).toBe("");
 		const submitButton = screen.getByTestId("search-button");
 		expect(store.dispatch).toBeCalledTimes(0);
 
-		userEvent.click(submitButton)
+		userEvent.click(submitButton);
 		expect(store.dispatch).toBeCalledTimes(0);
-
 	});
 
-	
+	it("should dispatch and fetch posts according to the typed term after clicking the search button", () => {
+		render(<InputForm />, { store });
+		const input = screen.getByPlaceholderText("Search");
+
+		expect(input).toHaveValue("");
+
+		userEvent.type(input, "memes");
+
+		const submitButton = screen.getByTestId("search-button");
+
+		expect(store.dispatch).toBeCalledTimes(0);
+
+		userEvent.click(submitButton);
+
+		expect(store.dispatch).toHaveBeenNthCalledWith(1, searchTermSet("memes"));
+		expect(store.dispatch).toBeCalledTimes(2);
+	});
 	// it("should render without crashing", () => {});
 });
