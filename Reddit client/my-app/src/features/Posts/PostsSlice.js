@@ -7,7 +7,7 @@ const initialState = {
 	filter: "relevance",
 	firstFilter: "relevance",
 	lastFilter: "comments",
-	status: "idle",
+	postFetchingStatus: "idle",
 	error: null,
 };
 
@@ -38,14 +38,14 @@ const postsSlice = createSlice({
 	},
 	extraReducers: {
 		[fetchPosts.pending]: (state, action) => {
-			state.status = "Loading";
+			state.postFetchingStatus = "Loading";
 		},
 		[fetchPosts.fulfilled]: (state, action) => {
-			state.status = "succeeded";
+			state.postFetchingStatus = "succeeded";
 			state.postList = action.payload;
 		},
 		[fetchPosts.rejected]: (state, action) => {
-			state.status = "failed";
+			state.postFetchingStatus = "failed";
 			state.error = action.error.message;
 		},
 	},

@@ -7,7 +7,7 @@ import PostsSkeleton from "../PostsSkeleton/PostsSkeleton";
 import { nanoid } from "nanoid";
 
 const PostsList = () => {
-	const postsStatus = useSelector((state) => state.posts.status);
+	const postsStatus = useSelector((state) => state.posts.postFetchingStatus);
 	const postError = useSelector((state) => state.posts.error);
 	const posts = useSelector(selectAllPosts);
 

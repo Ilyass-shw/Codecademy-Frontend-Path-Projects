@@ -32,9 +32,9 @@ jest.mock("./Post", () => {
 });
 
 describe("PostsList", () => {
-	it("should render first time (with posts.status = idle, in store) without crashing ", () => {
+	it("should render first time (with posts.postFetchingStatus = idle, in store) without crashing ", () => {
 		const initialState = {
-			status: "idle",
+			postFetchingStatus: "idle",
 		};
 		const name = "posts";
 		const store = makeTestStore(name, initialState);
@@ -44,7 +44,7 @@ describe("PostsList", () => {
 
 	it("should fetch posts when rendered ", () => {
 		const initialState = {
-			status: "idle",
+			postFetchingStatus: "idle",
 		};
 		const name = "posts";
 		const store = makeTestStore(name, initialState);
@@ -58,7 +58,7 @@ describe("PostsList", () => {
 
 	it("should display skeleton and match the snapshot when while posts are not fetched yet ", () => {
 		const initialState = {
-			status: "idle",
+			postFetchingStatus: "idle",
 		};
 		const name = "posts";
 		const store = makeTestStore(name, initialState);
@@ -68,7 +68,7 @@ describe("PostsList", () => {
 
 	it("should display skeleton and match the snapshot when while posts fetching is not completed yet ", () => {
 		const initialState = {
-			status: "Loading",
+			postFetchingStatus: "Loading",
 		};
 		const name = "posts";
 		const store = makeTestStore(name, initialState);
@@ -78,7 +78,7 @@ describe("PostsList", () => {
 
 	it("should display error when posts fetching fails", () => {
 		const initialState = {
-			status: "failed",
+			postFetchingStatus: "failed",
 			error: "I have failed you master!",
 		};
 		const name = "posts";
@@ -89,7 +89,7 @@ describe("PostsList", () => {
 
 	it("should display posts after fetching has succeeded ", () => {
 		const initialState = {
-			status: "succeeded",
+			postFetchingStatus: "succeeded",
 			posts: [
 				{
 					title: "fake title 1",

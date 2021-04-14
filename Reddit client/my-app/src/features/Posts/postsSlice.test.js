@@ -1,5 +1,6 @@
-import { searchTermSet, filterUpdated, firstFilterUpdated, lastFilterUpdated } from "./postsSlice";
+import reducer, { searchTermSet, filterUpdated, firstFilterUpdated, lastFilterUpdated, fetchPosts } from "./postsSlice";
 import store from "../../app/store.js";
+import { client, getEndPoint, handlefetchedPosts } from "../../api/api";
 
 describe("searchTermSet reducer", () => {
 	it("should handle searchTermSet", () => {
@@ -57,6 +58,22 @@ describe("filterUpdated reducer", () => {
 			store.dispatch(lastFilterUpdated("hot"));
 			lastFilter = store.getState().posts.lastFilter;
 			expect(lastFilter).toBe("hot");
+		});
+	});
+
+	describe("fetchPosts reducer", () => {
+		it("should change postFetchingStatus from idle to loading while pending", () => {
+			const initialState = {
+				searchTerm: "memes",
+				postList: [],
+				filter: "relevance",
+				firstFilter: "relevance",
+				lastFilter: "comments",
+				postFetchingStatus: "idle",
+				error: null,
+			};
+			const newState = reducer(initialState, fetchPosts.pending);
+			expect(newState.postFetchingStatus).toBe("Loading");
 		});
 	});
 });
