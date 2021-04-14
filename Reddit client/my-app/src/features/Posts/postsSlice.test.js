@@ -1,4 +1,4 @@
-import reducer, { searchTermSet, filterUpdated, firstFilterUpdated, lastFilterUpdated } from "./postsSlice";
+import { searchTermSet, filterUpdated, firstFilterUpdated, lastFilterUpdated } from "./postsSlice";
 import store from "../../app/store.js";
 
 describe("searchTermSet reducer", () => {
@@ -31,7 +31,7 @@ describe("filterUpdated reducer", () => {
 	});
 
 	describe("firstFilterUpdated reducer", () => {
-		it("should handle filterUpdated", () => {
+		it("should handle firstFilterUpdated", () => {
 			let firstFilter = store.getState().posts.firstFilter;
 			expect(firstFilter).toBe("relevance");
 
@@ -42,6 +42,21 @@ describe("filterUpdated reducer", () => {
 			store.dispatch(firstFilterUpdated("new"));
 			firstFilter = store.getState().posts.firstFilter;
 			expect(firstFilter).toBe("new");
+		});
+	});
+
+	describe("lastFilterUpdated reducer", () => {
+		it("should handle lastFilterUpdated", () => {
+			let lastFilter = store.getState().posts.lastFilter;
+			expect(lastFilter).toBe("comments");
+
+			store.dispatch(lastFilterUpdated("relevance"));
+			lastFilter = store.getState().posts.lastFilter;
+			expect(lastFilter).toBe("relevance");
+
+			store.dispatch(lastFilterUpdated("hot"));
+			lastFilter = store.getState().posts.lastFilter;
+			expect(lastFilter).toBe("hot");
 		});
 	});
 });
