@@ -90,7 +90,7 @@ describe("PostsList", () => {
 	it("should display posts after fetching has succeeded ", () => {
 		const initialState = {
 			postFetchingStatus: "succeeded",
-			posts: [
+			postList: [
 				{
 					title: "fake title 1",
 					img: "fake img url 1",

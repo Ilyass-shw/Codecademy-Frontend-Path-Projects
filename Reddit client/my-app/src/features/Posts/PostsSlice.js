@@ -20,7 +20,7 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (_, { getSt
 });
 
 const postsSlice = createSlice({
-	name: "postList",
+	name: "posts",
 	initialState,
 	reducers: {
 		searchTermSet(state, action) {
