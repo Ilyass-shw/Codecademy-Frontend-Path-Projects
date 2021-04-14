@@ -1,16 +1,12 @@
-import reducer from "./postsSlice";
+import reducer, { searchTermSet, filterUpdated, firstFilterUpdated, lastFilterUpdated } from "./postsSlice";
+import store from "../../app/store.js";
+describe("searchTermSet reducer", () => {
+	it("should handle searchTermSet", () => {
+		let searchTerm = store.getState().posts.searchTerm;
+		expect(searchTerm).toBe("memes");
 
-describe("postsSlice reducer", () => {
-	const initialState = {
-		searchTerm: "lol",
-		posts: [],
-		filter: "relevance",
-		firstFilter: "relevance",
-		lastFilter: "comments",
-		status: "idle",
-		error: null,
-	};
-	it("should return the initial state", () => {
-		expect(reducer(undefined, {})).toEqual(initialState);
+		store.dispatch(searchTermSet("random"));
+		searchTerm = store.getState().posts.searchTerm;
+		expect(searchTerm).toBe("random");
 	});
 });

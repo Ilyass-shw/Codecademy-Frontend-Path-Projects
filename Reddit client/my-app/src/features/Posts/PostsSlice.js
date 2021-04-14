@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { client, getEndPoint, handlefetchedPosts } from "../../api/api";
 
 const initialState = {
-	searchTerm: "lol",
-	posts: [],
+	searchTerm: "memes",
+	postList: [],
 	filter: "relevance",
 	firstFilter: "relevance",
 	lastFilter: "comments",
@@ -20,7 +20,7 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (_, { getSt
 });
 
 const postsSlice = createSlice({
-	name: "posts",
+	name: "postList",
 	initialState,
 	reducers: {
 		searchTermSet(state, action) {
@@ -42,7 +42,7 @@ const postsSlice = createSlice({
 		},
 		[fetchPosts.fulfilled]: (state, action) => {
 			state.status = "succeeded";
-			state.posts = action.payload;
+			state.postList = action.payload;
 		},
 		[fetchPosts.rejected]: (state, action) => {
 			state.status = "failed";
@@ -54,4 +54,4 @@ const postsSlice = createSlice({
 export const { searchTermSet, filterUpdated, firstFilterUpdated, lastFilterUpdated } = postsSlice.actions;
 export default postsSlice.reducer;
 
-export const selectAllPosts = (state) => state.posts.posts;
+export const selectAllPosts = (state) => state.posts.postList;
