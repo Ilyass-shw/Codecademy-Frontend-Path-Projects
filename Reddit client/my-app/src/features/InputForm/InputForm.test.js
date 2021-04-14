@@ -11,6 +11,15 @@ jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	};
 });
 
+
+
+// jest.mock("../posts/postsSlice", () => {
+// 	return {
+// 		...jest.requireActual("../posts/postsSlice"),
+// 		fetchPosts: () => "posts are fetched",
+// 	};
+// });
+
 jest.mock("react-spring/renderprops", () => {
 	return {
 		Transition: ({ children, enter }) => {
