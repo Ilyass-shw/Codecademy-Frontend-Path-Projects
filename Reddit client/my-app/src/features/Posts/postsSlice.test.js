@@ -1,6 +1,7 @@
 import reducer, { searchTermSet, filterUpdated, firstFilterUpdated, lastFilterUpdated, fetchPosts } from "./postsSlice";
 import store from "../../app/store.js";
-import { client, getEndPoint, handlefetchedPosts } from "../../api/api";
+import { server, rest } from "../../testServer";
+import { wait } from "@testing-library/react";
 
 describe("searchTermSet reducer", () => {
 	it("should handle searchTermSet", () => {
@@ -62,7 +63,6 @@ describe("filterUpdated reducer", () => {
 	});
 
 	describe("fetchPosts reducer", () => {
-        
 		it("should change postFetchingStatus from idle to loading while pending", () => {
 			const initialState = {
 				searchTerm: "memes",
@@ -78,18 +78,32 @@ describe("filterUpdated reducer", () => {
 		});
 	});
 
-		it("should change postFetchingStatus from idle to loading while pending", () => {
-			const initialState = {
-				searchTerm: "memes",
-				postList: [],
-				filter: "relevance",
-				firstFilter: "relevance",
-				lastFilter: "comments",
-				postFetchingStatus: "idle",
-				error: null,
-			};
-			const newState = reducer(initialState, fetchPosts.pending);
-			expect(newState.postFetchingStatus).toBe("Loading");
-		});
+	it("should change postFetchingStatus from idle to loading while pending", async () => {
+		server.use(
+			rest.get("https://www.reddit.com/search.json", (res) => {
+				return res((res) => {
+					res.status = 404;
+					res.statusText = "I failed, so sad :(";
+					res.body = JSON.stringify({ error: "You must add request handler." });
+					res.headers.set("Content-Type", "application/json");
+					return res;
+				});
+			})
+		);
+
+		let postFetchingStatus = store.getState().posts.postFetchingStatus;
+		let error = store.getState().posts.error;
+
+		expect(postFetchingStatus).toBe("idle");
+		expect(error).toBeNull();
+
+		store.dispatch(fetchPosts());
+
+		await wait(() => expect(store.getState().posts.postFetchingStatus).toBe("failed"));
+		postFetchingStatus = store.getState().posts.postFetchingStatus;
+		error = store.getState().posts.error;
+
+		expect(postFetchingStatus).toBe("failed");
+		expect(error).toBe("I failed, so sad :(");
 	});
 });
