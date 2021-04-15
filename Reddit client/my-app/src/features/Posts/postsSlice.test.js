@@ -2,7 +2,12 @@ import reducer, { searchTermSet, filterUpdated, firstFilterUpdated, lastFilterUp
 import store from "../../app/store.js";
 import { server, rest } from "../../testServer";
 import { wait } from "@testing-library/react";
+import { SWRConfig, cache } from "swr";
 
+
+afterEach(async () => {
+	await wait(() => cache.clear());
+});
 describe("searchTermSet reducer", () => {
 	it("should handle searchTermSet", () => {
 		let searchTerm = store.getState().posts.searchTerm;
@@ -78,32 +83,50 @@ describe("filterUpdated reducer", () => {
 		});
 	});
 
-	it("should change postFetchingStatus from loading to failed if the fetching fails", async () => {
-		server.use(
-			rest.get("https://www.reddit.com/search.json", (req, res) => {
-				return res((res) => {
-					res.status = 404;
-					res.statusText = "I failed, so sad :(";
-					res.body = JSON.stringify({ error: "You must add request handler." });
-					res.headers.set("Content-Type", "application/json");
-					return res;
-				});
-			})
-		);
-
+	it("should change postFetchingStatus from loading to succeeded if the fetching suceedes", async () => {
 		let postFetchingStatus = store.getState().posts.postFetchingStatus;
-		let error = store.getState().posts.error;
+		let postList = store.getState().posts.postList;
 
 		expect(postFetchingStatus).toBe("idle");
-		expect(error).toBeNull();
+		expect(postList).toHaveLength(0);
 
 		store.dispatch(fetchPosts());
 
-		await wait(() => expect(store.getState().posts.postFetchingStatus).toBe("failed"));
-		postFetchingStatus = store.getState().posts.postFetchingStatus;
-		error = store.getState().posts.error;
+		await wait(() => expect(store.getState().posts.postFetchingStatus).toBe("succeeded"));
 
-		expect(postFetchingStatus).toBe("failed");
-		expect(error).toBe("I failed, so sad :(");
+		postList = store.getState().posts.postList;
+
+		expect(postList).toHaveLength(3);
+		expect(postList).toMatchSnapshot();
+		await wait(() => cache.clear());
 	});
+
+	// it("should change postFetchingStatus from loading to failed if the fetching fails", async () => {
+	// 	server.use(
+	// 		rest.get("https://www.reddit.com/search.json", (req, res) => {
+	// 			return res((res) => {
+	// 				res.status = 404;
+	// 				res.statusText = "I failed, so sad :(";
+	// 				res.body = JSON.stringify({ error: "You must add request handler." });
+	// 				res.headers.set("Content-Type", "application/json");
+	// 				return res;
+	// 			});
+	// 		})
+	// 	);
+
+	// 	let postFetchingStatus = store.getState().posts.postFetchingStatus;
+	// 	let error = store.getState().posts.error;
+
+	// 	expect(postFetchingStatus).toBe("idle");
+	// 	expect(error).toBeNull();
+
+	// 	store.dispatch(fetchPosts());
+
+	// 	await wait(() => expect(store.getState().posts.postFetchingStatus).toBe("failed"));
+	// 	postFetchingStatus = store.getState().posts.postFetchingStatus;
+	// 	error = store.getState().posts.error;
+
+	// 	expect(postFetchingStatus).toBe("failed");
+	// 	expect(error).toBe("I failed, so sad :(");
+	// });
 });
