@@ -78,9 +78,9 @@ describe("filterUpdated reducer", () => {
 		});
 	});
 
-	it("should change postFetchingStatus from idle to loading while pending", async () => {
+	it("should change postFetchingStatus from loading to failed if the fetching fails", async () => {
 		server.use(
-			rest.get("https://www.reddit.com/search.json", (res) => {
+			rest.get("https://www.reddit.com/search.json", (req, res) => {
 				return res((res) => {
 					res.status = 404;
 					res.statusText = "I failed, so sad :(";
