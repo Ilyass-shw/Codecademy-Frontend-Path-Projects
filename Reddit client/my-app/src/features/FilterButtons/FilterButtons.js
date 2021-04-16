@@ -8,7 +8,7 @@ import sharpNewReleases from "@iconify-icons/ic/sharp-new-releases";
 import verticalAlignTop from "@iconify/icons-oi/vertical-align-top";
 import commentsIcon from "@iconify/icons-icons8/comments";
 
-import { filterUpdated, fetchPosts, firstFilterUpdated, lastFilterUpdated } from "../posts/postsSlice";
+import { filterUpdated, fetchPosts, firstFilterUpdated, lastFilterUpdated } from "../posts/postsSlice/postsSlice";
 
 const FilterButtons = () => {
 	const [filterBy, setFilterBy] = useState("relevance");

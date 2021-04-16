@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { client, getEndPoint, handlefetchedPosts } from "../../api/api";
+import { client, getEndPoint, handlefetchedPosts } from "../../../api/api";
 
 const initialState = {
 	searchTerm: "memes",

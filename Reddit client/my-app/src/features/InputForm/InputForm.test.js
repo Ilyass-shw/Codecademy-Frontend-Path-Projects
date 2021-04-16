@@ -2,7 +2,7 @@ import { jest } from "@jest/globals";
 import { render, makeTestStore, screen } from "../testUtils/testUtils";
 import React from "react";
 import { InputForm } from "./InputForm.js";
-import { fetchPosts, searchTermSet } from "../posts/postsSlice";
+import { searchTermSet } from "../posts/postsSlice/postsSlice";
 import userEvent from "@testing-library/user-event";
 
 jest.mock("@iconify-icons/fluent/search-16-filled", () => {
@@ -83,5 +83,4 @@ describe("InputForm", () => {
 		expect(store.dispatch).toHaveBeenNthCalledWith(1, searchTermSet("memes"));
 		expect(store.dispatch).toBeCalledTimes(2);
 	});
-	// it("should render without crashing", () => {});
 });

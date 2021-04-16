@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./InputForm.css";
 import { InlineIcon } from "@iconify/react";
 import search16Filled from "@iconify-icons/fluent/search-16-filled";
-import { fetchPosts, searchTermSet } from "../posts/postsSlice";
+import { fetchPosts, searchTermSet } from "../posts/postsSlice/postsSlice";
 import { useDispatch } from "react-redux";
 import { Transition } from "react-spring/renderprops";
 export const InputForm = () => {

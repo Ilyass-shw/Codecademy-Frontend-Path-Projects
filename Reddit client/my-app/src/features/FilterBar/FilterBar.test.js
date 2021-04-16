@@ -1,7 +1,7 @@
 import React from "react";
 import { FilterBar } from "./FilterBar";
 import { jest } from "@jest/globals";
-import { filterUpdated } from "../posts/postsSlice";
+import { filterUpdated } from "../posts/postsSlice/postsSlice";
 import { render, makeTestStore, fireEvent, screen } from "../testUtils/testUtils";
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
