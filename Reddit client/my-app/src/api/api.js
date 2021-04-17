@@ -48,7 +48,7 @@ client.post = function (endpoint, body, customConfig = {}) {
 
 // ============= ============= ============= ============= =============
 
-export const getEndPoint = ({ searchTerm, filter }) => {
+export const getEndPoint = (searchTerm, filter) => {
 	return `https://www.reddit.com/search.json?q=${searchTerm}&limit=20&restrict_sr=true&sort=${filter}&t=all&show=all`;
 };
 
