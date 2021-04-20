@@ -1,4 +1,5 @@
 import { client } from "../api";
+import { server, rest } from "../../testServer";
 
 describe("client.get", () => {
 	it("should return data if fetching succeeds", async () => {
@@ -50,4 +51,29 @@ describe("client.get", () => {
 
 		expect(actualData).toStrictEqual(expectedData);
 	});
+
+	it("should return error message if fetching fails", async () => {
+		server.use(
+			rest.get("https://www.reddit.com/search.json", (req, res) => {
+				return res((res) => {
+					res.status = 404;
+					res.statusText = "I failed, so sad :((";
+					res.body = JSON.stringify({ error: "You must add request handler." });
+					res.headers.set("Content-Type", "application/json");
+					return res;
+				});
+			})
+		);
+
+		const endPoint = `https://www.reddit.com/search.json?q=memes&limit=20&restrict_sr=true&sort=comments&t=all&show=all`;
+		
+		try {
+			await client.get(endPoint);
+		} catch (err) {
+			expect(err).toBe("I failed, so sad :((");
+		}
+	});
+
 });
+
+
