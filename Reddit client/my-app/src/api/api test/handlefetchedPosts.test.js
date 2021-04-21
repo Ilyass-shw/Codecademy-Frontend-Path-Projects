@@ -1,4 +1,4 @@
-import { handlefetchedPosts } from "./api";
+import { handlefetchedPosts } from "../api";
 
 
 
