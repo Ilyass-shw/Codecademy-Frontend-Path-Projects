@@ -92,31 +92,24 @@ export const handleThumbnail = (thubmnailSrc) => {
 		alignItems: "center",
 		backgroundColor: "#202021",
 	};
+
+	const ImageIcon = (icon) => {
+		return (
+			<div className="content-image" style={style}>
+				<Icon icon={icon} height="2rem" width="2rem" />
+			</div>
+		);
+	};
+
 	if (thubmnailSrc) {
 		if (thubmnailSrc === "self") {
-			return (
-				<div className="content-image" style={style}>
-					<Icon icon={commentTextAlt} height="2rem" width="2rem" />
-				</div>
-			);
+			return ImageIcon(commentTextAlt);
 		} else if (thubmnailSrc === "spoiler") {
-			return (
-				<div className="content-image" style={style}>
-					<Icon icon={imageIcon} height="2rem" width="2rem" />
-				</div>
-			);
+			return ImageIcon(imageIcon);
 		} else if (thubmnailSrc === "default") {
-			return (
-				<div className="content-image" style={style}>
-					<Icon icon={linkChain} height="2rem" width="2rem" />
-				</div>
-			);
+			return ImageIcon(linkChain);
 		} else if (thubmnailSrc === "image") {
-			return (
-				<div className="content-image" style={style}>
-					<Icon icon={imageIcon} height="2rem" width="2rem" />
-				</div>
-			);
+			return ImageIcon(linkChain);
 		} else {
 			return <img src={thubmnailSrc} alt="post" className="content-image" />;
 		}
