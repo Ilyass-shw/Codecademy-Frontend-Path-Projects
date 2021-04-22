@@ -2,6 +2,8 @@ import React from 'react'
 import { handleThumbnail } from "../api";
 
 describe('handleThumbnail',()=>{
+
+    
     it('should return img element with te according provided link as src ', ()=>{
         const ThumbnailLink= 'www.yt.com'
 
@@ -9,5 +11,11 @@ describe('handleThumbnail',()=>{
         
 
         expect(handleThumbnail(ThumbnailLink)).toStrictEqual(expectedImgElement)
+    })
+
+    it('should return Icon if thumbnail=self ', ()=>{
+        const ThumbnailLink= 'self'        
+
+        expect(handleThumbnail(ThumbnailLink)).toMatchSnapshot()
     })
 })
