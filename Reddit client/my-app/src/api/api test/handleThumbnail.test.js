@@ -24,4 +24,10 @@ describe('handleThumbnail',()=>{
 
         expect(handleThumbnail(ThumbnailLink)).toMatchSnapshot()
     })
+
+    it('should return Icon if thumbnail=default ', ()=>{
+        const ThumbnailLink= 'default'        
+
+        expect(handleThumbnail(ThumbnailLink)).toMatchSnapshot()
+    })
 })

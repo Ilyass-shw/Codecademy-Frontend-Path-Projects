@@ -1,5 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`handleThumbnail should return Icon if thumbnail=default  1`] = `
+<div
+  className="content-image"
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#202021",
+      "display": "inline-flex",
+      "justifyContent": "center",
+    }
+  }
+>
+  <Icon
+    height="2rem"
+    icon={
+      Object {
+        "body": "<g fill=\\"none\\"><path d=\\"M13.544 10.456a4.368 4.368 0 0 0-6.176 0l-3.089 3.088a4.367 4.367 0 1 0 6.177 6.177L12 18.177m-1.544-4.633a4.368 4.368 0 0 0 6.177 0l3.088-3.088a4.368 4.368 0 0 0-6.177-6.177L12 5.823\\" stroke=\\"currentColor\\" stroke-width=\\"2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\"/></g>",
+        "height": 24,
+        "width": 24,
+      }
+    }
+    width="2rem"
+  />
+</div>
+`;
+
 exports[`handleThumbnail should return Icon if thumbnail=self  1`] = `
 <div
   className="content-image"
