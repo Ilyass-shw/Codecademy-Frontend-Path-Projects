@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import { jest } from "@jest/globals";
-import { render, fireEvent, screen } from "../../app/test-utils/test-utils.js";
+import { render, makeTestStore, fireEvent, screen } from "../testUtils/testUtils";
 
 jest.mock("@iconify/react", () => {
 	return { InlineIcon: () => <p>InlineIcon mock</p> };
@@ -57,32 +57,38 @@ jest.mock("@iconify-icons/fluent/search-16-filled", () => {
 	};
 });
 
+let store;
+
 describe("Header", () => {
+	beforeEach(() => {
+		store = makeTestStore();
+	});
+
 	it("should match the snapshot", () => {
-		const { container } = render(<Header />);
+		const { container } = render(<Header />, { store });
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without crashing", () => {
-		render(<Header />);
+		render(<Header />, { store });
 	});
 
 	it("should render InputForm when window-width > 460", () => {
 		global.innerWidth = 461;
-		const { getByText } = render(<Header />);
+		const { getByText } = render(<Header />, { store });
 		getByText("InputForm mock");
 	});
 
 	it("should not render InputForm on window-width < 460", () => {
 		global.innerWidth = 459;
-		render(<Header />);
+		render(<Header />, { store });
 		const InputForm = screen.queryByText("InputForm mock");
 		expect(InputForm).not.toBeInTheDocument(); // it doesn't exist
 	});
 
 	it("should render InputForm and go-back-button when clicking on search button on window-width < 460", () => {
 		global.innerWidth = 459;
-		const { getByTestId } = render(<Header />);
+		const { getByTestId } = render(<Header />, { store });
 		const MobileSearchButton = getByTestId("mobile-search-button");
 		fireEvent.click(MobileSearchButton);
 
@@ -95,7 +101,7 @@ describe("Header", () => {
 
 	it("should make InputForm disappear and rerender mobile-search-button and reddit-logo when clicking on go-back-button on window-width < 460", () => {
 		global.innerWidth = 459;
-		const { getByTestId } = render(<Header />);
+		const { getByTestId } = render(<Header />, { store });
 		let MobileSearchButton = getByTestId("mobile-search-button");
 		fireEvent.click(MobileSearchButton);
 
