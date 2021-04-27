@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Post from "./Post";
+import Post from "../posts/Post";
 import "./PostsList.css";
-import { fetchPosts, selectAllPosts } from "./postsSlice/postsSlice";
+import { fetchPosts, selectAllPosts } from "../posts/postsSlice/postsSlice";
 import PostsSkeleton from "../PostsSkeleton/PostsSkeleton";
 import { nanoid } from "nanoid";
 

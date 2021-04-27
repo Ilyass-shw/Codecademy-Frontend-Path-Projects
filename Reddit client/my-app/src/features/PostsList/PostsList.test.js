@@ -11,7 +11,7 @@ jest.mock("../PostsSkeleton/PostsSkeleton", () => {
 	};
 });
 
-jest.mock("./Post", () => {
+jest.mock("../posts/Post", () => {
 	return {
 		__esModule: true,
 		default: ({ post }) => {
