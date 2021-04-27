@@ -49,6 +49,7 @@
 	margin: 0 4px;
 }
 .subreddit {
+	position: relative;
 	display: flex;
 	align-items: flex-end;
 	padding: 12px 0;
@@ -69,9 +70,9 @@
 	color: #ffffff;
 	background-color: #5a5a5ac9;
 	border-radius: 2px;
-	position: relative;
-	right: 107px;
-	bottom: 30px;
+	position: absolute;
+	left: 22px;
+    bottom: 42px;
 	opacity: 0;
 	transition: opacity 0.28s;
 }

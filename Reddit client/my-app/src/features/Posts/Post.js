@@ -6,7 +6,7 @@ import bxlReddit from "@iconify/icons-bx/bxl-reddit";
 import { handleThumbnail } from "../../api/api";
 
 const Post = ({ post }) => {
-	let isDesktop= window.innerWidth > 580;
+	let isDesktop = window.innerWidth > 580;
 	return (
 		<div className="post-block">
 			<a
@@ -26,15 +26,16 @@ const Post = ({ post }) => {
 								<Icon icon={bxlReddit} width="1.5rem" height="1.5rem" />
 							</div>
 						)}
-						<div className='mobile-post-data'>
-						<h4 className="title">{post.title}</h4>
-						<div className="upvotes-date-data">
-							<p>
-								{post.subreddit}<span className="dot">•</span>   
-								{post.upvotes} upvotes<span className="dot">•</span>
-								{post.date}
-							</p>
-						</div>
+						<div className="mobile-post-data">
+							<h4 className="title">{post.title}</h4>
+							<div className="upvotes-date-data">
+								<p>
+									{post.subreddit}
+									<span className="dot">•</span>
+									{post.upvotes} upvotes<span className="dot">•</span>
+									{post.date}
+								</p>
+							</div>
 						</div>
 						{isDesktop && (
 							<div className="subreddit">
