@@ -18,8 +18,11 @@ export const NavLogo = styled(routerLink)`
   color: #55565a;
 `;
 
-export const NavLink = styled(routerLink)`
-padding: 0 0 0 1rem;
+export const NavLink = styled.div`
+  margin: 0 0 0 1rem;
+`;
+
+export const LinkButton = styled(routerLink)`
   font-weight: 700;
   color: black;
 `;
