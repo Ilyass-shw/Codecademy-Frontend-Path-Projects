@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
         </Links>
 
         <Cart>
-          <FaShoppingCart />
+          <FaShoppingCart size={"27"} />
         </Cart>
       </NavLinkWrapper>
     </NavBarContainer>
