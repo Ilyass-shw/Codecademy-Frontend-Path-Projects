@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HoverBarWrapper from '../../custom components/HoverBarWrapper/HoverBarWrapper';
-import { FaShoppingCart } from 'react-icons/fa';
+import CartIcon from '../CartIcon/CartIcon';
+
+import CartBar from '../CartBar/CartBar';
 
 import {
   NavBarContainer,
@@ -8,16 +10,17 @@ import {
   NavLink,
   NavLogo,
   LinkButton,
-  Cart,
   Links,
 } from './NavBar.component';
 
 const NavBar: React.FC = () => {
+  const [openCartBar, setOpenCartBar] = useState(true);
+
   return (
     <NavBarContainer>
       <NavLogo to="/">Shw</NavLogo>
+      <CartBar openCartBar={openCartBar} setOpenCartBar={setOpenCartBar} />
       <NavLinkWrapper>
-
         <Links>
           <NavLink>
             <HoverBarWrapper durationInSec={'1s'} repeate={1}>
@@ -32,9 +35,11 @@ const NavBar: React.FC = () => {
           </NavLink>
         </Links>
 
-        <Cart>
-          <FaShoppingCart size={"27"} />
-        </Cart>
+        <CartIcon
+          // onClick={() => {
+          //   setOpenCartBar(!openCartBar);
+          // }}
+        />
       </NavLinkWrapper>
     </NavBarContainer>
   );

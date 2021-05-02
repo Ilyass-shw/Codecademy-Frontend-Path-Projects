@@ -1,33 +1,35 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
+// import { configureStore } from '@reduxjs/toolkit';
+// import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-	firstFilter: "relevance",
-	lastFilter: "comments",
-	filter: "relevance",
-};
-const fakeSlice = createSlice({
-	name: "posts",
-	initialState,
-	reducers: {},
-});
+// import { StoreType , SliceParameters} from './types';
 
-export default configureStore({
-	reducer: {
-		posts: fakeSlice.reducer,
-	},
-});
+// // const initialState :object= {};
+// const fakeSlice = createSlice({
+//   name: 'posts',
+//   initialState,
+//   reducers: {},
+// });
 
-// export const makeCustomTestStore = (name, initialState, reducers = {}) => {
-// 	const fakeSlice = createSlice({
-// 		name,
-// 		initialState,
-// 		reducers,
-// 	});
+// export default configureStore({
+//   reducer: {
+//     posts: fakeSlice.reducer,
+//   },
+// });
 
-// 	return configureStore({
-// 		reducer: {
-// 			posts: fakeSlice.reducer,
-// 		},
-// 	});
+// export const makeCustomTestStore = (
+//   name: string,
+//   initialState: string[],
+//   reducers = {},
+// ): StoreType => {
+//   const fakeSlice = createSlice({
+//     name,
+//     initialState,
+//     reducers,
+//   });
+
+//   return configureStore({
+//     reducer: {
+//       posts: fakeSlice.reducer,
+//     },
+//   });
 // };
