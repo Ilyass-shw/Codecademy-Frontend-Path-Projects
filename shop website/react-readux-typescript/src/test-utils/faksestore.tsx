@@ -1,35 +1,34 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import { createSlice } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-// import { StoreType , SliceParameters} from './types';
+import { StoreType } from './types';
 
-// // const initialState :object= {};
-// const fakeSlice = createSlice({
-//   name: 'posts',
-//   initialState,
-//   reducers: {},
-// });
+const fakeSlice = createSlice({
+  name: 'name',
+  initialState: {} ,
+  reducers: {},
+});
 
-// export default configureStore({
-//   reducer: {
-//     posts: fakeSlice.reducer,
-//   },
-// });
+export default configureStore({
+  reducer: {
+    posts: fakeSlice.reducer,
+  },
+});
 
-// export const makeCustomTestStore = (
-//   name: string,
-//   initialState: string[],
-//   reducers = {},
-// ): StoreType => {
-//   const fakeSlice = createSlice({
-//     name,
-//     initialState,
-//     reducers,
-//   });
+export const makeCustomTestStore = (
+  name: string,
+  initialState: Record<string, unknown>,
+  reducers = {},
+): StoreType => {
+  const FakeSlice = createSlice({
+    name,
+    initialState,
+    reducers,
+  });
 
-//   return configureStore({
-//     reducer: {
-//       posts: fakeSlice.reducer,
-//     },
-//   });
-// };
+  return configureStore({
+    reducer: {
+      posts: FakeSlice.reducer,
+    },
+  });
+};

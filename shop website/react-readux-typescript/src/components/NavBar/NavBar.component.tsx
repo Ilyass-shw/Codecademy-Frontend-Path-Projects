@@ -8,6 +8,8 @@ export const NavBarContainer = styled.div`
   align-items: center;
 `;
 
+// ============= ============= ============= ============= =============
+
 export const NavLinkWrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -17,11 +19,14 @@ export const NavLinkWrapper = styled.div`
     flex-direction: row;
   }
 `;
+// ============= ============= ============= ============= =============
 
 export const Links = styled.div`
   display: flex;
   padding: 0 1rem;
 `;
+
+// ============= ============= ============= ============= =============
 
 export const NavLogo = styled(RouterLink)`
   font-size: 1.8rem;
@@ -34,9 +39,13 @@ export const NavLogo = styled(RouterLink)`
   }
 `;
 
+// ============= ============= ============= ============= =============
+
 export const NavLink = styled.div`
   margin: 0 0 0 1rem;
 `;
+
+// ============= ============= ============= ============= =============
 
 export const LinkButton = styled(RouterLink)`
   font-weight: 700;

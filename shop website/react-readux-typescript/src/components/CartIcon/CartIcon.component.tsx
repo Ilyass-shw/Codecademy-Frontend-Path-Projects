@@ -18,7 +18,7 @@ export const CartWrapper = styled(CustomButton)`
 export const NumberOfItemsIndicator = styled.h6`
   position: absolute;
   padding: 0.05rem 0.15rem;
-  background-color: red;
+  background-color: #ff2300;
   border-radius: 50%;
   transform: translate(.7rem,-.6rem);
   @media screen and (min-width: 700px) {

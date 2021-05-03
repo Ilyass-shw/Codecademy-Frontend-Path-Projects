@@ -19,7 +19,9 @@ const NavBar: React.FC = () => {
   return (
     <NavBarContainer>
       <NavLogo to="/">Shw</NavLogo>
+
       <CartBar openCartBar={openCartBar} setOpenCartBar={setOpenCartBar} />
+
       <NavLinkWrapper>
         <Links>
           <NavLink>
@@ -36,9 +38,9 @@ const NavBar: React.FC = () => {
         </Links>
 
         <CartIcon
-          // onClick={() => {
-          //   setOpenCartBar(!openCartBar);
-          // }}
+        // onClick={() => {
+        //   setOpenCartBar(!openCartBar);
+        // }}
         />
       </NavLinkWrapper>
     </NavBarContainer>

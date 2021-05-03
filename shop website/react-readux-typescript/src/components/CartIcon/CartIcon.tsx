@@ -9,7 +9,7 @@ const CartIcon: React.FC = () => {
   return (
     <>
       <CartWrapper>
-        <FaShoppingCart size={iconSize} />
+        <FaShoppingCart size={iconSize} data-testid='cartIcon'/>
         <NumberOfItemsIndicator>
           0
         </NumberOfItemsIndicator>
