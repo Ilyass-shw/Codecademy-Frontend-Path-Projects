@@ -55,3 +55,6 @@ export const LinkButton = styled(RouterLink)`
     font-size: 1.2rem;
   }
 `;
+// ============= ============= ============= ============= =============
+
+export const Icon = styled.div``;

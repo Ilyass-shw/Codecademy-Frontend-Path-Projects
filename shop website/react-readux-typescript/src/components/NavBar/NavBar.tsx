@@ -11,10 +11,11 @@ import {
   NavLogo,
   LinkButton,
   Links,
+  Icon,
 } from './NavBar.component';
 
 const NavBar: React.FC = () => {
-  const [openCartBar, setOpenCartBar] = useState(true);
+  const [openCartBar, setOpenCartBar] = useState(false);
 
   return (
     <NavBarContainer>
@@ -37,11 +38,14 @@ const NavBar: React.FC = () => {
           </NavLink>
         </Links>
 
-        <CartIcon
-        // onClick={() => {
-        //   setOpenCartBar(!openCartBar);
-        // }}
-        />
+        <Icon
+          onClick={() => {
+            setOpenCartBar(!openCartBar);
+          }}
+          data-testid="Icon"
+        >
+          <CartIcon />
+        </Icon>
       </NavLinkWrapper>
     </NavBarContainer>
   );

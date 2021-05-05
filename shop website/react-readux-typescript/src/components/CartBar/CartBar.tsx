@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Content,
   CloseButton,
   CartBarWrapper,
   ItemCard,
@@ -24,33 +25,44 @@ const CartBar: React.FC<props> = ({ openCartBar, setOpenCartBar }) => {
   ];
   const emptyitem = [];
 
+  const fullPage = false;
   return (
-    <CartBarWrapper opend={openCartBar}>
-      <CloseButton data-testid='closeButton'
+    <>
+      <CartBarWrapper
+        data-testid="dark-background"
         onClick={() => {
           setOpenCartBar(!openCartBar);
         }}
-      >
-        <GrFormClose size={30} />
-      </CloseButton>
+        opend={openCartBar}
+      />
 
-      <Items>
-        {items.length > 0 &&
-          items.map((item) => {
-            return <ItemCard key={item.id}>{item.name}</ItemCard>;
-          })}
+      <Content fullPage={fullPage} opend={openCartBar} data-testid="CartBar">
+        <CloseButton
+          data-testid="closeButton"
+          onClick={() => {
+            setOpenCartBar(!openCartBar);
+          }}
+        >
+          <GrFormClose size={30} />
+        </CloseButton>
 
-        {emptyitem.length > 0 && <p>Your cart is currently empty.</p>}
-      </Items>
-      <CheckoutFotter>
-        <Total>
-          <h5>Total</h5>
-          <Price>35$</Price>
-        </Total>
-      <CheckoutButton>Check Out</CheckoutButton>
+        <Items>
+          {items.length > 0 &&
+            items.map((item) => {
+              return <ItemCard key={item.id}>{item.name}</ItemCard>;
+            })}
 
-      </CheckoutFotter>
-    </CartBarWrapper>
+          {emptyitem.length > 0 && <p>Your cart is currently empty.</p>}
+        </Items>
+        <CheckoutFotter>
+          <Total>
+            <h5>Total</h5>
+            <Price>35$</Price>
+          </Total>
+          <CheckoutButton>Check Out</CheckoutButton>
+        </CheckoutFotter>
+      </Content>
+    </>
   );
 };
 

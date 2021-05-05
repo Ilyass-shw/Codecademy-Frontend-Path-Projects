@@ -15,6 +15,8 @@ export const CartWrapper = styled(CustomButton)`
   }
 `;
 
+// ============= ============= ============= ============= =============
+
 export const NumberOfItemsIndicator = styled.h6`
   position: absolute;
   padding: 0.05rem 0.15rem;

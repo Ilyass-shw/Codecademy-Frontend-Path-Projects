@@ -21,15 +21,32 @@ describe('CartBar', () => {
       <CartBar openCartBar={true} setOpenCartBar={openCart} />,
     );
     const closeButton = screen.getByTestId('closeButton');
-    const firstItem = screen.getByText('item one');
+    const cartBar = screen.getByTestId('CartBar');
 
-    expect(closeButton).toBeInTheDocument();
-    expect(firstItem).toBeVisible();
+    expect(cartBar).toBeVisible();
 
     userEvent.click(closeButton);
 
     waitFor(() => {
-      expect(firstItem).not.toBeVisible();
+      expect(cartBar).not.toBeVisible();
+    });
+    expect(openCart).toBeCalledTimes(1);
+    expect(openCart).toBeCalledWith(false);
+  });
+
+  it('should close when clicked on the dark background', async () => {
+    renderWithRouterOnly(
+      <CartBar openCartBar={true} setOpenCartBar={openCart} />,
+    );
+    const cartBar = screen.getByTestId('CartBar');
+
+    expect(cartBar).toBeVisible();
+    const Background = screen.getByTestId('dark-background');
+
+    userEvent.click(Background);
+
+    waitFor(() => {
+      expect(cartBar).not.toBeVisible();
     });
     expect(openCart).toBeCalledTimes(1);
     expect(openCart).toBeCalledWith(false);

@@ -1,5 +1,9 @@
 import React from 'react';
-import { renderWithRouterOnly, screen } from '../../test-utils/testUtils';
+import {
+  renderWithRouterOnly,
+  screen,
+  waitFor,
+} from '../../test-utils/testUtils';
 import NavBar from './NavBar';
 import userEvent from '@testing-library/user-event';
 
@@ -16,20 +20,29 @@ describe('NavBar', () => {
     expect(CollectionLink).toBeInTheDocument();
   });
 
-  it('should open cart items pop on page that are in the cart when cliled on cart icon', async () => {
+  it('should open and close cart items bar using the cart icon button', async () => {
     renderWithRouterOnly(<NavBar />);
 
     const closeButton = screen.getByTestId('closeButton');
     const firstItem = screen.getByText('item one');
 
-    expect(closeButton).not.toBeInTheDocument();
+    expect(closeButton).not.toBeVisible();
     expect(firstItem).not.toBeVisible();
 
-    const icon = screen.getByTestId('cartIcon');
+    const icon = screen.getByTestId('Icon');
 
     userEvent.click(icon);
 
-    expect(closeButton).toBeInTheDocument();
-    expect(firstItem).toBeVisible();
+    waitFor(() => {
+      expect(closeButton).toBeVisible();
+      expect(firstItem).toBeVisible();
+    });
+
+    userEvent.click(icon);
+
+    waitFor(() => {
+      expect(closeButton).not.toBeVisible();
+      expect(firstItem).not.toBeVisible();
+    });
   });
 });

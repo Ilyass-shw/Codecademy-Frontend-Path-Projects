@@ -1,3 +1,5 @@
+export default const ni = 'ha'
+
 // import Store from '../App/Store';
 // // import { ItemAdded } from './CartSlice';
 
@@ -10,7 +12,6 @@
 //     expect(NumberOfItems).toStrictEqual(0)
 //     expect(ItemsList.length).toStrictEqual(0)
 
-    
 
 
 //   });
