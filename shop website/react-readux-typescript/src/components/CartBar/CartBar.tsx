@@ -25,7 +25,7 @@ const CartBar: React.FC<props> = ({ openCartBar, setOpenCartBar }) => {
   ];
   const emptyitem = [];
 
-  const fullPage = false;
+  const fullPage = items.length > 2;
   return (
     <>
       <CartBarWrapper
