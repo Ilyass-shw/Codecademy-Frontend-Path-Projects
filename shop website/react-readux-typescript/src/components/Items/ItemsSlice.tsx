@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import data from '../../Data';
+import { DataItem, Item } from '../../helpers/types';
 
 export const getItemsData = createAsyncThunk('Items/getItemData', async () => {
   //   const data = import('../../Data');
@@ -8,19 +9,10 @@ export const getItemsData = createAsyncThunk('Items/getItemData', async () => {
 
 type fetchStatus = 'Loading' | 'succeeded' | 'failed' | 'idle';
 
-interface Item {
-  id: number;
-  category: 'jewelry' | 'photoprints';
-  name: string;
-  price: number;
-  description: string;
-  imgs: string[];
-}
-
-interface items {
-  jewelry: Omit<Item, 'category'>[];
-  photoprints: Exclude<Item, 'category'>[];
-}
+type items = {
+  jewelry: Item[];
+  photoprints: Item[];
+};
 
 export interface ItemsState {
   Items: items;
@@ -42,12 +34,12 @@ export const Items = createSlice({
       })
       .addCase(getItemsData.fulfilled, (state, action) => {
         state.FetchStatus = 'succeeded';
-        const jewelryItems = action.payload.filter((item: Item) => {
+        const jewelryItems = action.payload.filter((item: DataItem) => {
           return item.category === 'jewelry';
         });
 
         state.Items.jewelry = jewelryItems;
-        const photoprints = action.payload.filter((item: Item) => {
+        const photoprints = action.payload.filter((item: DataItem) => {
           return item.category === 'photoprints';
         });
         state.Items.photoprints = photoprints;

@@ -1,14 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-
-const initialState = {}; 
+interface CartState {
+  isBarOpen: boolean;
+}
+const initialState: CartState = { isBarOpen: false };
 
 export const CartSlice = createSlice({
-    name:'Cart',
-    initialState,
-    reducers: {
-    }
-
-})
+  name: 'Cart',
+  initialState,
+  reducers: {},
+});
 
 export default CartSlice.reducer;

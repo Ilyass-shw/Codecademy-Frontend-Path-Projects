@@ -1,12 +1,8 @@
-interface Item {
-  id: number;
-  category: 'jewelry' | 'photoprints';
-  name: string;
-  price: number;
-  description: string;
-  imgs: string[];
-}
-const Items: Item[] = [
+import { DataItem } from './helpers/types';
+
+
+
+const Items: DataItem[] = [
   {
     id: 1,
     category: 'jewelry',

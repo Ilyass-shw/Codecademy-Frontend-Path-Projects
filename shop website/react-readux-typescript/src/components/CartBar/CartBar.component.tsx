@@ -2,26 +2,26 @@ import styled from 'styled-components';
 import { CustomButton } from '../../App/App.component';
 
 interface WrapperProps {
-  opend: boolean;
+  open: boolean;
 }
 
 export const CartBarWrapper = styled.div`
   position: absolute;
   top: 0;
-  height: ${(props: WrapperProps) => (props.opend ? '60vh' : '0')};
+  height: ${(props: WrapperProps) => (props.open ? '60vh' : '0')};
   width: 100vw;
   transition: background-color 0.28s ease-in-out, height 0s ease-in-out;
   background-color: ${(props: WrapperProps) =>
-    props.opend ? '#0000006e;' : 'transparent;'};
+    props.open ? '#0000006e;' : 'transparent;'};
   @media screen and (min-width: 780px) {
-    height: 100vh;
+    height: ${(props: WrapperProps) => (props.open ? '100vh' : '0')};
   }
 `;
 
 // ============= ============= ============= ============= =============
 
 interface ContentProps {
-  opend: boolean;
+  open: boolean;
   fullPage: boolean;
 }
 
@@ -30,9 +30,9 @@ export const Content = styled.div`
   position: fixed;
   overflow-x: scroll;
   width: 100vw;
-  opacity: ${(props: ContentProps) => (props.opend ? '1' : '0')};
+  opacity: ${(props: ContentProps) => (props.open ? '1' : '0')};
   top: ${(props: ContentProps) => {
-    if (props.opend) {
+    if (props.open) {
       if (props.fullPage) {
         return '0';
       } else {
@@ -43,7 +43,7 @@ export const Content = styled.div`
     }
   }};
   height: ${(props: ContentProps) => {
-    if (props.opend && props.fullPage) {
+    if (props.open && props.fullPage) {
       return '100vh';
     } else {
       return '40vh';
@@ -58,7 +58,7 @@ export const Content = styled.div`
     width: 40vw;
     height: 100vh;
     transform: ${(props: ContentProps) =>
-      props.opend ? 'translateX(0)' : 'translateX(100%)'};
+      props.open ? 'translateX(0)' : 'translateX(100%)'};
   }
 `;
 

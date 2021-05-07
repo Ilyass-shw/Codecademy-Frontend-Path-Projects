@@ -33,10 +33,10 @@ const CartBar: React.FC<props> = ({ openCartBar, setOpenCartBar }) => {
         onClick={() => {
           setOpenCartBar(!openCartBar);
         }}
-        opend={openCartBar}
+        open={openCartBar}
       />
 
-      <Content fullPage={fullPage} opend={openCartBar} data-testid="CartBar">
+      <Content fullPage={fullPage} open={openCartBar} data-testid="CartBar">
         <CloseButton
           data-testid="closeButton"
           onClick={() => {

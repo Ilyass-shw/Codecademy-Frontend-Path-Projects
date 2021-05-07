@@ -5,12 +5,12 @@ import './App.css';
 
 import NavBar from '../components/NavBar/NavBar';
 import { getItemsData } from '../components/Items/ItemsSlice';
-// import { useDispatch } from 'react-redux';
+// import { useAppDispatch } from '../helpers/hooks';
 import store from './store';
 
 const App: React.FC = () => {
   useEffect(() => {
-    // const dispatch = useDispatch();
+    // const dispatch= useAppDispatch()
     // dispatch(getItemsData());
     store.dispatch(getItemsData())
   }, []);
