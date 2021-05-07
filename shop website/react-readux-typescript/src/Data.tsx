@@ -1,12 +1,14 @@
 interface Item {
+  id: number;
   category: 'jewelry' | 'photoprints';
   name: string;
   price: number;
   description: string;
   imgs: string[];
 }
-export const Items: Item[] = [
+const Items: Item[] = [
   {
+    id: 1,
     category: 'jewelry',
     name: 'DESTINY – ARMCUFF',
     price: 236.64,
@@ -21,6 +23,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 2,
     category: 'jewelry',
     name: 'BODY, MIND, SOUL – NECKLACE',
     price: 236.64,
@@ -35,6 +38,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 3,
     category: 'jewelry',
     name: 'FJALL – RING',
     price: 157.94,
@@ -49,6 +53,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 4,
     category: 'jewelry',
     name: 'WAY OF THE HEART – NECKLACE',
     price: 172.74,
@@ -63,6 +68,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 5,
     category: 'jewelry',
     name: 'FREYJA – BRACELET',
     price: 94.14,
@@ -76,6 +82,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 6,
     category: 'jewelry',
     name: 'FREYJA – EARRINGS',
     price: 147.9,
@@ -90,6 +97,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 7,
     category: 'jewelry',
     name: 'NEW PATH – ARMCUFF',
     price: 177.48,
@@ -104,6 +112,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 8,
     category: 'jewelry',
     name: 'ORIGIN – ARMCUFF',
     price: 463.94,
@@ -118,6 +127,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 9,
     category: 'jewelry',
     name: 'RIMFROST – EARRINGS',
     price: 78.29,
@@ -132,6 +142,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 10,
     category: 'jewelry',
     name: 'ETERNITY – EARRINGS',
     price: 177.48,
@@ -145,6 +156,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 11,
     category: 'jewelry',
     name: 'CELESTIAL – RING',
     price: 113.96,
@@ -157,6 +169,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 12,
     category: 'jewelry',
     name: 'FREYJA – ARMCUFF',
     price: 384.54,
@@ -171,6 +184,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 13,
     category: 'jewelry',
     name: 'NORDIC SKY – NECKLACE',
     price: 158.55,
@@ -185,6 +199,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 14,
     category: 'photoprints',
     name: 'A MAGICAL PLACE II',
     price: 218.02,
@@ -198,6 +213,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 15,
     category: 'photoprints',
     name: 'A MAGICAL PLACE I',
     price: 218.02,
@@ -211,6 +227,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 16,
     category: 'photoprints',
     name: 'A MAGICAL PLACE',
     price: 218.02,
@@ -224,6 +241,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 17,
     category: 'photoprints',
     name: 'A QUIET MIND',
     price: 218.02,
@@ -237,6 +255,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 18,
     category: 'photoprints',
     name: 'A NIGHT IN MAY',
     price: 218.02,
@@ -249,6 +268,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 19,
     category: 'photoprints',
     name: 'A NIGHT IN MAY',
     price: 218.02,
@@ -261,6 +281,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 20,
     category: 'photoprints',
     name: 'ANDROMEDA',
     price: 218.02,
@@ -273,6 +294,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 21,
     category: 'photoprints',
     name: 'ANDROMEDA',
     price: 218.02,
@@ -286,6 +308,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 22,
     category: 'photoprints',
     name: 'AUTUMN AIR',
     price: 44.59,
@@ -298,6 +321,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 23,
     category: 'photoprints',
     name: 'AUTUMN FOREST',
     price: 218.02,
@@ -311,6 +335,7 @@ export const Items: Item[] = [
   },
 
   {
+    id: 24,
     category: 'photoprints',
     name: 'BALANCE',
     price: 44.59,
@@ -323,3 +348,4 @@ export const Items: Item[] = [
     ],
   },
 ];
+export default Items;
