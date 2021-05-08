@@ -23,8 +23,8 @@ const initialState: ItemsState = {
   FetchStatus: 'idle',
 };
 
-export const Items = createSlice({
-  name: 'items',
+export const Products = createSlice({
+  name: 'products',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -50,4 +50,4 @@ export const Items = createSlice({
   },
 });
 
-export default Items.reducer;
+export default Products.reducer;

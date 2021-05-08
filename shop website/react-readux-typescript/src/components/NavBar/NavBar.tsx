@@ -1,46 +1,30 @@
-import React, { useState } from 'react';
-import HoverBarWrapper from '../../custom components/HoverBarWrapper/HoverBarWrapper';
+import React from 'react';
+
+import { toggleCartSideBar } from '../../helpers/toggleCartSideBar';
+
+import NavLinks from '../NavLinks/NavLinks';
 import CartIcon from '../CartIcon/CartIcon';
-
 import CartBar from '../CartBar/CartBar';
-
 import {
   NavBarContainer,
   NavLinkWrapper,
-  NavLink,
   NavLogo,
-  LinkButton,
-  Links,
   Icon,
 } from './NavBar.component';
 
 const NavBar: React.FC = () => {
-  const [openCartBar, setOpenCartBar] = useState(false);
-
   return (
     <NavBarContainer>
       <NavLogo to="/">Shw</NavLogo>
 
-      <CartBar openCartBar={openCartBar} setOpenCartBar={setOpenCartBar} />
+      <CartBar />
 
       <NavLinkWrapper>
-        <Links>
-          <NavLink>
-            <HoverBarWrapper durationInSec={'1s'} repeate={1}>
-              <LinkButton to="/">Shop</LinkButton>
-            </HoverBarWrapper>
-          </NavLink>
-
-          <NavLink>
-            <HoverBarWrapper durationInSec={'1s'} repeate={1}>
-              <LinkButton to="/">Collection</LinkButton>
-            </HoverBarWrapper>
-          </NavLink>
-        </Links>
+        <NavLinks />
 
         <Icon
           onClick={() => {
-            setOpenCartBar(!openCartBar);
+            toggleCartSideBar();
           }}
           data-testid="Icon"
         >

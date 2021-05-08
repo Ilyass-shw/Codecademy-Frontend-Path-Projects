@@ -1,4 +1,9 @@
 import React from 'react';
+import { GrFormClose } from 'react-icons/gr';
+import { useSelector } from 'react-redux';
+import { toggleCartSideBar } from '../../helpers/toggleCartSideBar';
+import { isBarOpenSelector } from '../CartSlice/CartSlice';
+
 import {
   Content,
   CloseButton,
@@ -10,14 +15,10 @@ import {
   Price,
   Total,
 } from './CartBar.component';
-import { GrFormClose } from 'react-icons/gr';
 
-interface props {
-  openCartBar: boolean;
-  setOpenCartBar: (opening: boolean) => void;
-}
+const CartBar: React.FC = () => {
+  const isBarOpen = useSelector(isBarOpenSelector);
 
-const CartBar: React.FC<props> = ({ openCartBar, setOpenCartBar }) => {
   const items = [
     { name: 'item one', id: 1 },
     { name: 'item two', id: 2 },
@@ -25,22 +26,22 @@ const CartBar: React.FC<props> = ({ openCartBar, setOpenCartBar }) => {
   ];
   const emptyitem = [];
 
-  const fullPage = items.length > 2;
+  const fullPage = false;
   return (
     <>
       <CartBarWrapper
         data-testid="dark-background"
         onClick={() => {
-          setOpenCartBar(!openCartBar);
+          toggleCartSideBar();
         }}
-        open={openCartBar}
+        open={isBarOpen}
       />
 
-      <Content fullPage={fullPage} open={openCartBar} data-testid="CartBar">
+      <Content fullPage={fullPage} open={isBarOpen} data-testid="CartBar">
         <CloseButton
           data-testid="closeButton"
           onClick={() => {
-            setOpenCartBar(!openCartBar);
+            toggleCartSideBar();
           }}
         >
           <GrFormClose size={30} />

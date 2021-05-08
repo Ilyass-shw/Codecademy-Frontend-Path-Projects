@@ -1,18 +1,26 @@
 import React from 'react';
 import { CartWrapper, NumberOfItemsIndicator } from './CartIcon.component';
-import { FaShoppingCart } from 'react-icons/fa';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { IconContext } from 'react-icons';
+
 import { useWindowWidth } from '../../helpers/getWindowWidth';
 
 const CartIcon: React.FC = () => {
-  const iconSize = useWindowWidth() > 700 ? '27' : '20';
+  const iconSize = useWindowWidth() > 700 ? '37' : '27';
 
   return (
     <>
       <CartWrapper>
-        <FaShoppingCart size={iconSize} data-testid='cartIcon'/>
-        <NumberOfItemsIndicator>
-          0
-        </NumberOfItemsIndicator>
+        <IconContext.Provider
+          value={{
+            color: 'white',
+            style: { transform: 'translateX(-2px)' },
+            size: iconSize,
+          }}
+        >
+          <AiOutlineShoppingCart data-testid="cartIcon" />
+        </IconContext.Provider>
+        <NumberOfItemsIndicator>0</NumberOfItemsIndicator>
       </CartWrapper>
     </>
   );
