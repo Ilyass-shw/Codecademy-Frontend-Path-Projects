@@ -27,7 +27,7 @@ interface ContentProps {
 }
 
 export const Content = styled.div`
-  z-index: 20;
+  z-index: 101;
   position: fixed;
   overflow-x: scroll;
   width: 100vw;

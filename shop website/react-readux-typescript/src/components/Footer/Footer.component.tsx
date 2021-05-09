@@ -7,19 +7,11 @@ export const SeparatorSection = styled.section`
   background-color: black;
 `;
 
-export const Content = styled.section`
-/* width: 100vw;
-display: flex;
-justify-content: center;
-  max-width: 8rem; */
-`;
-
-
-
 export const SocialMedia = styled.div`
   display: flex;
   justify-content: space-around;
-
+  margin: auto;
+  max-width: 20rem;
   flex-wrap: wrap;
 `;
 
@@ -32,6 +24,8 @@ export const IconRing = styled(CustomButton)`
 `;
 
 export const SiteSection = styled.section`
+  margin: auto;
+  max-width: 28rem;
   padding: 1rem 0.1rem;
   display: flex;
   justify-content: space-around;

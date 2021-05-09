@@ -1,5 +1,18 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
+
+export const GlobalStyle = createGlobalStyle<{ canScroll: boolean }>`
+  @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oxygen', sans-serif;
+  overflow: ${({ canScroll }) => (canScroll ? 'hidden' : '')};
+
+}
+`;
 
 export const RouterLink = styled(LinkR)`
   cursor: pointer;
@@ -12,3 +25,4 @@ export const CustomButton = styled.button`
   padding: 0;
   cursor: pointer;
 `;
+
