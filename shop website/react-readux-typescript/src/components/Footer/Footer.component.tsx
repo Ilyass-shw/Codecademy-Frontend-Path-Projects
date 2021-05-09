@@ -31,6 +31,13 @@ export const SiteSection = styled.section`
   justify-content: space-around;
   flex-wrap: wrap;
 `;
-export const Site = styled.h6`
+export const Site = styled(CustomButton)`
+  font-size: small;
   padding: 0.4rem;
+`;
+
+export const Copyright = styled.p`
+  margin: auto;
+  font-size: x-small;
+  width: fit-content;
 `;

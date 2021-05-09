@@ -11,6 +11,7 @@ import {
   IconRing,
   SiteSection,
   Site,
+  Copyright,
 } from './Footer.component';
 
 const Footer: React.FC = () => {
@@ -48,6 +49,7 @@ const Footer: React.FC = () => {
         <Site>Shipping & Returns</Site>
         <Site>Terms & Conditions</Site>
       </SiteSection>
+      <Copyright>&copy; 2021 Sdw</Copyright>
     </>
   );
 };
