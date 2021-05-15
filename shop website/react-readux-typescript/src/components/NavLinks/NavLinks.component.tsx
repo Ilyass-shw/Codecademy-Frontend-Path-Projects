@@ -19,6 +19,7 @@ export const NavLink = styled.div`
 export const LinkButton = styled(RouterLink)`
   font-weight: 700;
   color: black;
+  padding-bottom: 1rem;
 
   @media screen and (min-width: 700px) {
     font-size: 1.2rem;
@@ -31,6 +32,7 @@ export const CategoryList = styled.div<{
   isHover: boolean;
 }>`
   position: absolute;
+  background-color: white;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 10px 20px rgb(0 0 0 / 9%);
@@ -38,13 +40,15 @@ export const CategoryList = styled.div<{
   transform: ${({ isHover }) =>
     isHover ? 'translateY(10px)' : 'translateY(0)'};
   visibility: ${({ isHover }) => (isHover ? 'visible' : 'hidden')};
-  transition: 0.18s cubic-bezier(0.2, 0.06, 0.05, 0.95);
+  transition: 0.18s;
+  z-index: 500;
 `;
 // ============= ============= ============= ============= =============
 
 export const Category = styled(RouterLink)`
+  position: relative;
+  z-index: 500;
   color: black;
   padding: 10px 10px;
-  z-index: 50;
-
+  white-space: nowrap;
 `;

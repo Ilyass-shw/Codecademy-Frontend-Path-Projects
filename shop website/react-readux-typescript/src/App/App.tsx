@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from './App.component';
 import NavBar from '../components/NavBar/NavBar';
 import Footer from '../components/Footer/Footer';
+import HeroSection from '../components/HeroSection/HeroSection';
+
 import { getItemsData } from '../components/Products/ProductsSlice';
 // import { useAppDispatch } from '../helpers/hooks';
 import store from './store';
@@ -23,6 +25,7 @@ const App: React.FC = () => {
       <GlobalStyle canScroll={isCartBarOpen} />
       <BrowserRouter>
         <NavBar />
+        <HeroSection/>
         <h1>wiyééé</h1>
         <Footer />
       </BrowserRouter>

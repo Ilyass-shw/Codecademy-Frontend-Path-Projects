@@ -19,6 +19,8 @@ export const NumberOfItemsIndicator = styled.h6`
   position: absolute;
   padding: 0.05rem 0.15rem;
   background-color: white;
+  color: #ff2300;
+  font-weight: bolder;
   border-radius: 50%;
   transform: translate(1.2rem, -1.8rem);
   @media screen and (min-width: 700px) {

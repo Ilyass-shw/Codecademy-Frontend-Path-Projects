@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { RouterLink } from '../../App/App.component';
 
 export const NavBarContainer = styled.div`
-  height: 7rem;
+  height: 6rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
