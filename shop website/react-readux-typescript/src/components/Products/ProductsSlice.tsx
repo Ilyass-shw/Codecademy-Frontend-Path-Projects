@@ -1,25 +1,43 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import data from '../../Data';
-import { DataItem, Item } from '../../helpers/types';
+import { Item } from '../../helpers/types';
+import { getProductsDataFulfilledReducer } from './reducers/getItemsDataFulfilled.reducer';
+import { getItemsDataPendingReducer } from './reducers/getItemsDataPending.reducer';
+import { getItemsDataRejectedReducer } from './reducers/getItemsDataRejected.reducer';
 
-export const getItemsData = createAsyncThunk('Items/getItemData', async () => {
-  //   const data = import('../../Data');
-  return data;
-});
+export const getProductsData = createAsyncThunk(
+  'Products/getItemData',
+  async () => {
+    return data;
+  },
+);
 
 type fetchStatus = 'Loading' | 'succeeded' | 'failed' | 'idle';
 
-type items = {
-  jewelry: Item[];
-  photoprints: Item[];
-};
+interface jewelryLists {
+  AllJewelry: Item[];
+  Armcuff: Item[];
+  Ring: Item[];
+  Bracelet: Item[];
+  Earrings: Item[];
+  Necklage: Item[];
+}
 
-export interface ItemsState {
-  Items: items;
+export interface ProductsState {
+  Products: { jewelry: jewelryLists };
   FetchStatus: fetchStatus;
 }
-const initialState: ItemsState = {
-  Items: { jewelry: [], photoprints: [] },
+const initialState: ProductsState = {
+  Products: {
+    jewelry: {
+      AllJewelry: [],
+      Armcuff: [],
+      Ring: [],
+      Bracelet: [],
+      Earrings: [],
+      Necklage: [],
+    },
+  },
   FetchStatus: 'idle',
 };
 
@@ -29,24 +47,9 @@ export const Products = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getItemsData.pending, (state) => {
-        state.FetchStatus = 'Loading';
-      })
-      .addCase(getItemsData.fulfilled, (state, action) => {
-        state.FetchStatus = 'succeeded';
-        const jewelryItems = action.payload.filter((item: DataItem) => {
-          return item.category === 'jewelry';
-        });
-
-        state.Items.jewelry = jewelryItems;
-        const photoprints = action.payload.filter((item: DataItem) => {
-          return item.category === 'photoprints';
-        });
-        state.Items.photoprints = photoprints;
-      })
-      .addCase(getItemsData.rejected, (state) => {
-        state.FetchStatus = 'failed';
-      });
+      .addCase(getProductsData.pending, getItemsDataPendingReducer)
+      .addCase(getProductsData.fulfilled, getProductsDataFulfilledReducer)
+      .addCase(getProductsData.rejected, getItemsDataRejectedReducer);
   },
 });
 

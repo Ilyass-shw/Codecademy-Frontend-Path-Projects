@@ -5,6 +5,14 @@ export interface Item {
   description: string;
   imgs: string[];
 }
+
+export type categories =
+  | 'NECKLACE'
+  | 'RING'
+  | 'ARMCUFF'
+  | 'BRACELET'
+  | 'EARRINGS';
+
 export interface DataItem extends Item {
-  category: 'jewelry' | 'photoprints';
+  category: categories;
 }

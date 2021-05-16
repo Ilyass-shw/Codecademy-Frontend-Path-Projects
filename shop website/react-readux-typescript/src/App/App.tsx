@@ -6,7 +6,7 @@ import NavBar from '../components/NavBar/NavBar';
 import Footer from '../components/Footer/Footer';
 import HeroSection from '../components/HeroSection/HeroSection';
 
-import { getItemsData } from '../components/Products/ProductsSlice';
+import { getProductsData } from '../components/Products/ProductsSlice';
 // import { useAppDispatch } from '../helpers/hooks';
 import store from './store';
 import { useSelector } from 'react-redux';
@@ -15,8 +15,8 @@ import { isBarOpenSelector } from '../components/CartSlice/CartSlice';
 const App: React.FC = () => {
   useEffect(() => {
     // const dispatch= useAppDispatch()
-    // dispatch(getItemsData());
-    store.dispatch(getItemsData());
+    // dispatch(getProductsData());
+    store.dispatch(getProductsData());
   }, []);
 
   const isCartBarOpen = useSelector(isBarOpenSelector);
