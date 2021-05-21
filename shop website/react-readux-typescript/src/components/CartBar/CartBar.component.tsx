@@ -29,7 +29,7 @@ interface ContentProps {
 export const Content = styled.div`
   z-index: 101;
   position: fixed;
-  overflow-x: scroll;
+  overflow-y: scroll;
   width: 100vw;
   opacity: ${(props: ContentProps) => (props.open ? '1' : '0')};
   top: ${(props: ContentProps) => {

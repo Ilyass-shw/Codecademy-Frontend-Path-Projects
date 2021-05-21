@@ -14,13 +14,17 @@ export const BackgroundImage = styled.section`
   }
 `;
 
+// ============= ============= ============= ============= =============
+
 export const HeroContent = styled.div`
   width: 40vw;
   height: 60%;
   color: #f1f1f1;
 `;
 
-export const HeroText = styled.text`
+// ============= ============= ============= ============= =============
+
+export const HeroText = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital@1&display=swap');
 
   p {
@@ -33,4 +37,8 @@ export const HeroText = styled.text`
 
 export const FirstPart = styled.p``;
 
+// ============= ============= ============= ============= =============
+
 export const LastPart = styled.p``;
+
+// ============= ============= ============= ============= =============

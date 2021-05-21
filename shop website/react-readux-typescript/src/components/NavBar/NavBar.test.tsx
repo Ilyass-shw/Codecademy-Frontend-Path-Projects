@@ -1,19 +1,16 @@
 import React from 'react';
-import {
-  renderWithRouterOnly,
-  screen,
-  waitFor,
-} from '../../test-utils/testUtils';
+import store from '../../App/store';
+import { render, screen } from '../../test-utils/testUtils';
 import NavBar from './NavBar';
 import userEvent from '@testing-library/user-event';
 
 describe('NavBar', () => {
   it('should render', () => {
-    renderWithRouterOnly(<NavBar />);
+    render(<NavBar />, store, 'withRouter');
 
     const Logo = screen.getByText('Shw');
     const ShopLink = screen.getByText('Shop');
-    const CollectionLink = screen.getByText('Collection');
+    const CollectionLink = screen.getByText('Categories');
 
     expect(Logo).toBeInTheDocument();
     expect(ShopLink).toBeInTheDocument();
@@ -21,28 +18,23 @@ describe('NavBar', () => {
   });
 
   it('should open and close cart items bar using the cart icon button', async () => {
-    renderWithRouterOnly(<NavBar />);
+    render(<NavBar />, store, 'withRouter');
 
-    const closeButton = screen.getByTestId('closeButton');
-    const firstItem = screen.getByText('item one');
+    const cartBar = screen.getByTestId('CartBar');
 
-    expect(closeButton).not.toBeVisible();
-    expect(firstItem).not.toBeVisible();
+    expect(cartBar).not.toBeVisible();
+    expect(store.getState().Cart.isBarOpen).toBeFalsy();
 
     const icon = screen.getByTestId('Icon');
-
     userEvent.click(icon);
 
-    waitFor(() => {
-      expect(closeButton).toBeVisible();
-      expect(firstItem).toBeVisible();
-    });
+    expect(store.getState().Cart.isBarOpen).toBeTruthy();
+    expect(cartBar).toBeVisible();
 
-    userEvent.click(icon);
+    const closeButton = screen.getByTestId('closeButton');
+    userEvent.click(closeButton);
 
-    waitFor(() => {
-      expect(closeButton).not.toBeVisible();
-      expect(firstItem).not.toBeVisible();
-    });
+    expect(cartBar).not.toBeVisible();
+    expect(store.getState().Cart.isBarOpen).toBeFalsy();
   });
 });

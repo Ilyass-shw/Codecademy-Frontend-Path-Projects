@@ -22,7 +22,6 @@ const CartBar: React.FC = () => {
   const items = [
     { name: 'item one', id: 1 },
     { name: 'item two', id: 2 },
-    { name: 'item three', id: 3 },
   ];
   const emptyitem = [];
 

@@ -7,6 +7,8 @@ export const SeparatorSection = styled.section`
   background-color: black;
 `;
 
+// ============= ============= ============= ============= =============
+
 export const SocialMedia = styled.div`
   display: flex;
   justify-content: space-around;
@@ -14,6 +16,9 @@ export const SocialMedia = styled.div`
   max-width: 20rem;
   flex-wrap: wrap;
 `;
+
+// ============= ============= ============= ============= =============
+
 
 export const IconRing = styled(CustomButton)`
   border-radius: 50%;
@@ -23,6 +28,8 @@ export const IconRing = styled(CustomButton)`
   border: 0.17rem solid black;
 `;
 
+// ============= ============= ============= ============= =============
+
 export const SiteSection = styled.section`
   margin: auto;
   max-width: 28rem;
@@ -31,10 +38,15 @@ export const SiteSection = styled.section`
   justify-content: space-around;
   flex-wrap: wrap;
 `;
+
+// ============= ============= ============= ============= =============
+
 export const Site = styled(CustomButton)`
   font-size: small;
   padding: 0.4rem;
 `;
+
+// ============= ============= ============= ============= =============
 
 export const Copyright = styled.p`
   margin: auto;

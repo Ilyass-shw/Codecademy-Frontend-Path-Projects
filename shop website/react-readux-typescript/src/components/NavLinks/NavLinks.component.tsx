@@ -41,13 +41,12 @@ export const CategoryList = styled.div<{
     isHover ? 'translateY(10px)' : 'translateY(0)'};
   visibility: ${({ isHover }) => (isHover ? 'visible' : 'hidden')};
   transition: 0.18s;
-  z-index: 500;
+  z-index: 100;
 `;
 // ============= ============= ============= ============= =============
 
 export const Category = styled(RouterLink)`
   position: relative;
-  z-index: 500;
   color: black;
   padding: 10px 10px;
   white-space: nowrap;

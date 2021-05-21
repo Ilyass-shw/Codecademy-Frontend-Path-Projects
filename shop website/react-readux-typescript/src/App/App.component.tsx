@@ -2,7 +2,6 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
 
 export const GlobalStyle = createGlobalStyle<{ canScroll: boolean }>`
-  @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
 * {
   box-sizing: border-box;
