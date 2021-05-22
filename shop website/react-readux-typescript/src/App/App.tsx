@@ -6,11 +6,12 @@ import NavBar from '../components/NavBar/NavBar';
 import Footer from '../components/Footer/Footer';
 import HeroSection from '../components/HeroSection/HeroSection';
 
-import { getProductsData } from '../components/Products/ProductsSlice';
+import { getProductsData } from '../components/ProductsSlice/ProductsSlice';
 // import { useAppDispatch } from '../helpers/hooks';
 import store from './store';
 import { useSelector } from 'react-redux';
 import { isBarOpenSelector } from '../components/CartSlice/CartSlice';
+import ProductsList from '../components/ProductsList/ProductsList';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -25,8 +26,8 @@ const App: React.FC = () => {
       <GlobalStyle canScroll={isCartBarOpen} />
       <BrowserRouter>
         <NavBar />
-        <HeroSection/>
-        <h1>wiyééé</h1>
+        <HeroSection />
+        <ProductsList />
         <Footer />
       </BrowserRouter>
     </>
