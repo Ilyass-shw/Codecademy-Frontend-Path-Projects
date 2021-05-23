@@ -1,17 +1,18 @@
 export interface HoverBarProps {
   repeate: 'infinite' | 1;
   imgNumber?: number;
-  durationInSec: string;
+  durationInSec?: string;
   isHovering: boolean;
 }
 
 export interface AnimationProps {
   repeate: 'infinite' | 1;
   isHovering?: boolean;
-  durationInSec: string;
+  durationInSec?: string;
 }
 
 export interface HoverBarWrapperProps {
   repeate: 'infinite' | 1;
-  durationInSec: string;
+  durationInSec?: string;
+  imgNumber?: number;
 }

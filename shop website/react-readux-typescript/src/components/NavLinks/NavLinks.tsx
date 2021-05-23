@@ -15,7 +15,9 @@ const NavLinks: React.FC = () => {
     <Links>
       <NavLink>
         <HoverBarWrapper durationInSec={'1s'} repeate={1}>
-          <LinkButton to="/">Shop</LinkButton>
+          <LinkButton to="/">
+            <h3>Shop</h3>{' '}
+          </LinkButton>
         </HoverBarWrapper>
       </NavLink>
 
@@ -26,7 +28,7 @@ const NavLinks: React.FC = () => {
             onMouseLeave={(): void => setIsHover(false)}
             to="/"
           >
-            Categories
+            <h3>Categories</h3>
           </LinkButton>
         </HoverBarWrapper>
         <CategoryList

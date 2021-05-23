@@ -5,7 +5,11 @@ import { AllJewellrySelector } from '../ProductsSlice/selectors/AllJewelrySelect
 import { ItemList, ProductsWrapper } from './ProductsList.component';
 const ProductsList: React.FC = () => {
   const productsList = useSelector(AllJewellrySelector);
-
+  if (!productsList || productsList.length === 0) {
+    return (
+      <h4>Sorry, no products are available right now. Please check later.</h4>
+    );
+  }
   return (
     <ProductsWrapper>
       <ItemList>

@@ -6,6 +6,7 @@ const HoverBarWrapper: React.FC<HoverBarWrapperProps> = ({
   children,
   durationInSec,
   repeate,
+  imgNumber,
 }) => {
   const [isHover, setIsHover] = useState(false);
 
@@ -15,7 +16,12 @@ const HoverBarWrapper: React.FC<HoverBarWrapperProps> = ({
       onMouseLeave={(): void => setIsHover(false)}
     >
       {children}
-      <HoverBar isHovering={isHover} durationInSec={durationInSec} repeate={repeate} />
+      <HoverBar
+        isHovering={isHover}
+        durationInSec={durationInSec}
+        repeate={repeate}
+        imgNumber={imgNumber}
+      />
     </div>
   );
 };

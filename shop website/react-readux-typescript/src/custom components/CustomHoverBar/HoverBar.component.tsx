@@ -16,7 +16,7 @@ to{
 `;
 
 const animation = (props: AnimationProps) => css`
-  animation: ${progress} ${props.durationInSec} ${props.repeate} ;
+  animation: ${progress} ${props.durationInSec} ${props.repeate} linear ;
 `;
 
 export const MainBar = styled.div<AnimationProps>`

@@ -1,21 +1,22 @@
 import styled from 'styled-components';
 
 export const ProductItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow: hidden;
   padding: 1rem 1rem;
-  height: 90vw;
-  width: 80vw;
+  min-height: 21rem;
+  min-width: 80vw;
   margin: auto;
 `;
-export const ItemImages = styled.div`
-  height: 80%;
-  overflow: hidden;
-`;
 
-export const ItemImage = styled.img`
-height: 100%;
-width: 100%;
-fit-content
+
+
+export const ItemName = styled.h4`
+  padding: 0.2rem 0 0 0;
+  text-align: center;
 `;
-export const ItemName = styled.h4``;
-export const ItemPrice = styled.h5``;
+export const ItemPrice = styled.h6`
+  font-weight: lighter;
+`;

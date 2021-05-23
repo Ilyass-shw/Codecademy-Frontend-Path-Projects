@@ -1,29 +1,21 @@
-import { nanoid } from '@reduxjs/toolkit';
 import React from 'react';
 import HoverBarWrapper from '../../custom components/HoverBarWrapper/HoverBarWrapper';
 import { Item } from '../../helpers/types';
-import {
-  ProductItem,
-  ItemImages,
-  ItemImage,
-  ItemName,
-  ItemPrice,
-} from './Product.component';
+import { ProductItem, ItemName, ItemPrice } from './Product.component';
+
+import ProductImgs from '../ProductImgs/ProductImgs';
 interface product {
   item: Item;
 }
 const Product: React.FC<product> = ({ item }) => {
+  const imgNumber = item.imgs.length;
   return (
     <ProductItem>
-      <HoverBarWrapper durationInSec='2sec' repeate={1}>
-      <ItemImages>
-        {item.imgs.map((src) => {
-          return <ItemImage src={src} key={nanoid()} />;
-        })}
-      </ItemImages>
+      <HoverBarWrapper repeate={'infinite'} imgNumber={imgNumber}>
+        <ProductImgs  imgs={item.imgs} />
       </HoverBarWrapper>
       <ItemName>{item.name}</ItemName>
-      <ItemPrice>{item.price}</ItemPrice>
+      <ItemPrice>{'$' + item.price}</ItemPrice>
     </ProductItem>
   );
 };
