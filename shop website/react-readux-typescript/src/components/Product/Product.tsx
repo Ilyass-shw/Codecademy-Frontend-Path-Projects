@@ -1,21 +1,28 @@
-import React from 'react';
-import HoverBarWrapper from '../../custom components/HoverBarWrapper/HoverBarWrapper';
+import React, { useState } from 'react';
 import { Item } from '../../helpers/types';
-import { ProductItem, ItemName, ItemPrice } from './Product.component';
+import {
+  ProductItem,
+  ItemName,
+  ItemPrice,
+  ProductLink,
+} from './Product.component';
 
 import ProductImgs from '../ProductImgs/ProductImgs';
 interface product {
   item: Item;
 }
 const Product: React.FC<product> = ({ item }) => {
-  const imgNumber = item.imgs.length;
+  const [isHover, setIsHover] = useState(false);
   return (
-    <ProductItem>
-      <HoverBarWrapper repeate={'infinite'} imgNumber={imgNumber}>
-        <ProductImgs  imgs={item.imgs} />
-      </HoverBarWrapper>
-      <ItemName>{item.name}</ItemName>
-      <ItemPrice>{'$' + item.price}</ItemPrice>
+    <ProductItem
+      onMouseEnter={(): void => setIsHover(true)}
+      onMouseLeave={(): void => setIsHover(false)}
+    >
+      <ProductLink to="/">
+        <ProductImgs imgs={item.imgs} isOnHover={isHover} />
+        <ItemName>{item.name}</ItemName>
+        <ItemPrice>{'$' + item.price}</ItemPrice>
+      </ProductLink>
     </ProductItem>
   );
 };

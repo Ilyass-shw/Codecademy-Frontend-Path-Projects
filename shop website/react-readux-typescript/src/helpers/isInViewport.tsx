@@ -1,4 +1,4 @@
-export const isInViewport = (element: Element): boolean => {
+export const isInViewport = (element: Element  ): boolean => {
   const rect = element.getBoundingClientRect();
   return (
     rect.top >= 0 &&

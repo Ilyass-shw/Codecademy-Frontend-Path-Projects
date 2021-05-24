@@ -6,16 +6,15 @@ import { HoverBarProps } from '../types';
 const HoverBar: React.FC<HoverBarProps> = ({
   imgNumber,
   durationInSec,
-  isHovering,
+  activate,
   repeate,
 }) => {
-  const duration = imgNumber ? imgNumber*3 + 's' : durationInSec;
-  console.log(duration)
+  const duration = imgNumber ? imgNumber * 2 + 's' : durationInSec;
   return (
     <>
       <BarWrapper>
         <MainBar
-          isHovering={isHovering}
+          activate={activate}
           durationInSec={duration}
           repeate={repeate}
         />

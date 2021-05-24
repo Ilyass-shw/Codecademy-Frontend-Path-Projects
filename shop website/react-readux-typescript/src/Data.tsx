@@ -16,35 +16,35 @@ const Items: DataItem[] = [
     ],
   },
 
-  // {
-  //   id: 2,
-  //   category: 'NECKLACE',
-  //   name: 'BODY, MIND, SOUL – NECKLACE',
-  //   price: 236.64,
-  //   description:
-  //     'A necklace with a Quartz crystal on a faceted silver chain.In spirituality Quartz it’s known as a powerful stone of healing and a amplifier of energy and intention. Also referred to as a protector that negates bad energies.–  Diameter of pendant: 30 mm (1.18″)–  Diameter of quartz crystal: 5 mm (0.2″)–  Thickness of chain: 1,8 mm Every Quartz crystal differs and is unique.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/body-mind-soul-necklace-jonnajinton1-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/body-mind-soul-jonnajinton11-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/body-mind-soul-necklace-jonnajinton3-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/body-mind-soul-necklace-jonnajinton2-L.jpg',
-  //   ],
-  // },
+  {
+    id: 2,
+    category: 'NECKLACE',
+    name: 'BODY, MIND, SOUL – NECKLACE',
+    price: 236.64,
+    description:
+      'A necklace with a Quartz crystal on a faceted silver chain.In spirituality Quartz it’s known as a powerful stone of healing and a amplifier of energy and intention. Also referred to as a protector that negates bad energies.–  Diameter of pendant: 30 mm (1.18″)–  Diameter of quartz crystal: 5 mm (0.2″)–  Thickness of chain: 1,8 mm Every Quartz crystal differs and is unique.',
+    imgs: [
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/body-mind-soul-necklace-jonnajinton1-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/body-mind-soul-jonnajinton11-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/body-mind-soul-necklace-jonnajinton3-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/body-mind-soul-necklace-jonnajinton2-L.jpg',
+    ],
+  },
 
-  // {
-  //   id: 3,
-  //   category: 'RING',
-  //   name: 'FJALL – RING',
-  //   price: 157.94,
-  //   description:
-  //     'A powerful double banded silver ring with a heavy melted silverstone on top.–  Silverstone size: ≈ 20 x 17 mm (0.79″ x 0.67″)– Wire thickness: 2 mm',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/fjall-ring-jonnajinton-jewelry8-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/fjall-ring-jonnajinton-jewelry3-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/fjall-ring-jonnajinton17-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/fjall-ring-jonnajinton15-L.jpg',
-  //   ],
-  // },
+  {
+    id: 3,
+    category: 'RING',
+    name: 'FJALL – RING',
+    price: 157.94,
+    description:
+      'A powerful double banded silver ring with a heavy melted silverstone on top.–  Silverstone size: ≈ 20 x 17 mm (0.79″ x 0.67″)– Wire thickness: 2 mm',
+    imgs: [
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/fjall-ring-jonnajinton-jewelry8-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/fjall-ring-jonnajinton-jewelry3-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/fjall-ring-jonnajinton17-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/fjall-ring-jonnajinton15-L.jpg',
+    ],
+  },
 
   // {
   //   id: 4,

@@ -16,11 +16,11 @@ to{
 `;
 
 const animation = (props: AnimationProps) => css`
-  animation: ${progress} ${props.durationInSec} ${props.repeate} linear ;
+  animation: ${progress} ${props.durationInSec} ${props.repeate} linear;
 `;
 
 export const MainBar = styled.div<AnimationProps>`
   height: 100%;
   background-color: black;
-  ${(props: AnimationProps) => (props.isHovering ? animation : 'width: 0;')};
+  ${(props: AnimationProps) => (props.activate ? animation : 'width: 0;')};
 `;

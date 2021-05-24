@@ -1,46 +1,62 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { handleScroll, setNextImg } from './helpers';
 import { ItemImage, ItemImages } from './ProductImgs.component';
-import { nanoid } from '@reduxjs/toolkit';
-// import { isInViewport } from '../../helpers/isInViewport';
+import HoverBarWrapper from '../../custom components/HoverBarWrapper/HoverBarWrapper';
+import { useWindowWidth } from '../../helpers/useWindowWidth';
 
 interface productImgs {
   imgs: string[];
+  isOnHover: boolean;
 }
 
-const ProductImgs: React.FC<productImgs> = ({ imgs }) => {
+const ProductImgs: React.FC<productImgs> = ({ imgs, isOnHover }) => {
   const [currentImg, setCurrentImg] = useState(0);
-  const imgNumber = imgs.length;
-  //   const img = useRef<Element>(null);
-  //   const isVisible = isInViewport(img);
-  // let n: ReturnType<typeof setTimeout>;
-  // const timeout = useRef(n);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const img = useRef<HTMLImageElement>(null);
+  const imgsNumber = imgs.length;
+  let timeout: ReturnType<typeof setTimeout>;
+  const isOnMobile = useWindowWidth() < 500;
 
   useEffect(() => {
-    const nextImg = () => {
-      setCurrentImg((current) => (current === imgNumber - 1 ? 0 : current + 1));
+    window.addEventListener('scroll', () =>
+      handleScroll(img.current, setIsVisible),
+    );
+    return () => {
+      window.removeEventListener('scroll', () =>
+        handleScroll(img.current, setIsVisible),
+      );
     };
-    // timeout.current = setTimeout(nextImg, 2000);
-    // let bo: ReturnType<typeof setTimeout>;
-    // if (isVisible) {
-    const bo = setTimeout(nextImg, 2000);
-    // }
+  }, []);
+
+  useEffect(() => {
+    // Change imgs when product is visible on mobile
+    // and on hover on bigger screens.
+    if ((isVisible && isOnMobile) || (isVisible && isOnHover)) {
+      timeout = setTimeout(() => setNextImg(setCurrentImg, imgsNumber), 2000);
+    }
 
     return () => {
-      if (bo) {
-        clearTimeout(bo);
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      // We want to restart to the first img in two cases:
+      // -when product is out and back again in viewport, on mobiles.
+      // -when user hovers again on the product, on bigger screens.
+      if (!isVisible || (!isOnMobile && !isOnHover)) {
+        setCurrentImg(0);
       }
     };
-  }, [currentImg, imgNumber]);
+  }, [currentImg, imgsNumber, isVisible, isOnMobile, isOnHover]);
 
   return (
-    <ItemImages>
-      {
-        <ItemImage src={imgs[currentImg]} key={nanoid()} />
-        // item.imgs.map((src) => {
-        //   return <ItemImage src={src} key={nanoid()} />;
-        // })
-      }
-    </ItemImages>
+    <HoverBarWrapper
+      repeate={'infinite'}
+      imgNumber={imgsNumber}
+      active={isVisible && isOnMobile}
+    >
+      <ItemImages>{<ItemImage ref={img} src={imgs[currentImg]} />}</ItemImages>
+    </HoverBarWrapper>
   );
 };
 
