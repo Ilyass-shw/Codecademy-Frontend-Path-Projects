@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
 export const ItemImages = styled.div`
+  /* @media screen and (min-width: 880px) { */
   display: flex;
+  /* } */
   flex-wrap: nowrap;
-  min-height: 40vh;
   overflow: hidden;
 `;
 export const ItemImage = styled.img`
   width: 100%;
   object-fit: cover;
   line-height: 1.8rem;
+  height: 80%;
+
+  @media screen and (min-width: 780px) {
+    /* max-height: 25%; */
+  }
 `;

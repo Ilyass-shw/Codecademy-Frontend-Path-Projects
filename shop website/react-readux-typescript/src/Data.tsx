@@ -46,49 +46,49 @@ const Items: DataItem[] = [
     ],
   },
 
-  // {
-  //   id: 4,
-  //   category: 'NECKLACE',
-  //   name: 'WAY OF THE HEART – NECKLACE',
-  //   price: 172.74,
-  //   description:
-  //     'A necklace with a celtic love knot on a faceted silver chain.– Dimensions of pendant: 25 x 9 mm (1″ x 0.35″)– Thickness of chain: 1,8 mm',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/way-of-the-heart-necklace-jonnajinton1-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/way-of-the-heart-jonnajinton11-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/way-of-the-heart-necklace-jonnajinton5-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/way-of-the-heart-jonnajinton15-L.jpg',
-  //   ],
-  // },
+  {
+    id: 4,
+    category: 'NECKLACE',
+    name: 'WAY OF THE HEART – NECKLACE',
+    price: 172.74,
+    description:
+      'A necklace with a celtic love knot on a faceted silver chain.– Dimensions of pendant: 25 x 9 mm (1″ x 0.35″)– Thickness of chain: 1,8 mm',
+    imgs: [
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/way-of-the-heart-necklace-jonnajinton1-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/way-of-the-heart-jonnajinton11-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/way-of-the-heart-necklace-jonnajinton5-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/way-of-the-heart-jonnajinton15-L.jpg',
+    ],
+  },
 
-  // {
-  //   id: 5,
-  //   category: 'BRACELET',
-  //   name: 'FREYJA – BRACELET',
-  //   price: 94.14,
-  //   description: 'A simple palm silver chain.– Chain thickness: 3,4 mm',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-bracelet-jonnajinton-jewelry1-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-bracelet-jonnajinton10-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2019/10/eternity-bracelet-freyja-jonnajinton12-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-bracelet-jonnajinton-jewelry3-L.jpg',
-  //   ],
-  // },
+  {
+    id: 5,
+    category: 'BRACELET',
+    name: 'FREYJA – BRACELET',
+    price: 94.14,
+    description: 'A simple palm silver chain.– Chain thickness: 3,4 mm',
+    imgs: [
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-bracelet-jonnajinton-jewelry1-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-bracelet-jonnajinton10-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2019/10/eternity-bracelet-freyja-jonnajinton12-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-bracelet-jonnajinton-jewelry3-L.jpg',
+    ],
+  },
 
-  // {
-  //   id: 6,
-  //   category: 'EARRINGS',
-  //   name: 'FREYJA – EARRINGS',
-  //   price: 147.9,
-  //   description:
-  //     'One pair of distinctive silver earrings with a hammered surface.– Earring dimensions: 40 x 19 mm (1.57″ x 0.75″)–Plate thickness: 1 mm',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-earrings-jonnajinton-jewelry1-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-earrings-jonnajinton10L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-earrings-jonnajinton-jewelry2-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-earrings-jonnajinton11L.jpg',
-  //   ],
-  // },
+  {
+    id: 6,
+    category: 'EARRINGS',
+    name: 'FREYJA – EARRINGS',
+    price: 147.9,
+    description:
+      'One pair of distinctive silver earrings with a hammered surface.– Earring dimensions: 40 x 19 mm (1.57″ x 0.75″)–Plate thickness: 1 mm',
+    imgs: [
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-earrings-jonnajinton-jewelry1-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-earrings-jonnajinton10L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-earrings-jonnajinton-jewelry2-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/07/freyja-earrings-jonnajinton11L.jpg',
+    ],
+  },
 
   // {
   //   id: 7,

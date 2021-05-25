@@ -4,7 +4,6 @@ export const BackgroundImage = styled.section`
   background: url('https://jonnajintonsweden.com/wp-content/uploads/2020/09/test-header-4-4500x1550.jpg')
     45% / cover no-repeat;
   height: 22.2rem;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;

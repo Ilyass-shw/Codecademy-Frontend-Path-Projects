@@ -3,7 +3,7 @@ import { AnimationProps } from '../types';
 
 export const BarWrapper = styled.div`
   width: 100%;
-  height: 2px;
+  height: 3px;
 `;
 
 const progress = keyframes`

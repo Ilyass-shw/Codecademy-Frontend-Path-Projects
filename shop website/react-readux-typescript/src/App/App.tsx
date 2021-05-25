@@ -1,22 +1,15 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import store from './store';
 
 import { GlobalStyle } from './App.component';
-import NavBar from '../components/NavBar/NavBar';
-import Footer from '../components/Footer/Footer';
-import HeroSection from '../components/HeroSection/HeroSection';
-
 import { getProductsData } from '../components/ProductsSlice/ProductsSlice';
-// import { useAppDispatch } from '../helpers/hooks';
-import store from './store';
-import { useSelector } from 'react-redux';
 import { isBarOpenSelector } from '../components/CartSlice/CartSlice';
-import ProductsList from '../components/ProductsList/ProductsList';
+import Home from '../pages/Home';
 
 const App: React.FC = () => {
   useEffect(() => {
-    // const dispatch= useAppDispatch()
-    // dispatch(getProductsData());
     store.dispatch(getProductsData());
   }, []);
 
@@ -25,10 +18,9 @@ const App: React.FC = () => {
     <>
       <GlobalStyle canScroll={isCartBarOpen} />
       <BrowserRouter>
-        <NavBar />
-        <HeroSection />
-        <ProductsList />
-        <Footer />
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
       </BrowserRouter>
     </>
   );

@@ -16,7 +16,7 @@ const ProductImgs: React.FC<productImgs> = ({ imgs, isOnHover }) => {
   const img = useRef<HTMLImageElement>(null);
   const imgsNumber = imgs.length;
   let timeout: ReturnType<typeof setTimeout>;
-  const isOnMobile = useWindowWidth() < 500;
+  const isOnMobile = useWindowWidth() < 957;
 
   useEffect(() => {
     window.addEventListener('scroll', () =>

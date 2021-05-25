@@ -21,7 +21,7 @@ export const LinkButton = styled(RouterLink)`
   color: black;
   padding-bottom: 1rem;
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 780px) {
     font-size: 1.2rem;
   }
 `;

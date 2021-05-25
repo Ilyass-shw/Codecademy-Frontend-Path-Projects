@@ -8,7 +8,7 @@ export const CartWrapper = styled(CustomButton)`
   border-radius: 50%;
   margin: 0 0.9rem;
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 780px) {
     margin: 0 3rem 0 2rem;
   }
 `;
@@ -23,7 +23,7 @@ export const NumberOfItemsIndicator = styled.h6`
   font-weight: bolder;
   border-radius: 50%;
   transform: translate(1.2rem, -1.8rem);
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 780px) {
     transform: translate(1.7rem, -2.4rem);
   }
 `;
