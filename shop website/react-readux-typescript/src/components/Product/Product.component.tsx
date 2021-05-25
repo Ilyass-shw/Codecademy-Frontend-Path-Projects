@@ -4,17 +4,13 @@ import { RouterLink } from '../../App/App.component';
 export const ProductItem = styled.li`
   overflow: hidden;
   padding: 1rem 1rem;
-  /* max-width: 80vw; */
-  width: 60vw;
-    max-height: 70vw;
+  width: 85vw;
   margin: auto;
   @media screen and (min-width: 960px) {
     width: 40vw;
-    /* max-height: 70vw; */
   }
   @media screen and (min-width: 1276px) {
     width: 30vw;
-    /* max-height: 70vw; */
   }
 `;
 export const ProductLink = styled(RouterLink)`

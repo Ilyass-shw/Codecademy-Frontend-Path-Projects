@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { handleScroll, setNextImg } from './helpers';
+import { setNextImg } from './helpers';
 import { ItemImage, ItemImages } from './ProductImgs.component';
 import HoverBarWrapper from '../../custom components/HoverBarWrapper/HoverBarWrapper';
 import { useWindowWidth } from '../../helpers/useWindowWidth';
@@ -7,27 +7,16 @@ import { useWindowWidth } from '../../helpers/useWindowWidth';
 interface productImgs {
   imgs: string[];
   isOnHover: boolean;
+  isVisible: boolean;
 }
 
-const ProductImgs: React.FC<productImgs> = ({ imgs, isOnHover }) => {
+const ProductImgs: React.FC<productImgs> = ({ imgs, isOnHover, isVisible }) => {
   const [currentImg, setCurrentImg] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
 
   const img = useRef<HTMLImageElement>(null);
   const imgsNumber = imgs.length;
   let timeout: ReturnType<typeof setTimeout>;
   const isOnMobile = useWindowWidth() < 957;
-
-  useEffect(() => {
-    window.addEventListener('scroll', () =>
-      handleScroll(img.current, setIsVisible),
-    );
-    return () => {
-      window.removeEventListener('scroll', () =>
-        handleScroll(img.current, setIsVisible),
-      );
-    };
-  }, []);
 
   useEffect(() => {
     // Change imgs when product is visible on mobile
