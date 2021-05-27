@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { setNextImg } from './helpers';
-import { ItemImage, ItemImages } from './ProductImgs.component';
+import { ItemImage, ItemImages } from './Pro.component';
 import HoverBarWrapper from '../../custom components/HoverBarWrapper/HoverBarWrapper';
 import { useWindowWidth } from '../../helpers/useWindowWidth';
+import { nanoid } from '@reduxjs/toolkit';
 
 interface productImgs {
   imgs: string[];
@@ -19,9 +20,11 @@ const ProductImgs: React.FC<productImgs> = ({ imgs, isOnHover, isVisible }) => {
   const isOnMobile = useWindowWidth() < 957;
 
   useEffect(() => {
-    // Change imgs when product is visible on mobile
+    // slide imgs when product is visible on mobile
     // and on hover on bigger screens.
-    if ((isVisible && isOnMobile) || (isVisible && isOnHover)) {
+    if ((isVisible && isOnMobile) || (isOnHover && !isOnMobile)) {
+      console.log('kk');
+
       timeout = setTimeout(() => setNextImg(setCurrentImg, imgsNumber), 2000);
     }
 
@@ -29,11 +32,12 @@ const ProductImgs: React.FC<productImgs> = ({ imgs, isOnHover, isVisible }) => {
       if (timeout) {
         clearTimeout(timeout);
       }
-      // We want to restart to the first img in two cases:
+      // We want to reslide to the first img in two cases:
       // -when product is out and back again in viewport, on mobiles.
       // -when user hovers again on the product, on bigger screens.
-      if (!isVisible || (!isOnMobile && !isOnHover)) {
+      if ((!isVisible && isOnMobile) || (!isOnMobile && !isOnHover)) {
         setCurrentImg(0);
+        console.log('ff');
       }
     };
   }, [currentImg, imgsNumber, isVisible, isOnMobile, isOnHover]);
@@ -42,9 +46,20 @@ const ProductImgs: React.FC<productImgs> = ({ imgs, isOnHover, isVisible }) => {
     <HoverBarWrapper
       repeate={'infinite'}
       imgNumber={imgsNumber}
-      active={(isVisible && isOnMobile) || (isVisible && isOnHover)}
+      active={(isVisible && isOnMobile) || (isOnHover && !isOnMobile)}
     >
-      <ItemImages>{<ItemImage loading='lazy' ref={img} src={imgs[currentImg]} />}</ItemImages>
+      <ItemImages>
+        {imgs.map((src, index) => (
+          <ItemImage
+            loading="lazy"
+            ref={img}
+            src={src}
+            key={nanoid()}
+            currentImgg={imgs[currentImg] === src}
+            index={index}
+          />
+        ))}
+      </ItemImages>
     </HoverBarWrapper>
   );
 };

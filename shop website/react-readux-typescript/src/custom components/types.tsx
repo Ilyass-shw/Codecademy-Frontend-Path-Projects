@@ -15,5 +15,5 @@ export interface HoverBarWrapperProps {
   repeate: 'infinite' | 1;
   durationInSec?: string;
   imgNumber?: number;
-  active?: boolean;
+  active: boolean;
 }

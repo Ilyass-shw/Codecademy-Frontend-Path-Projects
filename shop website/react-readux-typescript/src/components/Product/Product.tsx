@@ -7,7 +7,7 @@ import {
   ProductLink,
 } from './Product.component';
 import { handleScroll } from './helpers';
-import ProductImgs from '../ProductImgs/ProductImgs';
+import ProductImgs from '../ProductImgs/Pro';
 
 interface product {
   item: Item;

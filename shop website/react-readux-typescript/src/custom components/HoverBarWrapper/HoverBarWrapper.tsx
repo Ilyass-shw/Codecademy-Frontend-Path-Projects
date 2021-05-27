@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import HoverBar from '../CustomHoverBar/HoverBar';
 import { HoverBarWrapperProps } from '../types';
 
@@ -9,16 +9,16 @@ const HoverBarWrapper: React.FC<HoverBarWrapperProps> = ({
   imgNumber,
   active,
 }) => {
-  const [isHover, setIsHover] = useState(false);
-  const activate = active || isHover;
+  // const [isHover, setIsHover] = useState(false);
+  // const activate = active || isHover;
   return (
     <div
-      onMouseEnter={(): void => setIsHover(true)}
-      onMouseLeave={(): void => setIsHover(false)}
+    // onMouseEnter={(): void => setIsHover(true)}
+    // onMouseLeave={(): void => setIsHover(false)}
     >
       {children}
       <HoverBar
-        activate={activate}
+        activate={active}
         durationInSec={durationInSec}
         repeate={repeate}
         imgNumber={imgNumber}

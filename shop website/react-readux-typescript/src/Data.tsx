@@ -269,18 +269,18 @@ const Items: DataItem[] = [
   //     'https://jonnajintonsweden.com/wp-content/uploads/2020/07/perfect-imperfect3-jonnajinton12.jpg',
   //   ],
   // },
-  // {
-  //   id: 20,
-  //   category: 'NECKLACE',
-  //   name: 'SPIRIT – ROSE QUARTZ – NECKLACE',
-  //   price: 135.09,
-  //   description:
-  //     'A necklace with a Rose Quartz crystal rod on a faceted silver chain.In spirituality it’s known as the universal stone of Love. A stone of trust, harmony and forgiveness. Also referred to as a cleansing stone and a healer of the internal body.– Dimensions pendant: 35 x 8,5 mm (1.38″ x 0.33″)– Thickness of chain: 1,8 mm Every Rose Quartz crystal will differ in appearance and is unique.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/09/spirit-rosequartz-necklace-jonnajinton2-L.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/09/spirit-rosequartz-necklace-jonnajinton3-L.jpg',
-  //   ],
-  // },
+  {
+    id: 20,
+    category: 'NECKLACE',
+    name: 'SPIRIT – ROSE QUARTZ – NECKLACE',
+    price: 135.09,
+    description:
+      'A necklace with a Rose Quartz crystal rod on a faceted silver chain.In spirituality it’s known as the universal stone of Love. A stone of trust, harmony and forgiveness. Also referred to as a cleansing stone and a healer of the internal body.– Dimensions pendant: 35 x 8,5 mm (1.38″ x 0.33″)– Thickness of chain: 1,8 mm Every Rose Quartz crystal will differ in appearance and is unique.',
+    imgs: [
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/09/spirit-rosequartz-necklace-jonnajinton2-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/09/spirit-rosequartz-necklace-jonnajinton3-L.jpg',
+    ],
+  },
   // {
   //   id: 21,
   //   category: 'RING',

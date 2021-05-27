@@ -6,6 +6,7 @@ export const ProductItem = styled.li`
   padding: 1rem 1rem;
   width: 85vw;
   margin: auto;
+  line-height: 1.8rem;
   @media screen and (min-width: 960px) {
     width: 40vw;
   }

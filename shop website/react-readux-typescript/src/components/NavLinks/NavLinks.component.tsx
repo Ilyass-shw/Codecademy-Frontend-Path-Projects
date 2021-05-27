@@ -36,7 +36,7 @@ export const CategoryList = styled.div<{
   display: flex;
   flex-direction: column;
   box-shadow: 0px 10px 20px rgb(0 0 0 / 9%);
-  padding-top: 10px;
+  padding-top: 15px;
   transform: ${({ isHover }) =>
     isHover ? 'translateY(10px)' : 'translateY(0)'};
   visibility: ${({ isHover }) => (isHover ? 'visible' : 'hidden')};
