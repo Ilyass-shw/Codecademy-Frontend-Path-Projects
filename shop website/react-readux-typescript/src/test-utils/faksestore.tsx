@@ -5,7 +5,7 @@ import { StoreType } from './types';
 
 const fakeSlice = createSlice({
   name: 'name',
-  initialState: {} ,
+  initialState: {},
   reducers: {},
 });
 
@@ -16,12 +16,12 @@ export default configureStore({
 });
 
 export const makeCustomTestStore = (
-  name: string,
+  Name: string,
   initialState: Record<string, unknown>,
   reducers = {},
 ): StoreType => {
   const FakeSlice = createSlice({
-    name,
+    name: Name,
     initialState,
     reducers,
   });

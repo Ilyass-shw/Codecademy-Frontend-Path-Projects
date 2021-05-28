@@ -7,7 +7,7 @@ import {
   ProductLink,
 } from './Product.component';
 import { handleScroll } from './helpers';
-import ProductImgs from '../ProductImgs/Pro';
+import ProductImgs from '../ProductImgs/ProductImgs';
 
 interface product {
   item: Item;
@@ -35,6 +35,7 @@ const Product: React.FC<product> = ({ item }) => {
       <ProductLink ref={img} to="/">
         <ProductImgs
           imgs={item.imgs}
+          alt={item.name}
           isOnHover={isHover}
           isVisible={isVisible}
         />

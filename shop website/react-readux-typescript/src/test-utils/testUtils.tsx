@@ -2,7 +2,7 @@ import React from 'react';
 import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store, { makeCustomTestStore } from './faksestore';
-import {  RenderReturn, StoreType } from './types';
+import { RenderReturn, StoreType } from './types';
 import { BrowserRouter } from 'react-router-dom';
 
 // const TestWrapper: React.FC<WrapperParams> = ({
@@ -48,12 +48,12 @@ export const renderWithRouterOnly = (ui: React.ReactElement): RenderReturn => {
 // ============= ============= ============= ============= =============
 
 export const makeTestStore = (
-  name?: string,
+  Name?: string,
   initialState?: Record<string, unknown>,
   reducers = {},
 ): StoreType => {
-  if (name && initialState) {
-    const CustomTestStore = makeCustomTestStore(name, initialState, reducers);
+  if (Name && initialState) {
+    const CustomTestStore = makeCustomTestStore(Name, initialState, reducers);
     const origDispatch = CustomTestStore.dispatch;
     CustomTestStore.dispatch = jest.fn(origDispatch);
     return CustomTestStore;

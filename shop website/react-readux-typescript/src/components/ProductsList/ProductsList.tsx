@@ -12,7 +12,7 @@ const ProductsList: React.FC = () => {
   }
   return (
     <ProductsWrapper>
-      <ItemList>
+      <ItemList role={'products List'}>
         {productsList.map((item) => {
           return <Product item={item} key={item.id} />;
         })}

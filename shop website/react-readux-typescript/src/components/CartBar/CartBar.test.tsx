@@ -25,7 +25,7 @@ describe('CartBar', () => {
 
     userEvent.click(closeButton);
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(cartBar).not.toBeVisible();
       expect(store.getState().Cart.isBarOpen).toBeFalsy();
     });
@@ -47,7 +47,7 @@ describe('CartBar', () => {
 
     userEvent.click(Background);
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(cartBar).not.toBeVisible();
     });
   });
