@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../App/store';
+import { RootState } from '../../../App/store';
 
 interface CartState {
   isBarOpen: boolean;

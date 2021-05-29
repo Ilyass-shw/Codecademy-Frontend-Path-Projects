@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { DataItem } from '../../../helpers/types';
+import { DataItem } from '../../../../helpers/types';
 import { filterWithCategory } from '../helpers';
 import { ProductsState } from '../ProductsSlice';
 

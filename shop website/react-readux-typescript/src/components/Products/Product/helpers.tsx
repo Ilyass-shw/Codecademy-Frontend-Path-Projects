@@ -1,4 +1,4 @@
-import { isInViewport } from '../../helpers/isInViewport';
+import { isInViewport } from '../../../helpers/isInViewport';
 
 export const handleScroll = (
   img: Element | null | undefined,

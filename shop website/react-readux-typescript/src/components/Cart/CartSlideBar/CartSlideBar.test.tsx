@@ -1,9 +1,9 @@
 import React from 'react';
-import { render, screen, waitFor } from '../../test-utils/testUtils';
+import { render, screen, waitFor } from '../../../test-utils/testUtils';
 import userEvent from '@testing-library/user-event';
-import CartBar from './CartBar';
-import store from '../../App/store';
-import { toggleCartSideBar } from '../../helpers/toggleCartSideBar';
+import CartBar from './CartSlideBar';
+import store from '../../../App/store';
+import { toggleCartSlideBar } from '../../../helpers/toggleCartSlideBar';
 
 describe('CartBar', () => {
   it('should render', () => {
@@ -18,7 +18,7 @@ describe('CartBar', () => {
     expect(cartBar).not.toBeVisible();
     expect(store.getState().Cart.isBarOpen).toBeFalsy();
 
-    toggleCartSideBar();
+    toggleCartSlideBar();
 
     expect(cartBar).toBeVisible();
     expect(store.getState().Cart.isBarOpen).toBeTruthy();
@@ -38,7 +38,7 @@ describe('CartBar', () => {
     expect(cartBar).not.toBeVisible();
     expect(store.getState().Cart.isBarOpen).toBeFalsy();
 
-    toggleCartSideBar();
+    toggleCartSlideBar();
 
     expect(cartBar).toBeVisible();
     expect(store.getState().Cart.isBarOpen).toBeTruthy();

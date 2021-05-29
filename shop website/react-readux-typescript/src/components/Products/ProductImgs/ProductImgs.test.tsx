@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, renderWithRouterOnly } from '../../test-utils/testUtils';
+import { screen, renderWithRouterOnly } from '../../../test-utils/testUtils';
 import ProductImgs from './ProductImgs';
 import { checkIfAllImgsWereDisplayed } from './helpers';
 

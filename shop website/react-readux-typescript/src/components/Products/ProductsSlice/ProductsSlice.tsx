@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import data from '../../Data';
-import { Item } from '../../helpers/types';
+import data from '../../../Data';
+import { Item } from '../../../helpers/types';
 import { getProductsDataFulfilledReducer } from './reducers/getItemsDataFulfilled.reducer';
 import { getItemsDataPendingReducer } from './reducers/getItemsDataPending.reducer';
 import { getItemsDataRejectedReducer } from './reducers/getItemsDataRejected.reducer';

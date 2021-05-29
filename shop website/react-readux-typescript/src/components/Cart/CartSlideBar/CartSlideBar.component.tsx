@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CustomButton } from '../../App/App.component';
+import { CustomButton } from '../../../App/App.component';
 
 interface WrapperProps {
   open: boolean;

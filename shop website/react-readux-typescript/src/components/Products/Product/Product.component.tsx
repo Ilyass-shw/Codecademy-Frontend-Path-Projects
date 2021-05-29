@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { RouterLink } from '../../App/App.component';
+import { RouterLink } from '../../../App/App.component';
 
 export const ProductItem = styled.li`
   overflow: hidden;

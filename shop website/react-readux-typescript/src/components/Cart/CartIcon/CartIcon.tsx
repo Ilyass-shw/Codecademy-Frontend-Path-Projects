@@ -3,7 +3,7 @@ import { CartWrapper, NumberOfItemsIndicator } from './CartIcon.component';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
-import { useWindowWidth } from '../../helpers/useWindowWidth';
+import { useWindowWidth } from '../../../helpers/useWindowWidth';
 
 const CartIcon: React.FC = () => {
   const iconSize = useWindowWidth() > 700 ? '37' : '27';

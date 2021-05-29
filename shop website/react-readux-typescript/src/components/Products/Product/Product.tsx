@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Item } from '../../helpers/types';
+import { Item } from '../../../helpers/types';
 import {
   ProductItem,
   ItemName,

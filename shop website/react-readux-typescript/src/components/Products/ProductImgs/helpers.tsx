@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen as srn, waitFor } from '../../test-utils/testUtils';
+import { screen as srn, waitFor } from '../../../test-utils/testUtils';
 
 export const setNextImg = (
   setCurrentImg: React.Dispatch<React.SetStateAction<number>>,

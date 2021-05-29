@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { toggleCartSideBar } from '../../helpers/toggleCartSideBar';
+import { toggleCartSlideBar } from '../../helpers/toggleCartSlideBar';
 
 import NavLinks from '../NavLinks/NavLinks';
-import CartIcon from '../CartIcon/CartIcon';
-import CartBar from '../CartBar/CartBar';
+import CartIcon from '../Cart/CartIcon/CartIcon';
+import CartBar from '../Cart/CartSlideBar/CartSlideBar';
+
 import {
   NavBarContainer,
   NavLinkWrapper,
@@ -24,7 +25,7 @@ const NavBar: React.FC = () => {
 
         <Icon
           onClick={() => {
-            toggleCartSideBar();
+            toggleCartSlideBar();
           }}
           data-testid="Icon"
         >

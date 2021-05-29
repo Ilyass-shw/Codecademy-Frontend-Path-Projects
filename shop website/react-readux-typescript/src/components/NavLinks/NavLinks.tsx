@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import HoverBarWrapper from '../../custom components/HoverBarWrapper/HoverBarWrapper';
+import HoverBarWrapper from '../CustomComponents/HoverBarWrapper/HoverBarWrapper/HoverBarWrapper';
 import {
   NavLink,
   Links,

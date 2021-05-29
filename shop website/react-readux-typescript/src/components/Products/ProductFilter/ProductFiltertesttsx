@@ -1,0 +1,10 @@
+import React from 'react'
+import { render, screen } from '../../test-utils/testUtils'
+
+describe('ProductFilter',()=>{
+    it('should render form with all filter options', () => {
+        render()
+        screen.getBy
+    })
+    
+})

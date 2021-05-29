@@ -1,4 +1,4 @@
-import { categories, DataItem } from '../../helpers/types';
+import { categories, DataItem } from '../../../helpers/types';
 
 export const filterWithCategory = (
   data: DataItem[],

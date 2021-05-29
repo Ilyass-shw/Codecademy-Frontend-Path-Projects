@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import store from './store';
 
 import { GlobalStyle } from './App.component';
-import { getProductsData } from '../components/ProductsSlice/ProductsSlice';
-import { isBarOpenSelector } from '../components/CartSlice/CartSlice';
+import { getProductsData } from '../components/Products/ProductsSlice/ProductsSlice';
+import { isBarOpenSelector } from '../components/Cart/CartSlice/CartSlice';
 import Home from '../pages/Home';
 
 const App: React.FC = () => {

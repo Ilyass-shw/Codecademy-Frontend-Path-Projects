@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { setNextImg } from './helpers';
 import { ItemImage, ItemImages } from './ProductImgs.component';
-import HoverBarWrapper from '../../custom components/HoverBarWrapper/HoverBarWrapper';
-import { useWindowWidth } from '../../helpers/useWindowWidth';
+import HoverBarWrapper from '../../CustomComponents/HoverBarWrapper/HoverBarWrapper/HoverBarWrapper';
+import { useWindowWidth } from '../../../helpers/useWindowWidth';
 import { nanoid } from '@reduxjs/toolkit';
 
 interface productImgs {

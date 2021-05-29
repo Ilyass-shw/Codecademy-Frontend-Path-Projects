@@ -1,7 +1,7 @@
 import React from 'react';
 import { GrFormClose } from 'react-icons/gr';
 import { useSelector } from 'react-redux';
-import { toggleCartSideBar } from '../../helpers/toggleCartSideBar';
+import { toggleCartSlideBar } from '../../../helpers/toggleCartSlideBar';
 import { isBarOpenSelector } from '../CartSlice/CartSlice';
 
 import {
@@ -14,7 +14,7 @@ import {
   CheckoutFotter,
   Price,
   Total,
-} from './CartBar.component';
+} from './CartSlideBar.component';
 
 const CartBar: React.FC = () => {
   const isBarOpen = useSelector(isBarOpenSelector);
@@ -31,7 +31,7 @@ const CartBar: React.FC = () => {
       <CartBarWrapper
         data-testid="dark-background"
         onClick={() => {
-          toggleCartSideBar();
+          toggleCartSlideBar();
         }}
         open={isBarOpen}
       />
@@ -40,7 +40,7 @@ const CartBar: React.FC = () => {
         <CloseButton
           data-testid="closeButton"
           onClick={() => {
-            toggleCartSideBar();
+            toggleCartSlideBar();
           }}
         >
           <GrFormClose size={30} />
