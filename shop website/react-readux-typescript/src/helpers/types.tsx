@@ -7,11 +7,11 @@ export interface Item {
 }
 
 export type categories =
-  | 'NECKLACE'
-  | 'RING'
-  | 'ARMCUFF'
-  | 'BRACELET'
-  | 'EARRINGS';
+  | 'Necklage'
+  | 'Ring'
+  | 'Armcuff'
+  | 'Bracelet'
+  | 'Earrings';
 
 export interface DataItem extends Item {
   category: categories;

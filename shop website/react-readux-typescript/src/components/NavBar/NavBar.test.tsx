@@ -1,12 +1,12 @@
 import React from 'react';
 import store from '../../App/store';
-import { render, screen } from '../../test-utils/testUtils';
+import { renderWithStore, screen } from '../../test-utils/testUtils';
 import NavBar from './NavBar';
 import userEvent from '@testing-library/user-event';
 
 describe('NavBar', () => {
   it('should render', () => {
-    render(<NavBar />, store, 'withRouter');
+    renderWithStore(<NavBar />, store, 'withRouter');
 
     const Logo = screen.getByText('Shw');
     const ShopLink = screen.getByText('Shop');
@@ -18,7 +18,7 @@ describe('NavBar', () => {
   });
 
   it('should open and close cart items bar using the cart icon button', async () => {
-    render(<NavBar />, store, 'withRouter');
+    renderWithStore(<NavBar />, store, 'withRouter');
 
     const cartBar = screen.getByTestId('CartBar');
 

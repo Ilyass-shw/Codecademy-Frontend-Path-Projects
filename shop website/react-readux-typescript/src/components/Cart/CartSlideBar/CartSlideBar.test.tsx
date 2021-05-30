@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '../../../test-utils/testUtils';
+import { renderWithStore, screen, waitFor } from '../../../test-utils/testUtils';
 import userEvent from '@testing-library/user-event';
 import CartBar from './CartSlideBar';
 import store from '../../../App/store';
@@ -7,11 +7,11 @@ import { toggleCartSlideBar } from '../../../helpers/toggleCartSlideBar';
 
 describe('CartBar', () => {
   it('should render', () => {
-    render(<CartBar />, store, 'withRouter');
+    renderWithStore(<CartBar />, store, 'withRouter');
   });
 
   it('should close when clicked on close button', async () => {
-    render(<CartBar />, store, 'withRouter');
+    renderWithStore(<CartBar />, store, 'withRouter');
     const closeButton = screen.getByTestId('closeButton');
     const cartBar = screen.getByTestId('CartBar');
 
@@ -32,7 +32,7 @@ describe('CartBar', () => {
   });
 
   it('should close when clicked on the dark background', async () => {
-    render(<CartBar />, store, 'withRouter');
+    renderWithStore(<CartBar />, store, 'withRouter');
     const cartBar = screen.getByTestId('CartBar');
 
     expect(cartBar).not.toBeVisible();

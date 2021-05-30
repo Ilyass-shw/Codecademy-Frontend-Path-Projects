@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, renderWithRouterOnly } from '../../../test-utils/testUtils';
+import { screen, renderWithRouter } from '../../../test-utils/testUtils';
 import ProductImgs from './ProductImgs';
 import { checkIfAllImgsWereDisplayed } from './helpers';
 
@@ -7,7 +7,7 @@ const imgs = ['src1', 'src2', 'src3'];
 
 describe('ProductImgs', () => {
   it('should render imgs for all src', () => {
-    renderWithRouterOnly(
+    renderWithRouter(
       <ProductImgs
         imgs={imgs}
         isVisible={false}
@@ -23,7 +23,7 @@ describe('ProductImgs', () => {
     expect(Imgs[2].src).toContain('src3');
   });
   it('should render imgs with the first one is the only visible one', () => {
-    renderWithRouterOnly(
+    renderWithRouter(
       <ProductImgs
         imgs={imgs}
         isVisible={false}
@@ -40,7 +40,7 @@ describe('ProductImgs', () => {
 
   it('should display all imgs sequentially on small devices when product is visible', async () => {
     global.innerWidth = 300;
-    const { rerender } = renderWithRouterOnly(
+    const { rerender } = renderWithRouter(
       <ProductImgs
         imgs={imgs}
         isVisible={false}
@@ -68,7 +68,7 @@ describe('ProductImgs', () => {
 
   it('should display all imgs sequentially on bigger devices when product is hoverd on', async () => {
     global.innerWidth = 980;
-    const { rerender } = renderWithRouterOnly(
+    const { rerender } = renderWithRouter(
       <ProductImgs
         imgs={imgs}
         isVisible={false}

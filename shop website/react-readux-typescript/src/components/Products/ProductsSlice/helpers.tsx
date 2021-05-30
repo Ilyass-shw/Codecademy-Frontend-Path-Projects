@@ -1,8 +1,8 @@
-import { categories, DataItem } from '../../../helpers/types';
+import { DataItem } from '../../../helpers/types';
 
 export const filterWithCategory = (
   data: DataItem[],
-  category: categories,
+  category: string,
 ): DataItem[] => {
   return data.filter((item: DataItem) => {
     return item.category === category;

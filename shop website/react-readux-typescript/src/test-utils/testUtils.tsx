@@ -5,25 +5,13 @@ import store, { makeCustomTestStore } from './faksestore';
 import { RenderReturn, StoreType } from './types';
 import { BrowserRouter } from 'react-router-dom';
 
-// const TestWrapper: React.FC<WrapperParams> = ({
-//   MyStore,
-//   WithRouter,
-//   children,
-// }) => {
-//   if (WithRouter) {
-//     return (
-//       <Provider store={MyStore}>
-//         <BrowserRouter>{children}</BrowserRouter>
-//       </Provider>
-//     );
-//   } else {
-//     return <Provider store={MyStore}>{children}</Provider>;
-//   }
-// };
+export const render = (ui: React.ReactElement): RenderReturn => {
+  return rtlRender(ui);
+};
 
 // ============= ============= ============= ============= =============
 
-export const render = (
+export const renderWithStore = (
   ui: React.ReactElement,
   MyStore: StoreType,
   WithRouter?: 'withRouter',
@@ -41,7 +29,7 @@ export const render = (
 
 // ============= ============= ============= ============= =============
 
-export const renderWithRouterOnly = (ui: React.ReactElement): RenderReturn => {
+export const renderWithRouter = (ui: React.ReactElement): RenderReturn => {
   return rtlRender(<BrowserRouter>{ui}</BrowserRouter>);
 };
 
