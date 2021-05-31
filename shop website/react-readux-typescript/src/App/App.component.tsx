@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle<{ canScroll: boolean }>`
   padding: 0;
   font-family: 'Oxygen', sans-serif;
   overflow: ${({ canScroll }) => (canScroll ? 'hidden' : '')};
-
 }
 `;
 
@@ -24,4 +23,3 @@ export const CustomButton = styled.button`
   padding: 0;
   cursor: pointer;
 `;
-

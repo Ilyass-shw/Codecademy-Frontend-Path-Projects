@@ -6,7 +6,7 @@ import CustomSelectInput from './CustomSelectInput';
 describe('CustomSelectInput', () => {
   it('should render all provided options with the correct initial value', () => {
     const options = ['option1', 'option2', 'option3'];
-    const onChange = jest.fn() as (value: string) => void;
+    const onChange = jest.fn() as () => void;
     render(
       <CustomSelectInput
         label={'my label'}
@@ -27,7 +27,7 @@ describe('CustomSelectInput', () => {
 
   it('should change the value and call onChange function when another option is selected', () => {
     const options = ['option1', 'option2', 'option3'];
-    const onChange = jest.fn() as (value: string) => void;
+    const onChange = jest.fn() as () => void;
     render(
       <CustomSelectInput
         label={'my label'}

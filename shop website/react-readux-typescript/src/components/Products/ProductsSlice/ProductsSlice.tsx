@@ -48,7 +48,7 @@ const initialState: ProductsState = {
   },
   FetchStatus: 'idle',
   categories: [],
-  filter: 'Ring',
+  filter: 'AllJewelry',
 };
 
 export const Products = createSlice({

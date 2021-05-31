@@ -8,45 +8,25 @@ import { NecklageSelector } from '../../ProductsSlice/selectors/NecklageSelector
 import { RingSelector } from '../../ProductsSlice/selectors/RingSelector';
 
 export const getProductsByFilter = (filter: string): Item[] => {
-//   let products ;
-
   switch (filter) {
     case 'Necklage': {
-    //   products =
-    console.log('yaaasbi')
-
-       return useSelector(NecklageSelector);
-    //   break;
+      return useSelector(NecklageSelector);
     }
 
     case 'Ring': {
-    //   products =
-    console.log('yaaas')
-       return useSelector(RingSelector);
-    //   break;
+      return useSelector(RingSelector);
     }
 
     case 'Armcuff': {
-    //   products =
-       return useSelector(ArmcuffSelector);
-    //   break;
+      return useSelector(ArmcuffSelector);
     }
 
     case 'Bracelet':
-    //   products =
-       return useSelector(BraceletSelector);
-    //   break;
+      return useSelector(BraceletSelector);
 
     case 'Earrings':
-    //   products =
-       return useSelector(EarringsSelector);
-    //   break;
-
+      return useSelector(EarringsSelector);
     default:
-        console.log('yaaas')
-
-        return useSelector(AllJewellrySelector);
-
-    }
-//   return products;
+      return useSelector(AllJewellrySelector);
+  }
 };

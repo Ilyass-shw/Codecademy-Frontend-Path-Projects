@@ -7,9 +7,9 @@ import {
 } from './CustomSelectInput.component';
 interface CustomSelectInputProps {
   label: string;
-  value: filter;
+  value: filter|string;
   options: string[];
-  onChange: (Filter: filter) => void;
+  onChange: ((Filter: filter) => void)|(() => void);
   id: string;
 }
 
@@ -20,7 +20,6 @@ const CustomSelectInput: React.FC<CustomSelectInputProps> = ({
   onChange,
   id,
 }) => {
-  console.log(value)
   return (
     <>
       <CustomLabel htmlFor={id}>{label}</CustomLabel>
