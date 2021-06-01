@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { render, screen } from '../../../test-utils/testUtils';
+import { render, screen, within } from '../../../test-utils/testUtils';
 import CustomSelectInput from './CustomSelectInput';
 
 describe('CustomSelectInput', () => {
@@ -28,7 +28,7 @@ describe('CustomSelectInput', () => {
   it('should change the value and call onChange function when another option is selected', () => {
     const options = ['option1', 'option2', 'option3'];
     const onChange = jest.fn() as () => void;
-    render(
+    const { rerender } = render(
       <CustomSelectInput
         label={'my label'}
         value={'option2'}
@@ -37,12 +37,24 @@ describe('CustomSelectInput', () => {
         id={'idd'}
       />,
     );
+
     expect(onChange).toHaveBeenCalledTimes(0);
-    userEvent.click(screen.getAllByRole('option')[2]);
 
-    // const selectInput = screen.getByLabelText('my label');
+    const selectInput = screen.getByLabelText('my label');
+    const option3 = within(selectInput).getByText('option3');
 
-    // expect(selectInput).toHaveValue('option3');
+    userEvent.selectOptions(selectInput, option3);
+
     expect(onChange).toHaveBeenCalledTimes(1);
+    rerender(
+      <CustomSelectInput
+        label={'my label'}
+        value={'option3'}
+        options={options}
+        onChange={onChange}
+        id={'idd'}
+      />,
+    );
+    expect(selectInput).toHaveValue('option3');
   });
 });
