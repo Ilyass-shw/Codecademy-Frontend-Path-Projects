@@ -29,7 +29,7 @@ const ProductImgs: React.FC<productImgs> = ({
     // slide imgs when product is visible on mobile
     // and on hover on bigger screens.
     if ((isVisible && isOnMobile) || (isOnHover && !isOnMobile)) {
-      timeout = setTimeout(() => setNextImg(setCurrentImg, imgsNumber), 2000);
+      timeout = setTimeout(() => setNextImg(setCurrentImg, imgsNumber), 1500);
     }
 
     return () => {

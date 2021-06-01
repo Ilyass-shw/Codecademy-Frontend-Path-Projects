@@ -9,7 +9,7 @@ const HoverBar: React.FC<HoverBarProps> = ({
   activate,
   repeate,
 }) => {
-  const duration = imgNumber ? imgNumber * 2 + 's' : durationInSec;
+  const duration = imgNumber ? imgNumber * 1500 + 'ms' : durationInSec;
   return (
     <>
       <BarWrapper>

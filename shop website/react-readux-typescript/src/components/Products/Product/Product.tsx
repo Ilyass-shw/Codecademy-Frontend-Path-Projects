@@ -32,7 +32,7 @@ const Product: React.FC<product> = ({ item }) => {
       onMouseEnter={(): void => setIsHover(true)}
       onMouseLeave={(): void => setIsHover(false)}
     >
-      <ProductLink ref={img} to="/">
+      <ProductLink ref={img} to={`/product/${item.id}`}>
         <ProductImgs
           imgs={item.imgs}
           alt={item.name}
