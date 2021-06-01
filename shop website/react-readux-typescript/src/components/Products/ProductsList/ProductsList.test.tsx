@@ -28,21 +28,17 @@ describe('ProductsList', () => {
 
     const filterInput = await screen.findByLabelText('Filter');
     const filters = within(filterInput).getAllByRole('option');
+
     expect(filters.length > 1).toBeTruthy();
-    console.log(filters.length);
-    // console.log(filters);
     expect(store.getState().Items.filter).toBe('AllJewelry');
     expect(filterInput).toHaveValue('AllJewelry');
 
     const filterOne = store.getState().Items.categories[1];
-    console.log(filterOne);
 
-    const el = within(filterInput).getByRole('option', { name: filterOne });
-    console.log(el);
+    const option = within(filterInput).getByRole('option', { name: filterOne });
 
-    userEvent.click(el);
+    userEvent.selectOptions(filterInput, option);
 
-    // const newFilter = filterInput.lastElementChild?.nodeValue;
     await waitFor(() => {
       expect(filterInput).toHaveValue(filterOne);
       expect(store.getState().Items.filter).toBe(filterOne);
