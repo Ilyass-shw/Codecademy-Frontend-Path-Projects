@@ -9,14 +9,14 @@ export const CartBarWrapper = styled.div`
   position: absolute;
   top: 0;
   z-index: 100;
-  height: ${(props: WrapperProps) => (props.open ? '60vh' : '0')};
+  height: ${(props: WrapperProps) => (props.open ? '100vh' : '0')};
   width: 100vw;
   transition: background-color 0.28s ease-in-out, height 0s ease-in-out;
   background-color: ${(props: WrapperProps) =>
     props.open ? '#0000006e;' : 'transparent;'};
-  @media screen and (min-width: 780px) {
-    height: ${(props: WrapperProps) => (props.open ? '100vh' : '0')};
-  }
+  /* @media screen and (min-width: 780px) { */
+    /* height: ${(props: WrapperProps) => (props.open ? '100vh' : '0')}; */
+  /* } */
 `;
 
 // ============= ============= ============= ============= =============

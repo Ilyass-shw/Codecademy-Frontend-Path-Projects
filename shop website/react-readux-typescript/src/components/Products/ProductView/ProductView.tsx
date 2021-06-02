@@ -1,14 +1,15 @@
 import React from 'react';
+import { Item } from '../../../helpers/types';
 import ProductDetais from '../ProductDetails/ProductDetails';
 import ProductViewImgSlider from '../ProductViewImgSlider/ProductViewImgSlider';
 
 interface productViewProps {
-  productId: number | undefined;
+  item: Item ;
 }
-const ProductView: React.FC<productViewProps> = ({ productId }) => {
+const ProductView: React.FC<productViewProps> = ({ item }) => {
   return (
     <>
-      <ProductViewImgSlider productId={productId} />
+      <ProductViewImgSlider imgs={item.imgs} />
       <ProductDetais />
     </>
   );
