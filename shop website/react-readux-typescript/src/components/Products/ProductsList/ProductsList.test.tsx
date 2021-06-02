@@ -16,9 +16,9 @@ describe('ProductsList', () => {
     const filterInput = await screen.findByLabelText('Filter');
     const filters = within(filterInput).getAllByRole('option');
 
-    expect(filterInput).toHaveValue('AllJewelry');
+    expect(filterInput).toHaveValue('All Jewelry');
     expect(filters).toHaveLength(1);
-    expect(store.getState().Items.filter).toBe('AllJewelry');
+    expect(store.getState().Items.filter).toBe('All Jewelry');
   });
 
   it('should allow to change the filter ', async () => {
@@ -30,8 +30,8 @@ describe('ProductsList', () => {
     const filters = within(filterInput).getAllByRole('option');
 
     expect(filters.length > 1).toBeTruthy();
-    expect(store.getState().Items.filter).toBe('AllJewelry');
-    expect(filterInput).toHaveValue('AllJewelry');
+    expect(store.getState().Items.filter).toBe('All Jewelry');
+    expect(filterInput).toHaveValue('All Jewelry');
 
     const filterOne = store.getState().Items.categories[1];
 

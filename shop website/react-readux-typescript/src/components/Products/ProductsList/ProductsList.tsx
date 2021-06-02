@@ -9,7 +9,7 @@ import { updateFilter } from './helpers.tsx/updateFilter';
 import { ItemList, ProductsWrapper, Filter } from './ProductsList.component';
 const ProductsList: React.FC = () => {
   const filter = useSelector(filterSelector);
-  const options = ['AllJewelry', ...useSelector(itemsCategoriesSelector)];
+  const options = ['All Jewelry', ...useSelector(itemsCategoriesSelector)];
   const productsList = getProductsByFilter(filter);
 
   // if (!productsList || productsList.length === 0) {
