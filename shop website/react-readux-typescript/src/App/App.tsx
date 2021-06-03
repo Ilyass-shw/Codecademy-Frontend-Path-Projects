@@ -5,7 +5,7 @@ import store from './store';
 
 import { GlobalStyle } from './App.component';
 import { getProductsData } from '../components/Products/ProductsSlice/ProductsSlice';
-import { isBarOpenSelector } from '../components/Cart/CartSlice/CartSlice';
+import { isCartBarOpenSelector } from '../components/Cart/CartSlice/selectors/isCartBarOpenSelector';
 import Home from '../pages/Home';
 import ProductPage from '../pages/ProductPage';
 
@@ -14,7 +14,7 @@ const App: React.FC = () => {
     store.dispatch(getProductsData());
   }, []);
 
-  const isCartBarOpen = useSelector(isBarOpenSelector);
+  const isCartBarOpen = useSelector(isCartBarOpenSelector);
   return (
     <>
       <GlobalStyle canScroll={isCartBarOpen} />

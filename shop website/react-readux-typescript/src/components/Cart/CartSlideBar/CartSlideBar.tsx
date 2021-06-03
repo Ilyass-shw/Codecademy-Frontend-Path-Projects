@@ -1,8 +1,10 @@
 import React from 'react';
 import { GrFormClose } from 'react-icons/gr';
 import { useSelector } from 'react-redux';
+import { CustomButton } from '../../../App/App.component';
 import { toggleCartSlideBar } from '../../../helpers/toggleCartSlideBar';
-import { isBarOpenSelector } from '../CartSlice/CartSlice';
+import { CartitemsSelector } from '../CartSlice/selectors/cartItemsSelector';
+import { isCartBarOpenSelector } from '../CartSlice/selectors/isCartBarOpenSelector';
 
 import {
   Content,
@@ -15,17 +17,15 @@ import {
   Price,
   Total,
 } from './CartSlideBar.component';
+import { DeleteItem } from './helpers';
 
 const CartBar: React.FC = () => {
-  const isBarOpen = useSelector(isBarOpenSelector);
+  const isBarOpen = useSelector(isCartBarOpenSelector);
 
-  const items = [
-    { name: 'item one', id: 1 },
-    { name: 'item two', id: 2 },
-  ];
+  const items = useSelector(CartitemsSelector);
   const emptyitem = [];
 
-  const fullPage = false;
+  const fullPage = items.length > 2;
   return (
     <>
       <CartBarWrapper
@@ -48,8 +48,13 @@ const CartBar: React.FC = () => {
 
         <Items>
           {items.length > 0 &&
-            items.map((item) => {
-              return <ItemCard key={item.id}>{item.name}</ItemCard>;
+            items.map(({ item }) => {
+              return (
+                <>
+                  <ItemCard key={item.id}>{item.name}</ItemCard>
+                  <CustomButton onClick={()=> DeleteItem(item.id) } >Delete</CustomButton>
+                </>
+              );
             })}
 
           {emptyitem.length > 0 && <p>Your cart is currently empty.</p>}

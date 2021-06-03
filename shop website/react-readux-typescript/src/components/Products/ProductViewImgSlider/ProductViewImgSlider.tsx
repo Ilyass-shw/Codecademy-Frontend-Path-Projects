@@ -20,13 +20,13 @@ const ProductViewImgSlider: React.FC<productViewImgSliderProps> = ({
   const [main, setMain] = useState(0);
   return (
     <ImgContainer>
-      <MainImgContainer >
+      <MainImgContainer>
         <Arrow
           left={true}
           onClick={() =>
             setMain((current) => (current <= 0 ? imgs.length - 1 : current - 1))
           }
-          data-testid='leftArrow'
+          data-testid="leftArrow"
         >
           <MdKeyboardArrowLeft />
         </Arrow>
@@ -35,17 +35,17 @@ const ProductViewImgSlider: React.FC<productViewImgSliderProps> = ({
           onClick={() =>
             setMain((current) => (current >= imgs.length - 1 ? 0 : current + 1))
           }
-          data-testid='rightArrow'
+          data-testid="rightArrow"
         >
           <MdKeyboardArrowRight />
         </Arrow>
-        <MainImg loading="lazy" src={imgs[main]} data-testid='mainImg' />
+        <MainImg loading="lazy" src={imgs[main]} data-testid="mainImg" />
       </MainImgContainer>
       <AllImgs>
         {imgs.map((src, index) => (
           <CustomButton key={src} onClick={() => setMain(index)}>
             <ImgBorder selected={src === imgs[main]}>
-              <Img loading="lazy" src={src} data-testid={'miniImg '+src} />
+              <Img loading="lazy" src={src} data-testid={'miniImg ' + src} />
             </ImgBorder>
           </CustomButton>
         ))}
