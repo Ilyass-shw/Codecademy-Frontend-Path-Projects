@@ -12,8 +12,13 @@ export type items = {
 export interface CartState {
   isBarOpen: boolean;
   items: items[];
+  howManyItems: number;
 }
-const initialState: CartState = { isBarOpen: false, items: [] };
+const initialState: CartState = {
+  isBarOpen: false,
+  items: [],
+  howManyItems: 0,
+};
 
 export const CartSlice = createSlice({
   name: 'Cart',

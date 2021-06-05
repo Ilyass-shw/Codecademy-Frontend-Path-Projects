@@ -4,23 +4,30 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
 import { useWindowWidth } from '../../../helpers/useWindowWidth';
+import { howManyItemsInCart } from '../CartSlice/selectors/howManyItemsInCart';
+import { useSelector } from 'react-redux';
 
 const CartIcon: React.FC = () => {
   const iconSize = useWindowWidth() > 700 ? '37' : '27';
+  const howManyItems = useSelector(howManyItemsInCart);
 
   return (
     <>
-      <CartWrapper>
+      <CartWrapper isCartEmpty={howManyItems > 0}>
         <IconContext.Provider
           value={{
-            color: 'white',
+            color: howManyItems > 0 ? 'white' : 'black',
             style: { transform: 'translateX(-2px)' },
             size: iconSize,
           }}
         >
           <AiOutlineShoppingCart data-testid="cartIcon" />
         </IconContext.Provider>
-        <NumberOfItemsIndicator>0</NumberOfItemsIndicator>
+        {howManyItems > 0 && (
+          <NumberOfItemsIndicator isCartEmpty={howManyItems > 0}>
+            {howManyItems}
+          </NumberOfItemsIndicator>
+        )}
       </CartWrapper>
     </>
   );

@@ -37,11 +37,13 @@ describe('itemDeletedReducer', () => {
       size: 'XL',
     };
     expect(store.getState().Cart.items).toHaveLength(0);
+    expect(store.getState().Cart.howManyItems).toEqual(0);
 
     store.dispatch(itemAddedToCart(ItemOne));
     store.dispatch(itemAddedToCart(ItemTwo));
     store.dispatch(itemAddedToCart(ItemThree));
     expect(store.getState().Cart.items).toHaveLength(3);
+    expect(store.getState().Cart.howManyItems).toEqual(3);
     expect(store.getState().Cart.items).toContain(ItemTwo);
     store.dispatch(itemDeletedFromCart(ItemTwo.item.id));
     expect(store.getState().Cart.items).toHaveLength(2);
