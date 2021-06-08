@@ -52,7 +52,9 @@ const CartBar: React.FC = () => {
               return (
                 <>
                   <ItemCard key={item.id}>{item.name}</ItemCard>
-                  <CustomButton onClick={()=> DeleteItem(item.id) } >Delete</CustomButton>
+                  <CustomButton onClick={() => DeleteItem(item.id)}>
+                    Delete
+                  </CustomButton>
                 </>
               );
             })}
@@ -64,7 +66,7 @@ const CartBar: React.FC = () => {
             <h5>Total</h5>
             <Price>35$</Price>
           </Total>
-          <CheckoutButton>Check Out</CheckoutButton>
+          <CheckoutButton to="/checkout">Check Out</CheckoutButton>
         </CheckoutFotter>
       </Content>
     </>

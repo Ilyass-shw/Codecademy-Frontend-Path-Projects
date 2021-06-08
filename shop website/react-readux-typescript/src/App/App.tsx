@@ -7,7 +7,8 @@ import { GlobalStyle } from './App.component';
 import { getProductsData } from '../components/Products/ProductsSlice/ProductsSlice';
 import { isCartBarOpenSelector } from '../components/Cart/CartSlice/selectors/isCartBarOpenSelector';
 import Home from '../pages/Home';
-import ProductPage from '../pages/ProductPage';
+import ProductPage from '../pages/ViewProduct';
+import Checkout from '../pages/Checkout';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -24,10 +25,13 @@ const App: React.FC = () => {
           <Route
             path="/Product/:id"
             exact
-            // component={ProductPage}
-          >
-            <ProductPage />
-          </Route>
+            component={ProductPage}
+          /><Route
+            path="/checkout"
+            exact
+            component={Checkout}
+          />
+      
         </Switch>
       </BrowserRouter>
     </>

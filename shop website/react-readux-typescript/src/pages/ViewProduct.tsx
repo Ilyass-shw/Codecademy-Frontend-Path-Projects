@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   interface i {
     id?: string;
   }
-  let Id =1;
+  let Id = 1;
   const { id } = useParams<i>();
   if (id) {
     Id = parseFloat(id);
@@ -19,7 +19,7 @@ const Home: React.FC = () => {
   return (
     <>
       <NavBar />
-      {Item?<ProductView item={Item} />:<p>Product not found!</p>}
+      {Item ? <ProductView item={Item} /> : <p>Product not found!</p>}
       <Footer />
     </>
   );

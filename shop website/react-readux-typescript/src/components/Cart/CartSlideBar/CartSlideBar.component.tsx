@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CustomButton } from '../../../App/App.component';
+import { CustomButton, RouterLink } from '../../../App/App.component';
 
 interface WrapperProps {
   open: boolean;
@@ -15,7 +15,7 @@ export const CartBarWrapper = styled.div`
   background-color: ${(props: WrapperProps) =>
     props.open ? '#0000006e;' : 'transparent;'};
   /* @media screen and (min-width: 780px) { */
-    /* height: ${(props: WrapperProps) => (props.open ? '100vh' : '0')}; */
+  /* height: ${(props: WrapperProps) => (props.open ? '100vh' : '0')}; */
   /* } */
 `;
 
@@ -109,10 +109,13 @@ export const CheckoutFotter = styled.div`
 
 // ============= ============= ============= ============= =============
 
-export const CheckoutButton = styled(CustomButton)`
+export const CheckoutButton = styled(RouterLink)`
   height: 2.7rem;
   width: 100%;
   background-color: black;
   border-radius: 35px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
