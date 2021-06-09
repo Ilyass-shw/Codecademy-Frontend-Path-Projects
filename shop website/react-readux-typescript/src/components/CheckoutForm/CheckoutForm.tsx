@@ -1,4 +1,5 @@
 import React from 'react';
+import OrderSummary from '../OrderSummary/OrderSummary';
 import {
   Logo,
   Form,
@@ -6,6 +7,7 @@ import {
   SignIn,
   Link,
   Input,
+  Checkbox,
   MarketingCheckbox,
   MarketingLabel,
   Select,
@@ -16,11 +18,12 @@ const CheckoutForm: React.FC = () => {
   return (
     <>
       <Logo to="/">Shw</Logo>
+      <OrderSummary />
       <Form>
         <MainLabel>Contact information</MainLabel>
         <SignIn>
           Already have an account?
-          <Link>Log in</Link>
+          <Link href=""> Log in</Link>
         </SignIn>
         <Input
           type="email"
@@ -30,11 +33,12 @@ const CheckoutForm: React.FC = () => {
           autoComplete="email"
           required
         />
-        <MarketingCheckbox type="checkbox" id="buyer-accept-marketing" />
-        <MarketingLabel htmlFor="buyer-accept-marketing">
-          Keep me up to date on news and exclusive offers
-        </MarketingLabel>
-
+        <Checkbox>
+          <MarketingCheckbox type="checkbox" id="buyer-accept-marketing" />
+          <MarketingLabel htmlFor="buyer-accept-marketing">
+            Keep me up to date on news and exclusive offers.
+          </MarketingLabel>
+        </Checkbox>
         <MainLabel>Shipping address</MainLabel>
         <Input
           type="text"

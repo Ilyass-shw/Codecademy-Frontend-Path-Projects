@@ -66,7 +66,14 @@ const CartBar: React.FC = () => {
             <h5>Total</h5>
             <Price>35$</Price>
           </Total>
-          <CheckoutButton to="/checkout">Check Out</CheckoutButton>
+          <CheckoutButton
+            to="/checkout"
+            onClick={() => {
+              toggleCartSlideBar();
+            }}
+          >
+            Check Out
+          </CheckoutButton>
         </CheckoutFotter>
       </Content>
     </>

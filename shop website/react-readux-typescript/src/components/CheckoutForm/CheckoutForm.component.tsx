@@ -10,7 +10,6 @@ export const Logo = styled(RouterLink)`
   align-items: center;
   justify-content: center;
   height: 9rem;
-  border-bottom: 1px solid #e6e6e6;
 
   @media screen and (min-width: 700px) {
     /* margin: 0 3rem 0 2rem; */
@@ -28,7 +27,10 @@ export const MainLabel = styled.h2`
   padding: 0.9rem 0;
 `;
 export const SignIn = styled.p``;
-export const Link = styled.span``;
+export const Link = styled.a`
+  cursor: pointer;
+  text-decoration: none;
+`;
 
 export const Input = styled.input`
   border-radius: 5px;
@@ -37,6 +39,8 @@ export const Input = styled.input`
   margin: 0.9rem 0;
   font-size: 0.9rem;
 `;
+export const Checkbox = styled.div``;
+
 export const MarketingCheckbox = styled.input`
   border: 1px solid #d9d9d9;
   width: 18px;
@@ -44,6 +48,8 @@ export const MarketingCheckbox = styled.input`
   box-sizing: border-box;
   height: 18px;
   cursor: pointer;
+  margin: 0.3rem;
+  transform: translateY(4px);
 `;
 export const MarketingLabel = styled.label``;
 export const Select = styled.select``;
