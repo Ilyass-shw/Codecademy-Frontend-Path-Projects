@@ -20,9 +20,16 @@ export const ItemImg = styled.img`
 `;
 export const Quantity = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 3rem;
+  color: white;
+  top: -10px;
+  right: -10px;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: small;
   background-color: #808080;
   border-radius: 50%;
 `;

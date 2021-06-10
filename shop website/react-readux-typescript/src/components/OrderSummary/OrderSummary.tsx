@@ -1,37 +1,57 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { CartitemsSelector } from '../Cart/CartSlice/selectors/cartItemsSelector';
 import { TotalPriceSelector } from '../Cart/CartSlice/selectors/TotalPriceSelector';
 import SummaryItem from '../Cart/SummaryItem.tsx/SummaryItem';
+
 import {
   SummaryContainer,
-  ToggleButton,
-  ButtonHeader,
-  TotalPrice,
-  SummaryItems,
+  SummaryContent,
+  Summary,
 } from './OrderSummary.component';
+import SummaryToggleButton from '../SummaryToggleButton/SummaryToggleButton';
+import { useWindowWidth } from '../../helpers/useWindowWidth';
+import TotalPriceCalculator from '../TotalPriceCalculator/TotalPriceCalculator';
 
 const OrderSummary: React.FC = () => {
+  const isSmallScreen = useWindowWidth() < 1200;
+  console.log(isSmallScreen);
   const [show, setShow] = useState(false);
-  const total = useSelector(TotalPriceSelector);
+  const CartTotalPrice = useSelector(TotalPriceSelector);
   const Items = useSelector(CartitemsSelector);
+  const taxes = Items.length * 1.17;
+  const TotalToPay = taxes + CartTotalPrice;
+  useEffect(() => {
+    if (!isSmallScreen) {
+      setShow(false);
+    }
+  }, [isSmallScreen]);
   return (
     <SummaryContainer>
-      <ToggleButton onClick={() => setShow(!show)}>
-        <ButtonHeader>
-          {show ? 'Show Order summray' : 'Hide Order summray'}
-        </ButtonHeader>
-        <TotalPrice> {'$' + total}</TotalPrice>
-      </ToggleButton>
-      <SummaryItems show={show}>
-        {Items.map((items) => (
-          <SummaryItem
-            item={items.item}
-            quantity={items.quantity}
-            key={items.item.id}
+      {isSmallScreen && (
+        <SummaryToggleButton
+          show={show}
+          clickHandle={setShow}
+          TotalToPay={TotalToPay}
+        />
+      )}
+      <SummaryContent>
+        <Summary show={show}>
+          {Items.map((items) => (
+            <SummaryItem
+              item={items.item}
+              quantity={items.quantity}
+              key={items.item.id}
+            />
+          ))}
+
+          <TotalPriceCalculator
+            CartTotalPrice={CartTotalPrice}
+            taxes={taxes}
+            TotalToPay={TotalToPay}
           />
-        ))}
-      </SummaryItems>
+        </Summary>
+      </SummaryContent>
     </SummaryContainer>
   );
 };
