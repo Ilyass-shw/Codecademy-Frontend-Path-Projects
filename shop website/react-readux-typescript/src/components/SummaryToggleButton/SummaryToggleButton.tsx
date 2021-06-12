@@ -26,7 +26,7 @@ const SummaryToggleButton: React.FC<SummaryToggleButtonProps> = ({
           {show ? 'Show Order summray' : 'Hide Order summray'}
           <IoMdArrowDropdown size="27" />
         </ButtonHeader>
-        <TotalPrice> {'$' + TotalToPay}</TotalPrice>
+        <TotalPrice> {'$' + TotalToPay.toFixed(2)}</TotalPrice>
       </ButtonContent>
     </ToggleButton>
   );

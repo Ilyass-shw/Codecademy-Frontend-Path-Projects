@@ -3,6 +3,7 @@ import { Item } from '../../../helpers/types';
 import { itemAddedReducer } from './reducers/itemAdded';
 import { itemDeletedReducer } from './reducers/itemDeleted';
 import { toggleBarReducer } from './reducers/togglrBar';
+import { ItemQuantityUpdatedReducer } from './reducers/ItemQuantityUpdated';
 
 export type items = {
   item: Item;
@@ -27,6 +28,7 @@ export const CartSlice = createSlice({
     toggleBar: toggleBarReducer,
     itemAddedToCart: itemAddedReducer,
     itemDeletedFromCart: itemDeletedReducer,
+    ItemQuantityUpdated: ItemQuantityUpdatedReducer,
   },
 });
 
@@ -34,6 +36,7 @@ export const {
   toggleBar,
   itemAddedToCart,
   itemDeletedFromCart,
+  ItemQuantityUpdated,
 } = CartSlice.actions;
 
 export default CartSlice.reducer;

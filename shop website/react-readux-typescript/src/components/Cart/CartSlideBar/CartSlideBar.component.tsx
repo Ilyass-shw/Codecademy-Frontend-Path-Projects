@@ -14,9 +14,6 @@ export const CartBarWrapper = styled.div`
   transition: background-color 0.28s ease-in-out, height 0s ease-in-out;
   background-color: ${(props: WrapperProps) =>
     props.open ? '#0000006e;' : 'transparent;'};
-  /* @media screen and (min-width: 780px) { */
-  /* height: ${(props: WrapperProps) => (props.open ? '100vh' : '0')}; */
-  /* } */
 `;
 
 // ============= ============= ============= ============= =============
@@ -57,6 +54,7 @@ export const Content = styled.div`
     top: 0;
     right: 0;
     width: 40vw;
+    min-width: 28rem;
     height: 100vh;
     transform: ${(props: ContentProps) =>
       props.open ? 'translateX(0)' : 'translateX(100%)'};
@@ -83,11 +81,6 @@ export const CloseButton = styled(CustomButton)`
 `;
 // ============= ============= ============= ============= =============
 
-export const ItemCard = styled.div`
-  height: 3rem;
-`;
-// ============= ============= ============= ============= =============
-
 export const Total = styled.div`
   height: 3rem;
   width: 100%;
@@ -100,7 +93,7 @@ export const Price = styled.p``;
 // ============= ============= ============= ============= =============
 
 export const CheckoutFotter = styled.div`
-  padding: 1.25rem 1.25rem;
+  padding: 1.25rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,14 +101,18 @@ export const CheckoutFotter = styled.div`
 `;
 
 // ============= ============= ============= ============= =============
+interface CheckoutButtonProps {
+  disable: boolean;
+}
 
-export const CheckoutButton = styled(RouterLink)`
+export const CheckoutButton = styled(RouterLink)<CheckoutButtonProps>`
   height: 2.7rem;
   width: 100%;
-  background-color: black;
+  background-color: ${({ disable }) => (disable ? '#000000b5' : 'black')};
   border-radius: 35px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
 `;

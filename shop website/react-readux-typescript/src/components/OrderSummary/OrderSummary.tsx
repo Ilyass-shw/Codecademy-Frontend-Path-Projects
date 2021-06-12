@@ -15,7 +15,6 @@ import TotalPriceCalculator from '../TotalPriceCalculator/TotalPriceCalculator';
 
 const OrderSummary: React.FC = () => {
   const isSmallScreen = useWindowWidth() < 1200;
-  console.log(isSmallScreen);
   const [show, setShow] = useState(false);
   const CartTotalPrice = useSelector(TotalPriceSelector);
   const Items = useSelector(CartitemsSelector);

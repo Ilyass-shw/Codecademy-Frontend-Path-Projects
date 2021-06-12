@@ -25,7 +25,7 @@ const TotalPriceCalculator: React.FC<TotalPriceCalculatorProps> = ({
       <PriceCalculator>
         <CalculatorBlock>
           <Label>Subtotal</Label>
-          <Price>{'$' + CartTotalPrice}</Price>
+          <Price>{'$' + CartTotalPrice.toFixed(2)}</Price>
         </CalculatorBlock>
         <CalculatorBlock>
           <Label>Shipping</Label>

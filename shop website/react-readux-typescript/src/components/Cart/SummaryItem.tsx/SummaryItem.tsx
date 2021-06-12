@@ -23,7 +23,7 @@ const SummaryItem: React.FC<SummaryItemProps> = ({ item, quantity }) => {
         </Img>
         <ItemName>{item.name} </ItemName>
       </ToTheRight>
-      <ItemPrice>{'$' + item.price * quantity} </ItemPrice>
+      <ItemPrice>{'$' + (item.price * quantity).toFixed(2)} </ItemPrice>
     </Container>
   );
 };
