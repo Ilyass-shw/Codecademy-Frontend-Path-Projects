@@ -1,6 +1,5 @@
 import React from 'react';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { IoMdArrowDropdown } from 'react-icons/io';
+
 import {
   ToggleButton,
   ButtonContent,
@@ -21,10 +20,8 @@ const SummaryToggleButton: React.FC<SummaryToggleButtonProps> = ({
   return (
     <ToggleButton onClick={() => clickHandle(!show)}>
       <ButtonContent>
-        <ButtonHeader>
-          <AiOutlineShoppingCart size="27" />
+        <ButtonHeader show={show}>
           {show ? 'Show Order summray' : 'Hide Order summray'}
-          <IoMdArrowDropdown size="27" />
         </ButtonHeader>
         <TotalPrice> {'$' + TotalToPay.toFixed(2)}</TotalPrice>
       </ButtonContent>

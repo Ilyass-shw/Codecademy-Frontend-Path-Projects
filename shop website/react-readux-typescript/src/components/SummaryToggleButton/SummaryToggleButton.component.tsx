@@ -15,10 +15,22 @@ export const ButtonContent = styled.div`
   margin: auto;
   height: 100%;
 `;
-export const ButtonHeader = styled.h5`
+
+export const ButtonHeader = styled.h5<{ show: boolean }>`
   display: flex;
   align-items: center;
   width: 14rem;
   justify-content: space-evenly;
+  position: relative;
+  &::after {
+    content: '◀';
+    position: absolute;
+    top: ${({ show }) => (show ? '2px' : 0)};
+    right: 19px;
+    transform-origin: center;
+    transition: all 0.4s;
+    transform: ${({ show }) =>
+      show ? 'rotate(270deg) scale(0.9)' : 'rotate(90deg) scale(0.9)'};
+  }
 `;
 export const TotalPrice = styled.h4``;

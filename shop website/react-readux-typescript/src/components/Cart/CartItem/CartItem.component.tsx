@@ -60,12 +60,30 @@ export const ItemImg = styled.img`
 
 export const ItemName = styled.p`
   text-overflow: ellipsis;
+  color: #4f4e4e;
 `;
 export const ItemPrice = styled.p`
   font-size: smaller;
-  color: #a7a7a7;
+  color: #666666b3;
 `;
 export const RemoveButton = styled(CustomButton)`
   padding: 0.6rem;
   color: #939393;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    left: 7px;
+    bottom: 9.5px;
+    background: currentColor;
+    transform: scale(1, 1);
+    transform-origin: left center;
+    transition: transform 0.2s ease-in-out;
+  }
+  &:hover:before {
+      transform: scale(0, 1);
+  }
 `;

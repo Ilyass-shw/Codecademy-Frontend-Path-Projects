@@ -22,7 +22,7 @@ const CartBar: React.FC = () => {
   const items = useSelector(CartitemsSelector);
   const total = useSelector(TotalPriceSelector);
 
-  const fullPage = items.length > 2;
+  const fullPage = items.length > 1;
 
   return (
     <>

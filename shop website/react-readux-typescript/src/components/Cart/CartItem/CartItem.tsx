@@ -19,7 +19,6 @@ interface CartItemProps {
   product: items;
 }
 const CartItem: React.FC<CartItemProps> = ({ product }) => {
-  //   const [quantity, setQuantity] = useState(1);
 
   return (
     <>

@@ -34,7 +34,7 @@ export const Content = styled.div`
       if (props.fullPage) {
         return '0';
       } else {
-        return '60vh';
+        return '50vh';
       }
     } else {
       return '100vh';
@@ -44,7 +44,7 @@ export const Content = styled.div`
     if (props.open && props.fullPage) {
       return '100vh';
     } else {
-      return '40vh';
+      return '50vh';
     }
   }};
   transition: all 0.28s;
