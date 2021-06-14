@@ -1,4 +1,5 @@
 import React from 'react';
+import QuantityButtons from '../../CustomComponents/QuantityButtons/QuantityButtons';
 import { DeleteItem, UpdateItemQuantity } from './helpers';
 import {
   Container,
@@ -6,9 +7,6 @@ import {
   Img,
   Info,
   MoveToLeft,
-  QuantityBlock,
-  QuantityButton,
-  Quantity,
   ItemImg,
   ItemName,
   ItemPrice,
@@ -19,7 +17,6 @@ interface CartItemProps {
   product: items;
 }
 const CartItem: React.FC<CartItemProps> = ({ product }) => {
-
   return (
     <>
       <Container>
@@ -35,26 +32,11 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
           </Info>
         </MoveToRight>
         <MoveToLeft>
-          <QuantityBlock>
-            <QuantityButton
-              onClick={() =>
-                UpdateItemQuantity(
-                  product.item.id,
-                  product.quantity > 1 ? product.quantity - 1 : 1,
-                )
-              }
-            >
-              -
-            </QuantityButton>
-            <Quantity>{product.quantity}</Quantity>
-            <QuantityButton
-              onClick={() =>
-                UpdateItemQuantity(product.item.id, product.quantity + 1)
-              }
-            >
-              +
-            </QuantityButton>
-          </QuantityBlock>
+          <QuantityButtons
+            productID={product.item.id}
+            productQuantity={product.quantity}
+            UpdateItemQuantity={UpdateItemQuantity}
+          />
           <RemoveButton onClick={() => DeleteItem(product.item.id)}>
             Remove
           </RemoveButton>

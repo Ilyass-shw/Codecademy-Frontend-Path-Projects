@@ -2,7 +2,11 @@ import styled from 'styled-components';
 import { RouterLink } from '../../App/App.component';
 
 export const NavBarContainer = styled.div`
+  /* position: fixed;
+  width: 100vw; */
   height: 6rem;
+  /* background-color: white;
+  z-index:2; */
   display: flex;
   justify-content: space-around;
   align-items: center;

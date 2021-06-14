@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Item } from '../../../helpers/types';
 import ProductDetais from '../ProductDetails/ProductDetails';
+import QuantityButtons from '../../CustomComponents/QuantityButtons/QuantityButtons';
 import ProductViewImgSlider from '../ProductViewImgSlider/ProductViewImgSlider';
 import { AddToCart } from './helpers';
 import {
   NumberOfItem,
-  TheNumber,
+  // TheNumber,
   ViewContainer,
   Description,
   Size,
@@ -13,7 +14,7 @@ import {
   CustomSelect,
   CustomOption,
   ButtomView,
-  QuantityButton,
+  // QuantityButton,
   AddToCartButton,
 } from './ProductView.component';
 interface productViewProps {
@@ -44,7 +45,11 @@ const ProductView: React.FC<productViewProps> = ({ item }) => {
           </Size>
           <ButtomView>
           <NumberOfItem>
-            <QuantityButton
+          <QuantityButtons
+            productID={item.id}
+            productQuantity={quantity}
+            UpdateItemQuantity={setQuantity}
+          />            {/* <QuantityButton
               onClick={() =>
                 setQuantity((current) => (current > 1 ? current - 1 : 1))
               }
@@ -54,7 +59,7 @@ const ProductView: React.FC<productViewProps> = ({ item }) => {
             <TheNumber>{quantity}</TheNumber>
             <QuantityButton onClick={() => setQuantity(quantity + 1)}>
               +
-            </QuantityButton>
+            </QuantityButton> */}
           </NumberOfItem>
           <AddToCartButton onClick={() => AddToCart(item, itemSize, quantity)}>
             Add To Cart

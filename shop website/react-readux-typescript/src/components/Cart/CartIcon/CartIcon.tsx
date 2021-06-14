@@ -8,7 +8,7 @@ import { howManyItemsInCart } from '../CartSlice/selectors/howManyItemsInCart';
 import { useSelector } from 'react-redux';
 
 const CartIcon: React.FC = () => {
-  const iconSize = useWindowWidth() > 700 ? '37' : '27';
+  const iconSize = useWindowWidth() > 780 ? '37' : '27';
   const howManyItems = useSelector(howManyItemsInCart);
 
   return (

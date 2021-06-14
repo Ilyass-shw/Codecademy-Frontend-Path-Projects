@@ -32,25 +32,9 @@ export const MoveToLeft = styled.div`
   align-items: center;
   color: #cccccc;
   flex-shrink: 0;
+  min-width: fit-content;
 `;
-export const QuantityBlock = styled.div`
-  border: 1px solid #e7e7e7;
-  width: 7.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const QuantityButton = styled(CustomButton)`
-  font-size: x-large;
-  font-weight: bold;
-  padding: 0.4rem 1.2rem;
-  display: inline-block;
-  color: #a7a7a7;
-`;
-export const Quantity = styled.h3`
-  display: inline-block;
-  color: #939393;
-`;
+
 
 export const ItemImg = styled.img`
   height: 4rem;
@@ -84,6 +68,6 @@ export const RemoveButton = styled(CustomButton)`
     transition: transform 0.2s ease-in-out;
   }
   &:hover:before {
-      transform: scale(0, 1);
+    transform: scale(0, 1);
   }
 `;
