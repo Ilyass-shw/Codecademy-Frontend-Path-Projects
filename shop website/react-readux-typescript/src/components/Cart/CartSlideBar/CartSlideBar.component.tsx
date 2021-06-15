@@ -6,7 +6,7 @@ interface WrapperProps {
 }
 
 export const CartBarWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 100;
   height: ${(props: WrapperProps) => (props.open ? '100vh' : '0')};

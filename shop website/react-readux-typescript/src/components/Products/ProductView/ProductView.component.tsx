@@ -6,6 +6,7 @@ export const ViewContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   /* align-items: center; */
+  margin-top: 6rem;
   @media screen and (min-width: 916px) {
     flex-direction: row;
     padding: 2rem 2rem 2rem 0;

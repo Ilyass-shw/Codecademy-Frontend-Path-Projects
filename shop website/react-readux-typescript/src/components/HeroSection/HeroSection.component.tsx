@@ -7,6 +7,7 @@ export const BackgroundImage = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 6rem;
 
   @media screen and (min-width: 520px) {
     background-position: 25% 25%;
