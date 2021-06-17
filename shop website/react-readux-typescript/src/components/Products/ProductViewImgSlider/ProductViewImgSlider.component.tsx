@@ -20,6 +20,7 @@ export const AllImgs = styled.div`
   @media screen and (min-width: 916px) {
     padding: 0;
     margin: 0;
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
