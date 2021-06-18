@@ -44,26 +44,18 @@ const ProductView: React.FC<productViewProps> = ({ item }) => {
             </CustomSelect>
           </Size>
           <ButtomView>
-          <NumberOfItem>
-          <QuantityButtons
-            productID={item.id}
-            productQuantity={quantity}
-            UpdateItemQuantity={setQuantity}
-          />            {/* <QuantityButton
-              onClick={() =>
-                setQuantity((current) => (current > 1 ? current - 1 : 1))
-              }
+            <NumberOfItem>
+              <QuantityButtons
+                productID={item.id}
+                productQuantity={quantity}
+                setItemQuantity={setQuantity}
+              />
+            </NumberOfItem>
+            <AddToCartButton
+              onClick={() => AddToCart(item, itemSize, quantity)}
             >
-              -
-            </QuantityButton>
-            <TheNumber>{quantity}</TheNumber>
-            <QuantityButton onClick={() => setQuantity(quantity + 1)}>
-              +
-            </QuantityButton> */}
-          </NumberOfItem>
-          <AddToCartButton onClick={() => AddToCart(item, itemSize, quantity)}>
-            Add To Cart
-          </AddToCartButton>
+              Add To Cart
+            </AddToCartButton>
           </ButtomView>
         </Description>
       </>
