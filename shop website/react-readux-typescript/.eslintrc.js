@@ -24,7 +24,7 @@ module.exports = {
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
 
     'react/prop-types': ['off'],
-    'max-lines-per-function': ['error', 120],
+    'max-lines-per-function': ['error', 190],
     'prettier/prettier': ['off'],
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-shadow': ['error', { builtinGlobals: true, hoist: 'all' }],

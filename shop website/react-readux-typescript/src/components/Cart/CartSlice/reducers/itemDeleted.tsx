@@ -9,5 +9,7 @@ export const itemDeletedReducer = (
     (product) => product.item.id === action.payload,
   );
   state.items.splice(index, 1);
-  state.howManyItems--;
+  if (state.howManyItems > 0) {
+    state.howManyItems--;
+  }
 };

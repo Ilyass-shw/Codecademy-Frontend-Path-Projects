@@ -65,7 +65,7 @@ export const TheNumber = styled.p`
 export const AddToCartButton = styled(CustomButton)`
   display: inline-block;
   padding: 0.6rem 1.9rem;
-  background-color: #666666;
+  background-color: black;
   margin-left: 0.5rem;
   border-radius: 2px;
   font-weight: 900;

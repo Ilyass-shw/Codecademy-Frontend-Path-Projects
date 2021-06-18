@@ -4,6 +4,7 @@ import { itemAddedReducer } from './reducers/itemAdded';
 import { itemDeletedReducer } from './reducers/itemDeleted';
 import { toggleBarReducer } from './reducers/togglrBar';
 import { ItemQuantityUpdatedReducer } from './reducers/ItemQuantityUpdated';
+import { resetCartReducer } from './reducers/reset';
 
 export type items = {
   item: Item;
@@ -15,7 +16,7 @@ export interface CartState {
   items: items[];
   howManyItems: number;
 }
-const initialState: CartState = {
+export const initialState: CartState = {
   isBarOpen: false,
   items: [],
   howManyItems: 0,
@@ -29,6 +30,7 @@ export const CartSlice = createSlice({
     itemAddedToCart: itemAddedReducer,
     itemDeletedFromCart: itemDeletedReducer,
     ItemQuantityUpdated: ItemQuantityUpdatedReducer,
+    resetCart: resetCartReducer,
   },
 });
 
@@ -37,6 +39,7 @@ export const {
   itemAddedToCart,
   itemDeletedFromCart,
   ItemQuantityUpdated,
+  resetCart,
 } = CartSlice.actions;
 
 export default CartSlice.reducer;

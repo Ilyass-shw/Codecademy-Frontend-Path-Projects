@@ -2,7 +2,7 @@ import store from '../../../../App/store';
 import { itemAddedToCart, itemDeletedFromCart } from '../CartSlice';
 
 describe('itemDeletedReducer', () => {
-  it('should handle deleting item', async () => {
+  it('should handle deleting item and updating howManyItems state', async () => {
     const ItemOne = {
       item: {
         name: 'itemOne',
@@ -37,16 +37,24 @@ describe('itemDeletedReducer', () => {
       size: 'XL',
     };
     expect(store.getState().Cart.items).toHaveLength(0);
-    expect(store.getState().Cart.howManyItems).toEqual(0);
+    expect(store.getState().Cart.howManyItems).toStrictEqual(0);
 
     store.dispatch(itemAddedToCart(ItemOne));
     store.dispatch(itemAddedToCart(ItemTwo));
     store.dispatch(itemAddedToCart(ItemThree));
     expect(store.getState().Cart.items).toHaveLength(3);
-    expect(store.getState().Cart.howManyItems).toEqual(3);
+    expect(store.getState().Cart.howManyItems).toStrictEqual(3);
     expect(store.getState().Cart.items).toContain(ItemTwo);
     store.dispatch(itemDeletedFromCart(ItemTwo.item.id));
     expect(store.getState().Cart.items).toHaveLength(2);
+    expect(store.getState().Cart.howManyItems).toStrictEqual(2);
     expect(store.getState().Cart.items).not.toContain(ItemTwo);
+    store.dispatch(itemDeletedFromCart(ItemTwo.item.id));
+    store.dispatch(itemDeletedFromCart(ItemTwo.item.id));
+    store.dispatch(itemDeletedFromCart(ItemTwo.item.id));
+    store.dispatch(itemDeletedFromCart(ItemTwo.item.id));
+    store.dispatch(itemDeletedFromCart(ItemTwo.item.id));
+    expect(store.getState().Cart.items).toHaveLength(0);
+    expect(store.getState().Cart.howManyItems).toStrictEqual(0);
   });
 });

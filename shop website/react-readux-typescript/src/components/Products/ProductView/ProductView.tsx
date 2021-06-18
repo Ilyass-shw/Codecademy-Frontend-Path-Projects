@@ -6,7 +6,6 @@ import ProductViewImgSlider from '../ProductViewImgSlider/ProductViewImgSlider';
 import { AddToCart } from './helpers';
 import {
   NumberOfItem,
-  // TheNumber,
   ViewContainer,
   Description,
   Size,
@@ -14,15 +13,14 @@ import {
   CustomSelect,
   CustomOption,
   ButtomView,
-  // QuantityButton,
   AddToCartButton,
 } from './ProductView.component';
 interface productViewProps {
   item: Item;
 }
 const ProductView: React.FC<productViewProps> = ({ item }) => {
-  const options = ['Choose an Option', 'XS', 'S', 'M', 'L', 'Xl']; // We'd udually get this from store
-  const [itemSize, setItemSize] = useState('choose a size');
+  const options = ['Choose a Size', 'XS', 'S', 'M', 'L', 'Xl']; // We'd udually get this from store
+  const [itemSize, setItemSize] = useState('Choose a Size');
   const [quantity, setQuantity] = useState(1);
 
   return (
@@ -34,7 +32,7 @@ const ProductView: React.FC<productViewProps> = ({ item }) => {
           <Size>
             <CustomLabel htmlFor="size">Size</CustomLabel>
             <CustomSelect
-              value="Choose an Option"
+              value={itemSize}
               id="size"
               onChange={(e) => setItemSize(e?.target.value)}
             >
@@ -44,7 +42,7 @@ const ProductView: React.FC<productViewProps> = ({ item }) => {
             </CustomSelect>
           </Size>
           <ButtomView>
-            <NumberOfItem>
+            <NumberOfItem data-testid="quantity block">
               <QuantityButtons
                 productID={item.id}
                 productQuantity={quantity}
@@ -52,7 +50,11 @@ const ProductView: React.FC<productViewProps> = ({ item }) => {
               />
             </NumberOfItem>
             <AddToCartButton
-              onClick={() => AddToCart(item, itemSize, quantity)}
+              onClick={() => {
+                !itemSize || !(itemSize === options[0])
+                  ? AddToCart(item, itemSize, quantity)
+                  : window.alert('Please Choose a Size!');
+              }}
             >
               Add To Cart
             </AddToCartButton>
