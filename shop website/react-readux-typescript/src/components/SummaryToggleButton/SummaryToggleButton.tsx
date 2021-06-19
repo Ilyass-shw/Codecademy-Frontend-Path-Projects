@@ -18,7 +18,7 @@ const SummaryToggleButton: React.FC<SummaryToggleButtonProps> = ({
   TotalToPay,
 }) => {
   return (
-    <ToggleButton onClick={() => clickHandle(!show)} role='button'>
+    <ToggleButton onClick={() => clickHandle(!show)} role="button">
       <ButtonContent>
         <ButtonHeader show={show}>
           {show ? 'Show Order summray' : 'Hide Order summray'}

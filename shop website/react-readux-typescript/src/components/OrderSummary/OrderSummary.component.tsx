@@ -31,12 +31,13 @@ const collapsing = css`
   position: relative;
   max-height: 0;
   overflow: hidden;
+  opacity: 0;
 `;
 
 export const Summary = styled.div<SummaryItemsProps>`
   margin: auto;
   max-width: 40rem;
-  transition: all 0.55s ease;
+  transition: max-height 0.55s ease, opacity .6s ease-in ;
   max-height: 1000px;
   overflow: ${({ show }) => (show ? 'visible' : 'hidden')};
   ${({ show }) => (show ? collapsing : '')}

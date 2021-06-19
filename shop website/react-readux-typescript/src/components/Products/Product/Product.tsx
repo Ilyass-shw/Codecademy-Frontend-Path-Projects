@@ -1,13 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
+import ProductImgs from '../ProductImgs/ProductImgs';
 import { Item } from '../../../helpers/types';
+import { handleScroll } from './helpers';
 import {
   ProductItem,
   ItemName,
   ItemPrice,
   ProductLink,
 } from './Product.component';
-import { handleScroll } from './helpers';
-import ProductImgs from '../ProductImgs/ProductImgs';
 
 interface product {
   item: Item;

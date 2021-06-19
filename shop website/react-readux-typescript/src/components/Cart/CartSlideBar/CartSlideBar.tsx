@@ -2,7 +2,7 @@ import React from 'react';
 import { GrFormClose } from 'react-icons/gr';
 import { useSelector } from 'react-redux';
 import { toggleCartSlideBar } from '../../../helpers/toggleCartSlideBar';
-import { CartitemsSelector } from '../CartSlice/selectors/cartItemsSelector';
+import { CartItemsSelector } from '../CartSlice/selectors/cartItemsSelector';
 import { isCartBarOpenSelector } from '../CartSlice/selectors/isCartBarOpenSelector';
 import { TotalPriceSelector } from '../CartSlice/selectors/TotalPriceSelector';
 import CartItem from '../CartItem/CartItem';
@@ -19,7 +19,7 @@ import {
 
 const CartBar: React.FC = () => {
   const isBarOpen = useSelector(isCartBarOpenSelector);
-  const items = useSelector(CartitemsSelector);
+  const items = useSelector(CartItemsSelector);
   const total = useSelector(TotalPriceSelector);
 
   const fullPage = items.length > 1;
