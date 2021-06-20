@@ -58,8 +58,9 @@ const CartBar: React.FC = () => {
             <h5>Total</h5>
             <Price>{'$' + total.toFixed(2)}</Price>
           </Total>
+
           <CheckoutButton
-            disable={total === 0}
+            disable={(total === 0).toString()}
             to="/checkout"
             onClick={() => {
               toggleCartSlideBar();

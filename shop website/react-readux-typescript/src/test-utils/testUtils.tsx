@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store, { makeCustomTestStore } from './faksestore';
 import { RenderReturn, StoreType } from './types';
 import { BrowserRouter } from 'react-router-dom';
+import { realStoreType } from '../App/store';
 
 export const render = (ui: React.ReactElement): RenderReturn => {
   return rtlRender(ui);
@@ -13,7 +14,7 @@ export const render = (ui: React.ReactElement): RenderReturn => {
 
 export const renderWithStore = (
   ui: React.ReactElement,
-  MyStore: StoreType,
+  MyStore: realStoreType,
   WithRouter?: 'withRouter',
 ): RenderReturn => {
   if (WithRouter) {

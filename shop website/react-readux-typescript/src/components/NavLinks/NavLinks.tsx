@@ -25,7 +25,7 @@ const NavLinks: React.FC = () => {
             onMouseLeave={(): void => setShopHoveredOn(false)}
             to="/"
           >
-            <h3>Shop</h3>{' '}
+            Shop
           </LinkButton>
         </HoverBarWrapper>
       </NavLink>
@@ -41,10 +41,11 @@ const NavLinks: React.FC = () => {
             onMouseLeave={(): void => setCaterogiesHoveredOn(false)}
             to="/"
           >
-            <h3>Categories</h3>
+            Categories
           </LinkButton>
         </HoverBarWrapper>
         <CategoryList
+          data-testid="dropdown Categories"
           onMouseEnter={(): void => setCaterogiesHoveredOn(true)}
           onMouseLeave={(): void => setCaterogiesHoveredOn(false)}
           isHover={caterogiesHoveredOn}

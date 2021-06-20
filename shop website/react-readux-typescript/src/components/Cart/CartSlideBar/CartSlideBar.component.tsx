@@ -102,17 +102,18 @@ export const CheckoutFotter = styled.div`
 
 // ============= ============= ============= ============= =============
 interface CheckoutButtonProps {
-  disable: boolean;
+  disable: string;
 }
 
 export const CheckoutButton = styled(RouterLink)<CheckoutButtonProps>`
   height: 2.7rem;
   width: 100%;
-  background-color: ${({ disable }) => (disable ? '#000000b5' : 'black')};
+  background-color: ${({ disable }) =>
+    disable === 'true' ? '#000000b5' : 'black'};
   border-radius: 35px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
+  pointer-events: ${({ disable }) => (disable === 'true' ? 'none' : 'auto')};
 `;

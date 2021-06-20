@@ -38,7 +38,7 @@ export const CategoryList = styled.div<{
   box-shadow: 0px 10px 20px rgb(0 0 0 / 9%);
   padding-top: 15px;
   transform: ${({ isHover }) =>
-    isHover ? 'translateY(10px)' : 'translateY(0)'};
+    isHover ? 'translateY(2px)' : 'translateY(0)'};
   visibility: ${({ isHover }) => (isHover ? 'visible' : 'hidden')};
   transition: 0.18s;
   z-index: 100;
