@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from '../../test-utils/testUtils';
-import HeroSection from './HeroSection';
+import Footer from './Footer';
 
-describe('HeroSection', () => {
+describe('Footer', () => {
   it('should render', () => {
-    render(<HeroSection />);
+    render(<Footer />);
   });
   it('should match snapshot', () => {
-    const { asFragment } = render(<HeroSection />);
+    const { asFragment } = render(<Footer />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
