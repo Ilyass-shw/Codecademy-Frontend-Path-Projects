@@ -1,8 +1,8 @@
 import React from 'react';
-import { renderWithStore, screen } from '../../test-utils/testUtils';
+import { renderWithStore, screen } from '../../../test-utils/testUtils';
 import OrderSummary from './OrderSummary';
-import store from '../../App/store';
-import { itemAddedToCart } from '../Cart/CartSlice/CartSlice';
+import store from '../../../App/store';
+import { itemAddedToCart } from '../../Cart/CartSlice/CartSlice';
 import userEvent from '@testing-library/user-event';
 
 describe('OrderSummary', () => {

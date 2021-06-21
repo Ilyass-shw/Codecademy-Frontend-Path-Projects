@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { CartItemsSelector } from '../Cart/CartSlice/selectors/cartItemsSelector';
-import { TotalPriceSelector } from '../Cart/CartSlice/selectors/TotalPriceSelector';
-import SummaryItem from '../Cart/SummaryItem.tsx/SummaryItem';
+import { CartItemsSelector } from '../../Cart/CartSlice/selectors/cartItemsSelector';
+import { TotalPriceSelector } from '../../Cart/CartSlice/selectors/TotalPriceSelector';
+import SummaryItem from '../../Cart/SummaryItem.tsx/SummaryItem';
 import SummaryToggleButton from '../SummaryToggleButton/SummaryToggleButton';
-import { useWindowWidth } from '../../helpers/useWindowWidth';
+import { useWindowWidth } from '../../../helpers/useWindowWidth';
 import TotalPriceCalculator from '../TotalPriceCalculator/TotalPriceCalculator';
 import {
   SummaryContainer,

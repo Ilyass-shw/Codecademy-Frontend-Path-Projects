@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CustomButton, RouterLink } from '../../App/App.component';
+import { CustomButton, RouterLink } from '../../../App/App.component';
 
 export const Logo = styled(RouterLink)`
   font-size: 1.8rem;

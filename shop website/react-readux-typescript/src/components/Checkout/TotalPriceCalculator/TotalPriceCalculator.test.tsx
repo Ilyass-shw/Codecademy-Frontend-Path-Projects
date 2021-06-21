@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '../../test-utils/testUtils';
+import { render } from '../../../test-utils/testUtils';
 import TotalPriceCalculator from './TotalPriceCalculator';
 describe('TotalPriceCalculator', () => {
   const CartTotalPrice = 56;

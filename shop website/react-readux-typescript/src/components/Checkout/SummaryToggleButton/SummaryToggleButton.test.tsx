@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { render, screen } from '../../test-utils/testUtils';
+import { render, screen } from '../../../test-utils/testUtils';
 import SummaryToggleButton from './SummaryToggleButton';
 
 describe('SummaryToggleButton', () => {

@@ -88,15 +88,6 @@ const CheckoutForm: React.FC = () => {
             required
           />
           <CountrySelect/>
-          {/* <Select
-            placeholder="Counrty/Region"
-            autoCapitalize="off"
-            spellCheck="false"
-            autoComplete="address-level2"
-            autoCorrect="off"
-            required
-          ></Select> */}
-
           <Input
             type="tel"
             placeholder="Phone"
