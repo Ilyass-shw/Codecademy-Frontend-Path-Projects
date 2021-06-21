@@ -8,8 +8,11 @@ export const itemDeletedReducer = (
   const index = state.items.findIndex(
     (product) => product.item.id === action.payload,
   );
-  state.items.splice(index, 1);
-  if (state.howManyItems > 0) {
-    state.howManyItems--;
+  if(index!==(-1)){
+    state.items.splice(index, 1);
+    if (state.howManyItems > 0) {
+      state.howManyItems--;
+    }
   }
+  
 };
