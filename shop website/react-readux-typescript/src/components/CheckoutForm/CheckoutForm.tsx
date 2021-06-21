@@ -1,5 +1,6 @@
 import React from 'react';
 import OrderSummary from '../OrderSummary/OrderSummary';
+import CountrySelect from '../CountrySelect/CountrySelect';
 import {
   Logo,
   FormContainer,
@@ -11,7 +12,7 @@ import {
   Checkbox,
   MarketingCheckbox,
   MarketingLabel,
-  Select,
+  // Select,
   SubmitButton,
   ReturnLink,
 } from './CheckoutForm.component';
@@ -86,14 +87,15 @@ const CheckoutForm: React.FC = () => {
             autoCorrect="off"
             required
           />
-          <Select
+          <CountrySelect/>
+          {/* <Select
             placeholder="Counrty/Region"
             autoCapitalize="off"
             spellCheck="false"
             autoComplete="address-level2"
             autoCorrect="off"
             required
-          />
+          ></Select> */}
 
           <Input
             type="tel"

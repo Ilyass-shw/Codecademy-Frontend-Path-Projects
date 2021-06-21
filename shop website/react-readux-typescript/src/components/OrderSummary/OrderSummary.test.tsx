@@ -62,7 +62,6 @@ describe('OrderSummary', () => {
   it('should not render the toggle button on big screens ', () => {
     global.innerWidth = 1300;
     renderWithStore(<OrderSummary />, store);
-    // const toggleButton = screen.getByRole('button');
     expect(screen.queryByText(/Show Order summray/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Hide Order summray/i)).not.toBeInTheDocument();
   });
