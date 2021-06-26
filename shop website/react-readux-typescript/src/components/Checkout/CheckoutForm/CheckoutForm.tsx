@@ -1,6 +1,7 @@
 import React from 'react';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import CountrySelect from '../CountrySelect/CountrySelect';
+import { useForm } from "react-hook-form";
 import {
   Logo,
   FormContainer,
@@ -18,6 +19,11 @@ import {
 } from './CheckoutForm.component';
 
 const CheckoutForm: React.FC = () => {
+  type formValues = {
+    
+  }
+  const { register, handleSubmit } = useForm();
+
   return (
     <>
       <Logo to="/">Shw</Logo>
