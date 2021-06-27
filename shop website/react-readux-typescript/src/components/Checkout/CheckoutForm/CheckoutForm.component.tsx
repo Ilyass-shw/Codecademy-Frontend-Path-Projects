@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { CustomButton, RouterLink } from '../../../App/App.component';
+import { FieldError } from 'react-hook-form';
 
 export const Logo = styled(RouterLink)`
   font-size: 1.8rem;
@@ -39,12 +40,21 @@ export const Link = styled.a`
   text-decoration: none;
 `;
 
-export const Input = styled.input`
+type InputTypeProps = {
+  isError: FieldError | undefined;
+};
+export const Input = styled.input<InputTypeProps>`
   border-radius: 5px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid ${({ isError }) => (isError ? 'red' : '#d9d9d9')};
   padding: 1.2rem;
   margin: 0.9rem 0;
   font-size: 0.9rem;
+  &:focus-visible {
+    border-color: red;
+  }
+`;
+export const FormError = styled.p`
+  color: red;
 `;
 export const Checkbox = styled.div``;
 

@@ -1,9 +1,31 @@
 import React from 'react';
 import { Select, Country, Optgroup } from './CountrySelect.component';
-const CountrySelect: React.FC = () => {
+import { UseFormRegister } from 'react-hook-form';
+import formValue from '../CountrySelect/CountrySelect';
+import { FormState } from 'react-hook-form';
+
+// interface CountrySelect {
+//   formRegister: UseFormRegister<formValue>;
+//   formErrors: DeepMap<formValue, FieldError>;
+// }
+interface CountrySelectProps {
+  register?: UseFormRegister<formValue>;
+  formState?: FormState<formValue>;
+}
+const CountrySelect: React.FC<CountrySelectProps> = ({
+  register,
+  formState: { errors },
+}) => {
+  // const {
+  //   register,
+  //   formState: { errors },
+  // } = useFormContext();
+  console.log(errors.Country);
   return (
     <>
       <Select
+        {...register('Country', { required: 'This is required.' })}
+        isError={errors.Country}
         placeholder="Counrty/Region"
         autoComplete="address-level2"
         required

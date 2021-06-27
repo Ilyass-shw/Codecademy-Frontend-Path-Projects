@@ -24,6 +24,7 @@ module.exports = {
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
 
     'react/prop-types': ['off'],
+    "@typescript-eslint/ban-ts-comment": "off",
     'max-lines-per-function': ['error', 800],
     'prettier/prettier': ['off'],
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
