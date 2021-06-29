@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { CustomButton, RouterLink } from '../../../App/App.component';
-import { FieldError } from 'react-hook-form';
 
 export const Logo = styled(RouterLink)`
   font-size: 1.8rem;
@@ -39,37 +38,6 @@ export const Link = styled.a`
   cursor: pointer;
   text-decoration: none;
 `;
-
-type InputTypeProps = {
-  isError: FieldError | undefined;
-};
-export const Input = styled.input<InputTypeProps>`
-  border-radius: 5px;
-  border: 1px solid ${({ isError }) => (isError ? 'red' : '#d9d9d9')};
-  padding: 1.2rem;
-  margin: 0.9rem 0;
-  font-size: 0.9rem;
-  &:focus-visible {
-    border-color: red;
-  }
-`;
-export const FormError = styled.p`
-  color: red;
-`;
-export const Checkbox = styled.div``;
-
-export const MarketingCheckbox = styled.input`
-  border: 1px solid #d9d9d9;
-  width: 18px;
-  border-radius: 4px;
-  box-sizing: border-box;
-  height: 18px;
-  cursor: pointer;
-  margin: 0.3rem;
-  transform: translateY(4px);
-`;
-export const MarketingLabel = styled.label``;
-export const Select = styled.select``;
 export const SubmitButton = styled(CustomButton)`
   padding-top: 1.75em;
   padding-bottom: 1.75em;

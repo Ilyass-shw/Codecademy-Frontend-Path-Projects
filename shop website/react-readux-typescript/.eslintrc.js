@@ -25,7 +25,7 @@ module.exports = {
 
     'react/prop-types': ['off'],
     "@typescript-eslint/ban-ts-comment": "off",
-    'max-lines-per-function': ['error', 800],
+    'max-lines-per-function': ['error', 900],
     'prettier/prettier': ['off'],
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-shadow': ['error', { builtinGlobals: true, hoist: 'all' }],

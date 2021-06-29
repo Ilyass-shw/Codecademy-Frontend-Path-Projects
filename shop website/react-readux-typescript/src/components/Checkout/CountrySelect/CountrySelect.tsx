@@ -1,26 +1,18 @@
 import React from 'react';
-import { Select, Country, Optgroup } from './CountrySelect.component';
-import { UseFormRegister } from 'react-hook-form';
-import formValue from '../CountrySelect/CountrySelect';
-import { FormState } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
+import {
+  Select,
+  Country,
+  Optgroup,
+  FormError,
+} from './CountrySelect.component';
 
-// interface CountrySelect {
-//   formRegister: UseFormRegister<formValue>;
-//   formErrors: DeepMap<formValue, FieldError>;
-// }
-interface CountrySelectProps {
-  register?: UseFormRegister<formValue>;
-  formState?: FormState<formValue>;
-}
-const CountrySelect: React.FC<CountrySelectProps> = ({
-  register,
-  formState: { errors },
-}) => {
-  // const {
-  //   register,
-  //   formState: { errors },
-  // } = useFormContext();
-  console.log(errors.Country);
+const CountrySelect: React.FC = () => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <>
       <Select
@@ -28,11 +20,9 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
         isError={errors.Country}
         placeholder="Counrty/Region"
         autoComplete="address-level2"
-        required
-        name="country"
         id="country"
       >
-        <Country value="0" label="Select a country ... " selected disabled>
+        <Country value="" label="Select a country ... " selected disabled>
           Select a country ...
         </Country>
         <Optgroup id="country-optgroup-Africa" label="Africa">
@@ -805,6 +795,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
           </Country>
         </Optgroup>
       </Select>
+      <FormError>{errors.Country && errors.Country.message}</FormError>
     </>
   );
 };
