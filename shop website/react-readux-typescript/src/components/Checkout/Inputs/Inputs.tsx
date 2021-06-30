@@ -10,6 +10,11 @@ const Inputs: React.FC = () => {
     <>
       <RegisteredInput
         Name="email"
+        registerOptions={{
+          required: 'This is required.',
+          validate: (value) =>
+            value.includes('@') || 'Please enter a valid email Address.',
+        }}
         type="email"
         placeholder="Email"
         autoCapitalize="off"
@@ -23,7 +28,13 @@ const Inputs: React.FC = () => {
 
       <RegisteredInput
         Name="FirstName"
-        registerOptions={{ required: 'This is required.' }}
+        registerOptions={{
+          required: 'This is required.',
+          maxLength: {
+            value: 20,
+            message: 'This input exceed max length.',
+          },
+        }}
         type="text"
         placeholder="First name"
         autoCapitalize="off"
@@ -33,7 +44,10 @@ const Inputs: React.FC = () => {
       />
       <RegisteredInput
         Name="LastName"
-        registerOptions={{ required: 'This is required.' }}
+        registerOptions={{
+          required: 'This is required.',
+          pattern: /^[A-Za-z]+$/i,
+        }}
         type="text"
         placeholder="Last name"
         autoCapitalize="off"
