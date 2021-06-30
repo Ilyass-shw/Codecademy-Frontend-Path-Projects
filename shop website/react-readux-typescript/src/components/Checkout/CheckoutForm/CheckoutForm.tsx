@@ -2,6 +2,8 @@ import React from 'react';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import Inputs from '../Inputs/Inputs';
 import { FormProvider, useForm } from 'react-hook-form';
+import { handleData } from './helpers.tsx/handleData';
+import { formValue } from './helpers.tsx/types';
 import {
   Logo,
   FormContainer,
@@ -12,8 +14,7 @@ import {
   SubmitButton,
   ReturnLink,
 } from './CheckoutForm.component';
-import { handleData } from './helpers.tsx/handleData';
-import { formValue } from './helpers.tsx/types';
+
 
 const CheckoutForm: React.FC = () => {
   const methods = useForm<formValue>();

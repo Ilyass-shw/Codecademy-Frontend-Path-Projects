@@ -1,10 +1,11 @@
-import React from 'react';
-import { render as rtlRender } from '@testing-library/react';
+import React, { ReactElement } from 'react';
+import { render as rtlRender, RenderResult } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store, { makeCustomTestStore } from './faksestore';
 import { RenderReturn, StoreType } from './types';
 import { BrowserRouter } from 'react-router-dom';
 import { realStoreType } from '../App/store';
+import { useForm, FormProvider } from 'react-hook-form';
 
 export const render = (ui: React.ReactElement): RenderReturn => {
   return rtlRender(ui);
@@ -55,3 +56,19 @@ export const makeTestStore = (
 
 // re-export everything
 export * from '@testing-library/react';
+
+// ============= ============= ============= ============= =============
+
+export const renderWithReactHookForm = (
+  ui: ReactElement,
+  { defaultValues = {} } = {},
+): RenderResult => {
+  // let reactHookFormMethods = {};
+
+  const Wrapper: React.FC = ({ children }) => {
+    const methods = useForm({ defaultValues });
+    return <FormProvider {...methods}>{children}</FormProvider>;
+  };
+
+  return rtlRender(ui, { wrapper: Wrapper });
+};

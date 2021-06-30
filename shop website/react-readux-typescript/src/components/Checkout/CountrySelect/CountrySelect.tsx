@@ -20,9 +20,10 @@ const CountrySelect: React.FC = () => {
         isError={errors.Country}
         placeholder="Counrty/Region"
         autoComplete="address-level2"
+        defaultValue=''
         id="country"
       >
-        <Country value="" label="Select a country ... " selected disabled>
+        <Country value="" label="Select a country ... " disabled>
           Select a country ...
         </Country>
         <Optgroup id="country-optgroup-Africa" label="Africa">
