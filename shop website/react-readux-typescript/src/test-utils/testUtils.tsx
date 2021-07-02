@@ -61,6 +61,7 @@ export * from '@testing-library/react';
 
 export const renderWithReactHookForm = (
   ui: ReactElement,
+  WithRouter?: 'withRouter',
   { defaultValues = {} } = {},
 ): RenderResult => {
   // let reactHookFormMethods = {};
@@ -69,6 +70,17 @@ export const renderWithReactHookForm = (
     const methods = useForm({ defaultValues });
     return <FormProvider {...methods}>{children}</FormProvider>;
   };
+  const WithRouterWrapper: React.FC = ({ children }) => {
+    const methods = useForm({ defaultValues });
+    return (
+      <BrowserRouter>
+        <FormProvider {...methods}>{children}</FormProvider>
+      </BrowserRouter>
+    );
+  };
 
-  return rtlRender(ui, { wrapper: Wrapper });
+  if (!WithRouter) {
+    return rtlRender(ui, { wrapper: Wrapper });
+  }
+  return rtlRender(ui, { wrapper: WithRouterWrapper });
 };
