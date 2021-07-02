@@ -28,13 +28,7 @@ const Inputs: React.FC = () => {
 
       <RegisteredInput
         Name="FirstName"
-        registerOptions={{
-          required: 'This is required.',
-          maxLength: {
-            value: 20,
-            message: 'This input exceed max length.',
-          },
-        }}
+        registerOptions={{ required: 'This is required.' }}
         type="text"
         placeholder="First name"
         autoCapitalize="off"
@@ -44,10 +38,7 @@ const Inputs: React.FC = () => {
       />
       <RegisteredInput
         Name="LastName"
-        registerOptions={{
-          required: 'This is required.',
-          pattern: /^[A-Za-z]+$/i,
-        }}
+        registerOptions={{ required: 'This is required.' }}
         type="text"
         placeholder="Last name"
         autoCapitalize="off"

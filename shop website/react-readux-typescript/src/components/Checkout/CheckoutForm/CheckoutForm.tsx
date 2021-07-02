@@ -3,6 +3,7 @@ import Inputs from '../Inputs/Inputs';
 import { FormProvider, useForm } from 'react-hook-form';
 import { handleData } from './helpers.tsx/handleData';
 import { formValue } from './helpers.tsx/types';
+
 import {
   Logo,
   FormContainer,
@@ -14,7 +15,11 @@ import {
   ReturnLink,
 } from './CheckoutForm.component';
 
-const CheckoutForm: React.FC = () => {
+interface CheckoutFormProps {
+  saveData?: (dataToSave: formValue) => void;
+}
+
+const CheckoutForm: React.FC<CheckoutFormProps> = ({ saveData }) => {
   const methods = useForm<formValue>();
 
   return (
@@ -22,7 +27,11 @@ const CheckoutForm: React.FC = () => {
       <Logo to="/">Shw</Logo>
       <FormProvider {...methods}>
         <FormContainer>
-          <Form onSubmit={methods.handleSubmit(handleData)}>
+          <Form
+            onSubmit={methods.handleSubmit((data) =>
+              handleData(data, saveData),
+            )}
+          >
             <MainLabel>Contact information</MainLabel>
             <SignIn>
               Already have an account?
