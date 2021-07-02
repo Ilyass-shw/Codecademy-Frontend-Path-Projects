@@ -14,6 +14,8 @@ describe('CheckoutForm', () => {
     renderWithReactHookForm(<CheckoutForm />, 'withRouter');
   });
 
+  //========================================================================
+
   it('should match snapshot', () => {
     const { asFragment } = renderWithReactHookForm(
       <CheckoutForm />,
@@ -21,6 +23,8 @@ describe('CheckoutForm', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  //========================================================================
 
   it('should validate form fields', async () => {
     const verifyHowManyRequiredErrors = (Num: number): Promise<void> => {
@@ -88,6 +92,8 @@ describe('CheckoutForm', () => {
 
     await verifyHowManyRequiredErrors(0);
   }, 8000);
+
+  //========================================================================
 
   it('should submit correct form data', async () => {
     const saveData = jest.fn();
