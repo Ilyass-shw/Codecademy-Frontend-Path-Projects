@@ -2,17 +2,22 @@
 
 exports[`RegisteredInput should match snapshot 1`] = `
 <DocumentFragment>
-  <input
-    autocapitalize="off"
-    autocomplete="email"
-    class="sc-bdvvaa gBkXga"
-    name="email"
-    placeholder="Email"
-    spellcheck="false"
-    type="email"
-  />
-  <p
-    class="sc-gsDJrp eNrfob"
-  />
+  <form>
+    <input
+      autocapitalize="off"
+      autocomplete="email"
+      class="sc-bdvvaa gBkXga"
+      name="email"
+      placeholder="Email"
+      spellcheck="false"
+      type="email"
+    />
+    <p
+      class="sc-gsDJrp eNrfob"
+    />
+    <button
+      type="submit"
+    />
+  </form>
 </DocumentFragment>
 `;
