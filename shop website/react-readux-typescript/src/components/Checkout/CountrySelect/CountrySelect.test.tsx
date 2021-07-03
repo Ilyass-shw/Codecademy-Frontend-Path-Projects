@@ -1,14 +1,14 @@
 import React from 'react';
-import { renderWithReactHookForm } from '../../../test-utils/testUtils';
+import { renderWithFormProvider } from '../../../test-utils/testUtils';
 import CountrySelect from './CountrySelect';
 
 describe('CountrySelect', () => {
   it('should render', () => {
-    renderWithReactHookForm(<CountrySelect />);
+    renderWithFormProvider(<CountrySelect />);
   });
 
   it('should match snapshot', () => {
-    const { asFragment } = renderWithReactHookForm(<CountrySelect />);
+    const { asFragment } = renderWithFormProvider(<CountrySelect />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

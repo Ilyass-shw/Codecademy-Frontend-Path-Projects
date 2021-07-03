@@ -12,3 +12,9 @@ export interface WrapperParams {
   MyStore: StoreType;
   WithRouter?: boolean;
 }
+
+export interface useFormProps {
+  email: string;
+  phone: number;
+  saveData: jest.Mock;
+}

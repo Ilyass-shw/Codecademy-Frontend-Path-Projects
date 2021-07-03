@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { render as rtlRender, RenderResult } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store, { makeCustomTestStore } from './faksestore';
-import { RenderReturn, StoreType } from './types';
+import { RenderReturn, StoreType, useFormProps } from './types';
 import { BrowserRouter } from 'react-router-dom';
 import { realStoreType } from '../App/store';
 import { useForm, FormProvider } from 'react-hook-form';
@@ -59,7 +59,7 @@ export * from '@testing-library/react';
 
 // ============= ============= ============= ============= =============
 
-export const renderWithReactHookForm = (
+export const renderWithFormProvider = (
   ui: ReactElement,
   WithRouter?: 'withRouter',
   { defaultValues = {} } = {},
@@ -83,4 +83,28 @@ export const renderWithReactHookForm = (
     return rtlRender(ui, { wrapper: Wrapper });
   }
   return rtlRender(ui, { wrapper: WithRouterWrapper });
+};
+
+// ============= ============= ============= ============= =============
+
+export const renderWithReactHookForm = (
+  ui: JSX.Element,
+  saveData: jest.Mock,
+): RenderResult => {
+  const Wrapper: React.FC = ({ children }) => {
+    const methods = useForm<useFormProps>();
+    return (
+      <FormProvider {...methods}>
+        <form
+          onSubmit={methods.handleSubmit((data) => {
+            saveData(data);
+          })}
+        >
+          <BrowserRouter>{children}</BrowserRouter>
+          <button type="submit" data-testid='testSubmitButton'></button>
+        </form>
+      </FormProvider>
+    );
+  };
+  return rtlRender(<Wrapper>{ui}</Wrapper>);
 };

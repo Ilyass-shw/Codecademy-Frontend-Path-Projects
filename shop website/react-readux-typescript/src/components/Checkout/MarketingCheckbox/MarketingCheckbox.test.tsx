@@ -1,15 +1,15 @@
 import React from 'react';
-import { renderWithReactHookForm } from '../../../test-utils/testUtils';
+import { renderWithFormProvider } from '../../../test-utils/testUtils';
 import MarketingCheckbox from './MarketingCheckbox';
 
 
 describe('MarketingCheckbox', () => {
   it('should render', () => {
-    renderWithReactHookForm(<MarketingCheckbox />);
+    renderWithFormProvider(<MarketingCheckbox />);
   });
 
   it('should match snapshot', () => {
-    const { asFragment } = renderWithReactHookForm(<MarketingCheckbox />);
+    const { asFragment } = renderWithFormProvider(<MarketingCheckbox />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

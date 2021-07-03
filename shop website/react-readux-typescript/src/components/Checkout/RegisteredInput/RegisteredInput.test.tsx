@@ -1,13 +1,13 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { render, screen, waitFor } from './helpers';
+import { renderWithReactHookForm, screen, waitFor } from '../../../test-utils/testUtils';
 import RegisteredInput from './RegisteredInput';
 
 describe('RegisteredInput', () => {
   const saveData = jest.fn();
 
   it('should render', () => {
-    render(
+    renderWithReactHookForm(
       <RegisteredInput
         Name="email"
         registerOptions={{ required: 'This is required.' }}
@@ -22,7 +22,7 @@ describe('RegisteredInput', () => {
   });
 
   it('should match snapshot', () => {
-    const { asFragment } = render(
+    const { asFragment } = renderWithReactHookForm(
       <RegisteredInput
         Name="email"
         registerOptions={{ required: 'This is required.' }}
@@ -38,7 +38,7 @@ describe('RegisteredInput', () => {
   });
 
   it('should watch input correctly', () => {
-    render(
+    renderWithReactHookForm(
       <RegisteredInput Name="phone" type="tel" placeholder="Phone " />,
       saveData,
     );
@@ -48,7 +48,7 @@ describe('RegisteredInput', () => {
   });
 
   it('should display correct error message and submit correctly', async () => {
-    render(
+    renderWithReactHookForm(
       <RegisteredInput
         Name="email"
         type="email"
@@ -64,7 +64,7 @@ describe('RegisteredInput', () => {
       saveData,
     );
     const registeredInput = screen.getByPlaceholderText('Email');
-    const submitButton = screen.getByRole('button');
+    const submitButton = screen.getByTestId('testSubmitButton');
 
     // verify initial state
     expect(screen.queryByAltText('This is required.')).not.toBeInTheDocument();
