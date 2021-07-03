@@ -6,8 +6,6 @@ export type RenderReturn = ReturnType<typeof render>;
 export type SliceParameters = Parameters<typeof createSlice>;
 export type UiType = React.ReactElement;
 
-
-
 export interface WrapperParams {
   MyStore: StoreType;
   WithRouter?: boolean;
@@ -16,5 +14,5 @@ export interface WrapperParams {
 export interface useFormProps {
   email: string;
   phone: number;
-  saveData: jest.Mock;
+  buyerAcceptMarketing: string;
 }

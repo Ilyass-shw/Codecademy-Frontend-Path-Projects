@@ -24,7 +24,6 @@ describe('CheckoutForm', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-
   //========================================================================
 
   it('should submit correct form data', async () => {

@@ -101,7 +101,7 @@ export const renderWithReactHookForm = (
           })}
         >
           <BrowserRouter>{children}</BrowserRouter>
-          <button type="submit" data-testid='testSubmitButton'></button>
+          <button type="submit" data-testid="testSubmitButton"></button>
         </form>
       </FormProvider>
     );

@@ -1,6 +1,10 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { renderWithReactHookForm, screen, waitFor } from '../../../test-utils/testUtils';
+import {
+  renderWithReactHookForm,
+  screen,
+  waitFor,
+} from '../../../test-utils/testUtils';
 import RegisteredInput from './RegisteredInput';
 
 describe('RegisteredInput', () => {
