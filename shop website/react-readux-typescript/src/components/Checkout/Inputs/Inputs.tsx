@@ -76,7 +76,10 @@ const Inputs: React.FC = () => {
       <CountrySelect />
       <RegisteredInput
         Name="PhoneNumber"
-        registerOptions={{ required: 'This is required.' }}
+        registerOptions={{
+          required: 'This is required.',
+          pattern: { value: /^[0-9]+$/, message: 'Numbers only, please.' },
+        }}
         type="tel"
         placeholder="Phone"
         autoComplete="tel"

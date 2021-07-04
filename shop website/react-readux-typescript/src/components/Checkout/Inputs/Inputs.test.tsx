@@ -91,6 +91,10 @@ describe('Inputs', () => {
     await verifyHowManyRequiredErrors(1);
 
     // test validation for Phone input
+    userEvent.type(screen.getByPlaceholderText('Phone'), 'test');
+    expect(
+      await screen.findByText('Numbers only, please.'),
+    ).toBeInTheDocument();
     userEvent.type(screen.getByPlaceholderText('Phone'), '04578163554');
 
     await verifyHowManyRequiredErrors(0);

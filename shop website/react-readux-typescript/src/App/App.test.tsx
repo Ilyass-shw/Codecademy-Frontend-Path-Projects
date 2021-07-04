@@ -1,12 +1,36 @@
 import React from 'react';
-import { renderWithStore } from '../test-utils/testUtils';
+import { render, screen, RenderResult } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 import App from './App';
 import store from './store';
+import { Provider } from 'react-redux';
 
-test('renders learn react link', () => {
+describe('App', () => {
   window.alert = (): void => undefined; // provide an empty implementation for window.alert
   window.scrollTo = (): void => undefined; // provide an empty implementation for window.alert
-  renderWithStore(<App />, store, 'withRouter');
-  // const linkElement = screen.getByText(/wiyééé/i);
-  // expect(linkElement).toBeInTheDocument();
+
+  const renderApp = (): RenderResult => {
+    const history = createMemoryHistory();
+
+    return render(
+      <Provider store={store}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </Provider>,
+    );
+  };
+  it('should render ', () => {
+    renderApp();
+    expect(screen.getByRole('link', { name: /shw/i })).toBeInTheDocument();
+    expect(screen.getByTestId('cartIcon')).toBeInTheDocument();
+    expect(
+      screen.getByText(/“art is like a dance of the heart,/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('combobox', { name: /filter/i }),
+    ).toBeInTheDocument();
+  });
 });

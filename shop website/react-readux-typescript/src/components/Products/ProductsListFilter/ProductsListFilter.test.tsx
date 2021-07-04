@@ -2,7 +2,7 @@ import React from 'react';
 import userEvent from '@testing-library/user-event';
 import store from '../../../App/store';
 import { getProductsData } from '../ProductsSlice/ProductsSlice';
-import ProductsList from './ProductsList';
+import ProductsListFilter from './ProductsListFilter';
 import {
   renderWithStore,
   screen,
@@ -10,12 +10,17 @@ import {
   within,
 } from '../../../test-utils/testUtils';
 
-describe('ProductsList', () => {
+describe('ProductsListFilter', () => {
   it('should render ', async () => {
-    renderWithStore(<ProductsList />, store, 'withRouter');
+    const { asFragment } = renderWithStore(
+      <ProductsListFilter />,
+      store,
+      'withRouter',
+    );
     const filterInput = await screen.findByLabelText('Filter');
     const filters = within(filterInput).getAllByRole('option');
 
+    expect(asFragment).toMatchSnapshot();
     expect(filterInput).toHaveValue('All Jewelry');
     expect(filters).toHaveLength(1);
     expect(store.getState().Items.filter).toBe('All Jewelry');
@@ -24,12 +29,15 @@ describe('ProductsList', () => {
   it('should allow to change the filter ', async () => {
     store.dispatch(getProductsData());
 
-    renderWithStore(<ProductsList />, store, 'withRouter');
+    renderWithStore(<ProductsListFilter />, store, 'withRouter');
 
     const filterInput = await screen.findByLabelText('Filter');
     const filters = within(filterInput).getAllByRole('option');
 
+    // make sure additional filter options are added.
     expect(filters.length > 1).toBeTruthy();
+
+    //make sure changing filter option is possible.
     expect(store.getState().Items.filter).toBe('All Jewelry');
     expect(filterInput).toHaveValue('All Jewelry');
 
