@@ -18,7 +18,7 @@ export const getProductsData = createAsyncThunk<{
 
 type fetchStatus = 'Loading' | 'succeeded' | 'failed' | 'idle';
 
-export type filter = categories | 'All Jewelry';
+export type filter = categories | 'AllJewelry';
 
 interface jewelryLists {
   AllJewelry: Item[];
@@ -34,6 +34,7 @@ export interface ProductsState {
   FetchStatus: fetchStatus;
   categories: categories[];
   filter: filter;
+  filteredList: Item[];
 }
 const initialState: ProductsState = {
   Products: {
@@ -48,7 +49,8 @@ const initialState: ProductsState = {
   },
   FetchStatus: 'idle',
   categories: [],
-  filter: 'All Jewelry',
+  filter: 'AllJewelry',
+  filteredList: [],
 };
 
 export const Products = createSlice({

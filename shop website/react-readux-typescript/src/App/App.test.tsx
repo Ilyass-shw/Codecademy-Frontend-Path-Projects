@@ -1,5 +1,10 @@
 import React from 'react';
-import { render, screen, RenderResult } from '@testing-library/react';
+import {
+  render,
+  screen,
+  RenderResult,
+  prettyDOM,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
@@ -23,7 +28,7 @@ describe('App', () => {
     );
   };
   it('should render ', () => {
-    renderApp();
+    const { debug } = renderApp();
     expect(screen.getByRole('link', { name: /shw/i })).toBeInTheDocument();
     expect(screen.getByTestId('cartIcon')).toBeInTheDocument();
     expect(
@@ -32,5 +37,9 @@ describe('App', () => {
     expect(
       screen.getByRole('combobox', { name: /filter/i }),
     ).toBeInTheDocument();
+    // expect(
+    //   screen.getByRole('heading', { name: /body, mind, soul – necklace/i }),
+    // ).toBeInTheDocument();
+    console.log(prettyDOM(screen.getByLabelText('products List')))
   });
 });

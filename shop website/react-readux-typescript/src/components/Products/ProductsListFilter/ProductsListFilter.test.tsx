@@ -23,7 +23,7 @@ describe('ProductsListFilter', () => {
     expect(asFragment).toMatchSnapshot();
     expect(filterInput).toHaveValue('All Jewelry');
     expect(filters).toHaveLength(1);
-    expect(store.getState().Items.filter).toBe('All Jewelry');
+    expect(store.getState().Items.filter).toBe('AllJewelry');
   });
 
   it('should allow to change the filter ', async () => {
@@ -34,22 +34,46 @@ describe('ProductsListFilter', () => {
     const filterInput = await screen.findByLabelText('Filter');
     const filters = within(filterInput).getAllByRole('option');
 
-    // make sure additional filter options are added.
+    //lets make sure additional filter options are added.
     expect(filters.length > 1).toBeTruthy();
 
-    //make sure changing filter option is possible.
-    expect(store.getState().Items.filter).toBe('All Jewelry');
+    //lets make sure changing filter option is possible.
+    //lets check the default filter 'All Jewelry'.
+    expect(store.getState().Items.filter).toBe('AllJewelry');
     expect(filterInput).toHaveValue('All Jewelry');
 
+    //let's change the filter.
     const filterOne = store.getState().Items.categories[1];
 
-    const option = within(filterInput).getByRole('option', { name: filterOne });
+    let option = within(filterInput).getByRole('option', { name: filterOne });
 
     userEvent.selectOptions(filterInput, option);
 
     await waitFor(() => {
       expect(filterInput).toHaveValue(filterOne);
       expect(store.getState().Items.filter).toBe(filterOne);
+    });
+
+    //let's change the filter one more time.
+    const filterTwo = store.getState().Items.categories[2];
+
+    option = within(filterInput).getByRole('option', { name: filterTwo });
+
+    userEvent.selectOptions(filterInput, option);
+
+    await waitFor(() => {
+      expect(filterInput).toHaveValue(filterTwo);
+      expect(store.getState().Items.filter).toBe(filterTwo);
+    });
+
+    //lets go back to the default filter 'All Jewelry'.
+    option = within(filterInput).getByRole('option', { name: 'All Jewelry' });
+
+    userEvent.selectOptions(filterInput, option);
+
+    await waitFor(() => {
+      expect(filterInput).toHaveValue('All Jewelry');
+      expect(store.getState().Items.filter).toBe('AllJewelry');
     });
   });
 });

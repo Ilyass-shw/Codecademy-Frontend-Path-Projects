@@ -19,4 +19,6 @@ export const getProductsDataFulfilledReducer = (
   action.payload.categories.forEach((cat) => {
     state.Products.jewelry[cat] = filterWithCategory(action.payload.data, cat);
   });
+
+  state.filteredList = state.Products.jewelry[state.filter];
 };

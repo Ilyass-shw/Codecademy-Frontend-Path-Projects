@@ -26,7 +26,9 @@ const CustomSelectInput: React.FC<CustomSelectInputProps> = ({
       <CustomSelect
         value={value}
         id={id}
-        onChange={(e): void => onChange(e?.target.value as filter)}
+        onChange={(e): void =>
+          onChange(e?.target.value.replace(/\s/g, '') as filter)
+        }
       >
         {options.map((option) => (
           <CustomOption key={option}>{option}</CustomOption>

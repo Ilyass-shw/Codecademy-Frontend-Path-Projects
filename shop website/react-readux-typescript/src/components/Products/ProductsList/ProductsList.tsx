@@ -1,26 +1,24 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 import Product from '../Product/Product';
-import { filterSelector } from '../ProductsSlice/selectors/filterSelector';
-import { getProductsByFilter } from '../ProductsListFilter/helpers/getProductsByFilter';
-import ProductsListFilter  from '../ProductsListFilter/ProductsListFilter';
+import ProductsListFilter from '../ProductsListFilter/ProductsListFilter';
 import { ItemList, ProductsWrapper } from './ProductsList.component';
+import { filteredListSelector } from '../ProductsSlice/selectors/filteredListSelector';
 
 const ProductsList: React.FC = () => {
-  const filter = useSelector(filterSelector);
-  const productsList = getProductsByFilter(filter);
+  const productsList = useSelector(filteredListSelector);
 
   return (
     <ProductsWrapper>
-      <ProductsListFilter/>
+      <ProductsListFilter />
 
-      <ItemList role={'products List'}>
+      <ItemList aria-label="products List">
         {productsList.map((item) => {
           return (
-            <LazyLoad height={400} key={item.id}>
-              <Product item={item} />
-            </LazyLoad>
+            // <LazyLoad height={400} >
+              <Product item={item} key={item.id}/>
+            // </LazyLoad>
           );
         })}
       </ItemList>
