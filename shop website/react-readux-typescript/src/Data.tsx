@@ -18,7 +18,7 @@ const Items: DataItem[] = [
 
   {
     id: 2,
-    category: 'Necklage',
+    category: 'Necklace',
     name: 'BODY, MIND, SOUL – NECKLACE',
     price: 236.64,
     description:
@@ -48,7 +48,7 @@ const Items: DataItem[] = [
 
   {
     id: 4,
-    category: 'Necklage',
+    category: 'Necklace',
     name: 'WAY OF THE HEART – NECKLACE',
     price: 172.74,
     description:
@@ -181,7 +181,7 @@ const Items: DataItem[] = [
 
   {
     id: 13,
-    category: 'Necklage',
+    category: 'Necklace',
     name: 'NORDIC SKY – NECKLACE',
     price: 158.55,
     description:
@@ -196,7 +196,7 @@ const Items: DataItem[] = [
 
   {
     id: 14,
-    category: 'Necklage',
+    category: 'Necklace',
     name: 'FJALL – NECKLACE',
     price: 190.76,
     description:
@@ -273,7 +273,7 @@ const Items: DataItem[] = [
   },
   {
     id: 20,
-    category: 'Necklage',
+    category: 'Necklace',
     name: 'SPIRIT – ROSE QUARTZ – NECKLACE',
     price: 135.09,
     description:
@@ -323,7 +323,7 @@ const Items: DataItem[] = [
   },
   {
     id: 24,
-    category: 'Necklage',
+    category: 'Necklace',
     name: 'SPIRIT – CRYSTAL QUARTZ – NECKLACE',
     price: 130.52,
     description:
@@ -372,7 +372,7 @@ const Items: DataItem[] = [
   },
   {
     id: 28,
-    category: 'Earrings',
+    category: 'Ring',
     name: 'RIMFROST – RING (MEDIUM)',
     price: 145.1,
     description:
@@ -396,7 +396,7 @@ const Items: DataItem[] = [
   },
   {
     id: 30,
-    category: 'Necklage',
+    category: 'Necklace',
     name: 'ICE – NECKLACE',
     price: 159.1,
     description:
@@ -421,7 +421,7 @@ const Items: DataItem[] = [
   },
   {
     id: 32,
-    category: 'Necklage',
+    category: 'Necklace',
     name: 'SPIRIT – LABRADORITE – NECKLACE',
     price: 135.09,
     description:
@@ -445,7 +445,7 @@ const Items: DataItem[] = [
   },
   {
     id: 34,
-    category: 'Necklage',
+    category: 'Necklace',
     name: 'AURORA BOREALIS – NECKLACE',
     price: 155.1,
     description:

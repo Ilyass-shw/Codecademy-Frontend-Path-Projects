@@ -54,7 +54,7 @@ const ProductImgs: React.FC<productImgs> = ({
       <ItemImages>
         {imgs.map((src, index) => (
           <ItemImage
-            loading="lazy"
+            // loading="lazy"
             alt={alt}
             ref={img}
             src={src}

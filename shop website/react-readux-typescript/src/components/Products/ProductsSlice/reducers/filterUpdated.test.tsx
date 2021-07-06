@@ -22,10 +22,10 @@ describe('filterUpdated', () => {
     expect(store.getState().Items.filteredList.sort()).toStrictEqual(
       store.getState().Items.Products.jewelry.Armcuff.sort(),
     );
-    store.dispatch(filterUpdated('Necklage'));
-    expect(store.getState().Items.filter).toStrictEqual('Necklage');
+    store.dispatch(filterUpdated('Necklace'));
+    expect(store.getState().Items.filter).toStrictEqual('Necklace');
     expect(store.getState().Items.filteredList.sort()).toStrictEqual(
-      store.getState().Items.Products.jewelry.Necklage.sort(),
+      store.getState().Items.Products.jewelry.Necklace.sort(),
     );
     store.dispatch(filterUpdated('Ring'));
     expect(store.getState().Items.filter).toStrictEqual('Ring');

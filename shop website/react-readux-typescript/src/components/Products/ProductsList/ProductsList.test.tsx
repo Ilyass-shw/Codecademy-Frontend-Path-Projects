@@ -24,46 +24,103 @@ describe('ProductsList', () => {
     expect(asFragment).toMatchSnapshot();
   });
 
-  it('should allow to update list using filter ', async () => {
+  it('should correctly render products of all categories by the default.', async () => {
+    // Usually the api call should be mocked here
+    // but since data use in this project is fake
+    // and no real api call is performed, the mocking is skipped.
     store.dispatch(getProductsData());
+    renderWithStore(<ProductsList />, store, 'withRouter');
 
-    const { debug } = renderWithStore(<ProductsList />, store, 'withRouter');
-
-    // test correct products are represented for the first filter.
+    // Get the available filters.
     const filterInput = await screen.findByLabelText('Filter');
-    const filters = within(filterInput).getAllByRole('option');
-    const filterOne = filters[0].innerHTML;
-    const filterTwo = filters[1].innerHTML;
+    const filters = within(filterInput)
+      .getAllByRole('option')
+      .map((op) => op.innerHTML);
+
+    let categories: string[];
+    [filters[0], ...categories] = filters; // filter[0]==='All Jewelry'
+
+    // Get the actual correct products names that should be rendered
+    // on the screen.
+    const correctProducts = store.getState().Items.filteredList;
+    const correctProductsNames = correctProducts
+      .map((product) => product.name)
+      .sort();
+
+    // Get the products names of from all categories
+    // that are rendered on the screen.
     const productsList = screen.getByLabelText('products List');
-    console.log(filterOne);
-    let correctProducts = store.getState().Items.filteredList;
-    let correctProductsNames = correctProducts.map((product) => product.name);
+    const screenProductsNumber = within(productsList).getAllByRole('listitem')
+      .length;
+    let screenProductsNames: string[] = [];
+    await waitFor(() => {
+      categories.forEach((category) => {
+        const regex = new RegExp('(^|\\s)' + category + '(\\s|$)', 'i');
 
-    correctProductsNames.forEach(async (name) => {
-      expect(
-        await within(productsList).findByRole('heading', { name }),
-      ).toBeInTheDocument();
+        screenProductsNames = screenProductsNames.concat(
+          within(productsList)
+            .getAllByText(regex)
+            .map((item) => item.innerHTML),
+        );
+      });
     });
-    debug();
 
-    // test correct products are represented for another filter.
+    // Test correct products are represented.
+    expect(screenProductsNames.sort()).toStrictEqual(
+      correctProductsNames.sort(),
+    );
+    expect(screenProductsNumber).toStrictEqual(correctProductsNames.length);
+  }, 30000);
 
-    // const anotherFilter = within(filterInput).getByRole('option', {
-    //   name: filterTwo,
-    // });
+  it('should handle changing filter', async () => {
+    // Usually the api call should be mocked here
+    // but since data use in this project is fake
+    // and no real api call is performed, the mocking is skipped.
+    store.dispatch(getProductsData());
+    renderWithStore(<ProductsList />, store, 'withRouter');
 
-    // userEvent.selectOptions(filterInput, anotherFilter);
+    // Get the available filters.
+    const filterInput = await screen.findByLabelText('Filter');
+    const filters = within(filterInput)
+      .getAllByRole('option')
+      .map((op) => op.innerHTML);
 
-    // await waitFor(() => {
-    //   expect(filterInput).toHaveValue(filterOne);
-    //   expect(store.getState().Items.filter).toBe(filterOne);
-    // });
+    let categories: string[];
+    [filters[0], ...categories] = filters; // filter[0]==='All Jewelry'
+    // Get the actual correct products names that should be rendered
+    // on the screen.
+    const correctProducts = store.getState().Items.filteredList;
+    const correctProductsNames = correctProducts
+      .map((product) => product.name)
+      .sort();
 
-    // correctProducts = getProductsByFilter(filterOne);
-    // correctProductsNames = correctProducts.map((product) => product.name);
+    // change filter.
+    const anotherFilter = within(filterInput).getByRole('option', {
+      name: categories[0],
+    });
+    userEvent.selectOptions(filterInput, anotherFilter);
+    await waitFor(() => {
+      expect(filterInput).toHaveValue(filters[1]);
+      expect(store.getState().Items.filter).toBe(filters[1]);
+    });
 
-    // correctProductsNames.forEach((name) => {
-    //   expect(screen.getByText(name)).toBeInTheDocument();
-    // });
+    // Get the products names that are rendered on the screen.
+    const productsList = screen.getByLabelText('products List');
+    const screenProductsNumber = within(productsList).getAllByRole('listitem')
+      .length;
+
+    let screenProductsNames: string[] = [];
+    await waitFor(() => {
+      const regex = new RegExp('(^|\\s)' + categories[0] + '(\\s|$)', 'i');
+
+      screenProductsNames = within(productsList)
+        .getAllByText(regex)
+        .map((item) => item.innerHTML);
+    });
+    // Test correct products are represented.
+    expect(screenProductsNames.sort()).toStrictEqual(
+      correctProductsNames.sort(),
+    );
+    expect(screenProductsNumber).toStrictEqual(correctProductsNames.length);
   });
 });

@@ -12,7 +12,7 @@ export const getProductsData = createAsyncThunk<{
 }>('Products/getItemData', async () => {
   return {
     data,
-    categories: ['Armcuff', 'Ring', 'Bracelet', 'Earrings', 'Necklage'],
+    categories: ['Armcuff', 'Ring', 'Bracelet', 'Earrings', 'Necklace'],
   };
 });
 
@@ -26,7 +26,7 @@ interface jewelryLists {
   Ring: Item[];
   Bracelet: Item[];
   Earrings: Item[];
-  Necklage: Item[];
+  Necklace: Item[];
 }
 
 export interface ProductsState {
@@ -44,7 +44,7 @@ const initialState: ProductsState = {
       Ring: [],
       Bracelet: [],
       Earrings: [],
-      Necklage: [],
+      Necklace: [],
     },
   },
   FetchStatus: 'idle',

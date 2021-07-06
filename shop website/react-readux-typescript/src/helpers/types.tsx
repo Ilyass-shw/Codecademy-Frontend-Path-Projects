@@ -7,7 +7,7 @@ export interface Item {
 }
 
 export type categories =
-  | 'Necklage'
+  | 'Necklace'
   | 'Ring'
   | 'Armcuff'
   | 'Bracelet'
