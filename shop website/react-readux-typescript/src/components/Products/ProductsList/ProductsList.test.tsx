@@ -86,7 +86,7 @@ describe('ProductsList', () => {
       .map((op) => op.innerHTML);
 
     let categories: string[];
-    [filters[0], ...categories] = filters; // filter[0]==='All Jewelry'
+    [filters[0], ...categories] = filters; // Because filter[0]==='All Jewelry'
     // Get the actual correct products names that should be rendered
     // on the screen.
     const correctProducts = store.getState().Items.filteredList;
@@ -94,11 +94,11 @@ describe('ProductsList', () => {
       .map((product) => product.name)
       .sort();
 
-    // change filter.
-    const anotherFilter = within(filterInput).getByRole('option', {
+    // choose filter.
+    const firstFilter = within(filterInput).getByRole('option', {
       name: categories[0],
     });
-    userEvent.selectOptions(filterInput, anotherFilter);
+    userEvent.selectOptions(filterInput, firstFilter);
     await waitFor(() => {
       expect(filterInput).toHaveValue(filters[1]);
       expect(store.getState().Items.filter).toBe(filters[1]);
@@ -111,7 +111,8 @@ describe('ProductsList', () => {
 
     let screenProductsNames: string[] = [];
     await waitFor(() => {
-      const regex = new RegExp('(^|\\s)' + categories[0] + '(\\s|$)', 'i');
+
+      const regex = new RegExp('(^|\\s)' + categories[1] + '(\\s|$)', 'i');
 
       screenProductsNames = within(productsList)
         .getAllByText(regex)
@@ -122,5 +123,43 @@ describe('ProductsList', () => {
       correctProductsNames.sort(),
     );
     expect(screenProductsNumber).toStrictEqual(correctProductsNames.length);
+
+    // change filter one more time.
+    const secondFilter = within(filterInput).getByRole('option', {
+      name: categories[1],
+    });
+    userEvent.selectOptions(filterInput, secondFilter);
+    await waitFor(() => {
+      expect(filterInput).toHaveValue(filters[2]);
+      expect(store.getState().Items.filter).toBe(filters[2]);
+    });
+    // Get the actual correct products names that should be rendered
+    // on the screen again.
+    const secondCorrectProducts = store.getState().Items.filteredList;
+    const secondCorrectProductsNames = secondCorrectProducts
+      .map((product) => product.name)
+      .sort();
+
+    // Get the products names that are rendered on the screen.
+    const secondProductsList = screen.getByLabelText('products List');
+    const secondScreenProductsNumber = within(secondProductsList).getAllByRole(
+      'listitem',
+    ).length;
+
+    let secondScreenProductsNames: string[] = [];
+    await waitFor(() => {
+      const regex = new RegExp('(^|\\s)' + categories[1] + '(\\s|$)', 'i');
+
+      secondScreenProductsNames = within(secondProductsList)
+        .getAllByText(regex)
+        .map((item) => item.innerHTML);
+    });
+    // Test correct products are represented.
+    expect(secondScreenProductsNames.sort()).toStrictEqual(
+      secondCorrectProductsNames.sort(),
+    );
+    expect(secondScreenProductsNumber).toStrictEqual(
+      secondCorrectProductsNames.length,
+    );
   });
 });
