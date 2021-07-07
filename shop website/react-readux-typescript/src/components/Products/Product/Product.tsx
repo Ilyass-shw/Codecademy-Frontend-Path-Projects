@@ -32,7 +32,11 @@ const Product: React.FC<product> = ({ item }) => {
       onMouseEnter={(): void => setIsHover(true)}
       onMouseLeave={(): void => setIsHover(false)}
     >
-      <ProductLink ref={img} to={`/product/${item.id}`}>
+      <ProductLink
+        ref={img}
+        to={`/product/${item.id}`}
+        aria-label="product card"
+      >
         <ProductImgs
           imgs={item.imgs}
           alt={item.name}
