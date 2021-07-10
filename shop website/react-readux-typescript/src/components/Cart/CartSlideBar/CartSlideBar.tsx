@@ -27,16 +27,20 @@ const CartBar: React.FC = () => {
   return (
     <>
       <CartBarWrapper
-        data-testid="dark-background"
+        data-testid="cart-slide-bar-background"
         onClick={() => {
           toggleCartSlideBar();
         }}
         open={isBarOpen}
       />
 
-      <Content fullPage={fullPage} open={isBarOpen} data-testid="CartBar">
+      <Content
+        fullPage={fullPage}
+        open={isBarOpen}
+        data-testid="cart-slide-bar"
+      >
         <CloseButton
-          data-testid="closeButton"
+          data-testid="cart-slide-bar-closeButton"
           onClick={() => {
             toggleCartSlideBar();
           }}
@@ -60,6 +64,7 @@ const CartBar: React.FC = () => {
           </Total>
 
           <CheckoutButton
+            data-testid="cart-slide-bar-checkoutButton"
             disable={(total === 0).toString()}
             to="/checkout"
             onClick={() => {

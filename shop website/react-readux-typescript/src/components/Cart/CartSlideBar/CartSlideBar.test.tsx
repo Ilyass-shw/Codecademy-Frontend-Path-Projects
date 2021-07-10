@@ -12,7 +12,7 @@ describe('CartBar', () => {
 
   it('should close when clicked on close button', async () => {
     renderWithStore(<CartBar />, store, 'withRouter');
-    const closeButton = screen.getByTestId('closeButton');
+    const closeButton = screen.getByTestId('cart-slide-bar-closeButton');
     const cartBar = screen.getByTestId('CartBar');
 
     expect(cartBar).not.toBeVisible();
@@ -43,7 +43,7 @@ describe('CartBar', () => {
     expect(cartBar).toBeVisible();
     expect(store.getState().Cart.isBarOpen).toBeTruthy();
 
-    const Background = screen.getByTestId('dark-background');
+    const Background = screen.getByTestId('cart-slide-bar');
 
     userEvent.click(Background);
 

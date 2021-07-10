@@ -25,13 +25,13 @@ describe('NavBar', () => {
     expect(cartBar).not.toBeVisible();
     expect(store.getState().Cart.isBarOpen).toBeFalsy();
 
-    const icon = screen.getByTestId('Icon');
+    const icon = screen.getByTestId('cart-icon');
     userEvent.click(icon);
 
     expect(store.getState().Cart.isBarOpen).toBeTruthy();
     expect(cartBar).toBeVisible();
 
-    const closeButton = screen.getByTestId('closeButton');
+    const closeButton = screen.getByTestId('cart-slide-bar-closeButton');
     userEvent.click(closeButton);
 
     expect(cartBar).not.toBeVisible();

@@ -27,7 +27,7 @@ const NavBar: React.FC = () => {
           onClick={() => {
             toggleCartSlideBar();
           }}
-          data-testid="Icon"
+          data-testid="cart-icon"
         >
           <CartIcon />
         </Icon>
