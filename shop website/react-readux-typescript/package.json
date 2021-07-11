@@ -61,6 +61,10 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.9",
     "eslint": "^7.25.0",
-    "eslint-plugin-react": "^7.23.2"
+    "eslint-plugin-react": "^7.23.2",
+    "msw": "^0.31.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

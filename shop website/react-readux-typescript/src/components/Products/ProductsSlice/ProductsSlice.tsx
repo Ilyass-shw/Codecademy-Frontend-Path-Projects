@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import data from '../../../Data';
 import { Item, categories, DataItem } from '../../../helpers/types';
 import { filterUpdatedReducer } from './reducers/filterUpdated.reducer';
 import { getProductsDataFulfilledReducer } from './reducers/getItemsDataFulfilled.reducer';
@@ -10,6 +9,14 @@ export const getProductsData = createAsyncThunk<{
   data: DataItem[];
   categories: categories[];
 }>('Products/getItemData', async () => {
+  const res = await fetch('https://www.redrightkolo.com/search.json', {
+    method: 'GET',
+
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const { data } = await res.json();
   return {
     data,
     categories: ['Armcuff', 'Ring', 'Bracelet', 'Earrings', 'Necklace'],
