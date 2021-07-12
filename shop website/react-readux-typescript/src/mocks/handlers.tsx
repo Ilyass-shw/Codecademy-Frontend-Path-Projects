@@ -3,7 +3,7 @@ import { rest } from 'msw';
 import data from '../Data';
 
 export const handlers = [
-  rest.get('https://www.redrightkolo.com/search.json', (_req, res, ctx) => {
+  rest.get('/ShopData', (_req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({

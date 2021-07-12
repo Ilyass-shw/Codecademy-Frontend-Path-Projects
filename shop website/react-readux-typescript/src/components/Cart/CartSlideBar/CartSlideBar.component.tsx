@@ -63,7 +63,7 @@ export const Content = styled.div`
 
 // ============= ============= ============= ============= =============
 
-export const Items = styled.div`
+export const Items = styled.ul`
   margin-top: 2rem;
   display: flex;
   flex-direction: column;

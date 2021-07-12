@@ -9,7 +9,7 @@ export const getProductsData = createAsyncThunk<{
   data: DataItem[];
   categories: categories[];
 }>('Products/getItemData', async () => {
-  const res = await fetch('https://www.redrightkolo.com/search.json', {
+  const res = await fetch('/ShopData', {
     method: 'GET',
 
     headers: {

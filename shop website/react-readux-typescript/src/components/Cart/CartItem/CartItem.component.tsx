@@ -3,7 +3,7 @@ import { CustomButton } from '../../../App/App.component';
 // import { CustomButton, RouterLink } from '../../../App/App.component';
 
 // ============= ============= ============= ============= =============
-export const Container = styled.div`
+export const Container = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;

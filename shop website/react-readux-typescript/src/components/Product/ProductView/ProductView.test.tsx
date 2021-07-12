@@ -42,7 +42,7 @@ describe('ProductView', () => {
 
     const addButton = screen.getByRole('button', { name: /\+/i });
     const minusButton = screen.getByRole('button', { name: /\-/i });
-    const quantityBlock = screen.getByTestId('quantity block');
+    const quantityBlock = screen.getByTestId('product-quantity-input');
 
     expect(within(quantityBlock).getByRole('heading').innerHTML).toBe('1');
     userEvent.click(addButton);

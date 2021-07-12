@@ -48,7 +48,7 @@ const CartBar: React.FC = () => {
           <GrFormClose size={30} />
         </CloseButton>
 
-        <Items>
+        <Items aria-label='cart-products'>
           {items.length > 0 ? (
             items.map((product) => (
               <CartItem product={product} key={product.item.id} />

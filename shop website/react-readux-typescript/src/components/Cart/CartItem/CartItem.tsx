@@ -19,7 +19,7 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({ product }) => {
   return (
     <>
-      <Container>
+      <Container aria-label="cart-product-card">
         <MoveToRight>
           <Img>
             <ItemImg src={product.item.imgs[0]} />

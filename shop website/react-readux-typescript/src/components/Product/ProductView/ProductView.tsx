@@ -42,7 +42,7 @@ const ProductView: React.FC<productViewProps> = ({ item }) => {
             </CustomSelect>
           </Size>
           <ButtomView>
-            <NumberOfItem data-testid="quantity block">
+            <NumberOfItem data-testid="product-quantity-input">
               <QuantityButtons
                 productID={item.id}
                 productQuantity={quantity}

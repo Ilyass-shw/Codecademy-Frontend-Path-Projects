@@ -13,11 +13,11 @@ const ProductsList: React.FC = () => {
     <ProductsWrapper>
       <ProductsListFilter />
 
-      <ItemList aria-label="products List">
+      <ItemList aria-label="products List" data-testid="products-list">
         {productsList.map((item) => {
           return (
             // <LazyLoad height={400} >
-              <Product item={item} key={item.id}/>
+            <Product item={item} key={item.id} />
             // </LazyLoad>
           );
         })}

@@ -2,6 +2,31 @@ import { DataItem } from './helpers/types';
 
 const Items: DataItem[] = [
   {
+    id: 33,
+    category: 'Earrings',
+    name: 'ICE – EARRINGS',
+    price: 95.06,
+    description:
+      'On top of the world, close to the clouds. Where my soul has peace and my heart is free…',
+    imgs: [
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/09/ice-earrings-jonnajinton-jewelry7-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2020/09/ice-earrings-11-L.jpg',
+    ],
+  },
+  {
+    id: 34,
+    category: 'Necklace',
+    name: 'AURORA BOREALIS – NECKLACE',
+    price: 155.1,
+    description:
+      'On top of the world, close to the clouds. Where my soul has peace and my heart is free…',
+    imgs: [
+      'https://jonnajintonsweden.com/wp-content/uploads/2019/08/aurora-borealis-necklace-jonnajinton1-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2019/08/aurora-borealis-necklace-jonnajinton-L.jpg',
+      'https://jonnajintonsweden.com/wp-content/uploads/2019/08/auroraborealis5-necklace-jonnajinton-jewelry-L_1080x.jpg',
+    ],
+  },
+  {
     id: 1,
     category: 'Armcuff',
     name: 'DESTINY – ARMCUFF',
@@ -431,190 +456,5 @@ const Items: DataItem[] = [
       'https://jonnajintonsweden.com/wp-content/uploads/2020/09/spirit-labradorite-necklace-jonnajinton6-L.jpg',
     ],
   },
-  {
-    id: 33,
-    category: 'Earrings',
-    name: 'ICE – EARRINGS',
-    price: 95.06,
-    description:
-      'On top of the world, close to the clouds. Where my soul has peace and my heart is free…',
-    imgs: [
-      'https://jonnajintonsweden.com/wp-content/uploads/2020/09/ice-earrings-jonnajinton-jewelry7-L.jpg',
-      'https://jonnajintonsweden.com/wp-content/uploads/2020/09/ice-earrings-11-L.jpg',
-    ],
-  },
-  {
-    id: 34,
-    category: 'Necklace',
-    name: 'AURORA BOREALIS – NECKLACE',
-    price: 155.1,
-    description:
-      'On top of the world, close to the clouds. Where my soul has peace and my heart is free…',
-    imgs: [
-      'https://jonnajintonsweden.com/wp-content/uploads/2019/08/aurora-borealis-necklace-jonnajinton1-L.jpg',
-      'https://jonnajintonsweden.com/wp-content/uploads/2019/08/aurora-borealis-necklace-jonnajinton-L.jpg',
-      'https://jonnajintonsweden.com/wp-content/uploads/2019/08/auroraborealis5-necklace-jonnajinton-jewelry-L_1080x.jpg',
-    ],
-  },
-  // {
-  //   id: 14,
-  //   category: 'photoprints',
-  //   name: 'A MAGICAL PLACE II',
-  //   price: 218.02,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/A-magical-place-II-rame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/A-magical-place-II-int1.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/A-magical-place-II-1000.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 15,
-  //   category: 'photoprints',
-  //   name: 'A MAGICAL PLACE I',
-  //   price: 218.02,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/a-magical-place-I-frame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/09/a-magical-place-I-int1.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/a-magical-place-I-1000.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 16,
-  //   category: 'photoprints',
-  //   name: 'A MAGICAL PLACE',
-  //   price: 218.02,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // The photo is printed on the entire paper in the size selected, with no white border.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/a-magical-place-frame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/a-magical-place-int.1.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/a-magical-place-1000.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 17,
-  //   category: 'photoprints',
-  //   name: 'A QUIET MIND',
-  //   price: 218.02,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/A-quiet-mind-frame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/A-quiet-mind-int1.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/A-quiet-mind-1000.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 18,
-  //   category: 'photoprints',
-  //   name: 'A NIGHT IN MAY',
-  //   price: 218.02,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/a-new-day-frame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/A-night-in-may-1000.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 19,
-  //   category: 'photoprints',
-  //   name: 'A NIGHT IN MAY',
-  //   price: 218.02,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/a-night-in-may_frame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/a-night-in-may.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 20,
-  //   category: 'photoprints',
-  //   name: 'ANDROMEDA',
-  //   price: 218.02,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/Andromeda-frame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/Andromeda-1000.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 21,
-  //   category: 'photoprints',
-  //   name: 'ANDROMEDA',
-  //   price: 218.02,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/Andromeda_frame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/Andromeda-int1.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/Andromeda.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 22,
-  //   category: 'photoprints',
-  //   name: 'AUTUMN AIR',
-  //   price: 44.59,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/Autumn-air-frame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/Autumn-air-1000.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 23,
-  //   category: 'photoprints',
-  //   name: 'AUTUMN FOREST',
-  //   price: 218.02,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/autumn-forest-1000-1.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/09/autumn-forest-int1.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/autumn-forest-1000-1.jpg',
-  //   ],
-  // },
-
-  // {
-  //   id: 24,
-  //   category: 'photoprints',
-  //   name: 'BALANCE',
-  //   price: 44.59,
-  //   descriptiOn
-  // 'top of the world, close to the clouds. Where my soul has peace and my heart is fre',e…
-  // high quality matte and age resistant photo paper. The smooth surface gives the paper a lovely soft feel and the print a stunning sense of depth.',
-  //   imgs: [
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/Balance-frame.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/A-quiet-mind-int1.jpg',
-  //     'https://jonnajintonsweden.com/wp-content/uploads/2020/08/Balance-1000.jpg',
-  //   ],
-  // },
 ];
 export default Items;
