@@ -31,7 +31,7 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
             </ItemPrice>
           </Info>
         </MoveToRight>
-        <MoveToLeft>
+        <MoveToLeft data-testid="cart-quantity-input">
           <QuantityButtons
             productID={product.item.id}
             productQuantity={product.quantity}
