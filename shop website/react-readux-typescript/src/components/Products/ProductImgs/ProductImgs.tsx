@@ -51,7 +51,7 @@ const ProductImgs: React.FC<productImgs> = ({
       imgNumber={imgsNumber}
       active={(isVisible && isOnMobile) || (isOnHover && !isOnMobile)}
     >
-      <ItemImages>
+      <ItemImages data-testid="product-images">
         {imgs.map((src, index) => (
           <ItemImage
             // loading="lazy"

@@ -29,8 +29,8 @@ const Product: React.FC<product> = ({ item }) => {
   }, []);
   return (
     <ProductItem
-      onMouseEnter={(): void => setIsHover(true)}
-      onMouseLeave={(): void => setIsHover(false)}
+      onMouseOver={(): void => setIsHover(true)}
+      onMouseOut={(): void => setIsHover(false)}
     >
       <ProductLink
         ref={img}

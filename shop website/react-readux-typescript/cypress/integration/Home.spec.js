@@ -93,49 +93,159 @@ describe('Home', () => {
   //       );
   //     });
   // });
-  it('should handle filtering displayed products.', () => {
-    cy.get('#productFilter').select('Ring');
 
-    const RingProducts = data.filter((product) => product.category === 'Ring');
-    const RingProductsNames = RingProducts.map((item) => item.name);
-    cy.get('[aria-label="product card"]')
-      .find('h4')
-      .then((DisplayedProducts) =>
-        Cypress._.map(DisplayedProducts, 'innerText'),
-      )
-      .should('deep.equal', RingProductsNames);
-    cy.get('#productFilter').select('Earrings');
-    const EarringsProducts = data.filter(
-      (product) => product.category === 'Earrings',
-    );
-    const EarringsProductsNames = EarringsProducts.map((item) => item.name);
-    cy.get('[aria-label="product card"]')
-      .find('h4')
-      .then((DisplayedProducts) =>
-        Cypress._.map(DisplayedProducts, 'innerText'),
-      )
-      .should('deep.equal', EarringsProductsNames);
+  // it('should handle filtering displayed products.', () => {
+  //   const AllProductsNames = data.map((item) => item.name);
+  //   cy.get('[aria-label="product card"]')
+  //     .find('h4')
+  //     .then((DisplayedProducts) =>
+  //       Cypress._.map(DisplayedProducts, 'innerText'),
+  //     )
+  //     .should('deep.equal', AllProductsNames);
 
-    cy.get('#productFilter').select('Bracelet');
-    const BraceletProducts = data.filter(
-      (product) => product.category === 'Bracelet',
-    );
-    const BraceletProductsNames = BraceletProducts.map((item) => item.name);
-    cy.get('[aria-label="product card"]')
-      .find('h4')
-      .then((DisplayedProducts) =>
-        Cypress._.map(DisplayedProducts, 'innerText'),
-      )
-      .should('deep.equal', BraceletProductsNames);
+  //   cy.get('#productFilter').select('Ring');
+  //   const RingProducts = data.filter((product) => product.category === 'Ring');
+  //   const RingProductsNames = RingProducts.map((item) => item.name);
+  //   cy.get('[aria-label="product card"]')
+  //     .find('h4')
+  //     .then((DisplayedProducts) =>
+  //       Cypress._.map(DisplayedProducts, 'innerText'),
+  //     )
+  //     .should('deep.equal', RingProductsNames);
 
-    cy.get('#productFilter').select('All Jewelry');
+  //   cy.get('#productFilter').select('Earrings');
+  //   const EarringsProducts = data.filter(
+  //     (product) => product.category === 'Earrings',
+  //   );
+  //   const EarringsProductsNames = EarringsProducts.map((item) => item.name);
+  //   cy.get('[aria-label="product card"]')
+  //     .find('h4')
+  //     .then((DisplayedProducts) =>
+  //       Cypress._.map(DisplayedProducts, 'innerText'),
+  //     )
+  //     .should('deep.equal', EarringsProductsNames);
 
-    const AllProductsNames = data.map((item) => item.name);
-    cy.get('[aria-label="product card"]')
-      .find('h4')
-      .then((DisplayedProducts) =>
-        Cypress._.map(DisplayedProducts, 'innerText'),
-      )
-      .should('deep.equal', AllProductsNames);
+  //   cy.get('#productFilter').select('Bracelet');
+  //   const BraceletProducts = data.filter(
+  //     (product) => product.category === 'Bracelet',
+  //   );
+  //   const BraceletProductsNames = BraceletProducts.map((item) => item.name);
+  //   cy.get('[aria-label="product card"]')
+  //     .find('h4')
+  //     .then((DisplayedProducts) =>
+  //       Cypress._.map(DisplayedProducts, 'innerText'),
+  //     )
+  //     .should('deep.equal', BraceletProductsNames);
+
+  //   cy.get('#productFilter').select('All Jewelry');
+  //   cy.get('[aria-label="product card"]')
+  //     .find('h4')
+  //     .then((DisplayedProducts) =>
+  //       Cypress._.map(DisplayedProducts, 'innerText'),
+  //     )
+  //     .should('deep.equal', AllProductsNames);
+  // });
+
+  it('should play different imgs on hover over product card.', () => {
+    // On small devices the animation is activated
+    // when product card is within viewport.
+
+    // cy.viewport('iphone-5');
+    // cy.contains('ICE – EARRINGS')
+    //   .parents('li')
+    //   .find('[data-testid=product-images]')
+    //   .children()
+    //   .first()
+    //   .scrollIntoView();
+
+    // cy.contains('ICE – EARRINGS')
+    //   .parents('li')
+    //   .find('[data-testid=product-images]')
+    //   .children()
+    //   .should((imgs) => {
+    //     expect(imgs[0]).not.to.be.visible;
+    //     expect(imgs[1]).to.be.visible;
+    //   });
+
+    // cy.contains('ICE – EARRINGS')
+    //   .parents('li')
+    //   .find('[data-testid=product-images]')
+    //   .children()
+    //   .should((imgs) => {
+    //     expect(imgs[0]).to.be.visible;
+    //     expect(imgs[1]).not.to.be.visible;
+    //   });
+
+    // On bigger devices the animation is activate
+    // when product is hovered on.
+
+    cy.viewport('macbook-11');
+    cy.contains('AURORA BOREALIS – NECKLACE')
+      .parents('li')
+      .trigger('mouseover');
+
+    cy.contains('AURORA BOREALIS – NECKLACE')
+      .parents('li')
+      .find('[data-testid=product-images]')
+      .children()
+      .should((imgs) => {
+        expect(imgs[0]).not.to.be.visible;
+        expect(imgs[1]).to.be.visible;
+        expect(imgs[2]).not.to.be.visible;
+      });
+
+    cy.contains('AURORA BOREALIS – NECKLACE')
+      .parents('li')
+      .find('[data-testid=product-images]')
+      .children()
+      .should((imgs) => {
+        expect(imgs[0]).not.to.be.visible;
+        expect(imgs[1]).not.to.be.visible;
+        expect(imgs[2]).to.be.visible;
+      });
+
+    cy.contains('AURORA BOREALIS – NECKLACE')
+      .parents('li')
+      .find('[data-testid=product-images]')
+      .children()
+      .should((imgs) => {
+        expect(imgs[0]).to.be.visible;
+        expect(imgs[1]).not.to.be.visible;
+        expect(imgs[2]).not.to.be.visible;
+      });
+
+    cy.contains('AURORA BOREALIS – NECKLACE')
+      .parents('li')
+      .find('[data-testid=product-images]')
+      .children()
+      .should((imgs) => {
+        expect(imgs[0]).not.to.be.visible;
+        expect(imgs[1]).to.be.visible;
+        expect(imgs[2]).not.to.be.visible;
+      });
+
+    cy.contains('AURORA BOREALIS – NECKLACE')
+      .parents('li')
+      .trigger('mouseout')
+      .find('[data-testid=product-images]')
+      .first()
+      .children()
+      .should((imgs) => {
+        expect(imgs[0]).not.to.be.visible;
+        expect(imgs[1]).to.be.visible;
+        expect(imgs[2]).not.be.visible;
+      });
+    cy.scrollTo(0, 0);
+
+    cy.contains('AURORA BOREALIS – NECKLACE')
+      .parents('li')
+      .find('[data-testid=product-images]')
+      .children()
+      .should((imgs) => {
+        expect(imgs[0]).to.be.visible;
+        expect(imgs[1]).not.to.be.visible;
+        expect(imgs[2]).not.be.visible;
+      });
+    // });
   });
 });
