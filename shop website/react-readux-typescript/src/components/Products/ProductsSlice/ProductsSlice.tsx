@@ -9,7 +9,7 @@ export const getProductsData = createAsyncThunk<{
   data: DataItem[];
   categories: categories[];
 }>('Products/getItemData', async () => {
-  const res = await fetch('/ShopData', {
+  const res = await fetch('http://ShopData', {
     method: 'GET',
 
     headers: {

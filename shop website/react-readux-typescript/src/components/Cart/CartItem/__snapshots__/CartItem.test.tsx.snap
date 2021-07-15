@@ -2,7 +2,8 @@
 
 exports[`CartItem should match snapshot 1`] = `
 <DocumentFragment>
-  <div
+  <li
+    aria-label="cart-product-card"
     class="sc-jRQAMF egDwus"
   >
     <div
@@ -33,6 +34,7 @@ exports[`CartItem should match snapshot 1`] = `
     </div>
     <div
       class="sc-pVTma jQbaE"
+      data-testid="cart-quantity-input"
     >
       <div
         class="sc-dkPtyc gDTXiC"
@@ -59,6 +61,6 @@ exports[`CartItem should match snapshot 1`] = `
         Remove
       </button>
     </div>
-  </div>
+  </li>
 </DocumentFragment>
 `;

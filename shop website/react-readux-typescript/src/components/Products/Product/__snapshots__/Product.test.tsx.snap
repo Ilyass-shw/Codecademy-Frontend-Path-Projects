@@ -6,29 +6,28 @@ exports[`Product should match snaptshot 1`] = `
     class="sc-gKckTs jFUhbv"
   >
     <a
+      aria-label="product card"
       class="sc-eCImvq sc-iCfLBT gECYPg bNwGWt"
       href="/product/1"
     >
       <div>
         <div
           class="sc-bdvvaa cYloRB"
+          data-testid="product-images"
         >
           <img
             alt="itemOne"
             class="sc-gsDJrp dlZrhb"
-            loading="lazy"
             src="src1"
           />
           <img
             alt="itemOne"
             class="sc-gsDJrp dmjAPj"
-            loading="lazy"
             src="src2"
           />
           <img
             alt="itemOne"
             class="sc-gsDJrp fGGvVI"
-            loading="lazy"
             src="src3"
           />
         </div>

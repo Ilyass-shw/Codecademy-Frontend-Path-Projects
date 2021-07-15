@@ -32,17 +32,19 @@ describe('ProductsListFilter', () => {
     renderWithStore(<ProductsListFilter />, store, 'withRouter');
 
     const filterInput = await screen.findByLabelText('Filter');
-    const filters = within(filterInput).getAllByRole('option');
 
     //lets make sure additional filter options are added.
-    expect(filters.length > 1).toBeTruthy();
+    await waitFor(() => {
+      const filters = within(filterInput).getAllByRole('option');
+      expect(filters.length > 1).toBeTruthy();
+    });
 
-    //lets make sure changing filter option is possible.
-    //lets check the default filter 'All Jewelry'.
+    //lets make sure changing filter option is possible:
+    //lets first check the default filter 'All Jewelry'.
     expect(store.getState().Items.filter).toBe('AllJewelry');
     expect(filterInput).toHaveValue('All Jewelry');
 
-    //let's change the filter.
+    //let's then change the filter.
     const filterOne = store.getState().Items.categories[1];
 
     let option = within(filterInput).getByRole('option', { name: filterOne });

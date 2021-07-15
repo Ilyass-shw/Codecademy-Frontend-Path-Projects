@@ -20,7 +20,7 @@ describe('NavBar', () => {
   it('should open and close cart items bar using the cart icon button', async () => {
     renderWithStore(<NavBar />, store, 'withRouter');
 
-    const cartBar = screen.getByTestId('CartBar');
+    const cartBar = screen.getByTestId('cart-slide-bar');
 
     expect(cartBar).not.toBeVisible();
     expect(store.getState().Cart.isBarOpen).toBeFalsy();

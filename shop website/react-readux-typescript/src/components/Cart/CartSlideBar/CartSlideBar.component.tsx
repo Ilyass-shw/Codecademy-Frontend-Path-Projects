@@ -92,7 +92,7 @@ export const Total = styled.div`
 export const Price = styled.p``;
 // ============= ============= ============= ============= =============
 
-export const CheckoutFotter = styled.div`
+export const CheckoutFooter = styled.div`
   padding: 1.25rem 1rem;
   display: flex;
   flex-direction: column;

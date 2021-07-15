@@ -12,7 +12,7 @@ import {
   CartBarWrapper,
   Items,
   CheckoutButton,
-  CheckoutFotter,
+  CheckoutFooter,
   Price,
   Total,
 } from './CartSlideBar.component';
@@ -57,7 +57,7 @@ const CartBar: React.FC = () => {
             <p>Your cart is currently empty.</p>
           )}
         </Items>
-        <CheckoutFotter>
+        <CheckoutFooter>
           <Total>
             <h5>Total</h5>
             <Price>{'$' + total.toFixed(2)}</Price>
@@ -73,7 +73,7 @@ const CartBar: React.FC = () => {
           >
             Check Out
           </CheckoutButton>
-        </CheckoutFotter>
+        </CheckoutFooter>
       </Content>
     </>
   );
