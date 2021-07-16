@@ -18,7 +18,11 @@ const ZoomableImg: React.FC<ZoomableImgProps> = ({ mainImg }) => {
       isZoomed={isZoomed}
       onZoomChange={handleZoomChange}
     >
-      <MainImg loading="lazy" src={mainImg} data-testid="mainImg" />
+      <MainImg
+        data-testid="ZoomableImg"
+        loading="lazy"
+        src={mainImg}
+      />
     </ControlledZoom>
   );
 };

@@ -21,7 +21,7 @@ describe('Home', () => {
   //   cy.get('[data-testid=cart-slide-bar-background]').should('not.be.visible');
   // });
 
-  // it('should handle adding an item to the cart. ', () => {
+  // it('should handle adding and removing items from the cart. ', () => {
   //   cy.url().should('not.include', 'http://localhost:3000/product/');
   //   cy.get('[data-testid=products-list]').find('h4').first().as('ProductName');
   //   // .click();
@@ -43,7 +43,7 @@ describe('Home', () => {
   //     .should('have.length', 1);
   // });
 
-  // it('should handle choosing items  to the cart and checkout. ', () => {
+  // it('should handle choosing items into the cart and checkout. ', () => {
   //   // Add first item to cart.
   //   cy.contains('ICE – EARRINGS').click();
   //   cy.url().should('include', 'http://localhost:3000/product/');
@@ -149,7 +149,6 @@ describe('Home', () => {
   it('should play different imgs on hover over product card.', () => {
     // On small devices the animation is activated
     // when product card is within viewport.
-
     // cy.viewport('iphone-5');
     // cy.contains('ICE – EARRINGS')
     //   .parents('li')
@@ -157,7 +156,6 @@ describe('Home', () => {
     //   .children()
     //   .first()
     //   .scrollIntoView();
-
     // cy.contains('ICE – EARRINGS')
     //   .parents('li')
     //   .find('[data-testid=product-images]')
@@ -166,7 +164,6 @@ describe('Home', () => {
     //     expect(imgs[0]).not.to.be.visible;
     //     expect(imgs[1]).to.be.visible;
     //   });
-
     // cy.contains('ICE – EARRINGS')
     //   .parents('li')
     //   .find('[data-testid=product-images]')
@@ -175,77 +172,138 @@ describe('Home', () => {
     //     expect(imgs[0]).to.be.visible;
     //     expect(imgs[1]).not.to.be.visible;
     //   });
-
     // On bigger devices the animation is activate
     // when product is hovered on.
+    //   cy.viewport('macbook-11');
+    //   cy.contains('AURORA BOREALIS – NECKLACE')
+    //     .parents('li')
+    //     .trigger('mouseover');
+    //   cy.contains('AURORA BOREALIS – NECKLACE')
+    //     .parents('li')
+    //     .find('[data-testid=product-images]')
+    //     .children()
+    //     .should((imgs) => {
+    //       expect(imgs[0]).not.to.be.visible;
+    //       expect(imgs[1]).to.be.visible;
+    //       expect(imgs[2]).not.to.be.visible;
+    //     });
+    //   cy.contains('AURORA BOREALIS – NECKLACE')
+    //     .parents('li')
+    //     .find('[data-testid=product-images]')
+    //     .children()
+    //     .should((imgs) => {
+    //       expect(imgs[0]).not.to.be.visible;
+    //       expect(imgs[1]).not.to.be.visible;
+    //       expect(imgs[2]).to.be.visible;
+    //     });
+    //   cy.contains('AURORA BOREALIS – NECKLACE')
+    //     .parents('li')
+    //     .find('[data-testid=product-images]')
+    //     .children()
+    //     .should((imgs) => {
+    //       expect(imgs[0]).to.be.visible;
+    //       expect(imgs[1]).not.to.be.visible;
+    //       expect(imgs[2]).not.to.be.visible;
+    //     });
+    //   cy.contains('AURORA BOREALIS – NECKLACE')
+    //     .parents('li')
+    //     .find('[data-testid=product-images]')
+    //     .children()
+    //     .should((imgs) => {
+    //       expect(imgs[0]).not.to.be.visible;
+    //       expect(imgs[1]).to.be.visible;
+    //       expect(imgs[2]).not.to.be.visible;
+    //     });
+    //   cy.contains('AURORA BOREALIS – NECKLACE')
+    //     .parents('li')
+    //     .trigger('mouseout')
+    //     .find('[data-testid=product-images]')
+    //     .first()
+    //     .children()
+    //     .should((imgs) => {
+    //       expect(imgs[0]).not.to.be.visible;
+    //       expect(imgs[1]).to.be.visible;
+    //       expect(imgs[2]).not.be.visible;
+    //     });
+    //   cy.scrollTo(0, 0);
+    //   cy.contains('AURORA BOREALIS – NECKLACE')
+    //     .parents('li')
+    //     .find('[data-testid=product-images]')
+    //     .children()
+    //     .should((imgs) => {
+    //       expect(imgs[0]).to.be.visible;
+    //       expect(imgs[1]).not.to.be.visible;
+    //       expect(imgs[2]).not.be.visible;
+    //     });
+    //   // });
+  });
 
-    cy.viewport('macbook-11');
-    cy.contains('AURORA BOREALIS – NECKLACE')
-      .parents('li')
-      .trigger('mouseover');
-
-    cy.contains('AURORA BOREALIS – NECKLACE')
-      .parents('li')
-      .find('[data-testid=product-images]')
-      .children()
-      .should((imgs) => {
-        expect(imgs[0]).not.to.be.visible;
-        expect(imgs[1]).to.be.visible;
-        expect(imgs[2]).not.to.be.visible;
+  it('should allow user to view product details.', () => {
+    cy.url().should('not.include', 'http://localhost:3000/product/');
+    cy.contains('AURORA BOREALIS – NECKLACE').click();
+    cy.url().should('include', 'http://localhost:3000/product/');
+    cy.contains('AURORA BOREALIS – NECKLACE');
+    cy.get('[data-testid=miniImgs] > :nth-child(1) > div')
+      .should('have.css', 'border', '2.5px solid rgb(0, 0, 0)')
+      .find('img')
+      .click()
+      .then((miniImg) => {
+        cy.get('[data-testid=ZoomableImg]').should(
+          'have.attr',
+          'src',
+          miniImg.attr('src'),
+        );
       });
 
-    cy.contains('AURORA BOREALIS – NECKLACE')
-      .parents('li')
-      .find('[data-testid=product-images]')
-      .children()
-      .should((imgs) => {
-        expect(imgs[0]).not.to.be.visible;
-        expect(imgs[1]).not.to.be.visible;
-        expect(imgs[2]).to.be.visible;
+    cy.get('[data-testid=miniImgs] > :nth-child(3) > div')
+      .should('not.have.css', 'border', '2.5px solid rgb(0, 0, 0)')
+      .find('img')
+      .click()
+      .then((miniImg) => {
+        cy.get('[data-testid=ZoomableImg]').should(
+          'have.attr',
+          'src',
+          miniImg.attr('src'),
+        );
       });
+    cy.get('[data-testid=miniImgs] > :nth-child(3) > div').should(
+      'have.css',
+      'border',
+      '2.5px solid rgb(0, 0, 0)',
+    );
+    cy.get('[data-testid=miniImgs] > :nth-child(2) > div')
+      .should('not.have.css', 'border', '2.5px solid rgb(0, 0, 0)')
+      .find('img')
+      .click()
+      .then((miniImg) => {
+        cy.get('[data-testid=ZoomableImg]').should(
+          'have.attr',
+          'src',
+          miniImg.attr('src'),
+        );
+      });
+    cy.get('[data-testid=miniImgs] > :nth-child(2) > div').should(
+      'have.css',
+      'border',
+      '2.5px solid rgb(0, 0, 0)',
+    );
 
-    cy.contains('AURORA BOREALIS – NECKLACE')
-      .parents('li')
-      .find('[data-testid=product-images]')
-      .children()
-      .should((imgs) => {
-        expect(imgs[0]).to.be.visible;
-        expect(imgs[1]).not.to.be.visible;
-        expect(imgs[2]).not.to.be.visible;
+    cy.get('[data-testid=leftArrow] > svg').click();
+    cy.get('[data-testid=miniImgs] > :nth-child(1) > div')
+      .should('have.css', 'border', '2.5px solid rgb(0, 0, 0)')
+      .find('img')
+      .click()
+      .then((miniImg) => {
+        cy.get('[data-testid=ZoomableImg]').should(
+          'have.attr',
+          'src',
+          miniImg.attr('src'),
+        );
       });
-
-    cy.contains('AURORA BOREALIS – NECKLACE')
-      .parents('li')
-      .find('[data-testid=product-images]')
-      .children()
-      .should((imgs) => {
-        expect(imgs[0]).not.to.be.visible;
-        expect(imgs[1]).to.be.visible;
-        expect(imgs[2]).not.to.be.visible;
-      });
-
-    cy.contains('AURORA BOREALIS – NECKLACE')
-      .parents('li')
-      .trigger('mouseout')
-      .find('[data-testid=product-images]')
-      .first()
-      .children()
-      .should((imgs) => {
-        expect(imgs[0]).not.to.be.visible;
-        expect(imgs[1]).to.be.visible;
-        expect(imgs[2]).not.be.visible;
-      });
-    cy.scrollTo(0, 0);
-
-    cy.contains('AURORA BOREALIS – NECKLACE')
-      .parents('li')
-      .find('[data-testid=product-images]')
-      .children()
-      .should((imgs) => {
-        expect(imgs[0]).to.be.visible;
-        expect(imgs[1]).not.to.be.visible;
-        expect(imgs[2]).not.be.visible;
-      });
-    // });
+    cy.get('[data-testid=miniImgs] > :nth-child(1) > div').should(
+      'have.css',
+      'border',
+      '2.5px solid rgb(0, 0, 0)',
+    );
   });
 });

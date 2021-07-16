@@ -21,7 +21,7 @@ const ProductViewImgSlider: React.FC<productViewImgSliderProps> = ({
   return (
     <ImgContainer>
       <ProductViewMainImg main={main} setMain={setMain} imgs={imgs} />
-      <AllImgs>
+      <AllImgs data-testid='miniImgs'>
         {imgs.map((src, index) => (
           <CustomButton key={src} onClick={() => setMain(index)}>
             <ImgBorder selected={src === imgs[main]}>

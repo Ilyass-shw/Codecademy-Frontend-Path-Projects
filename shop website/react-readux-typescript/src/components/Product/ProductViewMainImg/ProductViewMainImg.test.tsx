@@ -13,7 +13,7 @@ describe('ProductViewMainImg', () => {
 
   it('should call setMain clicking the right arrows', () => {
     render(<ProductViewMainImg setMain={setMain} main={main} imgs={imgs} />);
-    const mainImg = screen.getByTestId('mainImg') as HTMLImageElement;
+    const mainImg = screen.getByTestId('ZoomableImg') as HTMLImageElement;
     const rightArrow = screen.getByTestId('rightArrow');
 
     expect(mainImg.src).toContain('src1');
@@ -27,7 +27,7 @@ describe('ProductViewMainImg', () => {
 
   it('should call setMain clicking the right main img using the left arrows', () => {
     render(<ProductViewMainImg setMain={setMain} main={main} imgs={imgs} />);
-    const mainImg = screen.getByTestId('mainImg') as HTMLImageElement;
+    const mainImg = screen.getByTestId('ZoomableImg') as HTMLImageElement;
     const leftArrow = screen.getByTestId('leftArrow');
 
     expect(mainImg.src).toContain('src1');
