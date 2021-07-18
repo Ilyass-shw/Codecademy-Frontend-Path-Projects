@@ -28,7 +28,7 @@ declare global {
   namespace Cypress {
     interface Chainable {
       /**
-       * Gets element by the test Id.
+       * Yields element by the test Id.
        *
        * @memberof Cypress.Chainable
        *
@@ -54,6 +54,17 @@ declare global {
         size: string,
         quantity?: number,
       ) => Chainable;
+      /**
+       * Yields product card images that are displayed on the main page.
+       *
+       * @memberof Cypress.Chainable
+       *
+       * @example
+        ```
+        cy.addItemToCart('ICE – EARRINGS','L',3).then(...)
+        ```
+       */
+      getProductCardsImgs: (ItemName: string) => Chainable;
     }
   }
 }
@@ -80,5 +91,13 @@ export const addItemToCart = (
   return cy.contains(/add to cart/i).click();
 };
 
-Cypress.Commands.add('addItemToCart', addItemToCart);
+export const getProductCardsImgs = (ItemName: string): Cypress.Chainable => {
+  cy.contains(ItemName)
+    .parents('li')
+    .find('[data-testid=product-images]')
+    .children();
+};
+
 Cypress.Commands.add('getByTestId', getByTestId);
+Cypress.Commands.add('addItemToCart', addItemToCart);
+Cypress.Commands.add('getProductCardsImgs', getProductCardsImgs);
