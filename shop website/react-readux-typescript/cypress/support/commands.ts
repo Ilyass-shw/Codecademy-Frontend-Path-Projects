@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Cypress {
@@ -92,7 +93,8 @@ export const addItemToCart = (
 };
 
 export const getProductCardsImgs = (ItemName: string): Cypress.Chainable => {
-  cy.contains(ItemName)
+  return cy
+    .contains(ItemName)
     .parents('li')
     .find('[data-testid=product-images]')
     .children();

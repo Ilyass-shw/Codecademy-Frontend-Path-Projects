@@ -41,9 +41,7 @@ describe('Home', () => {
     cy.contains(/add to cart/i).click();
     cy.getByTestId('cart-icon').contains('1');
     cy.getByTestId('cart-icon').click();
-    cy.get('[aria-label=cart-products]')
-      .children()
-      .should('have.length', 1);
+    cy.get('[aria-label=cart-products]').children().should('have.length', 1);
   });
 
   it('should handle choosing items into the cart and checkout. ', () => {
@@ -271,5 +269,4 @@ describe('Home', () => {
       '2.5px solid rgb(0, 0, 0)',
     );
   });
-  
 });
