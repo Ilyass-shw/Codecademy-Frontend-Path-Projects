@@ -5,6 +5,7 @@ export const ToggleButton = styled.div`
   cursor: pointer;
   border-bottom: 1px solid #e6e6e6;
 `;
+// ============= ============= ============= ============= =============
 
 export const ButtonContent = styled.div`
   display: flex;
@@ -15,6 +16,7 @@ export const ButtonContent = styled.div`
   margin: auto;
   height: 100%;
 `;
+// ============= ============= ============= ============= =============
 
 export const ButtonHeader = styled.h5<{ show: boolean }>`
   display: flex;
@@ -33,4 +35,7 @@ export const ButtonHeader = styled.h5<{ show: boolean }>`
       show ? 'rotate(270deg) scale(0.9)' : 'rotate(90deg) scale(0.9)'};
   }
 `;
+
+// ============= ============= ============= ============= =============
+
 export const TotalPrice = styled.h4``;

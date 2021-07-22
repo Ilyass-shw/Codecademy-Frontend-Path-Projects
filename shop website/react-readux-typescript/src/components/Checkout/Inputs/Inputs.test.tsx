@@ -43,7 +43,7 @@ describe('Inputs', () => {
 
     const submitButton = screen.getByTestId('testSubmitButton');
 
-    //verify initial state
+    // verify initial state
     expect(screen.queryByText('This is required.')).not.toBeInTheDocument();
     userEvent.click(submitButton);
     await verifyHowManyRequiredErrors(7);

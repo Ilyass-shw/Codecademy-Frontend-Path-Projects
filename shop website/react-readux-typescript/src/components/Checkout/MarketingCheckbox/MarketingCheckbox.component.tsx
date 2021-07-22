@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-
 export const CheckboxContainer = styled.div``;
+
+// ============= ============= ============= ============= =============
+
 export const Checkbox = styled.input`
   border: 1px solid #d9d9d9;
   width: 18px;

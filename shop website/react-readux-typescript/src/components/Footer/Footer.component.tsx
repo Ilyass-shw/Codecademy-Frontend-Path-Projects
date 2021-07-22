@@ -8,6 +8,11 @@ export const SeparatorSection = styled.section`
 `;
 
 // ============= ============= ============= ============= =============
+export const FooterContainer = styled.section`
+  height: 11rem;
+`;
+
+// ============= ============= ============= ============= =============
 
 export const SocialMedia = styled.div`
   display: flex;
@@ -18,7 +23,6 @@ export const SocialMedia = styled.div`
 `;
 
 // ============= ============= ============= ============= =============
-
 
 export const IconRing = styled(CustomButton)`
   border-radius: 50%;
@@ -52,4 +56,5 @@ export const Copyright = styled.p`
   margin: auto;
   font-size: x-small;
   width: fit-content;
+  padding-bottom: 0.2rem;
 `;

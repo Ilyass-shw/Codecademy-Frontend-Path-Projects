@@ -4,6 +4,8 @@ export const ProductsWrapper = styled.section`
   padding: 2rem 0;
 `;
 
+// ============= ============= ============= ============= =============
+
 export const ItemList = styled.ul`
   overflow: hidden;
   list-style: none;

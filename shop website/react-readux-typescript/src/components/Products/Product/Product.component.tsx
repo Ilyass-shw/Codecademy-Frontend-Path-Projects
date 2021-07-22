@@ -14,16 +14,25 @@ export const ProductItem = styled.li`
     width: 30vw;
   }
 `;
+
+// ============= ============= ============= ============= =============
+
 export const ProductLink = styled(RouterLink)`
   display: flex;
   flex-direction: column;
   align-items: center;
   color: black;
 `;
+
+// ============= ============= ============= ============= =============
+
 export const ItemName = styled.h4`
   padding: 0.2rem 0 0 0;
   text-align: center;
 `;
+
+// ============= ============= ============= ============= =============
+
 export const ItemPrice = styled.h6`
   font-weight: lighter;
 `;

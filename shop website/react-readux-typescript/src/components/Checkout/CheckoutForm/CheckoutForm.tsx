@@ -17,14 +17,18 @@ import {
 
 interface CheckoutFormProps {
   saveData?: (dataToSave: formValue) => void;
+  isSmallScreen: boolean;
 }
 
-const CheckoutForm: React.FC<CheckoutFormProps> = ({ saveData }) => {
+const CheckoutForm: React.FC<CheckoutFormProps> = ({
+  saveData,
+  isSmallScreen,
+}) => {
   const methods = useForm<formValue>();
 
   return (
     <>
-      <Logo to="/">Shw</Logo>
+      {!isSmallScreen && <Logo to="/">Shw</Logo>}
       <FormProvider {...methods}>
         <FormContainer>
           <Form

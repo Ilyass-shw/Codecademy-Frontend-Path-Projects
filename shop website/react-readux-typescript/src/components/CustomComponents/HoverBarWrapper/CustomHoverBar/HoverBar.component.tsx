@@ -19,6 +19,8 @@ const animation = (props: AnimationProps) => css`
   animation: ${progress} ${props.durationInSec} ${props.repeate} linear;
 `;
 
+// ============= ============= ============= ============= =============
+
 export const MainBar = styled.div<AnimationProps>`
   height: 100%;
   background-color: black;

@@ -15,6 +15,9 @@ export const QuantityBlock = styled.div`
     width: 5.8rem;
   }
 `;
+
+// ============= ============= ============= ============= =============
+
 export const QuantityButton = styled(CustomButton)`
   font-size: x-large;
   font-weight: bold;
@@ -27,6 +30,9 @@ export const QuantityButton = styled(CustomButton)`
     box-shadow: none;
   }
 `;
+
+// ============= ============= ============= ============= =============
+
 export const Quantity = styled.h3`
   display: inline-block;
   color: #939393;

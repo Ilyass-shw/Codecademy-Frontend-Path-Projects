@@ -14,6 +14,8 @@ export const SummaryContainer = styled.aside`
   }
 `;
 
+// ============= ============= ============= ============= =============
+
 export const SummaryContent = styled.div`
   max-width: 38rem;
   margin: auto;
@@ -23,9 +25,7 @@ export const SummaryContent = styled.div`
   }
 `;
 
-type SummaryItemsProps = {
-  show: boolean;
-};
+// ============= ============= ============= ============= =============
 
 const collapsing = css`
   position: relative;
@@ -34,10 +34,10 @@ const collapsing = css`
   opacity: 0;
 `;
 
-export const Summary = styled.div<SummaryItemsProps>`
+export const Summary = styled.div<{ show: boolean }>`
   margin: auto;
   max-width: 40rem;
-  transition: max-height 0.55s ease, opacity .6s ease-in ;
+  transition: max-height 0.55s ease, opacity 0.6s ease-in;
   max-height: 1000px;
   overflow: ${({ show }) => (show ? 'visible' : 'hidden')};
   ${({ show }) => (show ? collapsing : '')}

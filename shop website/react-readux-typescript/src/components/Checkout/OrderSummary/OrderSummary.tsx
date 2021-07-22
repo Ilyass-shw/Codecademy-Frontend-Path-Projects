@@ -4,7 +4,6 @@ import { CartItemsSelector } from '../../Cart/CartSlice/selectors/cartItemsSelec
 import { TotalPriceSelector } from '../../Cart/CartSlice/selectors/TotalPriceSelector';
 import SummaryItem from '../SummaryItem.tsx/SummaryItem';
 import SummaryToggleButton from '../SummaryToggleButton/SummaryToggleButton';
-import { useWindowWidth } from '../../../helpers/useWindowWidth';
 import TotalPriceCalculator from '../TotalPriceCalculator/TotalPriceCalculator';
 import {
   SummaryContainer,
@@ -12,18 +11,22 @@ import {
   Summary,
 } from './OrderSummary.component';
 
-const OrderSummary: React.FC = () => {
-  const isSmallScreen = useWindowWidth() < 1200;
+interface OrderSummaryProps {
+  isSmallScreen: boolean;
+}
+const OrderSummary: React.FC<OrderSummaryProps> = ({ isSmallScreen }) => {
   const [show, setShow] = useState(false);
   const CartTotalPrice = useSelector(TotalPriceSelector);
   const Items = useSelector(CartItemsSelector);
   const taxes = Items.length * 1.17;
   const TotalToPay = taxes + CartTotalPrice;
+
   useEffect(() => {
     if (!isSmallScreen) {
       setShow(false);
     }
   }, [isSmallScreen]);
+
   return (
     <SummaryContainer>
       {isSmallScreen && (

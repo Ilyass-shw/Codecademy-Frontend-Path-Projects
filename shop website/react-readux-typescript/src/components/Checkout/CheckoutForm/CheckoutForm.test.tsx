@@ -11,14 +11,27 @@ describe('CheckoutForm', () => {
   window.alert = (): void => undefined; // provide an empty implementation for window.alert
 
   it('should render', () => {
-    renderWithFormProvider(<CheckoutForm />, 'withRouter');
+    renderWithFormProvider(
+      <CheckoutForm isSmallScreen={false} />,
+      'withRouter',
+    );
   });
 
   //========================================================================
 
-  it('should match snapshot', () => {
+  it('should match snapshot on big Screen', () => {
     const { asFragment } = renderWithFormProvider(
-      <CheckoutForm />,
+      <CheckoutForm isSmallScreen={false} />,
+      'withRouter',
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  //========================================================================
+
+  it('should match snapshot on small Screen', () => {
+    const { asFragment } = renderWithFormProvider(
+      <CheckoutForm isSmallScreen={true} />,
       'withRouter',
     );
     expect(asFragment()).toMatchSnapshot();
@@ -28,7 +41,10 @@ describe('CheckoutForm', () => {
 
   it('should submit correct form data', async () => {
     const saveData = jest.fn();
-    renderWithFormProvider(<CheckoutForm saveData={saveData} />, 'withRouter');
+    renderWithFormProvider(
+      <CheckoutForm isSmallScreen={false} saveData={saveData} />,
+      'withRouter',
+    );
 
     const submitButton = screen.getByRole('button', {
       name: /continue to shipping/i,

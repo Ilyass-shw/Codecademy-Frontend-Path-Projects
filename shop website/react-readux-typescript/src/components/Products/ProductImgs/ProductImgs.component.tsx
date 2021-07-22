@@ -9,6 +9,9 @@ export const ItemImages = styled.div`
   overflow: hidden;
   height: 55vh;
 `;
+
+// ============= ============= ============= ============= =============
+
 export const ItemImage = styled.img<itemImage>`
   display: inline-block;
   position: relative;

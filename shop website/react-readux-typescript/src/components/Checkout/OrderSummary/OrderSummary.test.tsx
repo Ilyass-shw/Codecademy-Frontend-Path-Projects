@@ -42,11 +42,22 @@ describe('OrderSummary', () => {
 
   it('should render', () => {
     global.innerWidth = 1300;
-    renderWithStore(<OrderSummary />, store);
+    renderWithStore(<OrderSummary isSmallScreen={false} />, store);
   });
 
-  it('should match snapshot with empty cart', () => {
-    const { asFragment } = renderWithStore(<OrderSummary />, store);
+  it('should match snapshot with empty cart on small devices', () => {
+    const { asFragment } = renderWithStore(
+      <OrderSummary isSmallScreen={false} />,
+      store,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should match snapshot with empty cart on big devices', () => {
+    const { asFragment } = renderWithStore(
+      <OrderSummary isSmallScreen={true} />,
+      store,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -55,20 +66,23 @@ describe('OrderSummary', () => {
     store.dispatch(itemAddedToCart(ProductTwo));
     store.dispatch(itemAddedToCart(ProductThree));
 
-    const { asFragment } = renderWithStore(<OrderSummary />, store);
+    const { asFragment } = renderWithStore(
+      <OrderSummary isSmallScreen={false} />,
+      store,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should not render the toggle button on big screens ', () => {
     global.innerWidth = 1300;
-    renderWithStore(<OrderSummary />, store);
+    renderWithStore(<OrderSummary isSmallScreen={false} />, store);
     expect(screen.queryByText(/Show Order summray/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Hide Order summray/i)).not.toBeInTheDocument();
   });
 
   it('should render the toggle button on small screens ', () => {
     global.innerWidth = 700;
-    renderWithStore(<OrderSummary />, store);
+    renderWithStore(<OrderSummary isSmallScreen={false} />, store);
     expect(screen.queryByText(/Show Order summray/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Hide Order summray/i)).toBeInTheDocument();
     const toggleButton = screen.getByRole('button');
@@ -77,7 +91,7 @@ describe('OrderSummary', () => {
 
   it('should show and hide summary by clicking on the button', () => {
     global.innerWidth = 700;
-    renderWithStore(<OrderSummary />, store);
+    renderWithStore(<OrderSummary isSmallScreen={false} />, store);
     const toggleButton = screen.getByRole('button');
     expect(screen.getByTestId('cart summary')).toBeVisible();
     userEvent.click(toggleButton);

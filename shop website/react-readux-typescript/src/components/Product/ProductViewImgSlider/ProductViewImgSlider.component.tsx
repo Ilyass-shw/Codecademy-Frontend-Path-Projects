@@ -11,6 +11,7 @@ export const ImgContainer = styled.div`
   }
 `;
 
+// ============= ============= ============= ============= =============
 
 export const AllImgs = styled.div`
   padding: 1rem 1rem;
@@ -26,12 +27,18 @@ export const AllImgs = styled.div`
     align-items: center;
   }
 `;
+
+// ============= ============= ============= ============= =============
+
 type ImgBorderProps = { selected: boolean };
+
 export const ImgBorder = styled.div<ImgBorderProps>`
   display: flex;
   margin: 0 0.5rem;
   border: ${({ selected }) => (selected ? '2.5px solid black' : 'none')};
 `;
+
+// ============= ============= ============= ============= =============
 
 export const Img = styled.img`
   width: 11vw;

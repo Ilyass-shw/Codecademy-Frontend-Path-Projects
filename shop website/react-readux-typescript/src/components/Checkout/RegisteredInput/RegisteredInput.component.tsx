@@ -14,6 +14,9 @@ export const Input = styled.input<InputTypeProps>`
     border-color: red;
   }
 `;
+
+// ============= ============= ============= ============= =============
+
 export const FormError = styled.p`
   color: red;
   margin: 0 0 0.8rem 1rem;

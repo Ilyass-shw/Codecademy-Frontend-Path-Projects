@@ -1,6 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OrderSummary should match snapshot with empty cart 1`] = `
+exports[`OrderSummary should match snapshot with empty cart on big devices 1`] = `
+<DocumentFragment>
+  <aside
+    class="sc-fFehDp dBzzve"
+  >
+    <div
+      class="sc-iCfLBT juZEj"
+      role="button"
+    >
+      <div
+        class="sc-furvIG fpXRLl"
+      >
+        <h5
+          class="sc-pVTma hRSPpg"
+        >
+          Hide Order summray
+        </h5>
+        <h4
+          class="sc-jrQzUz"
+        >
+           $0.00
+        </h4>
+      </div>
+    </div>
+    <div
+      class="sc-bkkfTU huIOwn"
+    >
+      <div
+        class="sc-ieebsP bNXuno"
+        data-testid="cart summary"
+      >
+        <div
+          class="sc-kDThTU jyMbWq"
+        >
+          <div
+            class="sc-iqsfdx hCHYOZ"
+          >
+            <p
+              class="sc-crHlIS cAUUlo"
+            >
+              Subtotal
+            </p>
+            <h4
+              class="sc-bqiQRQ"
+            >
+              $0.00
+            </h4>
+          </div>
+          <div
+            class="sc-iqsfdx hCHYOZ"
+          >
+            <p
+              class="sc-crHlIS cAUUlo"
+            >
+              Shipping
+            </p>
+            <p
+              class="sc-egiSv xfnHp"
+            >
+              Calculated at next step
+            </p>
+          </div>
+          <div
+            class="sc-iqsfdx hCHYOZ"
+          >
+            <p
+              class="sc-crHlIS cAUUlo"
+            >
+              Taxes (estimated)
+            </p>
+            <h4
+              class="sc-bqiQRQ"
+            >
+              $0.00
+            </h4>
+          </div>
+        </div>
+        <div
+          class="sc-ksdxAp ecqOzd"
+        >
+          <h2
+            class="sc-hBURRC jMsQmL"
+          >
+            Total
+          </h2>
+          <h3
+            class="sc-fotPbf kiEKYR"
+          >
+            $0.00
+          </h3>
+        </div>
+      </div>
+    </div>
+  </aside>
+</DocumentFragment>
+`;
+
+exports[`OrderSummary should match snapshot with empty cart on small devices 1`] = `
 <DocumentFragment>
   <aside
     class="sc-fFehDp dBzzve"
@@ -9,7 +106,7 @@ exports[`OrderSummary should match snapshot with empty cart 1`] = `
       class="sc-bkkfTU huIOwn"
     >
       <div
-        class="sc-ieebsP eajotg"
+        class="sc-ieebsP bNXuno"
         data-testid="cart summary"
       >
         <div
@@ -87,7 +184,7 @@ exports[`OrderSummary should match snapshot with three items in the cart  1`] = 
       class="sc-bkkfTU huIOwn"
     >
       <div
-        class="sc-ieebsP eajotg"
+        class="sc-ieebsP bNXuno"
         data-testid="cart summary"
       >
         <div

@@ -1,13 +1,15 @@
 import React from 'react';
 import CheckoutForm from '../components/Checkout/CheckoutForm/CheckoutForm';
 import OrderSummary from '../components/Checkout/OrderSummary/OrderSummary';
-// import Footer from '../components/Footer/Footer';
+import { useWindowWidth } from '../helpers/useWindowWidth';
 
 const Checkout: React.FC = () => {
+  const isSmallScreen = useWindowWidth() < 1200;
+
   return (
     <>
-      <OrderSummary />
-      <CheckoutForm />
+      <OrderSummary isSmallScreen={isSmallScreen} />
+      <CheckoutForm isSmallScreen={isSmallScreen} />
     </>
   );
 };

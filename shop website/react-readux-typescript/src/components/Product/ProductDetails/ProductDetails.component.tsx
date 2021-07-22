@@ -8,6 +8,9 @@ export const ProductTitle = styled.h2`
     padding: 0 1rem 1rem 1rem;
   }
 `;
+
+// ============= ============= ============= ============= =============
+
 export const ProductPrice = styled.h3`
   color: #111;
   padding: 0.6rem 1rem 1rem 1rem;
@@ -24,6 +27,9 @@ export const ProductPrice = styled.h3`
     width: 20%;
   }
 `;
+
+// ============= ============= ============= ============= =============
+
 export const ProductDescription = styled.p`
   color: #111;
   padding: 0.6rem 1rem 1rem 1rem;

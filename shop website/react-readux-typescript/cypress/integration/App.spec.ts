@@ -2,86 +2,7 @@
 import data from '../../src/Data';
 describe('Home', () => {
   beforeEach(() => {
-    // cy.intercept('GEt', '/ShopData', {
-    //   fixture: 'StoreProducts.json',
-    // });
     cy.visit('http://localhost:3000/');
-  });
-  it('should handle opening and closing empty cart. ', () => {
-    cy.getByTestId('cart-slide-bar').should('not.be.visible');
-    cy.getByTestId('cart-slide-bar-background').should('not.be.visible');
-    cy.get('body').should('not.have.css', 'overflow', 'hidden');
-    cy.getByTestId('cart-icon').click();
-    cy.get('body').should('have.css', 'overflow', 'hidden');
-    cy.getByTestId('cart-slide-bar').should('be.visible');
-    cy.getByTestId('cart-slide-bar-background').should('be.visible');
-    cy.getByTestId('cart-slide-bar-checkoutButton').should(
-      'have.css',
-      'pointer-events',
-      'none',
-    );
-    cy.getByTestId('cart-slide-bar-closeButton').click();
-    cy.getByTestId('cart-slide-bar').should('not.be.visible');
-    cy.getByTestId('cart-slide-bar-background').should('not.be.visible');
-  });
-
-  it('should handle adding and removing items from the cart. ', () => {
-    cy.url().should('not.include', 'http://localhost:3000/product/');
-    cy.getByTestId('products-list').find('h4').first().as('ProductName');
-    cy.get('@ProductName')
-      .invoke('text')
-      .then((ProductName) => {
-        cy.get('@ProductName').click();
-        cy.contains(ProductName);
-        cy.url().should('include', 'http://localhost:3000/product/');
-      });
-    cy.get('select').contains(/size/i).parent().select('M');
-    cy.getByTestId('product-quantity-input').contains('+').click();
-    cy.getByTestId('cart-icon').contains('1').should('not.exist');
-    cy.contains(/add to cart/i).click();
-    cy.getByTestId('cart-icon').contains('1');
-    cy.getByTestId('cart-icon').click();
-    cy.get('[aria-label=cart-products]').children().should('have.length', 1);
-  });
-
-  it('should handle choosing items into the cart and checkout. ', () => {
-    // Add first item to cart.
-    cy.get('[data-testid=cart-icon]').contains('1').should('not.exist');
-    cy.addItemToCart('ICE – EARRINGS', 'M', 3);
-    cy.get('[data-testid=cart-icon]').contains('1').click();
-    cy.get('[aria-label=cart-products]').children().should('have.length', 1);
-    cy.get('[data-testid=cart-quantity-input]').contains('3');
-    cy.get('[aria-label=cart-products]').contains('ICE – EARRINGS');
-    cy.get('[data-testid=cart-slide-bar-background]').click();
-    cy.contains(/shop/i).click();
-
-    // Add second item to cart.
-    cy.get('[data-testid=cart-icon]').contains('2').should('not.exist');
-    cy.addItemToCart('AURORA BOREALIS – NECKLACE', 'L');
-    cy.get('[data-testid=cart-icon]').contains('2').click();
-    cy.get('[aria-label=cart-products]').children().should('have.length', 2);
-    cy.get('[data-testid=cart-quantity-input]').contains('3');
-    cy.contains('AURORA BOREALIS – NECKLACE');
-
-    // Checkout.
-    cy.get('[data-testid=cart-slide-bar-checkoutButton]').click();
-    cy.url().should('eq', 'http://localhost:3000/checkout');
-    cy.get('[name=email]').type('exapmle@gmail.com');
-    cy.get('[name=FirstName]').type('Andiran');
-    cy.get('[name=LastName]').type('Sobolov');
-    cy.get('[name=Address]').type('Somewhere');
-    cy.get('[name=City]').type('Berlin');
-    cy.get('[name=Country]').select('Germany');
-    cy.get('[type=tel]').type('03125481616');
-    const stub = cy.stub();
-    cy.on('window:alert', stub);
-    cy.get('[type=submit]')
-      .click()
-      .then(() => {
-        expect(stub.getCall(0)).to.be.calledWith(
-          'This is the extent of this website for now, more pages are yet to be available. Thank you for checking out my work. \n      \n    \n      Email: exapmle@gmail.com,\n      isBuyerAcceptingMarketing: false,\n      FirstName: Andiran,\n      LastName: Sobolov,\n      Address: Somewhere,\n      Address2: ,\n      City: Berlin,\n      PhoneNumber: 03125481616,\n      Country: DE,\n      ',
-        );
-      });
   });
 
   it('should handle using product filter on the landing page.', () => {
@@ -268,5 +189,82 @@ describe('Home', () => {
       'border',
       '2.5px solid rgb(0, 0, 0)',
     );
+  });
+
+  it('should handle opening and closing empty cart. ', () => {
+    cy.getByTestId('cart-slide-bar').should('not.be.visible');
+    cy.getByTestId('cart-slide-bar-background').should('not.be.visible');
+    cy.get('body').should('not.have.css', 'overflow', 'hidden');
+    cy.getByTestId('cart-icon').click();
+    cy.get('body').should('have.css', 'overflow', 'hidden');
+    cy.getByTestId('cart-slide-bar').should('be.visible');
+    cy.getByTestId('cart-slide-bar-background').should('be.visible');
+    cy.getByTestId('cart-slide-bar-checkoutButton').should(
+      'have.css',
+      'pointer-events',
+      'none',
+    );
+    cy.getByTestId('cart-slide-bar-closeButton').click();
+    cy.getByTestId('cart-slide-bar').should('not.be.visible');
+    cy.getByTestId('cart-slide-bar-background').should('not.be.visible');
+  });
+
+  it('should handle adding and removing items from the cart. ', () => {
+    cy.url().should('not.include', 'http://localhost:3000/product/');
+    cy.getByTestId('products-list').find('h4').first().as('ProductName');
+    cy.get('@ProductName')
+      .invoke('text')
+      .then((ProductName) => {
+        cy.get('@ProductName').click();
+        cy.contains(ProductName);
+        cy.url().should('include', 'http://localhost:3000/product/');
+      });
+    cy.get('select').contains(/size/i).parent().select('M');
+    cy.getByTestId('product-quantity-input').contains('+').click();
+    cy.getByTestId('cart-icon').contains('1').should('not.exist');
+    cy.contains(/add to cart/i).click();
+    cy.getByTestId('cart-icon').contains('1');
+    cy.getByTestId('cart-icon').click();
+    cy.get('[aria-label=cart-products]').children().should('have.length', 1);
+  });
+
+  it('should handle choosing items into the cart and checkout. ', () => {
+    // Add first item to cart.
+    cy.get('[data-testid=cart-icon]').contains('1').should('not.exist');
+    cy.addItemToCart('ICE – EARRINGS', 'M', 3);
+    cy.get('[data-testid=cart-icon]').contains('1').click();
+    cy.get('[aria-label=cart-products]').children().should('have.length', 1);
+    cy.get('[data-testid=cart-quantity-input]').contains('3');
+    cy.get('[aria-label=cart-products]').contains('ICE – EARRINGS');
+    cy.get('[data-testid=cart-slide-bar-background]').click();
+    cy.contains(/shop/i).click();
+
+    // Add second item to cart.
+    cy.get('[data-testid=cart-icon]').contains('2').should('not.exist');
+    cy.addItemToCart('AURORA BOREALIS – NECKLACE', 'L');
+    cy.get('[data-testid=cart-icon]').contains('2').click();
+    cy.get('[aria-label=cart-products]').children().should('have.length', 2);
+    cy.get('[data-testid=cart-quantity-input]').contains('3');
+    cy.contains('AURORA BOREALIS – NECKLACE');
+
+    // Checkout.
+    cy.get('[data-testid=cart-slide-bar-checkoutButton]').click();
+    cy.url().should('eq', 'http://localhost:3000/checkout');
+    cy.get('[name=email]').type('exapmle@gmail.com');
+    cy.get('[name=FirstName]').type('Andiran');
+    cy.get('[name=LastName]').type('Sobolov');
+    cy.get('[name=Address]').type('Somewhere');
+    cy.get('[name=City]').type('Berlin');
+    cy.get('[name=Country]').select('Germany');
+    cy.get('[type=tel]').type('03125481616');
+    const stub = cy.stub();
+    cy.on('window:alert', stub);
+    cy.get('[type=submit]')
+      .click()
+      .then(() => {
+        expect(stub.getCall(0)).to.be.calledWith(
+          'This is the extent of this website for now, more pages are yet to be available. Thank you for checking out my work. \n      \n    \n      Email: exapmle@gmail.com,\n      isBuyerAcceptingMarketing: false,\n      FirstName: Andiran,\n      LastName: Sobolov,\n      Address: Somewhere,\n      Address2: ,\n      City: Berlin,\n      PhoneNumber: 03125481616,\n      Country: DE,\n      ',
+        );
+      });
   });
 });

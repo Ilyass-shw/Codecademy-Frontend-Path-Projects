@@ -90,6 +90,7 @@ export const Total = styled.div`
 // ============= ============= ============= ============= =============
 
 export const Price = styled.p``;
+
 // ============= ============= ============= ============= =============
 
 export const CheckoutFooter = styled.div`

@@ -5,6 +5,8 @@ export const MainImgContainer = styled.div`
   position: relative;
 `;
 
+// ============= ============= ============= ============= =============
+
 export const Arrow = styled(CustomButton)<{ left: boolean }>`
   position: absolute;
   z-index: 1;

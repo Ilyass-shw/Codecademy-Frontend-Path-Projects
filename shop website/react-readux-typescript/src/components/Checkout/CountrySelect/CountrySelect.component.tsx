@@ -12,8 +12,17 @@ export const Select = styled.select<InputTypeProps>`
   margin: 0.9rem 0;
   font-size: 0.9rem;
 `;
+
+// ============= ============= ============= ============= =============
+
 export const Country = styled.option``;
+
+// ============= ============= ============= ============= =============
+
 export const Optgroup = styled.optgroup``;
+
+// ============= ============= ============= ============= =============
+
 export const FormError = styled.p`
   color: red;
   margin: 0 0 0.8rem 1rem;
