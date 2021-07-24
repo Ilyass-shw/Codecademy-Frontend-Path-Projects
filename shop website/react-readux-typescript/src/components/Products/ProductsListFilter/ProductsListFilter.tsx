@@ -5,6 +5,7 @@ import { itemsCategoriesSelector } from '../ProductsSlice/selectors/itemsCategor
 import { filterSelector } from '../ProductsSlice/selectors/filterSelector';
 import { updateFilter } from './helpers/updateFilter';
 import { Filter } from './ProductsListFilter.component';
+import { BiFilter } from 'react-icons/bi';
 
 const ProductsListFilter: React.FC = () => {
   const filter = useSelector(filterSelector);
@@ -12,6 +13,7 @@ const ProductsListFilter: React.FC = () => {
 
   return (
     <Filter>
+      <BiFilter size="2rem" />
       <CustomSelectInput
         label={'Filter'}
         id="productFilter"

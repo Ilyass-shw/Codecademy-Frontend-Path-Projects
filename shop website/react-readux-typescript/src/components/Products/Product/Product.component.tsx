@@ -34,5 +34,5 @@ export const ItemName = styled.h4`
 // ============= ============= ============= ============= =============
 
 export const ItemPrice = styled.h6`
-  font-weight: lighter;
+  font-weight: 600;
 `;

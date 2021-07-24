@@ -27,11 +27,24 @@ export const HeroContent = styled.div`
 export const HeroText = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital@1&display=swap');
 
+  margin-left: 3vw;
+  margin-top: 3vw;
+
   p {
-    padding: 10px;
+    padding: 10px 10px 5px 10px;
     font-family: 'Quattrocento Sans', sans-serif;
     font-style: italic;
-    font-size: 14px;
+    text-shadow: 0 0 white;
+    font-size: clamp(14px, 17px, 17px);
+    width: 55vw;
+    max-width: 23.4rem;
+  }
+
+  @media screen and (min-width: 364px) and (max-width: 485px) {
+    margin-left: 6vw;
+    p {
+      width: 42vw;
+    }
   }
 `;
 
@@ -39,6 +52,8 @@ export const FirstPart = styled.p``;
 
 // ============= ============= ============= ============= =============
 
-export const LastPart = styled.p``;
+export const LastPart = styled.p`
+  text-align: end;
+`;
 
 // ============= ============= ============= ============= =============

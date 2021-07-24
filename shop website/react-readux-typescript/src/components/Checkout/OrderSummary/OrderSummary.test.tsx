@@ -87,7 +87,6 @@ describe('OrderSummary', () => {
   });
 
   it('should show and hide summary by clicking on the button', () => {
-    global.innerWidth = 700;
     renderWithStore(<OrderSummary isSmallScreen={true} />, store);
     const toggleButton = screen.getByRole('button');
     expect(screen.getByTestId('cart summary')).toBeVisible();

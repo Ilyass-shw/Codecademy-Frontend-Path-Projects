@@ -19,7 +19,7 @@ interface productViewProps {
   item: Item;
 }
 const ProductView: React.FC<productViewProps> = ({ item }) => {
-  const options = ['Choose a Size', 'XS', 'S', 'M', 'L', 'Xl']; // We'd udually get this from store
+  const options = ['Choose a Size', 'XS', 'S', 'M', 'L', 'Xl']; // We'd udually get this from store.
   const [itemSize, setItemSize] = useState('Choose a Size');
   const [quantity, setQuantity] = useState(1);
 
