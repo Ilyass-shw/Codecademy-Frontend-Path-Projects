@@ -18,16 +18,19 @@ exports[`Product should match snaptshot 1`] = `
           <img
             alt="itemOne"
             class="sc-gsDJrp dlZrhb"
+            loading="lazy"
             src="src1"
           />
           <img
             alt="itemOne"
             class="sc-gsDJrp dmjAPj"
+            loading="lazy"
             src="src2"
           />
           <img
             alt="itemOne"
             class="sc-gsDJrp fGGvVI"
+            loading="lazy"
             src="src3"
           />
         </div>

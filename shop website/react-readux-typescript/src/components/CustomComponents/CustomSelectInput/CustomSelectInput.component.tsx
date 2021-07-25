@@ -12,12 +12,15 @@ export const CustomLabel = styled.label`
 
 export const CustomSelect = styled.select`
   padding: 0.5rem;
-  width: 90%;
+  width: 40%;
   border: 1px solid #8c8c8c;
   box-shadow: inset 0 -1.4em 1em 0 rgb(0 0 0 / 5%);
   border-radius: 2px;
   &:hover {
     box-shadow: none;
+  }
+  @media screen and (min-width: 420px) {
+    width: 90%;
   }
 `;
 

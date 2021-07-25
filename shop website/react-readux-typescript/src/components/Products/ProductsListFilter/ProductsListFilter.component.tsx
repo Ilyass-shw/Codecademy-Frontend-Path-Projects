@@ -7,4 +7,14 @@ export const Filter = styled.div`
   margin: auto;
   display: flex;
   justify-content: center;
+  svg {
+    width: 1.3rem;
+    transform: translateY(4px);
+  }
+  @media screen and (min-width: 420px) {
+    svg {
+      width: 2rem;
+      transform: translateY(3px);
+    }
+  }
 `;
